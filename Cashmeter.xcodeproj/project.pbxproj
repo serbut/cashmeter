@@ -7,8 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		07193BF8201798A100DA1ECC /* SpendingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07193BF7201798A100DA1ECC /* SpendingsTableViewController.swift */; };
+		07193BFA20179E2B00DA1ECC /* SpendnigItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07193BF920179E2B00DA1ECC /* SpendnigItem.swift */; };
+		07193BFC2017A1CB00DA1ECC /* SpendingCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07193BFB2017A1CB00DA1ECC /* SpendingCategory.swift */; };
+		07193BFF2017A97B00DA1ECC /* SpendingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07193BFD2017A97B00DA1ECC /* SpendingTableViewCell.swift */; };
 		073DDFFF20035DD4000CAD7C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073DDFFE20035DD4000CAD7C /* AppDelegate.swift */; };
-		073DE00120035DD4000CAD7C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073DE00020035DD4000CAD7C /* ViewController.swift */; };
+		073DE00120035DD4000CAD7C /* NewSpendingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073DE00020035DD4000CAD7C /* NewSpendingViewController.swift */; };
 		073DE00420035DD4000CAD7C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 073DE00220035DD4000CAD7C /* Main.storyboard */; };
 		073DE00720035DD4000CAD7C /* Cashmeter.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 073DE00520035DD4000CAD7C /* Cashmeter.xcdatamodeld */; };
 		073DE00920035DD4000CAD7C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 073DE00820035DD4000CAD7C /* Assets.xcassets */; };
@@ -27,9 +31,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		07193BF7201798A100DA1ECC /* SpendingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendingsTableViewController.swift; sourceTree = "<group>"; };
+		07193BF920179E2B00DA1ECC /* SpendnigItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendnigItem.swift; sourceTree = "<group>"; };
+		07193BFB2017A1CB00DA1ECC /* SpendingCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendingCategory.swift; sourceTree = "<group>"; };
+		07193BFD2017A97B00DA1ECC /* SpendingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendingTableViewCell.swift; sourceTree = "<group>"; };
 		073DDFFB20035DD4000CAD7C /* Cashmeter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cashmeter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		073DDFFE20035DD4000CAD7C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		073DE00020035DD4000CAD7C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		073DE00020035DD4000CAD7C /* NewSpendingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewSpendingViewController.swift; sourceTree = "<group>"; };
 		073DE00320035DD4000CAD7C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		073DE00620035DD4000CAD7C /* Cashmeter.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Cashmeter.xcdatamodel; sourceTree = "<group>"; };
 		073DE00820035DD4000CAD7C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -58,6 +66,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		07193BF4201757F700DA1ECC /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				07193BF920179E2B00DA1ECC /* SpendnigItem.swift */,
+				07193BFB2017A1CB00DA1ECC /* SpendingCategory.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		07193BF52017580200DA1ECC /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				073DE00220035DD4000CAD7C /* Main.storyboard */,
+				073DE00A20035DD4000CAD7C /* LaunchScreen.storyboard */,
+				07193BFD2017A97B00DA1ECC /* SpendingTableViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		07193BF62017580C00DA1ECC /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				073DE00020035DD4000CAD7C /* NewSpendingViewController.swift */,
+				07193BF7201798A100DA1ECC /* SpendingsTableViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		073DDFF220035DD4000CAD7C = {
 			isa = PBXGroup;
 			children = (
@@ -79,11 +115,11 @@
 		073DDFFD20035DD4000CAD7C /* Cashmeter */ = {
 			isa = PBXGroup;
 			children = (
+				07193BF4201757F700DA1ECC /* Models */,
+				07193BF52017580200DA1ECC /* Views */,
+				07193BF62017580C00DA1ECC /* Controllers */,
 				073DDFFE20035DD4000CAD7C /* AppDelegate.swift */,
-				073DE00020035DD4000CAD7C /* ViewController.swift */,
-				073DE00220035DD4000CAD7C /* Main.storyboard */,
 				073DE00820035DD4000CAD7C /* Assets.xcassets */,
-				073DE00A20035DD4000CAD7C /* LaunchScreen.storyboard */,
 				073DE00D20035DD4000CAD7C /* Info.plist */,
 				073DE00520035DD4000CAD7C /* Cashmeter.xcdatamodeld */,
 			);
@@ -202,9 +238,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				073DE00120035DD4000CAD7C /* ViewController.swift in Sources */,
+				07193BFA20179E2B00DA1ECC /* SpendnigItem.swift in Sources */,
+				073DE00120035DD4000CAD7C /* NewSpendingViewController.swift in Sources */,
 				073DE00720035DD4000CAD7C /* Cashmeter.xcdatamodeld in Sources */,
 				073DDFFF20035DD4000CAD7C /* AppDelegate.swift in Sources */,
+				07193BF8201798A100DA1ECC /* SpendingsTableViewController.swift in Sources */,
+				07193BFC2017A1CB00DA1ECC /* SpendingCategory.swift in Sources */,
+				07193BFF2017A97B00DA1ECC /* SpendingTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -360,6 +400,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3H2J8552ML;
 				INFOPLIST_FILE = Cashmeter/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sergeybutorin.Cashmeter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -375,6 +416,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3H2J8552ML;
 				INFOPLIST_FILE = Cashmeter/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sergeybutorin.Cashmeter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
