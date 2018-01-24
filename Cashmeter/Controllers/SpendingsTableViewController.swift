@@ -7,30 +7,45 @@
 //
 
 import UIKit
+import CoreData
 
 class SpendingsTableViewController: UITableViewController {
+    
+    var managedContext: NSManagedObjectContext!
 
-    var spendings = [SpendingItem]()
+    private var categories = [Category]()
+    private var spendings = [Spending]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let foodCategory = SpendingCategory(label: "🍔", title: "Food")
-        
-        spendings = [
-            SpendingItem(category: foodCategory, amount: 100.0, description: nil),
-            SpendingItem(category: foodCategory, amount: 180.0, description: nil),
-            SpendingItem(category: foodCategory, amount: 320.0, description: nil)
-        ]
+        fetchCategories()
+    }
     
+    override func viewWillAppear(_ animated: Bool) {
+        fetchSpendings()
     }
 
-    // MARK: - Table view data source
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let identifier = segue.identifier else { return }
+        switch identifier {
+        case "NewSpendingSegue":
+            let vc = segue.destination as! NewSpendingViewController
+            vc.categories = categories
+            vc.managedContext = managedContext
+        default:
+            fatalError("Unexpected segue")
+        }
+    }
+}
 
+// MARK: - Table view data source
+
+extension SpendingsTableViewController {
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return spendings.count
     }
@@ -39,10 +54,66 @@ class SpendingsTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "SpendingCell", for: indexPath) as! SpendingTableViewCell
         let spendingForCell = spendings[indexPath.row]
         
-        cell.categoryIconLabel.text = spendingForCell.category.label
-        cell.categoryNameLabel.text = spendingForCell.category.title
+        cell.categoryIconLabel.text = spendingForCell.category?.icon
+        cell.categoryNameLabel.text = spendingForCell.category?.title
         cell.amountLabel.text = "\(spendingForCell.amount) ₽"
         
         return cell
+    }
+}
+
+// MARK: - Table view delegate
+
+extension SpendingsTableViewController {
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+}
+
+// MARK: - Saving and fetching data
+
+extension SpendingsTableViewController {
+    private func fetchSpendings() {
+        let fetchRequest: NSFetchRequest<Spending> = Spending.fetchRequest()
+        
+        do {
+            let results = try managedContext.fetch(fetchRequest)
+            self.spendings = results.reversed()
+        } catch let error as NSError {
+            print("Fetch error: \(error) description: \(error.userInfo)")
+        }
+        tableView.reloadData()
+    }
+    
+    private func fetchCategories() {
+        let fetchRequest: NSFetchRequest<Category> = Category.fetchRequest()
+        do {
+            let results = try managedContext.fetch(fetchRequest)
+            if results.count > 0 {
+                categories = results
+            } else {
+                addDefaultCategories()
+            }
+        } catch let error as NSError {
+            print("Fetch error: \(error) description: \(error.userInfo)")
+        }
+    }
+    
+    private func addDefaultCategories() {
+        let path = Bundle.main.path(forResource: "DefaultCategories",
+                                    ofType: "plist")
+        let dataArray = NSArray(contentsOfFile: path!)!
+        for dict in dataArray {
+            let category = Category(context: managedContext)
+            let catDict = dict as! [String: AnyObject]
+            category.icon = catDict["icon"] as? String
+            category.title = catDict["title"] as? String
+            categories.append(category)
+        }
+        do {
+            try managedContext.save()
+        } catch let error as NSError {
+            print("Save error: \(error), description: \(error.userInfo)")
+        }
     }
 }

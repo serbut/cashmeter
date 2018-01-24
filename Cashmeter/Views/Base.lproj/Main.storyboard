@@ -11,10 +11,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--New Spending View Controller-->
+        <!--New Spending-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="NewSpendingViewController" customModule="Cashmeter" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="New Spending" id="BYZ-38-t0r" customClass="NewSpendingViewController" customModule="Cashmeter" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -34,11 +34,56 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <textInputTraits key="textInputTraits" keyboardType="decimalPad" returnKeyType="done"/>
                             </textField>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="pCV-GJ-juP">
+                                <rect key="frame" x="16" y="276" width="343" height="371"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CategoryCell" id="Jee-Sk-8XD" customClass="CategoryTableViewCell" customModule="Cashmeter" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="343" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Jee-Sk-8XD" id="MGj-rE-AWp">
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="🍔" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PDg-nb-mSu">
+                                                    <rect key="frame" x="15" y="11" width="23" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GA0-BO-fA8">
+                                                    <rect key="frame" x="54" y="11" width="120" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="GA0-BO-fA8" firstAttribute="leading" secondItem="PDg-nb-mSu" secondAttribute="trailing" constant="16" id="Eh1-U4-UvZ"/>
+                                                <constraint firstItem="PDg-nb-mSu" firstAttribute="leading" secondItem="MGj-rE-AWp" secondAttribute="leadingMargin" id="Ja5-5Z-hpf"/>
+                                                <constraint firstItem="GA0-BO-fA8" firstAttribute="centerY" secondItem="MGj-rE-AWp" secondAttribute="centerY" id="lnG-BD-TeK"/>
+                                                <constraint firstItem="PDg-nb-mSu" firstAttribute="centerY" secondItem="MGj-rE-AWp" secondAttribute="centerY" id="xW5-21-d8H"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="GA0-BO-fA8" secondAttribute="trailing" id="WdN-nh-vuC"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="iconLabel" destination="PDg-nb-mSu" id="sjb-j8-BBH"/>
+                                            <outlet property="titleLabel" destination="GA0-BO-fA8" id="qsA-hF-Jph"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="QWu-xf-0CG" firstAttribute="centerX" secondItem="sl2-Xx-tTO" secondAttribute="centerX" id="48m-uN-qUe"/>
+                            <constraint firstItem="pCV-GJ-juP" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Gr5-KA-c24"/>
+                            <constraint firstItem="pCV-GJ-juP" firstAttribute="top" secondItem="QWu-xf-0CG" secondAttribute="bottom" constant="8" id="NED-SH-Pbm"/>
+                            <constraint firstItem="pCV-GJ-juP" firstAttribute="width" secondItem="QWu-xf-0CG" secondAttribute="width" id="T34-DT-7EV"/>
                             <constraint firstItem="sl2-Xx-tTO" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="Ziv-w1-W4K"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="pCV-GJ-juP" secondAttribute="bottom" constant="20" id="cVi-0G-ZDE"/>
                             <constraint firstItem="sl2-Xx-tTO" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="cxy-bL-qKT"/>
                             <constraint firstItem="QWu-xf-0CG" firstAttribute="top" secondItem="sl2-Xx-tTO" secondAttribute="bottom" constant="6" id="sFh-XK-orI"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="sl2-Xx-tTO" secondAttribute="trailing" constant="16" id="vvi-Mz-eZP"/>
@@ -46,15 +91,27 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" title="New Spending" id="W51-bi-866">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="5D9-QZ-4xz">
+                            <connections>
+                                <action selector="saveButtonPushed:" destination="BYZ-38-t0r" id="eSd-dk-gpg"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="amountTextField" destination="sl2-Xx-tTO" id="AlM-e8-UyL"/>
+                        <outlet property="categoriesTableView" destination="pCV-GJ-juP" id="Fdq-cB-8ie"/>
+                        <outlet property="descriptionTextView" destination="QWu-xf-0CG" id="m1M-gd-gfe"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="476" y="133.5832083958021"/>
         </scene>
-        <!--Spendings Table View Controller-->
+        <!--My Spendings-->
         <scene sceneID="oyE-NW-tk8">
             <objects>
-                <tableViewController id="dNY-ZX-Iod" customClass="SpendingsTableViewController" customModule="Cashmeter" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="My Spendings" id="dNY-ZX-Iod" customClass="SpendingsTableViewController" customModule="Cashmeter" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="UNm-Qz-NKI">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -74,13 +131,13 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iNr-cr-NCT">
-                                            <rect key="frame" x="55" y="11" width="120" height="21"/>
+                                            <rect key="frame" x="55" y="11.5" width="120" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="500₽" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ii7-ki-2l1">
-                                            <rect key="frame" x="317.5" y="11" width="41.5" height="21"/>
+                                            <rect key="frame" x="317.5" y="11.5" width="41.5" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -108,10 +165,11 @@
                             <outlet property="delegate" destination="dNY-ZX-Iod" id="Jeh-QB-HFh"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="ko4-IM-MzW">
+                    <navigationItem key="navigationItem" title="My Spendings" id="ko4-IM-MzW">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="XmC-MW-B7b"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="srP-ay-gvF">
                             <connections>
-                                <segue destination="BYZ-38-t0r" kind="show" id="dKH-w2-cnE"/>
+                                <segue destination="BYZ-38-t0r" kind="show" identifier="NewSpendingSegue" id="dKH-w2-cnE"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
