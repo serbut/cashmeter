@@ -9,14 +9,24 @@
 import UIKit
 import CoreData
 
-class NewSpendingViewController: UIViewController {
+// MARK: SpendingDelegate
+protocol SpendingDelegate {
+    func didFinish(viewController: EditSpendingViewController, didSave: Bool)
+}
+
+class EditSpendingViewController: UIViewController {
     
+    // MARK: IBOutlets
     @IBOutlet weak var amountTextField: UITextField!
     @IBOutlet weak var descriptionTextView: UITextView!
     @IBOutlet weak var categoriesTableView: UITableView!
     
-    var categories: [Category]!
-    var managedContext: NSManagedObjectContext!
+    // MARK: Properties
+    var delegate: SpendingDelegate?
+    var context: NSManagedObjectContext!
+    var spending: Spending!
+    
+    var categories = [Category]()
     private var selectedCategoryIndex = 0
 
     override func viewDidLoad() {
@@ -24,19 +34,48 @@ class NewSpendingViewController: UIViewController {
         
         categoriesTableView.dataSource = self
         categoriesTableView.delegate = self
+        
+        fetchCategories()
     }
     
+    // MARK: IBActions
     @IBAction func saveButtonPushed(_ sender: UIBarButtonItem) {
-        if saveSpending() {
-            self.navigationController?.popViewController(animated: true)
+        if updateSpendingEntry() {
+            delegate?.didFinish(viewController: self, didSave: true)
         } else {
             // TODO: Show alert
         }
     }
     
+    @IBAction func cancelButtonPushed(_ sender: UIBarButtonItem) {
+        delegate?.didFinish(viewController: self, didSave: false)
+    }
+    
+    func updateSpendingEntry() -> Bool{
+        guard let amount = Double(amountTextField.text!) else { return false }
+        spending.amount = amount
+        spending.category = categories[selectedCategoryIndex]
+        spending.details = descriptionTextView.text
+        spending.date = Date()
+        return true
+    }
+    
+    // TODO: Move this function
+    private func fetchCategories() {
+        let fetchRequest: NSFetchRequest<Category> = Category.fetchRequest()
+        do {
+            let results = try context.fetch(fetchRequest)
+            if results.count > 0 {
+                categories = results
+            }
+        } catch let error as NSError {
+            print("Fetch error: \(error) description: \(error.userInfo)")
+        }
+    }
+    
 }
 
-extension NewSpendingViewController: UITableViewDataSource {
+extension EditSpendingViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return categories.count
     }
@@ -57,26 +96,9 @@ extension NewSpendingViewController: UITableViewDataSource {
     }
 }
 
-extension NewSpendingViewController: UITableViewDelegate {
+extension EditSpendingViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         selectedCategoryIndex = indexPath.row
         tableView.reloadData()
-    }
-}
-
-extension NewSpendingViewController {
-    private func saveSpending() -> Bool {
-        guard let amount = Double(amountTextField.text!) else { return false }
-        let newSpending = Spending(context: managedContext)
-        newSpending.amount = amount
-        newSpending.category = categories[selectedCategoryIndex]
-        newSpending.details = descriptionTextView.text
-        do {
-            try managedContext.save()
-        } catch let error as NSError {
-            print("Save error: \(error), description: \(error.userInfo)")
-            return false
-        }
-        return true
     }
 }

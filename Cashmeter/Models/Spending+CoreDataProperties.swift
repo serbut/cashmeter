@@ -20,5 +20,6 @@ extension Spending {
     @NSManaged public var amount: Double
     @NSManaged public var details: String?
     @NSManaged public var category: Category?
+    @NSManaged var date: Date?
 
 }

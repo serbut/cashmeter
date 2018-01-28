@@ -12,27 +12,32 @@ import CoreData
 class SpendingsTableViewController: UITableViewController {
     
     var coreDataStack: CoreDataStack!
-
-    private var categories = [Category]()
+    var fetchedResultsController: NSFetchedResultsController<Spending> = NSFetchedResultsController()
+    
     private var spendings = [Spending]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        fetchCategories()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        fetchSpendings()
+        fetchedResultsController = spendingsFetchedResultsController()
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let identifier = segue.identifier else { return }
         switch identifier {
         case "NewSpendingSegue":
-            let vc = segue.destination as! NewSpendingViewController
-            vc.categories = categories
-            vc.managedContext = coreDataStack.mainContext
+            guard let navigationController = segue.destination as? UINavigationController,
+                let vc = navigationController.topViewController as? EditSpendingViewController else {
+                    fatalError("Unexpected destination")
+            }
+            
+            let childContext = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
+            childContext.parent = coreDataStack.mainContext
+            let newSpending = Spending(context: childContext)
+            
+            vc.context = childContext
+            vc.spending = newSpending
+            vc.delegate = self
+            
         default:
             fatalError("Unexpected segue")
         }
@@ -43,16 +48,16 @@ class SpendingsTableViewController: UITableViewController {
 
 extension SpendingsTableViewController {
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        return fetchedResultsController.sections?.count ?? 0
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return spendings.count
+        return fetchedResultsController.sections?[section].numberOfObjects ?? 0
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "SpendingCell", for: indexPath) as! SpendingTableViewCell
-        let spendingForCell = spendings[indexPath.row]
+        let spendingForCell = fetchedResultsController.object(at: indexPath)
         
         cell.categoryIconLabel.text = spendingForCell.category?.icon
         cell.categoryNameLabel.text = spendingForCell.category?.title
@@ -70,30 +75,59 @@ extension SpendingsTableViewController {
     }
 }
 
-// MARK: - Saving and fetching data
+// MARK: SpendingDelegate
+extension SpendingsTableViewController : SpendingDelegate {
+    func didFinish(viewController: EditSpendingViewController, didSave: Bool) {
+        guard didSave,
+            let context = viewController.context,
+            context.hasChanges else {
+                dismiss(animated: true)
+                return
+        }
 
-extension SpendingsTableViewController {
-    private func fetchSpendings() {
-        let fetchRequest: NSFetchRequest<Spending> = Spending.fetchRequest()
+        context.perform {
+            do {
+                try context.save()
+            } catch let error as NSError {
+                fatalError("Error: \(error.localizedDescription)")
+            }
+            
+            self.coreDataStack.saveContext()
+        }
+        
+        dismiss(animated: true)
+    }
+}
+
+// MARK: NSFetchedResultsController
+extension SpendingsTableViewController : NSFetchedResultsControllerDelegate {
+    func spendingsFetchedResultsController() -> NSFetchedResultsController<Spending> {
+        let fetchedResultController = NSFetchedResultsController(fetchRequest: surfJournalFetchRequest(),
+                                                                 managedObjectContext: coreDataStack.mainContext,
+                                                                 sectionNameKeyPath: nil,
+                                                                 cacheName: nil)
+        fetchedResultController.delegate = self
         
         do {
-            let results = try coreDataStack.mainContext.fetch(fetchRequest)
-            self.spendings = results.reversed()
+            try fetchedResultController.performFetch()
         } catch let error as NSError {
-            print("Fetch error: \(error) description: \(error.userInfo)")
+            fatalError("Error: \(error.localizedDescription)")
         }
-        tableView.reloadData()
+        
+        return fetchedResultController
     }
     
-    private func fetchCategories() {
-        let fetchRequest: NSFetchRequest<Category> = Category.fetchRequest()
-        do {
-            let results = try coreDataStack.mainContext.fetch(fetchRequest)
-            if results.count > 0 {
-                categories = results
-            }
-        } catch let error as NSError {
-            print("Fetch error: \(error) description: \(error.userInfo)")
-        }
+    func surfJournalFetchRequest() -> NSFetchRequest<Spending> {
+        let fetchRequest: NSFetchRequest<Spending> = Spending.fetchRequest()
+        fetchRequest.fetchBatchSize = 20
+        
+        let sortDescriptor = NSSortDescriptor(key: "date", ascending: false)
+        fetchRequest.sortDescriptors = [sortDescriptor]
+        
+        return fetchRequest
+    }
+    
+    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        tableView.reloadData()
     }
 }
