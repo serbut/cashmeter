@@ -22,6 +22,7 @@
 		077EBB682018B9F6006E12D5 /* Spending+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077EBB642018B9F6006E12D5 /* Spending+CoreDataProperties.swift */; };
 		077EBB742018BC15006E12D5 /* DefaultCategories.plist in Resources */ = {isa = PBXBuildFile; fileRef = 077EBB732018BC15006E12D5 /* DefaultCategories.plist */; };
 		077EBB762018C8AD006E12D5 /* CategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077EBB752018C8AD006E12D5 /* CategoryTableViewCell.swift */; };
+		07D76D83201E56FD00D2FC0F /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D76D82201E56FD00D2FC0F /* CoreDataStack.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,7 @@
 		077EBB642018B9F6006E12D5 /* Spending+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Spending+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		077EBB732018BC15006E12D5 /* DefaultCategories.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = DefaultCategories.plist; sourceTree = "<group>"; };
 		077EBB752018C8AD006E12D5 /* CategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewCell.swift; sourceTree = "<group>"; };
+		07D76D82201E56FD00D2FC0F /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,8 +129,10 @@
 			isa = PBXGroup;
 			children = (
 				073DDFFE20035DD4000CAD7C /* AppDelegate.swift */,
+				07D76D82201E56FD00D2FC0F /* CoreDataStack.swift */,
 				07193BF4201757F700DA1ECC /* Models */,
 				07193BF52017580200DA1ECC /* Views */,
+				07D76D84201E596F00D2FC0F /* Services */,
 				07193BF62017580C00DA1ECC /* Controllers */,
 				073DE00820035DD4000CAD7C /* Assets.xcassets */,
 				077EBB732018BC15006E12D5 /* DefaultCategories.plist */,
@@ -145,6 +149,13 @@
 				073DE01820035DD4000CAD7C /* Info.plist */,
 			);
 			path = CashmeterTests;
+			sourceTree = "<group>";
+		};
+		07D76D84201E596F00D2FC0F /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,6 +268,7 @@
 				073DE00120035DD4000CAD7C /* NewSpendingViewController.swift in Sources */,
 				073DE00720035DD4000CAD7C /* Cashmeter.xcdatamodeld in Sources */,
 				077EBB762018C8AD006E12D5 /* CategoryTableViewCell.swift in Sources */,
+				07D76D83201E56FD00D2FC0F /* CoreDataStack.swift in Sources */,
 				077EBB672018B9F6006E12D5 /* Spending+CoreDataClass.swift in Sources */,
 				073DDFFF20035DD4000CAD7C /* AppDelegate.swift in Sources */,
 				07193BF8201798A100DA1ECC /* SpendingsTableViewController.swift in Sources */,

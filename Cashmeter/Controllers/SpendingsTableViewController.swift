@@ -11,7 +11,7 @@ import CoreData
 
 class SpendingsTableViewController: UITableViewController {
     
-    var managedContext: NSManagedObjectContext!
+    var coreDataStack: CoreDataStack!
 
     private var categories = [Category]()
     private var spendings = [Spending]()
@@ -32,7 +32,7 @@ class SpendingsTableViewController: UITableViewController {
         case "NewSpendingSegue":
             let vc = segue.destination as! NewSpendingViewController
             vc.categories = categories
-            vc.managedContext = managedContext
+            vc.managedContext = coreDataStack.mainContext
         default:
             fatalError("Unexpected segue")
         }
@@ -77,7 +77,7 @@ extension SpendingsTableViewController {
         let fetchRequest: NSFetchRequest<Spending> = Spending.fetchRequest()
         
         do {
-            let results = try managedContext.fetch(fetchRequest)
+            let results = try coreDataStack.mainContext.fetch(fetchRequest)
             self.spendings = results.reversed()
         } catch let error as NSError {
             print("Fetch error: \(error) description: \(error.userInfo)")
@@ -88,32 +88,12 @@ extension SpendingsTableViewController {
     private func fetchCategories() {
         let fetchRequest: NSFetchRequest<Category> = Category.fetchRequest()
         do {
-            let results = try managedContext.fetch(fetchRequest)
+            let results = try coreDataStack.mainContext.fetch(fetchRequest)
             if results.count > 0 {
                 categories = results
-            } else {
-                addDefaultCategories()
             }
         } catch let error as NSError {
             print("Fetch error: \(error) description: \(error.userInfo)")
-        }
-    }
-    
-    private func addDefaultCategories() {
-        let path = Bundle.main.path(forResource: "DefaultCategories",
-                                    ofType: "plist")
-        let dataArray = NSArray(contentsOfFile: path!)!
-        for dict in dataArray {
-            let category = Category(context: managedContext)
-            let catDict = dict as! [String: AnyObject]
-            category.icon = catDict["icon"] as? String
-            category.title = catDict["title"] as? String
-            categories.append(category)
-        }
-        do {
-            try managedContext.save()
-        } catch let error as NSError {
-            print("Save error: \(error), description: \(error.userInfo)")
         }
     }
 }
