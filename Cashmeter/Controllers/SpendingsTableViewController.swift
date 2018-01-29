@@ -27,7 +27,7 @@ class SpendingsTableViewController: UITableViewController {
         case "NewSpendingSegue":
             guard let navigationController = segue.destination as? UINavigationController,
                 let vc = navigationController.topViewController as? EditSpendingViewController else {
-                    fatalError("Unexpected destination")
+                    fatalError("Application storyboard mis-configuration")
             }
             
             let childContext = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
@@ -37,6 +37,14 @@ class SpendingsTableViewController: UITableViewController {
             vc.context = childContext
             vc.spending = newSpending
             vc.delegate = self
+            
+        case "SpendingDetailSegue":
+            guard let vc = segue.destination as? SpendingDetailViewController,
+                let indexPath = tableView.indexPathForSelectedRow else {
+                    fatalError("Application storyboard mis-configuration")
+            }
+            
+            vc.spending = fetchedResultsController.object(at: indexPath)
             
         default:
             fatalError("Unexpected segue")

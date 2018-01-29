@@ -63,6 +63,10 @@ class EditSpendingViewController: UIViewController {
     // TODO: Move this function
     private func fetchCategories() {
         let fetchRequest: NSFetchRequest<Category> = Category.fetchRequest()
+        
+        let sortDescriptor = NSSortDescriptor(key: "title", ascending: true)
+        fetchRequest.sortDescriptors = [sortDescriptor]
+        
         do {
             let results = try context.fetch(fetchRequest)
             if results.count > 0 {

@@ -16,6 +16,7 @@
 		073DE00920035DD4000CAD7C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 073DE00820035DD4000CAD7C /* Assets.xcassets */; };
 		073DE00C20035DD4000CAD7C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 073DE00A20035DD4000CAD7C /* LaunchScreen.storyboard */; };
 		073DE01720035DD4000CAD7C /* CashmeterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073DE01620035DD4000CAD7C /* CashmeterTests.swift */; };
+		07745F6D201F2B0F00C26252 /* SpendingDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07745F6C201F2B0F00C26252 /* SpendingDetailViewController.swift */; };
 		077EBB652018B9F6006E12D5 /* Category+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077EBB612018B9F6006E12D5 /* Category+CoreDataClass.swift */; };
 		077EBB662018B9F6006E12D5 /* Category+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077EBB622018B9F6006E12D5 /* Category+CoreDataProperties.swift */; };
 		077EBB672018B9F6006E12D5 /* Spending+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077EBB632018B9F6006E12D5 /* Spending+CoreDataClass.swift */; };
@@ -49,6 +50,7 @@
 		073DE01220035DD4000CAD7C /* CashmeterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CashmeterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		073DE01620035DD4000CAD7C /* CashmeterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashmeterTests.swift; sourceTree = "<group>"; };
 		073DE01820035DD4000CAD7C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		07745F6C201F2B0F00C26252 /* SpendingDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendingDetailViewController.swift; sourceTree = "<group>"; };
 		077EBB612018B9F6006E12D5 /* Category+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Category+CoreDataClass.swift"; sourceTree = "<group>"; };
 		077EBB622018B9F6006E12D5 /* Category+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Category+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		077EBB632018B9F6006E12D5 /* Spending+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Spending+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 			children = (
 				073DE00020035DD4000CAD7C /* EditSpendingViewController.swift */,
 				07193BF7201798A100DA1ECC /* SpendingsTableViewController.swift */,
+				07745F6C201F2B0F00C26252 /* SpendingDetailViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -269,6 +272,7 @@
 				073DE00720035DD4000CAD7C /* Cashmeter.xcdatamodeld in Sources */,
 				077EBB762018C8AD006E12D5 /* CategoryTableViewCell.swift in Sources */,
 				07D76D83201E56FD00D2FC0F /* CoreDataStack.swift in Sources */,
+				07745F6D201F2B0F00C26252 /* SpendingDetailViewController.swift in Sources */,
 				077EBB672018B9F6006E12D5 /* Spending+CoreDataClass.swift in Sources */,
 				073DDFFF20035DD4000CAD7C /* AppDelegate.swift in Sources */,
 				07193BF8201798A100DA1ECC /* SpendingsTableViewController.swift in Sources */,

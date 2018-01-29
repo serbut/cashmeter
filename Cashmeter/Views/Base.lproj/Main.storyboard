@@ -111,7 +111,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1310" y="133"/>
+            <point key="canvasLocation" x="1335" y="-151"/>
         </scene>
         <!--My Spendings-->
         <scene sceneID="oyE-NW-tk8">
@@ -162,6 +162,7 @@
                                     <outlet property="amountLabel" destination="Ii7-ki-2l1" id="2ES-LF-Xgf"/>
                                     <outlet property="categoryIconLabel" destination="iBk-SP-v2W" id="2e0-bg-AOC"/>
                                     <outlet property="categoryNameLabel" destination="iNr-cr-NCT" id="pFX-UK-CXL"/>
+                                    <segue destination="PQg-7x-KX4" kind="show" identifier="SpendingDetailSegue" id="jFv-t7-HqS"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -217,7 +218,58 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LJ8-6r-fLr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="475.19999999999999" y="133.13343328335833"/>
+            <point key="canvasLocation" x="513" y="-150"/>
+        </scene>
+        <!--Spending Detail View Controller-->
+        <scene sceneID="6Xv-7R-Ufg">
+            <objects>
+                <viewController id="PQg-7x-KX4" customClass="SpendingDetailViewController" customModule="Cashmeter" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="oI0-jc-1ji">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100 ₽" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IZC-n0-nY7">
+                                <rect key="frame" x="137" y="121" width="100.5" height="48"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="No description" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="LCZ-aT-azX">
+                                <rect key="frame" x="60" y="209" width="255" height="358"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="01.01.2018" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8wV-D6-igM">
+                                <rect key="frame" x="138.5" y="177" width="98.5" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="vEZ-Mj-UIY" firstAttribute="trailing" secondItem="LCZ-aT-azX" secondAttribute="trailing" constant="60" id="50y-As-c1l"/>
+                            <constraint firstItem="IZC-n0-nY7" firstAttribute="top" secondItem="vEZ-Mj-UIY" secondAttribute="top" constant="57" id="9Sw-d3-XkF"/>
+                            <constraint firstItem="LCZ-aT-azX" firstAttribute="centerX" secondItem="vEZ-Mj-UIY" secondAttribute="centerX" id="FoT-JD-Ly0"/>
+                            <constraint firstItem="LCZ-aT-azX" firstAttribute="leading" secondItem="vEZ-Mj-UIY" secondAttribute="leading" constant="60" id="Xvt-Q2-wSS"/>
+                            <constraint firstItem="vEZ-Mj-UIY" firstAttribute="bottom" secondItem="LCZ-aT-azX" secondAttribute="bottom" constant="100" id="Yz2-LN-0F3"/>
+                            <constraint firstItem="8wV-D6-igM" firstAttribute="centerX" secondItem="IZC-n0-nY7" secondAttribute="centerX" id="ZrI-RT-i8K"/>
+                            <constraint firstItem="LCZ-aT-azX" firstAttribute="top" secondItem="8wV-D6-igM" secondAttribute="bottom" constant="8" symbolic="YES" id="cLJ-BU-nHE"/>
+                            <constraint firstItem="8wV-D6-igM" firstAttribute="top" secondItem="IZC-n0-nY7" secondAttribute="bottom" constant="8" symbolic="YES" id="gUF-jY-1gs"/>
+                            <constraint firstItem="IZC-n0-nY7" firstAttribute="centerX" secondItem="vEZ-Mj-UIY" secondAttribute="centerX" id="lwI-Fy-d20"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="vEZ-Mj-UIY"/>
+                    </view>
+                    <connections>
+                        <outlet property="amountLabel" destination="IZC-n0-nY7" id="AyL-ik-DzL"/>
+                        <outlet property="dateLabel" destination="8wV-D6-igM" id="vCb-wc-m4W"/>
+                        <outlet property="descriptionTextView" destination="LCZ-aT-azX" id="LB5-0l-4mN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lA8-9U-2Z5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="513" y="537"/>
         </scene>
     </scenes>
 </document>
