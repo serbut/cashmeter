@@ -4,4 +4,4 @@ xcode_project: Cashmeter.xcodeproj
 xcode_scheme: CashmeterTests
 xcode_sdk: iphonesimulator11.2
 script:
-    - xcodebuild clean build test -sdk iphonesimulator -project Cashmeter.xcodeproj -scheme CashmeterTests CODE_SIGNING_REQUIRED=NO
+    - xctool test -sdk iphonesimulator -project Cashmeter.xcodeproj -scheme CashmeterTests CODE_SIGNING_REQUIRED=NO
