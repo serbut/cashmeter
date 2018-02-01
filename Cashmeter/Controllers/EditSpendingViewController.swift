@@ -23,8 +23,10 @@ class EditSpendingViewController: UIViewController {
     
     // MARK: Properties
     var delegate: SpendingDelegate?
+    var spending: Spending?
     var context: NSManagedObjectContext!
-    var spending: Spending!
+    var spendingService: SpendingService!
+    var categoryService: CategoryService!
     
     var categories = [Category]()
     private var selectedCategoryIndex = 0
@@ -35,7 +37,7 @@ class EditSpendingViewController: UIViewController {
         categoriesTableView.dataSource = self
         categoriesTableView.delegate = self
         
-        fetchCategories()
+        categories = categoryService.getCategories()
     }
     
     // MARK: IBActions
@@ -53,28 +55,20 @@ class EditSpendingViewController: UIViewController {
     
     func updateSpendingEntry() -> Bool{
         guard let amount = Double(amountTextField.text!) else { return false }
-        spending.amount = amount
-        spending.category = categories[selectedCategoryIndex]
-        spending.details = descriptionTextView.text
-        spending.date = Date()
-        return true
-    }
-    
-    // TODO: Move this function
-    private func fetchCategories() {
-        let fetchRequest: NSFetchRequest<Category> = Category.fetchRequest()
+        let category = categories[selectedCategoryIndex]
+        let details = descriptionTextView.text
         
-        let sortDescriptor = NSSortDescriptor(key: "title", ascending: true)
-        fetchRequest.sortDescriptors = [sortDescriptor]
-        
-        do {
-            let results = try context.fetch(fetchRequest)
-            if results.count > 0 {
-                categories = results
-            }
-        } catch let error as NSError {
-            print("Fetch error: \(error) description: \(error.userInfo)")
+        if let spending = spending {
+            spendingService.updateSpending(spending,
+                                           withAmount: amount,
+                                           category: category,
+                                           details: details)
+        } else {
+            spending = spendingService.addSpending(withAmount: amount,
+                                        category: category,
+                                        details: details)
         }
+        return true
     }
     
 }

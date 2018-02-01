@@ -32,10 +32,10 @@ class SpendingsTableViewController: UITableViewController {
             
             let childContext = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
             childContext.parent = coreDataStack.mainContext
-            let newSpending = Spending(context: childContext)
-            
+
             vc.context = childContext
-            vc.spending = newSpending
+            vc.spendingService = SpendingService(managedObjectContext: childContext, coreDataStack: coreDataStack)
+            vc.categoryService = CategoryService(managedObjectContext: childContext, coreDataStack: coreDataStack)
             vc.delegate = self
             
         case "SpendingDetailSegue":
