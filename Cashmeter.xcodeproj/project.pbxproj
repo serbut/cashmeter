@@ -17,10 +17,14 @@
 		073DE00C20035DD4000CAD7C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 073DE00A20035DD4000CAD7C /* LaunchScreen.storyboard */; };
 		073DE01720035DD4000CAD7C /* CashmeterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073DE01620035DD4000CAD7C /* CashmeterTests.swift */; };
 		07745F6D201F2B0F00C26252 /* SpendingDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07745F6C201F2B0F00C26252 /* SpendingDetailViewController.swift */; };
-		077EBB652018B9F6006E12D5 /* Category+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077EBB612018B9F6006E12D5 /* Category+CoreDataClass.swift */; };
-		077EBB662018B9F6006E12D5 /* Category+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077EBB622018B9F6006E12D5 /* Category+CoreDataProperties.swift */; };
-		077EBB672018B9F6006E12D5 /* Spending+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077EBB632018B9F6006E12D5 /* Spending+CoreDataClass.swift */; };
-		077EBB682018B9F6006E12D5 /* Spending+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077EBB642018B9F6006E12D5 /* Spending+CoreDataProperties.swift */; };
+		07745F82201F513E00C26252 /* Category+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07745F7A201F513E00C26252 /* Category+CoreDataClass.swift */; };
+		07745F83201F513E00C26252 /* Category+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07745F7B201F513E00C26252 /* Category+CoreDataProperties.swift */; };
+		07745F84201F513E00C26252 /* Currency+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07745F7C201F513E00C26252 /* Currency+CoreDataClass.swift */; };
+		07745F85201F513E00C26252 /* Currency+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07745F7D201F513E00C26252 /* Currency+CoreDataProperties.swift */; };
+		07745F86201F513E00C26252 /* Wallet+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07745F7E201F513E00C26252 /* Wallet+CoreDataClass.swift */; };
+		07745F87201F513E00C26252 /* Wallet+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07745F7F201F513E00C26252 /* Wallet+CoreDataProperties.swift */; };
+		07745F88201F513E00C26252 /* Spending+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07745F80201F513E00C26252 /* Spending+CoreDataClass.swift */; };
+		07745F89201F513E00C26252 /* Spending+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07745F81201F513E00C26252 /* Spending+CoreDataProperties.swift */; };
 		077EBB742018BC15006E12D5 /* DefaultCategories.plist in Resources */ = {isa = PBXBuildFile; fileRef = 077EBB732018BC15006E12D5 /* DefaultCategories.plist */; };
 		077EBB762018C8AD006E12D5 /* CategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077EBB752018C8AD006E12D5 /* CategoryTableViewCell.swift */; };
 		07D76D83201E56FD00D2FC0F /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D76D82201E56FD00D2FC0F /* CoreDataStack.swift */; };
@@ -51,10 +55,14 @@
 		073DE01620035DD4000CAD7C /* CashmeterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashmeterTests.swift; sourceTree = "<group>"; };
 		073DE01820035DD4000CAD7C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		07745F6C201F2B0F00C26252 /* SpendingDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendingDetailViewController.swift; sourceTree = "<group>"; };
-		077EBB612018B9F6006E12D5 /* Category+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Category+CoreDataClass.swift"; sourceTree = "<group>"; };
-		077EBB622018B9F6006E12D5 /* Category+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Category+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		077EBB632018B9F6006E12D5 /* Spending+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Spending+CoreDataClass.swift"; sourceTree = "<group>"; };
-		077EBB642018B9F6006E12D5 /* Spending+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Spending+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		07745F7A201F513E00C26252 /* Category+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Category+CoreDataClass.swift"; sourceTree = "<group>"; };
+		07745F7B201F513E00C26252 /* Category+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Category+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		07745F7C201F513E00C26252 /* Currency+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Currency+CoreDataClass.swift"; sourceTree = "<group>"; };
+		07745F7D201F513E00C26252 /* Currency+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Currency+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		07745F7E201F513E00C26252 /* Wallet+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Wallet+CoreDataClass.swift"; sourceTree = "<group>"; };
+		07745F7F201F513E00C26252 /* Wallet+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Wallet+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		07745F80201F513E00C26252 /* Spending+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Spending+CoreDataClass.swift"; sourceTree = "<group>"; };
+		07745F81201F513E00C26252 /* Spending+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Spending+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		077EBB732018BC15006E12D5 /* DefaultCategories.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = DefaultCategories.plist; sourceTree = "<group>"; };
 		077EBB752018C8AD006E12D5 /* CategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewCell.swift; sourceTree = "<group>"; };
 		07D76D82201E56FD00D2FC0F /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
@@ -81,10 +89,14 @@
 		07193BF4201757F700DA1ECC /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				077EBB612018B9F6006E12D5 /* Category+CoreDataClass.swift */,
-				077EBB622018B9F6006E12D5 /* Category+CoreDataProperties.swift */,
-				077EBB632018B9F6006E12D5 /* Spending+CoreDataClass.swift */,
-				077EBB642018B9F6006E12D5 /* Spending+CoreDataProperties.swift */,
+				07745F7A201F513E00C26252 /* Category+CoreDataClass.swift */,
+				07745F7B201F513E00C26252 /* Category+CoreDataProperties.swift */,
+				07745F7C201F513E00C26252 /* Currency+CoreDataClass.swift */,
+				07745F7D201F513E00C26252 /* Currency+CoreDataProperties.swift */,
+				07745F7E201F513E00C26252 /* Wallet+CoreDataClass.swift */,
+				07745F7F201F513E00C26252 /* Wallet+CoreDataProperties.swift */,
+				07745F80201F513E00C26252 /* Spending+CoreDataClass.swift */,
+				07745F81201F513E00C26252 /* Spending+CoreDataProperties.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -265,17 +277,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				077EBB682018B9F6006E12D5 /* Spending+CoreDataProperties.swift in Sources */,
-				077EBB662018B9F6006E12D5 /* Category+CoreDataProperties.swift in Sources */,
-				077EBB652018B9F6006E12D5 /* Category+CoreDataClass.swift in Sources */,
+				07745F86201F513E00C26252 /* Wallet+CoreDataClass.swift in Sources */,
 				073DE00120035DD4000CAD7C /* EditSpendingViewController.swift in Sources */,
 				073DE00720035DD4000CAD7C /* Cashmeter.xcdatamodeld in Sources */,
 				077EBB762018C8AD006E12D5 /* CategoryTableViewCell.swift in Sources */,
+				07745F87201F513E00C26252 /* Wallet+CoreDataProperties.swift in Sources */,
 				07D76D83201E56FD00D2FC0F /* CoreDataStack.swift in Sources */,
 				07745F6D201F2B0F00C26252 /* SpendingDetailViewController.swift in Sources */,
-				077EBB672018B9F6006E12D5 /* Spending+CoreDataClass.swift in Sources */,
 				073DDFFF20035DD4000CAD7C /* AppDelegate.swift in Sources */,
+				07745F85201F513E00C26252 /* Currency+CoreDataProperties.swift in Sources */,
 				07193BF8201798A100DA1ECC /* SpendingsTableViewController.swift in Sources */,
+				07745F88201F513E00C26252 /* Spending+CoreDataClass.swift in Sources */,
+				07745F84201F513E00C26252 /* Currency+CoreDataClass.swift in Sources */,
+				07745F83201F513E00C26252 /* Category+CoreDataProperties.swift in Sources */,
+				07745F89201F513E00C26252 /* Spending+CoreDataProperties.swift in Sources */,
+				07745F82201F513E00C26252 /* Category+CoreDataClass.swift in Sources */,
 				07193BFF2017A97B00DA1ECC /* SpendingTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

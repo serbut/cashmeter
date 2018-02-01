@@ -1,5 +1,5 @@
 //
-//  Category+CoreDataProperties.swift
+//  Currency+CoreDataProperties.swift
 //  Cashmeter
 //
 //  Created by Sergey Butorin on 29/01/2018.
@@ -11,20 +11,20 @@ import Foundation
 import CoreData
 
 
-extension Category {
+extension Currency {
 
-    @nonobjc public class func fetchRequest() -> NSFetchRequest<Category> {
-        return NSFetchRequest<Category>(entityName: "Category")
+    @nonobjc public class func fetchRequest() -> NSFetchRequest<Currency> {
+        return NSFetchRequest<Currency>(entityName: "Currency")
     }
 
-    @NSManaged public var icon: String?
-    @NSManaged public var title: String?
+    @NSManaged public var label: String?
+    @NSManaged public var name: String?
     @NSManaged public var spending: NSSet?
 
 }
 
 // MARK: Generated accessors for spending
-extension Category {
+extension Currency {
 
     @objc(addSpendingObject:)
     @NSManaged public func addToSpending(_ value: Spending)

@@ -2,7 +2,7 @@
 //  Spending+CoreDataProperties.swift
 //  Cashmeter
 //
-//  Created by Sergey Butorin on 24/01/2018.
+//  Created by Sergey Butorin on 29/01/2018.
 //  Copyright © 2018 Sergey Butorin. All rights reserved.
 //
 //
@@ -18,8 +18,10 @@ extension Spending {
     }
 
     @NSManaged public var amount: Double
+    @NSManaged public var date: Date?
     @NSManaged public var details: String?
     @NSManaged public var category: Category?
-    @NSManaged var date: Date?
+    @NSManaged public var currency: Currency?
+    @NSManaged public var wallet: Wallet?
 
 }

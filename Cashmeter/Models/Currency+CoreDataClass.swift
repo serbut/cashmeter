@@ -1,5 +1,5 @@
 //
-//  Category+CoreDataClass.swift
+//  Currency+CoreDataClass.swift
 //  Cashmeter
 //
 //  Created by Sergey Butorin on 29/01/2018.
@@ -10,7 +10,7 @@
 import Foundation
 import CoreData
 
-@objc(Category)
-public class Category: NSManagedObject {
+@objc(Currency)
+public class Currency: NSManagedObject {
 
 }
