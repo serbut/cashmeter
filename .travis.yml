@@ -1,7 +1,6 @@
 language: objective-c
 osx_image: xcode9.2
 xcode_project: Cashmeter.xcodeproj
-xcode_scheme: CashmeterTests
 xcode_sdk: iphonesimulator11.2
 script:
-    - xcodebuild clean build -sdk iphonesimulator -project Cashmeter.xcodeproj -scheme Cashmeter CODE_SIGNING_REQUIRED=NO
+    - xcodebuild clean build -sdk iphonesimulator -project Cashmeter.xcodeproj CODE_SIGNING_REQUIRED=NO
