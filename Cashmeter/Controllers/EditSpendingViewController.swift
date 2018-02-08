@@ -10,7 +10,7 @@ import UIKit
 import CoreData
 
 // MARK: SpendingDelegate
-protocol SpendingDelegate {
+protocol EditSpendingDelegate {
     func didFinish(viewController: EditSpendingViewController, didSave: Bool)
 }
 
@@ -22,7 +22,7 @@ class EditSpendingViewController: UIViewController {
     @IBOutlet weak var categoriesTableView: UITableView!
     
     // MARK: Properties
-    var delegate: SpendingDelegate?
+    var delegate: EditSpendingDelegate?
     var spending: Spending?
     var context: NSManagedObjectContext!
     var spendingService: SpendingService!

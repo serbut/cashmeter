@@ -18,6 +18,7 @@ class SpendingsTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         fetchedResultsController = spendingsFetchedResultsController()
     }
 
@@ -84,7 +85,7 @@ extension SpendingsTableViewController {
 }
 
 // MARK: SpendingDelegate
-extension SpendingsTableViewController : SpendingDelegate {
+extension SpendingsTableViewController : EditSpendingDelegate {
     func didFinish(viewController: EditSpendingViewController, didSave: Bool) {
         guard didSave,
             let context = viewController.context,

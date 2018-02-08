@@ -16,6 +16,7 @@
 		073DE00920035DD4000CAD7C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 073DE00820035DD4000CAD7C /* Assets.xcassets */; };
 		073DE00C20035DD4000CAD7C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 073DE00A20035DD4000CAD7C /* LaunchScreen.storyboard */; };
 		073DE01720035DD4000CAD7C /* CashmeterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073DE01620035DD4000CAD7C /* CashmeterTests.swift */; };
+		076CFE87202C9A450021E452 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076CFE86202C9A450021E452 /* MainTabBarViewController.swift */; };
 		07745F6D201F2B0F00C26252 /* SpendingDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07745F6C201F2B0F00C26252 /* SpendingDetailViewController.swift */; };
 		077EBB742018BC15006E12D5 /* DefaultCategories.plist in Resources */ = {isa = PBXBuildFile; fileRef = 077EBB732018BC15006E12D5 /* DefaultCategories.plist */; };
 		077EBB762018C8AD006E12D5 /* CategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077EBB752018C8AD006E12D5 /* CategoryTableViewCell.swift */; };
@@ -33,6 +34,8 @@
 		07B8D0B8202348E30064AFF1 /* Spending+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B8D0B0202348E30064AFF1 /* Spending+CoreDataProperties.swift */; };
 		07B8D0BA202349820064AFF1 /* SpendingServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B8D0B9202349820064AFF1 /* SpendingServiceTests.swift */; };
 		07D76D83201E56FD00D2FC0F /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D76D82201E56FD00D2FC0F /* CoreDataStack.swift */; };
+		71C75014B1E17BA62FE54967 /* Pods_CashmeterTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7CD87DBA69B2F0ED8B7E723 /* Pods_CashmeterTests.framework */; };
+		CA06724044977622A6504B76 /* Pods_Cashmeter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46F8AC54DD1B7AC16B227C86 /* Pods_Cashmeter.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +62,7 @@
 		073DE01220035DD4000CAD7C /* CashmeterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CashmeterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		073DE01620035DD4000CAD7C /* CashmeterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashmeterTests.swift; sourceTree = "<group>"; };
 		073DE01820035DD4000CAD7C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		076CFE86202C9A450021E452 /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
 		07745F6C201F2B0F00C26252 /* SpendingDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendingDetailViewController.swift; sourceTree = "<group>"; };
 		077EBB732018BC15006E12D5 /* DefaultCategories.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = DefaultCategories.plist; sourceTree = "<group>"; };
 		077EBB752018C8AD006E12D5 /* CategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewCell.swift; sourceTree = "<group>"; };
@@ -76,6 +80,12 @@
 		07B8D0B0202348E30064AFF1 /* Spending+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Spending+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		07B8D0B9202349820064AFF1 /* SpendingServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendingServiceTests.swift; sourceTree = "<group>"; };
 		07D76D82201E56FD00D2FC0F /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		2E96A771FAEEA62194F54E2B /* Pods-CashmeterTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CashmeterTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CashmeterTests/Pods-CashmeterTests.debug.xcconfig"; sourceTree = "<group>"; };
+		3F98855B3D89BBA89C654223 /* Pods-Cashmeter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cashmeter.release.xcconfig"; path = "Pods/Target Support Files/Pods-Cashmeter/Pods-Cashmeter.release.xcconfig"; sourceTree = "<group>"; };
+		46F8AC54DD1B7AC16B227C86 /* Pods_Cashmeter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Cashmeter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		718CA3657DD4B7569C449FA1 /* Pods-CashmeterTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CashmeterTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CashmeterTests/Pods-CashmeterTests.release.xcconfig"; sourceTree = "<group>"; };
+		828B6CCCB8442A139B0708E9 /* Pods-Cashmeter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cashmeter.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Cashmeter/Pods-Cashmeter.debug.xcconfig"; sourceTree = "<group>"; };
+		C7CD87DBA69B2F0ED8B7E723 /* Pods_CashmeterTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CashmeterTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +93,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA06724044977622A6504B76 /* Pods_Cashmeter.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -90,6 +101,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				71C75014B1E17BA62FE54967 /* Pods_CashmeterTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -128,6 +140,7 @@
 				073DE00020035DD4000CAD7C /* EditSpendingViewController.swift */,
 				07193BF7201798A100DA1ECC /* SpendingsTableViewController.swift */,
 				07745F6C201F2B0F00C26252 /* SpendingDetailViewController.swift */,
+				076CFE86202C9A450021E452 /* MainTabBarViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -138,6 +151,8 @@
 				073DDFFD20035DD4000CAD7C /* Cashmeter */,
 				073DE01520035DD4000CAD7C /* CashmeterTests */,
 				073DDFFC20035DD4000CAD7C /* Products */,
+				E9E2F932B53CAEDE28991D57 /* Pods */,
+				89C919BBE7F647DD0871A687 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -196,6 +211,26 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
+		89C919BBE7F647DD0871A687 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				46F8AC54DD1B7AC16B227C86 /* Pods_Cashmeter.framework */,
+				C7CD87DBA69B2F0ED8B7E723 /* Pods_CashmeterTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E9E2F932B53CAEDE28991D57 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				828B6CCCB8442A139B0708E9 /* Pods-Cashmeter.debug.xcconfig */,
+				3F98855B3D89BBA89C654223 /* Pods-Cashmeter.release.xcconfig */,
+				2E96A771FAEEA62194F54E2B /* Pods-CashmeterTests.debug.xcconfig */,
+				718CA3657DD4B7569C449FA1 /* Pods-CashmeterTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -203,9 +238,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 073DE01B20035DD4000CAD7C /* Build configuration list for PBXNativeTarget "Cashmeter" */;
 			buildPhases = (
+				F02479ED393FE60590D6B127 /* [CP] Check Pods Manifest.lock */,
 				073DDFF720035DD4000CAD7C /* Sources */,
 				073DDFF820035DD4000CAD7C /* Frameworks */,
 				073DDFF920035DD4000CAD7C /* Resources */,
+				A9A33343ED721DCEA68E3549 /* [CP] Embed Pods Frameworks */,
+				73CAFA6455F8CCD91149BD29 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -220,9 +258,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 073DE01E20035DD4000CAD7C /* Build configuration list for PBXNativeTarget "CashmeterTests" */;
 			buildPhases = (
+				F8FA74EF1EE54A207265A347 /* [CP] Check Pods Manifest.lock */,
 				073DE00E20035DD4000CAD7C /* Sources */,
 				073DE00F20035DD4000CAD7C /* Frameworks */,
 				073DE01020035DD4000CAD7C /* Resources */,
+				2864398184D9B81199B8CCF1 /* [CP] Embed Pods Frameworks */,
+				58163543815183032970FF25 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -295,6 +336,108 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2864398184D9B81199B8CCF1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CashmeterTests/Pods-CashmeterTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		58163543815183032970FF25 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CashmeterTests/Pods-CashmeterTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		73CAFA6455F8CCD91149BD29 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Cashmeter/Pods-Cashmeter-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A9A33343ED721DCEA68E3549 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Cashmeter/Pods-Cashmeter-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/ESTabBarController-swift/ESTabBarController_swift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ESTabBarController_swift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Cashmeter/Pods-Cashmeter-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F02479ED393FE60590D6B127 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Cashmeter-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F8FA74EF1EE54A207265A347 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CashmeterTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		073DDFF720035DD4000CAD7C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -311,6 +454,7 @@
 				077EBB762018C8AD006E12D5 /* CategoryTableViewCell.swift in Sources */,
 				07D76D83201E56FD00D2FC0F /* CoreDataStack.swift in Sources */,
 				07745F6D201F2B0F00C26252 /* SpendingDetailViewController.swift in Sources */,
+				076CFE87202C9A450021E452 /* MainTabBarViewController.swift in Sources */,
 				07B8D0B1202348E30064AFF1 /* Wallet+CoreDataClass.swift in Sources */,
 				07B8D0B8202348E30064AFF1 /* Spending+CoreDataProperties.swift in Sources */,
 				073DDFFF20035DD4000CAD7C /* AppDelegate.swift in Sources */,
@@ -471,6 +615,7 @@
 		};
 		073DE01C20035DD4000CAD7C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 828B6CCCB8442A139B0708E9 /* Pods-Cashmeter.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -487,6 +632,7 @@
 		};
 		073DE01D20035DD4000CAD7C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3F98855B3D89BBA89C654223 /* Pods-Cashmeter.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -503,6 +649,7 @@
 		};
 		073DE01F20035DD4000CAD7C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2E96A771FAEEA62194F54E2B /* Pods-CashmeterTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -520,6 +667,7 @@
 		};
 		073DE02020035DD4000CAD7C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 718CA3657DD4B7569C449FA1 /* Pods-CashmeterTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";

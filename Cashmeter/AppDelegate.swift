@@ -19,11 +19,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         _ = coreDataStack.mainContext
         self.addDefaultCategories()
 
-        guard let navController = window?.rootViewController as? UINavigationController,
-            let viewController = navController.topViewController as? SpendingsTableViewController else {
+        guard let tabController = window?.rootViewController as? MainTabBarViewController else {
                 return true
         }
-        viewController.coreDataStack = coreDataStack
+        tabController.coreDataStack = coreDataStack
         
         return true
     }

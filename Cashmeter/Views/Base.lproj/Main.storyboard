@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ynw-Ac-ke3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Odw-x3-3Nh">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -14,7 +14,7 @@
         <!--New Spending-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController title="New Spending" id="BYZ-38-t0r" customClass="EditSpendingViewController" customModule="Cashmeter" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="New Spending" title="New Spending" id="BYZ-38-t0r" customClass="EditSpendingViewController" customModule="Cashmeter" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -111,12 +111,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1335" y="-151"/>
+            <point key="canvasLocation" x="550" y="851"/>
         </scene>
         <!--My Spendings-->
         <scene sceneID="oyE-NW-tk8">
             <objects>
-                <tableViewController title="My Spendings" id="dNY-ZX-Iod" customClass="SpendingsTableViewController" customModule="Cashmeter" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="All Spendings" title="My Spendings" id="dNY-ZX-Iod" customClass="SpendingsTableViewController" customModule="Cashmeter" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="UNm-Qz-NKI">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -175,7 +175,7 @@
                         <barButtonItem key="backBarButtonItem" title="Back" id="XmC-MW-B7b"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="srP-ay-gvF">
                             <connections>
-                                <segue destination="TYy-eH-lVx" kind="show" identifier="NewSpendingSegue" id="dKH-w2-cnE"/>
+                                <segue destination="TYy-eH-lVx" kind="show" identifier="NewSpendingSegue" id="eOE-7c-5hB"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -184,28 +184,11 @@
             </objects>
             <point key="canvasLocation" x="-292" y="133.5832083958021"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="VWq-Jw-4OX">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ynw-Ac-ke3" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="xTh-iE-BQw">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="dNY-ZX-Iod" kind="relationship" relationship="rootViewController" id="mi1-Cx-OHj"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="3Uq-1b-TPc" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1092" y="134"/>
-        </scene>
-        <!--Navigation Controller-->
+        <!--New Spending-->
         <scene sceneID="CLk-OI-FUc">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="TYy-eH-lVx" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="New Spending" id="8Fe-9N-1wj"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="oTR-Y3-BuQ">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -218,7 +201,49 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LJ8-6r-fLr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="513" y="-150"/>
+            <point key="canvasLocation" x="-292" y="851"/>
+        </scene>
+        <!--Main Tab Bar View Controller-->
+        <scene sceneID="v5j-aN-t2z">
+            <objects>
+                <tabBarController id="Odw-x3-3Nh" customClass="MainTabBarViewController" customModule="Cashmeter" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="RVb-My-mtf">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="N3C-Ek-iYF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1282" y="851"/>
+        </scene>
+        <!--Wallets-->
+        <scene sceneID="GiK-Ni-cZT">
+            <objects>
+                <viewController storyboardIdentifier="Wallets" id="rRK-tb-MxZ" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ldd-wb-kmf">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wallets" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e8b-D8-5D3">
+                                <rect key="frame" x="159" y="333" width="56" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="e8b-D8-5D3" firstAttribute="centerY" secondItem="fsy-bS-r9R" secondAttribute="centerY" id="EsR-EK-moF"/>
+                            <constraint firstItem="e8b-D8-5D3" firstAttribute="centerX" secondItem="fsy-bS-r9R" secondAttribute="centerX" id="Oxn-zI-EQO"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="fsy-bS-r9R"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Wallets" id="cdM-K7-Rg0"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nab-eO-Maz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-292" y="1616.9415292353824"/>
         </scene>
         <!--Spending Detail View Controller-->
         <scene sceneID="6Xv-7R-Ufg">
@@ -229,19 +254,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100 ₽" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IZC-n0-nY7">
-                                <rect key="frame" x="137" y="121" width="100.5" height="48"/>
+                                <rect key="frame" x="137" y="77" width="100.5" height="48"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="No description" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="LCZ-aT-azX">
-                                <rect key="frame" x="60" y="209" width="255" height="358"/>
+                                <rect key="frame" x="60" y="165" width="255" height="402"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="01.01.2018" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8wV-D6-igM">
-                                <rect key="frame" x="138.5" y="177" width="98.5" height="24"/>
+                                <rect key="frame" x="138.5" y="133" width="98.5" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -269,7 +294,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lA8-9U-2Z5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="513" y="537"/>
+            <point key="canvasLocation" x="551" y="134"/>
         </scene>
     </scenes>
 </document>
