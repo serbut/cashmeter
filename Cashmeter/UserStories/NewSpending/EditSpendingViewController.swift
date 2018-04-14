@@ -36,6 +36,7 @@ class EditSpendingViewController: UIViewController {
         
         categoriesTableView.dataSource = self
         categoriesTableView.delegate = self
+        categoriesTableView.register(UINib(nibName: "CategoryTableViewCell", bundle: nil), forCellReuseIdentifier: "CategoryCell")
         
         categories = categoryService.getCategories()
     }

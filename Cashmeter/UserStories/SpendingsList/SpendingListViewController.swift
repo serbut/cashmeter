@@ -1,70 +1,44 @@
 //
-//  SpendingsTableViewController.swift
+//  SpendingListViewController.swift
 //  Cashmeter
 //
-//  Created by Sergey Butorin on 23/01/2018.
+//  Created by Sergey Butorin on 14/04/2018.
 //  Copyright © 2018 Sergey Butorin. All rights reserved.
 //
 
 import UIKit
 import CoreData
 
-class SpendingsTableViewController: UITableViewController {
-    
+class SpendingListViewController: UIViewController {
+
     var coreDataStack: CoreDataStack!
     var fetchedResultsController: NSFetchedResultsController<Spending> = NSFetchedResultsController()
     
-    private var spendings = [Spending]()
+    @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        tableView.delegate = self
+        tableView.register(UINib(nibName: "SpendingTableViewCell", bundle: nil), forCellReuseIdentifier: "SpendingCell")
         fetchedResultsController = spendingsFetchedResultsController()
     }
 
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let identifier = segue.identifier else { return }
-        switch identifier {
-        case "NewSpendingSegue":
-            guard let navigationController = segue.destination as? UINavigationController,
-                let vc = navigationController.topViewController as? EditSpendingViewController else {
-                    fatalError("Application storyboard mis-configuration")
-            }
-            
-            let childContext = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
-            childContext.parent = coreDataStack.mainContext
-
-            vc.context = childContext
-            vc.spendingService = SpendingService(managedObjectContext: childContext, coreDataStack: coreDataStack)
-            vc.categoryService = CategoryService(managedObjectContext: childContext, coreDataStack: coreDataStack)
-            vc.delegate = self
-            
-        case "SpendingDetailSegue":
-            guard let vc = segue.destination as? SpendingDetailViewController,
-                let indexPath = tableView.indexPathForSelectedRow else {
-                    fatalError("Application storyboard mis-configuration")
-            }
-            
-            vc.spending = fetchedResultsController.object(at: indexPath)
-            
-        default:
-            fatalError("Unexpected segue")
-        }
-    }
 }
 
 // MARK: - Table view data source
 
-extension SpendingsTableViewController {
-    override func numberOfSections(in tableView: UITableView) -> Int {
+extension SpendingListViewController: UITableViewDataSource {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
         return fetchedResultsController.sections?.count ?? 0
     }
     
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return fetchedResultsController.sections?[section].numberOfObjects ?? 0
     }
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "SpendingCell", for: indexPath) as! SpendingTableViewCell
         let spendingForCell = fetchedResultsController.object(at: indexPath)
         
@@ -78,14 +52,18 @@ extension SpendingsTableViewController {
 
 // MARK: - Table view delegate
 
-extension SpendingsTableViewController {
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+extension SpendingListViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
     }
+    
 }
 
 // MARK: SpendingDelegate
-extension SpendingsTableViewController : EditSpendingDelegate {
+
+extension SpendingListViewController: EditSpendingDelegate {
+    
     func didFinish(viewController: EditSpendingViewController, didSave: Bool) {
         guard didSave,
             let context = viewController.context,
@@ -93,7 +71,7 @@ extension SpendingsTableViewController : EditSpendingDelegate {
                 dismiss(animated: true)
                 return
         }
-
+        
         context.perform {
             do {
                 try context.save()
@@ -106,12 +84,15 @@ extension SpendingsTableViewController : EditSpendingDelegate {
         
         dismiss(animated: true)
     }
+    
 }
 
 // MARK: NSFetchedResultsController
-extension SpendingsTableViewController : NSFetchedResultsControllerDelegate {
+
+extension SpendingListViewController: NSFetchedResultsControllerDelegate {
+    
     func spendingsFetchedResultsController() -> NSFetchedResultsController<Spending> {
-        let fetchedResultController = NSFetchedResultsController(fetchRequest: surfJournalFetchRequest(),
+        let fetchedResultController = NSFetchedResultsController(fetchRequest: spendingsFetchRequest(),
                                                                  managedObjectContext: coreDataStack.mainContext,
                                                                  sectionNameKeyPath: nil,
                                                                  cacheName: nil)
@@ -126,7 +107,7 @@ extension SpendingsTableViewController : NSFetchedResultsControllerDelegate {
         return fetchedResultController
     }
     
-    func surfJournalFetchRequest() -> NSFetchRequest<Spending> {
+    func spendingsFetchRequest() -> NSFetchRequest<Spending> {
         let fetchRequest: NSFetchRequest<Spending> = Spending.fetchRequest()
         fetchRequest.fetchBatchSize = 20
         
@@ -139,4 +120,5 @@ extension SpendingsTableViewController : NSFetchedResultsControllerDelegate {
     func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
         tableView.reloadData()
     }
+    
 }

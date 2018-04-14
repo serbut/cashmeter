@@ -2,7 +2,7 @@
 //  CategoryTableViewCell.swift
 //  Cashmeter
 //
-//  Created by Sergey Butorin on 24/01/2018.
+//  Created by Sergey Butorin on 14/04/2018.
 //  Copyright © 2018 Sergey Butorin. All rights reserved.
 //
 
@@ -23,5 +23,5 @@ class CategoryTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-
+    
 }

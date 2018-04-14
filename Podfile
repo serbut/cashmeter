@@ -6,6 +6,7 @@ target 'Cashmeter' do
   use_frameworks!
 
   pod "ESTabBarController-swift"
+  pod 'Alamofire'
 
   target 'CashmeterTests' do
     inherit! :search_paths
