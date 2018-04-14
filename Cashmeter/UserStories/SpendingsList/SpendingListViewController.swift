@@ -12,7 +12,7 @@ import CoreData
 class SpendingListViewController: UIViewController {
 
     var coreDataStack: CoreDataStack!
-    var fetchedResultsController: NSFetchedResultsController<Spending> = NSFetchedResultsController()
+    var fetchedResultsController: NSFetchedResultsController<Spending>!
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -20,8 +20,25 @@ class SpendingListViewController: UIViewController {
         super.viewDidLoad()
         
         tableView.delegate = self
+        tableView.dataSource = self
         tableView.register(UINib(nibName: "SpendingTableViewCell", bundle: nil), forCellReuseIdentifier: "SpendingCell")
         fetchedResultsController = spendingsFetchedResultsController()
+        
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addSpending))
+    }
+    
+    @objc func addSpending() {
+        let newSpendingVC = EditSpendingViewController()
+        
+        let childContext = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
+        childContext.parent = coreDataStack.mainContext
+        
+        newSpendingVC.context = childContext
+        newSpendingVC.spendingService = SpendingService(managedObjectContext: childContext, coreDataStack: coreDataStack)
+        newSpendingVC.categoryService = CategoryService(managedObjectContext: childContext, coreDataStack: coreDataStack)
+        newSpendingVC.delegate = self
+        
+        self.present(UINavigationController(rootViewController: newSpendingVC), animated: true, completion: nil)
     }
 
 }

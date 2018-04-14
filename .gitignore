@@ -89,3 +89,5 @@ fastlane/test_output
 
 # End of https://www.gitignore.io/api/swift,macos
 Pods/
+*.xcworkspace
+Podfile.lock

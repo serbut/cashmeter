@@ -39,10 +39,12 @@ class EditSpendingViewController: UIViewController {
         categoriesTableView.register(UINib(nibName: "CategoryTableViewCell", bundle: nil), forCellReuseIdentifier: "CategoryCell")
         
         categories = categoryService.getCategories()
+        
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(saveButtonPushed))
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(cancelButtonPushed))
     }
     
-    // MARK: IBActions
-    @IBAction func saveButtonPushed(_ sender: UIBarButtonItem) {
+    @objc func saveButtonPushed(_ sender: UIBarButtonItem) {
         if updateSpendingEntry() {
             delegate?.didFinish(viewController: self, didSave: true)
         } else {
@@ -50,7 +52,7 @@ class EditSpendingViewController: UIViewController {
         }
     }
     
-    @IBAction func cancelButtonPushed(_ sender: UIBarButtonItem) {
+    @objc func cancelButtonPushed(_ sender: UIBarButtonItem) {
         delegate?.didFinish(viewController: self, didSave: false)
     }
     

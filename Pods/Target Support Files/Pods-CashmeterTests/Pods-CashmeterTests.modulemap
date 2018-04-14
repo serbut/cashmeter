@@ -1,6 +1,0 @@
-framework module Pods_CashmeterTests {
-  umbrella header "Pods-CashmeterTests-umbrella.h"
-
-  export *
-  module * { export * }
-}
