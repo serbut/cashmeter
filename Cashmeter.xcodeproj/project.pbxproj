@@ -48,6 +48,8 @@
 		0773D3A4208370F400BB12ED /* SpendingInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0773D3A3208370F400BB12ED /* SpendingInteractorInput.swift */; };
 		0773D3A620838CFA00BB12ED /* AmountTableViewCellObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0773D3A520838CFA00BB12ED /* AmountTableViewCellObject.swift */; };
 		0773D3A820838D0B00BB12ED /* ReceiptTableViewCellObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0773D3A720838D0B00BB12ED /* ReceiptTableViewCellObject.swift */; };
+		0773D3AB2083A1F200BB12ED /* QRScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0773D3AA2083A1F200BB12ED /* QRScannerViewController.swift */; };
+		0773D3B12083B9B500BB12ED /* QRScannerModuleOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0773D3B02083B9B500BB12ED /* QRScannerModuleOutput.swift */; };
 		07745F6D201F2B0F00C26252 /* SpendingDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07745F6C201F2B0F00C26252 /* SpendingDetailViewController.swift */; };
 		077EBB742018BC15006E12D5 /* DefaultCategories.plist in Resources */ = {isa = PBXBuildFile; fileRef = 077EBB732018BC15006E12D5 /* DefaultCategories.plist */; };
 		078037DC20234EAA00AA651C /* CategoryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078037DB20234EAA00AA651C /* CategoryService.swift */; };
@@ -125,6 +127,8 @@
 		0773D3A3208370F400BB12ED /* SpendingInteractorInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendingInteractorInput.swift; sourceTree = "<group>"; };
 		0773D3A520838CFA00BB12ED /* AmountTableViewCellObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmountTableViewCellObject.swift; sourceTree = "<group>"; };
 		0773D3A720838D0B00BB12ED /* ReceiptTableViewCellObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptTableViewCellObject.swift; sourceTree = "<group>"; };
+		0773D3AA2083A1F200BB12ED /* QRScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRScannerViewController.swift; sourceTree = "<group>"; };
+		0773D3B02083B9B500BB12ED /* QRScannerModuleOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRScannerModuleOutput.swift; sourceTree = "<group>"; };
 		07745F6C201F2B0F00C26252 /* SpendingDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendingDetailViewController.swift; sourceTree = "<group>"; };
 		077EBB732018BC15006E12D5 /* DefaultCategories.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = DefaultCategories.plist; sourceTree = "<group>"; };
 		078037DB20234EAA00AA651C /* CategoryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryService.swift; sourceTree = "<group>"; };
@@ -187,16 +191,10 @@
 				074E3248207EAC9B00C78501 /* NewCategory */,
 				074E3247207EAC6500C78501 /* SpendingDetails */,
 				074E3246207EAC4800C78501 /* Spending */,
+				0773D3A92083A1C300BB12ED /* QRScanner */,
 				074E3245207EAC0100C78501 /* SpendingsList */,
 			);
 			path = UserStories;
-			sourceTree = "<group>";
-		};
-		07193BF62017580C00DA1ECC /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Controllers;
 			sourceTree = "<group>";
 		};
 		073DDFF220035DD4000CAD7C = {
@@ -249,7 +247,6 @@
 				07193BF4201757F700DA1ECC /* Models */,
 				07193BF52017580200DA1ECC /* UserStories */,
 				07D76D84201E596F00D2FC0F /* Services */,
-				07193BF62017580C00DA1ECC /* Controllers */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -520,6 +517,15 @@
 				0773D39F20836EFC00BB12ED /* ServicesAssembly.swift */,
 			);
 			path = Assemblies;
+			sourceTree = "<group>";
+		};
+		0773D3A92083A1C300BB12ED /* QRScanner */ = {
+			isa = PBXGroup;
+			children = (
+				0773D3AA2083A1F200BB12ED /* QRScannerViewController.swift */,
+				0773D3B02083B9B500BB12ED /* QRScannerModuleOutput.swift */,
+			);
+			path = QRScanner;
 			sourceTree = "<group>";
 		};
 		07B8D0A4202334290064AFF1 /* Services */ = {
@@ -813,6 +819,8 @@
 				0773D39B20836E2700BB12ED /* Module.swift in Sources */,
 				0773D3822083567F00BB12ED /* SpendingViewInput.swift in Sources */,
 				0773D35420829E5700BB12ED /* SpendingTableViewCell.swift in Sources */,
+				0773D3B12083B9B500BB12ED /* QRScannerModuleOutput.swift in Sources */,
+				0773D3AB2083A1F200BB12ED /* QRScannerViewController.swift in Sources */,
 				0773D37820834CCB00BB12ED /* CellObjectProtocol.swift in Sources */,
 				0773D38F20835B6600BB12ED /* SpendingCellObjectsFactory.swift in Sources */,
 				074E3243207EABD100C78501 /* ReceiptService.swift in Sources */,

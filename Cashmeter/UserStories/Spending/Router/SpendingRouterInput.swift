@@ -11,6 +11,6 @@ protocol SpendingRouterInput: class {
     /**
      Метод открывает модуль сканирования QR-кодов
     */
-    func showScanQrModule()
+    func showScanQrModule(moduleOutput: QRScannerModuleOutput)
     
 }

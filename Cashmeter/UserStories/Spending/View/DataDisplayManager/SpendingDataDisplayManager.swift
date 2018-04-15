@@ -41,8 +41,8 @@ extension SpendingDataDisplayManager: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
-        if let cellObject = cellObjects[indexPath.row] as? ReceiptTableViewCell {
-            print("ReceiptTableViewCell tapped")
+        if let _ = cellObjects[indexPath.row] as? ReceiptTableViewCellObject {
+            output.didTriggerScanQrAction()
         }
     }
     

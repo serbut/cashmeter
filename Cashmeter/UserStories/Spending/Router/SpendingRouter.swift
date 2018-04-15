@@ -10,8 +10,10 @@ final class SpendingRouter: SpendingRouterInput {
     
     weak var transitionHandler: SpendingViewController!
     
-    func showScanQrModule() {
-        print("Opening QR module")
+    func showScanQrModule(moduleOutput: QRScannerModuleOutput) {
+        let viewController = QRScannerViewController()
+        viewController.moduleOutput = moduleOutput
+        self.transitionHandler.present(viewController, animated: true, completion: nil)
     }
     
 }

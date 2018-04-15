@@ -46,7 +46,15 @@ extension SpendingPresenter: SpendingViewOutput {
     }
     
     func didTriggerScanQrAction() {
-        router.showScanQrModule()
+        router.showScanQrModule(moduleOutput: self)
     }
     
+}
+
+// MARK: QRScannerModuleOutput
+
+extension SpendingPresenter: QRScannerModuleOutput {
+    func scanIsFinished(_ scannedString: String) {
+        print(scannedString)
+    }
 }
