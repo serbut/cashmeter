@@ -23,8 +23,8 @@ class SpendingDetailViewController: UIViewController {
 
         amountLabel.text = "\(spending.amount) ₽"
         dateLabel.text = stringForDate()
-        if spending.description != "" {
-            descriptionTextView.text = spending.description
+        if spending.details != "" {
+            descriptionTextView.text = spending.details 
         }
     }
 

@@ -73,6 +73,15 @@ extension SpendingListViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        
+        let spending = fetchedResultsController.object(at: indexPath)
+        let configurator = SpendingConfigurator()
+        let module = configurator.spendingModule()
+        let viewController = module.viewController
+        let moduleInput = module.moduleInput as? SpendingModuleInput
+        moduleInput?.setup(with: spending)
+
+        self.navigationController?.pushViewController(viewController, animated: true)
     }
     
 }

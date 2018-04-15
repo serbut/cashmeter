@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="13772" systemVersion="17D102" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14133" systemVersion="17E199" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Category" representedClassName="Cashmeter.Category" syncable="YES" codeGenerationType="class">
         <attribute name="icon" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
@@ -39,10 +39,10 @@
     </entity>
     <elements>
         <element name="Category" positionX="106" positionY="63" width="128" height="88"/>
-        <element name="Currency" positionX="-74" positionY="378" width="128" height="88"/>
-        <element name="Receipt" positionX="133" positionY="452" width="128" height="103"/>
+        <element name="Currency" positionX="-65" positionY="216" width="128" height="88"/>
+        <element name="Receipt" positionX="421" positionY="374" width="128" height="103"/>
         <element name="Spending" positionX="115" positionY="216" width="128" height="178"/>
         <element name="SpendingItem" positionX="403" positionY="63" width="128" height="103"/>
-        <element name="Wallet" positionX="430" positionY="450" width="128" height="73"/>
+        <element name="Wallet" positionX="439" positionY="242" width="128" height="73"/>
     </elements>
 </model>

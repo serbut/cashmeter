@@ -1,5 +1,5 @@
 //
-//  NewSpendingViewController.swift
+//  SpendingViewController.swift
 //  Cashmeter
 //
 //  Created by Sergey Butorin on 08/01/2018.

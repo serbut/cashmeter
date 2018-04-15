@@ -26,12 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         tabController.coreDataStack = coreDataStack
 
         window?.rootViewController = tabController
-        
-//        let networkProvider = NetworkProvider()
-//        networkProvider.sendRequest(.parse, data: Data(), completion: {
-//            print("Success")
-//        })
-//        
+
         return true
     }
 
