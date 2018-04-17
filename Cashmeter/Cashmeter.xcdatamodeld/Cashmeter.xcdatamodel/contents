@@ -11,9 +11,9 @@
         <relationship name="spending" toMany="YES" deletionRule="Deny" destinationEntity="Spending" inverseName="currency" inverseEntity="Spending" syncable="YES"/>
     </entity>
     <entity name="Receipt" representedClassName="Cashmeter.Receipt" syncable="YES" codeGenerationType="class">
-        <attribute name="fd" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="fn" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="fpd" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="fp" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="i" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="spending" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Spending" inverseName="receipt" inverseEntity="Spending" syncable="YES"/>
     </entity>
     <entity name="Spending" representedClassName="Cashmeter.Spending" syncable="YES" codeGenerationType="class">
@@ -40,7 +40,7 @@
     <elements>
         <element name="Category" positionX="106" positionY="63" width="128" height="88"/>
         <element name="Currency" positionX="-65" positionY="216" width="128" height="88"/>
-        <element name="Receipt" positionX="421" positionY="374" width="128" height="103"/>
+        <element name="Receipt" positionX="421" positionY="423" width="128" height="103"/>
         <element name="Spending" positionX="115" positionY="216" width="128" height="178"/>
         <element name="SpendingItem" positionX="403" positionY="63" width="128" height="103"/>
         <element name="Wallet" positionX="439" positionY="242" width="128" height="73"/>

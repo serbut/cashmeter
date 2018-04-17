@@ -10,6 +10,18 @@ import Foundation
 
 final class ServicesAssembly {
     
+    func receiptService() -> ReceiptService {
+        let receiptService = ReceiptService()
+        
+        receiptService.networkProvider = networkProvider()
+        
+        return receiptService
+    }
     
+    func networkProvider() -> NetworkProviderProtocol {
+        let networkProvider = NetworkProvider()
+        
+        return networkProvider
+    }
     
 }

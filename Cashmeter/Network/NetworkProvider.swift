@@ -18,17 +18,15 @@ final class NetworkProvider {
 // MARK: NetworkProviderProtocol
 
 extension NetworkProvider: NetworkProviderProtocol {
-    func sendRequest(_ requestType: RequestType, data: Data, completion: @escaping () -> Void) {
+    func sendRequest(_ requestType: RequestType, parameters: Parameters?, completion: @escaping () -> Void) {
 
         let requestUrl = baseUrl + requestType.rawValue
-        let params = ["fp": "1740507959", "i": "981", "fn": "8710000101503795"]
 
-        Alamofire.request(requestUrl, method: .post, parameters: params, encoding: JSONEncoding.default, headers: [:]).responseJSON
+        Alamofire.request(requestUrl, method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: [:]).responseJSON
             { response in
                 switch(response.result) {
                 case .success(_):
                     if response.result.value != nil{
-                        print("Uploaded")
                         print(response)
                         completion()
                     }

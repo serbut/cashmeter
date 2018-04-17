@@ -56,5 +56,10 @@ extension SpendingPresenter: SpendingViewOutput {
 extension SpendingPresenter: QRScannerModuleOutput {
     func scanIsFinished(_ scannedString: String) {
         print(scannedString)
+        guard let receipt = ReceiptData(fromQrString: scannedString) else {
+            print("Ошибка") // TODO: move and process errror
+            return
+        }
+        interactor.parseReceipt(receipt)
     }
 }

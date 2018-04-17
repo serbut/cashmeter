@@ -62,6 +62,9 @@
 		07C0FF0E20823E7500CA3FD0 /* RequestTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C0FF0D20823E7500CA3FD0 /* RequestTypes.swift */; };
 		07C0FF1220824E6000CA3FD0 /* SpendingDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07C0FF1120824E6000CA3FD0 /* SpendingDetailViewController.xib */; };
 		07D76D83201E56FD00D2FC0F /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D76D82201E56FD00D2FC0F /* CoreDataStack.swift */; };
+		07EC0008208681A3004E442B /* ReceiptServiceInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EC0007208681A3004E442B /* ReceiptServiceInput.swift */; };
+		07EC000B2086836D004E442B /* BaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EC000A2086836D004E442B /* BaseService.swift */; };
+		07EC000E20868581004E442B /* Receipt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EC000D20868581004E442B /* Receipt.swift */; };
 		07EDBFAA20828B7E009229DC /* SpendingListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EDBFA820828B7E009229DC /* SpendingListViewController.swift */; };
 		07EDBFAB20828B7E009229DC /* SpendingListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07EDBFA920828B7E009229DC /* SpendingListViewController.xib */; };
 		07EDBFAD20828CCE009229DC /* EditSpendingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07EDBFAC20828CCE009229DC /* EditSpendingViewController.xib */; };
@@ -141,6 +144,9 @@
 		07C0FF0D20823E7500CA3FD0 /* RequestTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestTypes.swift; sourceTree = "<group>"; };
 		07C0FF1120824E6000CA3FD0 /* SpendingDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SpendingDetailViewController.xib; sourceTree = "<group>"; };
 		07D76D82201E56FD00D2FC0F /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		07EC0007208681A3004E442B /* ReceiptServiceInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptServiceInput.swift; sourceTree = "<group>"; };
+		07EC000A2086836D004E442B /* BaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseService.swift; sourceTree = "<group>"; };
+		07EC000D20868581004E442B /* Receipt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Receipt.swift; sourceTree = "<group>"; };
 		07EDBFA820828B7E009229DC /* SpendingListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendingListViewController.swift; sourceTree = "<group>"; };
 		07EDBFA920828B7E009229DC /* SpendingListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SpendingListViewController.xib; sourceTree = "<group>"; };
 		07EDBFAC20828CCE009229DC /* EditSpendingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditSpendingViewController.xib; sourceTree = "<group>"; };
@@ -177,6 +183,7 @@
 		07193BF4201757F700DA1ECC /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				07EC000C2086856F004E442B /* Receipt */,
 				0773D37220834BBB00BB12ED /* Spending */,
 			);
 			path = Models;
@@ -265,6 +272,7 @@
 			isa = PBXGroup;
 			children = (
 				074E3242207EABD100C78501 /* ReceiptService.swift */,
+				07EC0007208681A3004E442B /* ReceiptServiceInput.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -452,6 +460,7 @@
 		0773D37520834CB000BB12ED /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				07EC00092086835F004E442B /* Service */,
 				0773D39E20836EE900BB12ED /* Assemblies */,
 				0773D37620834CB900BB12ED /* Cell */,
 			);
@@ -564,6 +573,22 @@
 				074E3241207EABB500C78501 /* CoreData */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		07EC00092086835F004E442B /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				07EC000A2086836D004E442B /* BaseService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		07EC000C2086856F004E442B /* Receipt */ = {
+			isa = PBXGroup;
+			children = (
+				07EC000D20868581004E442B /* Receipt.swift */,
+			);
+			path = Receipt;
 			sourceTree = "<group>";
 		};
 		89C919BBE7F647DD0871A687 /* Frameworks */ = {
@@ -810,12 +835,14 @@
 				0773D36D20834B3900BB12ED /* SpendingDataDisplayManager.swift in Sources */,
 				0773D380208355E100BB12ED /* CellProtocol.swift in Sources */,
 				0773D37420834BC900BB12ED /* SpendingButtonType.swift in Sources */,
+				07EC0008208681A3004E442B /* ReceiptServiceInput.swift in Sources */,
 				0773D364208342A300BB12ED /* ReceiptTableViewCell.swift in Sources */,
 				0773D37A2083513300BB12ED /* TableRegisterCell.swift in Sources */,
 				0773D39520835CD300BB12ED /* SpendingRouterInput.swift in Sources */,
 				07B8D0A8202343530064AFF1 /* SpendingService.swift in Sources */,
 				0773D36F20834B5100BB12ED /* SpendingDataDisplayManagerInput.swift in Sources */,
 				0773D3A620838CFA00BB12ED /* AmountTableViewCellObject.swift in Sources */,
+				07EC000B2086836D004E442B /* BaseService.swift in Sources */,
 				0773D39B20836E2700BB12ED /* Module.swift in Sources */,
 				0773D3822083567F00BB12ED /* SpendingViewInput.swift in Sources */,
 				0773D35420829E5700BB12ED /* SpendingTableViewCell.swift in Sources */,
@@ -841,6 +868,7 @@
 				07C0FF0E20823E7500CA3FD0 /* RequestTypes.swift in Sources */,
 				0773D3842083569300BB12ED /* SpendingViewOutput.swift in Sources */,
 				07D76D83201E56FD00D2FC0F /* CoreDataStack.swift in Sources */,
+				07EC000E20868581004E442B /* Receipt.swift in Sources */,
 				0773D39D20836E7800BB12ED /* AssembledModule.swift in Sources */,
 				0773D3A220836FE900BB12ED /* SpendingInteractor.swift in Sources */,
 				0773D3582083407E00BB12ED /* SpendingViewController.swift in Sources */,

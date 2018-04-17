@@ -8,4 +8,6 @@
 
 protocol SpendingInteractorInput {
     
+    func parseReceipt(_ receipt: ReceiptData)
+    
 }

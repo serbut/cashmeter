@@ -8,4 +8,24 @@
 
 import Foundation
 
+final class ReceiptService: BaseService {
+    
+}
 
+// MARK: ReceiptServiceInput
+
+extension ReceiptService: ReceiptServiceInput {
+    
+    func parse(_ receiptData: ReceiptData) {
+        
+        let params = ["fp": receiptData.fp,
+                      "i": receiptData.i,
+                      "fn": receiptData.fn]
+        
+        networkProvider.sendRequest(.parse, parameters: params, completion: {
+            
+        })
+        
+    }
+    
+}

@@ -22,8 +22,6 @@ final class SpendingConfigurator {
         presenter.interactor = interactor
         presenter.router = router
         
-        
-        
         router.transitionHandler = viewController
         
         let module = AssembledModule(viewController: viewController, moduleInput: presenter)
@@ -50,6 +48,8 @@ final class SpendingConfigurator {
     
     private func configureInteractor() -> SpendingInteractor {
         let interactor = SpendingInteractor()
+        
+        interactor.receiptService = servicesAssembly.receiptService()
         
         return interactor
     }

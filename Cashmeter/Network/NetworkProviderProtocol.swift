@@ -7,9 +7,10 @@
 //
 
 import Foundation
+import Alamofire
 
 protocol NetworkProviderProtocol: class {
     
-    func sendRequest(_ requestType: RequestType, data: Data, completion: @escaping () -> Void)
+    func sendRequest(_ requestType: RequestType, parameters: Parameters?, completion: @escaping () -> Void)
     
 }

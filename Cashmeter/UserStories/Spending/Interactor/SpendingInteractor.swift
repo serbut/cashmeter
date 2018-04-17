@@ -8,10 +8,16 @@
 
 final class SpendingInteractor {
     
+    var receiptService: ReceiptService!
+    
 }
 
 // MARK: SpendingInteractorInput
 
 extension SpendingInteractor: SpendingInteractorInput {
+    
+    func parseReceipt(_ receipt: ReceiptData) {
+        receiptService.parse(receipt)
+    }
     
 }
