@@ -11,7 +11,7 @@ protocol SpendingsListCellObjectsFactoryInput: class {
 	/**
      Метод конвертирует данные о покупке в cellObject.
      
-     @param object - объект, который надо сконвертировать в cellObject.
+     @param spending - объект, который надо сконвертировать в cellObject.
      
      @return sectionObject.
      */

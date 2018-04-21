@@ -10,18 +10,12 @@ import UIKit
 
 class AmountTableViewCell: UITableViewCell, HasNib {
 
-    @IBOutlet weak var amountLabel: UILabel!
+    @IBOutlet weak var amountTextField: UITextField!
     @IBOutlet weak var currencyLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
     
 }
@@ -31,7 +25,9 @@ extension AmountTableViewCell: TableCellInput {
     func setup(with cellObject: TableCellObject) {
         guard let cellObject = cellObject as? AmountTableViewCellObject else { return }
         
-        amountLabel.text = "\(cellObject.amount)"
+        if let amount = cellObject.amount {
+            amountTextField.text = "\(amount)"
+        }
     }
     
 }

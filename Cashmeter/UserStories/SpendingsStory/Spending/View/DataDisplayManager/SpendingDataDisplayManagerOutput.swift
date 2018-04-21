@@ -9,13 +9,13 @@
 protocol SpendingDataDisplayManagerOutput: class {
     
     /**
-     Метод сообщает о том, что пользователь нажал на кнопку
+     Метод сообщает о том, что пользователь нажал на кнопку.
      */
     func didTapButton(with type: SpendingButtonType)
     
     /**
-     Метод сообщает о том, что пользователь нажал на ячейку сканирования QR-кода
+     Метод сообщает о том, что пользователь нажал на ячейку сканирования QR-кода.
      */
     func didTriggerScanQrAction()
-    
+
 }

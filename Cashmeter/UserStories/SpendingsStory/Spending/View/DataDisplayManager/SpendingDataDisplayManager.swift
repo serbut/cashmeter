@@ -44,6 +44,17 @@ extension SpendingDataDisplayManager: UITableViewDelegate {
         if let _ = cellObjects[indexPath.row] as? AddReceiptTableViewCellObject {
             output.didTriggerScanQrAction()
         }
+        else if let cell = tableView.cellForRow(at: indexPath) as? SpendingDateTableViewCell {
+            let datePicker = cell.datePicker!
+            datePicker.isHidden = !datePicker.isHidden
+            
+            UIView.animate(withDuration: 0.3, animations: { () -> Void in
+                self.tableView.beginUpdates()
+                datePicker.alpha = datePicker.isHidden ? 0.0 : 1.0
+                self.tableView.deselectRow(at: indexPath, animated: true)
+                self.tableView.endUpdates()
+            })
+        }
     }
     
 }
@@ -63,6 +74,14 @@ extension SpendingDataDisplayManager: UITableViewDataSource {
         cell.setup(with: cellObjects[indexPath.row])
         
         return cell as! UITableViewCell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if let cell = tableView.cellForRow(at: indexPath) as? SpendingDateTableViewCell {
+            let height: CGFloat = cell.datePicker.isHidden ? 50 : 212
+            return height
+        }
+        return UITableViewAutomaticDimension
     }
     
 }

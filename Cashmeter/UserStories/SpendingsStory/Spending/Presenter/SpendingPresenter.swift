@@ -37,7 +37,12 @@ extension SpendingPresenter: SpendingViewOutput {
     
     func viewIsReady() {
         view.setupInitialState()
-        let cellObjects = cellObjectsFactory.convert(spending: spending)
+        var cellObjects: [TableCellObject] = []
+        if let spending = spending {
+            cellObjects = cellObjectsFactory.convert(spending: spending)
+        } else {
+            cellObjects = cellObjectsFactory.createForNewSpending()
+        }
         view.showData(cellObjects)
     }
     

@@ -8,6 +8,18 @@
 
 protocol SpendingCellObjectsFactoryInput: class {
     
-    func convert(spending: Spending?) -> [TableCellObject]
+    /**
+     Метод конвертирует данные о покупке в cellObject-ы.
+     
+     @param spending - объект, который надо сконвертировать в cellObject-ы.
+     
+     @return sectionObject-ы.
+     */
+    func convert(spending: Spending) -> [TableCellObject]
+    
+    /**
+     Метод создает cellObject-ы для новой покупки.
+     */
+    func createForNewSpending() -> [TableCellObject]
     
 }

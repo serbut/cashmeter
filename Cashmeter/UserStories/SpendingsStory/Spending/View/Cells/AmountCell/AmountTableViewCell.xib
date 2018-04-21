@@ -20,29 +20,30 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1500" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RTS-uc-oVb">
-                        <rect key="frame" x="246.5" y="12" width="38.5" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="₽" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PFi-If-ejV">
                         <rect key="frame" x="293" y="12" width="11" height="20.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="0.0" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sGt-gf-Lar">
+                        <rect key="frame" x="20" y="10.5" width="265" height="21"/>
+                        <nil key="textColor"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <textInputTraits key="textInputTraits"/>
+                    </textField>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="PFi-If-ejV" firstAttribute="leading" secondItem="sGt-gf-Lar" secondAttribute="trailing" constant="8" id="0ZA-GX-5mK"/>
                     <constraint firstAttribute="trailingMargin" secondItem="PFi-If-ejV" secondAttribute="trailing" id="BCa-af-AA6"/>
-                    <constraint firstItem="PFi-If-ejV" firstAttribute="leading" secondItem="RTS-uc-oVb" secondAttribute="trailing" constant="8" id="TU8-Qm-NYw"/>
                     <constraint firstItem="PFi-If-ejV" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="gah-sR-hEi"/>
-                    <constraint firstItem="RTS-uc-oVb" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="jqJ-c6-vW1"/>
+                    <constraint firstItem="sGt-gf-Lar" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="laT-MP-5GE"/>
+                    <constraint firstItem="sGt-gf-Lar" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" symbolic="YES" id="qx2-Ad-whW"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="amountLabel" destination="RTS-uc-oVb" id="2ca-xh-40k"/>
+                <outlet property="amountTextField" destination="sGt-gf-Lar" id="cIM-Bb-DUL"/>
                 <outlet property="currencyLabel" destination="PFi-If-ejV" id="Lsf-jR-OaE"/>
             </connections>
         </tableViewCell>
