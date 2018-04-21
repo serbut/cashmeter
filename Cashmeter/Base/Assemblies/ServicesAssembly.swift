@@ -6,7 +6,7 @@
 //  Copyright © 2018 Sergey Butorin. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 final class ServicesAssembly {
     
@@ -22,6 +22,13 @@ final class ServicesAssembly {
         let networkProvider = NetworkProvider()
         
         return networkProvider
+    }
+    
+    func spendingsListService() -> SpendingsListService {
+        let coreDataStack = (UIApplication.shared.delegate as? AppDelegate)!.coreDataStack
+        let spendingsListService = SpendingsListService(with: coreDataStack)
+        
+        return spendingsListService
     }
     
 }

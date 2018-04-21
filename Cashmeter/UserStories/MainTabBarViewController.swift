@@ -48,11 +48,14 @@ class MainTabBarViewController: ESTabBarController {
         }
     }
     
-    private func createSpendingsVC() -> SpendingListViewController {
-        let spendingsVC = SpendingListViewController()
-        spendingsVC.coreDataStack = coreDataStack
-        spendingsVC.tabBarItem = UITabBarItem(title: nil, image: UIImage(named: "list_icon"), tag: 1)
-        return spendingsVC
+    private func createSpendingsVC() -> UIViewController {
+        
+        let configurator = SpendingsListModuleConfigurator()
+        let module = configurator.buildModule()
+        let viewController = module.viewController
+        
+        viewController.tabBarItem = UITabBarItem(title: nil, image: UIImage(named: "list_icon"), tag: 1)
+        return viewController
     }
     
     private func createWalletsVC() -> UIViewController {
@@ -61,7 +64,7 @@ class MainTabBarViewController: ESTabBarController {
         return walletsVC
     }
     
-    private func createNewSpendingVC() -> EditSpendingViewController {
+    private func createNewSpendingVC() -> UIViewController {
         let newSpendingVC = EditSpendingViewController()
         newSpendingVC.tabBarItem = UITabBarItem(tabBarSystemItem: .favorites, tag: 2)
         

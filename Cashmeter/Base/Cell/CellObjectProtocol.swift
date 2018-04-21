@@ -13,3 +13,9 @@ protocol TableCellObject {
     var cellClass: UITableViewCell.Type! { get set }
     
 }
+
+protocol CollectionCellObject {
+    
+    var cellClass: UICollectionViewCell.Type! { get set }
+    
+}

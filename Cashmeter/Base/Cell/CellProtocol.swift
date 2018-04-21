@@ -11,3 +11,9 @@ protocol TableCellInput: class {
     func setup(with cellObject: TableCellObject)
     
 }
+
+protocol CollectionCellInput: class {
+    
+    func setup(with cellObject: CollectionCellObject)
+    
+}
