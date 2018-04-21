@@ -8,17 +8,60 @@
 
 import UIKit
 
-class CategoriesTableViewCell: UITableViewCell {
+final class CategoriesTableViewCell: UITableViewCell, HasNib {
 
+    @IBOutlet weak var categoriesCollectionView: UICollectionView!
+    var categories: [Category]!
+    var alreadyRegisteredCells: Set<String> = []
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+        categoriesCollectionView.delegate = self
+        categoriesCollectionView.dataSource = self
     }
+    
+}
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
+// MARK: TableCellInput
 
-        // Configure the view for the selected state
+extension CategoriesTableViewCell: TableCellInput {
+    
+    func setup(with cellObject: TableCellObject) {
+        guard let cellObject = cellObject as? CategoriesTableViewCellObject else { return }
+        categories = cellObject.categories
+    }
+    
+}
+
+// MARK: UICollectionViewDataSource
+
+extension CategoriesTableViewCell: UICollectionViewDataSource {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return categories.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withType: CategoryCollectionViewCell.self, at: indexPath, alreadyRegistered: &alreadyRegisteredCells) as! CategoryCollectionViewCell
+
+        cell.categoryTitleLabel.text = categories[indexPath.row].title
+        if let imageName = categories[indexPath.row].image_name {
+            cell.categoryImageView.image = UIImage(named: imageName)
+        }
+
+        return cell
+    }
+    
+}
+
+// MARK: UICollectionViewDelegate
+
+extension CategoriesTableViewCell: UICollectionViewDelegate {
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let cell = collectionView.cellForItem(at: indexPath) as! CategoryCollectionViewCell
+        cell.backgroundColor = .blue
     }
     
 }

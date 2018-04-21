@@ -3,26 +3,26 @@
 <plist version="1.0">
 <array>
 	<dict>
-		<key>icon</key>
-		<string>🚗</string>
+		<key>image_name</key>
+		<string>car</string>
 		<key>title</key>
 		<string>Car</string>
 	</dict>
 	<dict>
-		<key>icon</key>
-		<string>🏖</string>
+		<key>image_name</key>
+		<string>travel</string>
 		<key>title</key>
 		<string>Travel</string>
 	</dict>
 	<dict>
-		<key>icon</key>
-		<string>🚎</string>
+		<key>image_name</key>
+		<string>transport</string>
 		<key>title</key>
 		<string>Transport</string>
 	</dict>
 	<dict>
-		<key>icon</key>
-		<string>🍔</string>
+		<key>image_name</key>
+		<string>food</string>
 		<key>title</key>
 		<string>Food</string>
 	</dict>

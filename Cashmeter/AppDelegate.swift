@@ -43,7 +43,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         for dict in dataArray {
             let category = Category(context: coreDataStack.mainContext)
             let catDict = dict as! [String: AnyObject]
-            category.icon = catDict["icon"] as? String
+            category.image_name = catDict["image_name"] as? String
             category.title = catDict["title"] as? String
         }
         coreDataStack.saveContext()

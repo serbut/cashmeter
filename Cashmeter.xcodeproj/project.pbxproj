@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		073DDFFF20035DD4000CAD7C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073DDFFE20035DD4000CAD7C /* AppDelegate.swift */; };
 		073DE00720035DD4000CAD7C /* Cashmeter.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 073DE00520035DD4000CAD7C /* Cashmeter.xcdatamodeld */; };
-		073DE00920035DD4000CAD7C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 073DE00820035DD4000CAD7C /* Assets.xcassets */; };
+		073DE00920035DD4000CAD7C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 073DE00820035DD4000CAD7C /* Images.xcassets */; };
 		073DE00C20035DD4000CAD7C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 073DE00A20035DD4000CAD7C /* LaunchScreen.storyboard */; };
 		073DE01720035DD4000CAD7C /* CashmeterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073DE01620035DD4000CAD7C /* CashmeterTests.swift */; };
 		0743AF62208692C80026C5B9 /* CategoriesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0743AF60208692C80026C5B9 /* CategoriesTableViewCell.swift */; };
@@ -18,10 +18,7 @@
 		0743AF682086938F0026C5B9 /* CategoryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0743AF662086938F0026C5B9 /* CategoryCollectionViewCell.xib */; };
 		0743AF6B20869F0C0026C5B9 /* EditSpendingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0743AF6920869F0C0026C5B9 /* EditSpendingViewController.xib */; };
 		0743AF6C20869F0C0026C5B9 /* EditSpendingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0743AF6A20869F0C0026C5B9 /* EditSpendingViewController.swift */; };
-		0743AF6F20869FC40026C5B9 /* CategoriesDataDisplayManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0743AF6E20869FC40026C5B9 /* CategoriesDataDisplayManager.swift */; };
 		0743AF712086A01B0026C5B9 /* CollectionRegisterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0743AF702086A01B0026C5B9 /* CollectionRegisterCell.swift */; };
-		0743AF732086A0830026C5B9 /* CategoriesDataDisplayManagerInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0743AF722086A0830026C5B9 /* CategoriesDataDisplayManagerInput.swift */; };
-		0743AF752086A0940026C5B9 /* CategoriesDataDisplayManagerOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0743AF742086A0940026C5B9 /* CategoriesDataDisplayManagerOutput.swift */; };
 		0743AF78208B8BB10026C5B9 /* SpendingTableViewCellObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0743AF77208B8BB10026C5B9 /* SpendingTableViewCellObject.swift */; };
 		0743AF7A208B98E90026C5B9 /* SpendingsListService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0743AF79208B98E90026C5B9 /* SpendingsListService.swift */; };
 		0743AF7D208B990F0026C5B9 /* SpendingsListServiceInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0743AF7C208B990F0026C5B9 /* SpendingsListServiceInput.swift */; };
@@ -68,6 +65,8 @@
 		077EBB742018BC15006E12D5 /* DefaultCategories.plist in Resources */ = {isa = PBXBuildFile; fileRef = 077EBB732018BC15006E12D5 /* DefaultCategories.plist */; };
 		078037DC20234EAA00AA651C /* CategoryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078037DB20234EAA00AA651C /* CategoryService.swift */; };
 		078037DE2023542A00AA651C /* CategoryServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078037DD2023542A00AA651C /* CategoryServiceTests.swift */; };
+		07843B8E208BC694001DBABF /* CategoriesTableViewCellObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07843B8D208BC694001DBABF /* CategoriesTableViewCellObject.swift */; };
+		07843B90208BCC6D001DBABF /* CategoryCollectionViewCellObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07843B8F208BCC6D001DBABF /* CategoryCollectionViewCellObject.swift */; };
 		07B8D0A6202334470064AFF1 /* TestCoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B8D0A5202334470064AFF1 /* TestCoreDataStack.swift */; };
 		07B8D0A8202343530064AFF1 /* SpendingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B8D0A7202343530064AFF1 /* SpendingService.swift */; };
 		07B8D0BA202349820064AFF1 /* SpendingServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B8D0B9202349820064AFF1 /* SpendingServiceTests.swift */; };
@@ -114,7 +113,7 @@
 		073DDFFB20035DD4000CAD7C /* Cashmeter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cashmeter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		073DDFFE20035DD4000CAD7C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		073DE00620035DD4000CAD7C /* Cashmeter.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Cashmeter.xcdatamodel; sourceTree = "<group>"; };
-		073DE00820035DD4000CAD7C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		073DE00820035DD4000CAD7C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		073DE00B20035DD4000CAD7C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		073DE00D20035DD4000CAD7C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		073DE01220035DD4000CAD7C /* CashmeterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CashmeterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -126,10 +125,7 @@
 		0743AF662086938F0026C5B9 /* CategoryCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryCollectionViewCell.xib; sourceTree = "<group>"; };
 		0743AF6920869F0C0026C5B9 /* EditSpendingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EditSpendingViewController.xib; sourceTree = "<group>"; };
 		0743AF6A20869F0C0026C5B9 /* EditSpendingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditSpendingViewController.swift; sourceTree = "<group>"; };
-		0743AF6E20869FC40026C5B9 /* CategoriesDataDisplayManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesDataDisplayManager.swift; sourceTree = "<group>"; };
 		0743AF702086A01B0026C5B9 /* CollectionRegisterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionRegisterCell.swift; sourceTree = "<group>"; };
-		0743AF722086A0830026C5B9 /* CategoriesDataDisplayManagerInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesDataDisplayManagerInput.swift; sourceTree = "<group>"; };
-		0743AF742086A0940026C5B9 /* CategoriesDataDisplayManagerOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesDataDisplayManagerOutput.swift; sourceTree = "<group>"; };
 		0743AF77208B8BB10026C5B9 /* SpendingTableViewCellObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendingTableViewCellObject.swift; sourceTree = "<group>"; };
 		0743AF79208B98E90026C5B9 /* SpendingsListService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendingsListService.swift; sourceTree = "<group>"; };
 		0743AF7C208B990F0026C5B9 /* SpendingsListServiceInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendingsListServiceInput.swift; sourceTree = "<group>"; };
@@ -176,6 +172,8 @@
 		077EBB732018BC15006E12D5 /* DefaultCategories.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = DefaultCategories.plist; sourceTree = "<group>"; };
 		078037DB20234EAA00AA651C /* CategoryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryService.swift; sourceTree = "<group>"; };
 		078037DD2023542A00AA651C /* CategoryServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryServiceTests.swift; sourceTree = "<group>"; };
+		07843B8D208BC694001DBABF /* CategoriesTableViewCellObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesTableViewCellObject.swift; sourceTree = "<group>"; };
+		07843B8F208BCC6D001DBABF /* CategoryCollectionViewCellObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCellObject.swift; sourceTree = "<group>"; };
 		07B8D0A5202334470064AFF1 /* TestCoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCoreDataStack.swift; sourceTree = "<group>"; };
 		07B8D0A7202343530064AFF1 /* SpendingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendingService.swift; sourceTree = "<group>"; };
 		07B8D0B9202349820064AFF1 /* SpendingServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendingServiceTests.swift; sourceTree = "<group>"; };
@@ -322,18 +320,9 @@
 			children = (
 				0743AF652086938F0026C5B9 /* CategoryCollectionViewCell.swift */,
 				0743AF662086938F0026C5B9 /* CategoryCollectionViewCell.xib */,
+				07843B8F208BCC6D001DBABF /* CategoryCollectionViewCellObject.swift */,
 			);
 			path = CollectionCell;
-			sourceTree = "<group>";
-		};
-		0743AF6D20869F9F0026C5B9 /* CategoriesDataDisplayManager */ = {
-			isa = PBXGroup;
-			children = (
-				0743AF6E20869FC40026C5B9 /* CategoriesDataDisplayManager.swift */,
-				0743AF722086A0830026C5B9 /* CategoriesDataDisplayManagerInput.swift */,
-				0743AF742086A0940026C5B9 /* CategoriesDataDisplayManagerOutput.swift */,
-			);
-			path = CategoriesDataDisplayManager;
 			sourceTree = "<group>";
 		};
 		0743AF76208B7EC20026C5B9 /* SpendingsStory */ = {
@@ -416,7 +405,7 @@
 		0764A30D207EACE500D6FEB9 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				073DE00820035DD4000CAD7C /* Assets.xcassets */,
+				073DE00820035DD4000CAD7C /* Images.xcassets */,
 				073DE00D20035DD4000CAD7C /* Info.plist */,
 				073DE00520035DD4000CAD7C /* Cashmeter.xcdatamodeld */,
 				077EBB732018BC15006E12D5 /* DefaultCategories.plist */,
@@ -437,9 +426,9 @@
 		0773D35C2083416600BB12ED /* CategoriesCell */ = {
 			isa = PBXGroup;
 			children = (
-				0743AF6D20869F9F0026C5B9 /* CategoriesDataDisplayManager */,
 				0743AF64208693710026C5B9 /* CollectionCell */,
 				0743AF60208692C80026C5B9 /* CategoriesTableViewCell.swift */,
+				07843B8D208BC694001DBABF /* CategoriesTableViewCellObject.swift */,
 				0743AF61208692C80026C5B9 /* CategoriesTableViewCell.xib */,
 			);
 			path = CategoriesCell;
@@ -851,7 +840,7 @@
 				0773D3592083407E00BB12ED /* SpendingViewController.xib in Resources */,
 				075ED06D208BAF1E009AE6E8 /* SpendingDateTableViewCell.xib in Resources */,
 				0773D35520829E5700BB12ED /* SpendingTableViewCell.xib in Resources */,
-				073DE00920035DD4000CAD7C /* Assets.xcassets in Resources */,
+				073DE00920035DD4000CAD7C /* Images.xcassets in Resources */,
 				0743AF682086938F0026C5B9 /* CategoryCollectionViewCell.xib in Resources */,
 				0773D365208342A300BB12ED /* AddReceiptTableViewCell.xib in Resources */,
 			);
@@ -981,7 +970,6 @@
 				0743AF78208B8BB10026C5B9 /* SpendingTableViewCellObject.swift in Sources */,
 				07EC0008208681A3004E442B /* ReceiptServiceInput.swift in Sources */,
 				0773D364208342A300BB12ED /* AddReceiptTableViewCell.swift in Sources */,
-				0743AF752086A0940026C5B9 /* CategoriesDataDisplayManagerOutput.swift in Sources */,
 				0773D37A2083513300BB12ED /* TableRegisterCell.swift in Sources */,
 				0773D39520835CD300BB12ED /* SpendingRouterInput.swift in Sources */,
 				07B8D0A8202343530064AFF1 /* SpendingService.swift in Sources */,
@@ -1003,10 +991,10 @@
 				0743AF7A208B98E90026C5B9 /* SpendingsListService.swift in Sources */,
 				0773D39820835E2000BB12ED /* SpendingConfigurator.swift in Sources */,
 				0743AF62208692C80026C5B9 /* CategoriesTableViewCell.swift in Sources */,
+				07843B90208BCC6D001DBABF /* CategoryCollectionViewCellObject.swift in Sources */,
 				0773D38C208359FC00BB12ED /* SpendingModuleOutput.swift in Sources */,
 				073DE00720035DD4000CAD7C /* Cashmeter.xcdatamodeld in Sources */,
 				07C0FF0C20823D2D00CA3FD0 /* NetworkProvider.swift in Sources */,
-				0743AF732086A0830026C5B9 /* CategoriesDataDisplayManagerInput.swift in Sources */,
 				0773D3A020836EFC00BB12ED /* ServicesAssembly.swift in Sources */,
 				07C0FF0820823C2A00CA3FD0 /* NetworkProviderProtocol.swift in Sources */,
 				0773D3A4208370F400BB12ED /* SpendingInteractorInput.swift in Sources */,
@@ -1026,7 +1014,7 @@
 				0773D37E2083541100BB12ED /* HasNib.swift in Sources */,
 				0773D39120835B8100BB12ED /* SpendingCellObjectsFactoryInput.swift in Sources */,
 				075ED06F208BAF2F009AE6E8 /* SpendingDateTableViewCellObject.swift in Sources */,
-				0743AF6F20869FC40026C5B9 /* CategoriesDataDisplayManager.swift in Sources */,
+				07843B8E208BC694001DBABF /* CategoriesTableViewCellObject.swift in Sources */,
 				076CFE87202C9A450021E452 /* MainTabBarViewController.swift in Sources */,
 				073DDFFF20035DD4000CAD7C /* AppDelegate.swift in Sources */,
 				07EDBFAA20828B7E009229DC /* SpendingListViewController.swift in Sources */,

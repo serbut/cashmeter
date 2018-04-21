@@ -59,7 +59,7 @@ extension SpendingListViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "SpendingCell", for: indexPath) as! SpendingTableViewCell
         let spendingForCell = fetchedResultsController.object(at: indexPath)
         
-        cell.categoryIconLabel.text = spendingForCell.category?.icon
+//        cell.categoryIconLabel.text = spendingForCell.category?.icon
         cell.categoryNameLabel.text = spendingForCell.category?.title
         cell.amountLabel.text = "\(spendingForCell.amount) ₽"
         

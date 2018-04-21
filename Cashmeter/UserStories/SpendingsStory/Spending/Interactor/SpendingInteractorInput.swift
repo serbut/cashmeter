@@ -8,6 +8,16 @@
 
 protocol SpendingInteractorInput {
     
+    /**
+     Метод отправляет запрос на расшифровку чека.
+     
+     @param receipt - данные чека.
+     */
     func parseReceipt(_ receipt: ReceiptData)
+    
+    /**
+     Метод запрашивает категории.
+     */
+    func requestCategories() -> [Category]
     
 }

@@ -16,7 +16,6 @@ final class SpendingPresenter {
     var output: SpendingModuleOutput?
     var cellObjectsFactory: SpendingCellObjectsFactoryInput!
     
-    
     var spending: Spending?
     
 }
@@ -38,10 +37,11 @@ extension SpendingPresenter: SpendingViewOutput {
     func viewIsReady() {
         view.setupInitialState()
         var cellObjects: [TableCellObject] = []
+        let categories = interactor.requestCategories()
         if let spending = spending {
-            cellObjects = cellObjectsFactory.convert(spending: spending)
+            cellObjects = cellObjectsFactory.convert(spending: spending, categories: categories)
         } else {
-            cellObjects = cellObjectsFactory.createForNewSpending()
+            cellObjects = cellObjectsFactory.createForNewSpending(categories: categories)
         }
         view.showData(cellObjects)
     }
@@ -59,6 +59,7 @@ extension SpendingPresenter: SpendingViewOutput {
 // MARK: QRScannerModuleOutput
 
 extension SpendingPresenter: QRScannerModuleOutput {
+    
     func scanIsFinished(_ scannedString: String) {
         print(scannedString)
         guard let receipt = ReceiptData(fromQrString: scannedString) else {
@@ -67,4 +68,5 @@ extension SpendingPresenter: QRScannerModuleOutput {
         }
         interactor.parseReceipt(receipt)
     }
+    
 }

@@ -8,13 +8,23 @@
 
 import UIKit
 
-class CategoryCollectionViewCell: UICollectionViewCell {
+class CategoryCollectionViewCell: UICollectionViewCell, HasNib {
 
     @IBOutlet weak var categoryImageView: UIImageView!
     @IBOutlet weak var categoryTitleLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
 
+}
+
+extension CategoryCollectionViewCell: CollectionCellInput {
+    
+    func setup(with cellObject: CollectionCellObject) {
+        guard let cellObject = cellObject as? CategoryCollectionViewCellObject else { return }
+        categoryTitleLabel.text = cellObject.category.title
+    }
+    
 }

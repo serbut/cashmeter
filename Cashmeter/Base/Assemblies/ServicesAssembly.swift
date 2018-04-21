@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 final class ServicesAssembly {
     
@@ -25,10 +26,22 @@ final class ServicesAssembly {
     }
     
     func spendingsListService() -> SpendingsListService {
-        let coreDataStack = (UIApplication.shared.delegate as? AppDelegate)!.coreDataStack
-        let spendingsListService = SpendingsListService(with: coreDataStack)
+        let stack = coreDataStack()
+        let spendingsListService = SpendingsListService(with: stack)
         
         return spendingsListService
     }
     
+    func categoryService() -> CategoryService {
+        let stack = coreDataStack()
+        let childContext = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
+        childContext.parent = stack.mainContext
+        let categoryService = CategoryService(managedObjectContext: childContext, coreDataStack: stack)
+        
+        return categoryService
+    }
+    
+    private func coreDataStack() -> CoreDataStack {
+        return (UIApplication.shared.delegate as? AppDelegate)!.coreDataStack
+    }
 }

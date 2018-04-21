@@ -20,11 +20,11 @@ class CategoryService {
     }
     
     func addCategory(withTitle title: String,
-                     icon: String) -> Category {
+                     image_name: String) -> Category {
         let category = Category(context: managedObjectContext)
         
         category.title = title
-        category.icon = icon
+        category.image_name = image_name
                 
         return category
     }
