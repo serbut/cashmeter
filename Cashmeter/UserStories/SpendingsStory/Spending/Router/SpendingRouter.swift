@@ -16,4 +16,8 @@ final class SpendingRouter: SpendingRouterInput {
         self.transitionHandler.present(viewController, animated: true, completion: nil)
     }
     
+    func closeModule() {
+        transitionHandler.dismiss(animated: true, completion: nil)
+    }
+    
 }

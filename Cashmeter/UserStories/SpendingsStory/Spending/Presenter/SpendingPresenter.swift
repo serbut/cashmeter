@@ -54,6 +54,10 @@ extension SpendingPresenter: SpendingViewOutput {
         router.showScanQrModule(moduleOutput: self)
     }
     
+    func didTapOnClose() {
+        router.closeModule()
+    }
+    
 }
 
 // MARK: QRScannerModuleOutput

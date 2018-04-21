@@ -26,7 +26,7 @@ class AddReceiptTableViewCell: UITableViewCell, HasNib {
 extension AddReceiptTableViewCell: TableCellInput {
     
     func setup(with cellObject: TableCellObject) {
-        guard let cellObject = cellObject as? AddReceiptTableViewCellObject else { return }
+        guard let _ = cellObject as? AddReceiptTableViewCellObject else { return }
     }
     
 }

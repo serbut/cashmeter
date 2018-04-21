@@ -23,4 +23,9 @@ protocol SpendingViewOutput: class {
      */
     func didTriggerScanQrAction()
     
+    /**
+     Метод сообщает о том, что пользователь нажал на кнопку закрытия модуля.
+     */
+    func didTapOnClose()
+    
 }

@@ -28,6 +28,9 @@
                     </label>
                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="0.0" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sGt-gf-Lar">
                         <rect key="frame" x="20" y="0.0" width="265" height="43.5"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="43.5" id="NN6-3R-MGD"/>
+                        </constraints>
                         <nil key="textColor"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <textInputTraits key="textInputTraits"/>

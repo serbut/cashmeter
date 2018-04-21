@@ -65,40 +65,34 @@ class MainTabBarViewController: ESTabBarController {
     }
     
     private func createNewSpendingVC() -> UIViewController {
-        let newSpendingVC = EditSpendingViewController()
-        newSpendingVC.tabBarItem = UITabBarItem(tabBarSystemItem: .favorites, tag: 2)
+        let configurator = SpendingConfigurator()
+        let module = configurator.spendingModule()
+        let viewController = module.viewController
         
-        let childContext = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
-        childContext.parent = coreDataStack.mainContext
-        
-        newSpendingVC.context = childContext
-        newSpendingVC.spendingService = SpendingService(managedObjectContext: childContext, coreDataStack: coreDataStack)
-        newSpendingVC.categoryService = CategoryService(managedObjectContext: childContext, coreDataStack: coreDataStack)
-        newSpendingVC.delegate = self
-
-        return newSpendingVC
+        viewController.tabBarItem = UITabBarItem(tabBarSystemItem: .favorites, tag: 2)
+        return viewController
     }
 }
 
-extension MainTabBarViewController: EditSpendingDelegate {
-    func didFinish(viewController: EditSpendingViewController, didSave: Bool) {
-        guard didSave,
-            let context = viewController.context,
-            context.hasChanges else {
-                dismiss(animated: true)
-                return
-        }
-        
-        context.perform {
-            do {
-                try context.save()
-            } catch let error as NSError {
-                fatalError("Error: \(error.localizedDescription)")
-            }
-            
-            self.coreDataStack.saveContext()
-        }
-        
-        dismiss(animated: true)
-    }
-}
+//extension MainTabBarViewController: EditSpendingDelegate {
+//    func didFinish(viewController: EditSpendingViewController, didSave: Bool) {
+//        guard didSave,
+//            let context = viewController.context,
+//            context.hasChanges else {
+//                dismiss(animated: true)
+//                return
+//        }
+//
+//        context.perform {
+//            do {
+//                try context.save()
+//            } catch let error as NSError {
+//                fatalError("Error: \(error.localizedDescription)")
+//            }
+//
+//            self.coreDataStack.saveContext()
+//        }
+//
+//        dismiss(animated: true)
+//    }
+//}

@@ -23,24 +23,7 @@ class SpendingListViewController: UIViewController {
         tableView.dataSource = self
         tableView.register(UINib(nibName: "SpendingTableViewCell", bundle: nil), forCellReuseIdentifier: "SpendingCell")
         fetchedResultsController = spendingsFetchedResultsController()
-        
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addSpending))
     }
-    
-    @objc func addSpending() {
-        let newSpendingVC = EditSpendingViewController()
-        
-        let childContext = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
-        childContext.parent = coreDataStack.mainContext
-        
-        newSpendingVC.context = childContext
-        newSpendingVC.spendingService = SpendingService(managedObjectContext: childContext, coreDataStack: coreDataStack)
-        newSpendingVC.categoryService = CategoryService(managedObjectContext: childContext, coreDataStack: coreDataStack)
-        newSpendingVC.delegate = self
-        
-        self.present(UINavigationController(rootViewController: newSpendingVC), animated: true, completion: nil)
-    }
-
 }
 
 // MARK: - Table view data source
@@ -82,33 +65,6 @@ extension SpendingListViewController: UITableViewDelegate {
         moduleInput?.setup(with: spending)
 
         self.navigationController?.pushViewController(viewController, animated: true)
-    }
-    
-}
-
-// MARK: SpendingDelegate
-
-extension SpendingListViewController: EditSpendingDelegate {
-    
-    func didFinish(viewController: EditSpendingViewController, didSave: Bool) {
-        guard didSave,
-            let context = viewController.context,
-            context.hasChanges else {
-                dismiss(animated: true)
-                return
-        }
-        
-        context.perform {
-            do {
-                try context.save()
-            } catch let error as NSError {
-                fatalError("Error: \(error.localizedDescription)")
-            }
-            
-            self.coreDataStack.saveContext()
-        }
-        
-        dismiss(animated: true)
     }
     
 }

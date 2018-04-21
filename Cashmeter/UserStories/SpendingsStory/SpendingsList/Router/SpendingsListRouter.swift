@@ -6,6 +6,8 @@
 //  Copyright © 2018 Sergey Butorin. All rights reserved.
 //
 
+import UIKit
+
 final class SpendingsListRouter {
 
 	weak var transitionHandler: SpendingsListViewController!
@@ -20,8 +22,9 @@ extension SpendingsListRouter: SpendingsListRouterInput {
         let configurator = SpendingConfigurator()
         let module = configurator.spendingModule()
         let viewController = module.viewController
+        let navigationController = UINavigationController(rootViewController: viewController)
         
-        transitionHandler.present(viewController, animated: true, completion: nil)
+        transitionHandler.present(navigationController, animated: true, completion: nil)
     }
 	
 }

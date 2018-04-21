@@ -16,8 +16,6 @@
 		0743AF63208692C80026C5B9 /* CategoriesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0743AF61208692C80026C5B9 /* CategoriesTableViewCell.xib */; };
 		0743AF672086938F0026C5B9 /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0743AF652086938F0026C5B9 /* CategoryCollectionViewCell.swift */; };
 		0743AF682086938F0026C5B9 /* CategoryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0743AF662086938F0026C5B9 /* CategoryCollectionViewCell.xib */; };
-		0743AF6B20869F0C0026C5B9 /* EditSpendingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0743AF6920869F0C0026C5B9 /* EditSpendingViewController.xib */; };
-		0743AF6C20869F0C0026C5B9 /* EditSpendingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0743AF6A20869F0C0026C5B9 /* EditSpendingViewController.swift */; };
 		0743AF712086A01B0026C5B9 /* CollectionRegisterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0743AF702086A01B0026C5B9 /* CollectionRegisterCell.swift */; };
 		0743AF78208B8BB10026C5B9 /* SpendingTableViewCellObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0743AF77208B8BB10026C5B9 /* SpendingTableViewCellObject.swift */; };
 		0743AF7A208B98E90026C5B9 /* SpendingsListService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0743AF79208B98E90026C5B9 /* SpendingsListService.swift */; };
@@ -123,8 +121,6 @@
 		0743AF61208692C80026C5B9 /* CategoriesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoriesTableViewCell.xib; sourceTree = "<group>"; };
 		0743AF652086938F0026C5B9 /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		0743AF662086938F0026C5B9 /* CategoryCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryCollectionViewCell.xib; sourceTree = "<group>"; };
-		0743AF6920869F0C0026C5B9 /* EditSpendingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EditSpendingViewController.xib; sourceTree = "<group>"; };
-		0743AF6A20869F0C0026C5B9 /* EditSpendingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditSpendingViewController.swift; sourceTree = "<group>"; };
 		0743AF702086A01B0026C5B9 /* CollectionRegisterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionRegisterCell.swift; sourceTree = "<group>"; };
 		0743AF77208B8BB10026C5B9 /* SpendingTableViewCellObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendingTableViewCellObject.swift; sourceTree = "<group>"; };
 		0743AF79208B98E90026C5B9 /* SpendingsListService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendingsListService.swift; sourceTree = "<group>"; };
@@ -244,8 +240,6 @@
 			children = (
 				074E3245207EAC0100C78501 /* SpendingsList */,
 				0743AF76208B7EC20026C5B9 /* SpendingsStory */,
-				0743AF6A20869F0C0026C5B9 /* EditSpendingViewController.swift */,
-				0743AF6920869F0C0026C5B9 /* EditSpendingViewController.xib */,
 				076CFE86202C9A450021E452 /* MainTabBarViewController.swift */,
 			);
 			path = UserStories;
@@ -833,7 +827,6 @@
 			files = (
 				0743AF63208692C80026C5B9 /* CategoriesTableViewCell.xib in Resources */,
 				077EBB742018BC15006E12D5 /* DefaultCategories.plist in Resources */,
-				0743AF6B20869F0C0026C5B9 /* EditSpendingViewController.xib in Resources */,
 				07EDBFAB20828B7E009229DC /* SpendingsListViewController.xib in Resources */,
 				073DE00C20035DD4000CAD7C /* LaunchScreen.storyboard in Resources */,
 				0773D361208341BB00BB12ED /* AmountTableViewCell.xib in Resources */,
@@ -1001,7 +994,6 @@
 				075ED06C208BAF1E009AE6E8 /* SpendingDateTableViewCell.swift in Sources */,
 				0743AF7D208B990F0026C5B9 /* SpendingsListServiceInput.swift in Sources */,
 				0773D388208359D800BB12ED /* SpendingModuleInput.swift in Sources */,
-				0743AF6C20869F0C0026C5B9 /* EditSpendingViewController.swift in Sources */,
 				0773D3A820838D0B00BB12ED /* AddReceiptTableViewCellObject.swift in Sources */,
 				0743AF712086A01B0026C5B9 /* CollectionRegisterCell.swift in Sources */,
 				07C0FF0E20823E7500CA3FD0 /* RequestTypes.swift in Sources */,

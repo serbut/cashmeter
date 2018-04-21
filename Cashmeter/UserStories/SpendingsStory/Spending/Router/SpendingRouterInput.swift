@@ -13,4 +13,9 @@ protocol SpendingRouterInput: class {
     */
     func showScanQrModule(moduleOutput: QRScannerModuleOutput)
     
+    /**
+     Метод закрывает модуль.
+     */
+    func closeModule()
+    
 }
