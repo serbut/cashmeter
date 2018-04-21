@@ -11,6 +11,7 @@ final class SpendingsListCellObjectsFactory: SpendingsListCellObjectsFactoryInpu
     func convert(spending: Spending) -> TableCellObject {
         let cellObject = SpendingTableViewCellObject()
         
+        cellObject.cellClass = SpendingTableViewCell.self
         cellObject.amount = spending.amount
         cellObject.categoryName = spending.category?.title
         

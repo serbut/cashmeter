@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class SpendingTableViewCell: UITableViewCell {
+final class SpendingTableViewCell: UITableViewCell, HasNib {
 
     @IBOutlet weak var categoryIconLabel: UILabel!
     @IBOutlet weak var categoryNameLabel: UILabel!

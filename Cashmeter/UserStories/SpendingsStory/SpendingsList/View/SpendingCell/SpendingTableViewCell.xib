@@ -11,9 +11,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SpendingTableViewCell" customModule="Cashmeter" customModuleProvider="target"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SpendingCell" id="KGk-i7-Jjw" customClass="SpendingTableViewCell" customModule="Cashmeter" customModuleProvider="target">
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SpendingTableViewCell" id="KGk-i7-Jjw" customClass="SpendingTableViewCell" customModule="Cashmeter" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
@@ -51,9 +51,9 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="amountLabel" destination="ddA-JU-tDk" id="t5n-qP-b9d"/>
-                <outlet property="categoryIconLabel" destination="Ugl-ij-qek" id="uCR-ve-Dc8"/>
-                <outlet property="categoryNameLabel" destination="F3O-qS-Vkw" id="XsX-S3-iVF"/>
+                <outlet property="amountLabel" destination="ddA-JU-tDk" id="e1i-TQ-cV1"/>
+                <outlet property="categoryIconLabel" destination="Ugl-ij-qek" id="zc4-ql-pvf"/>
+                <outlet property="categoryNameLabel" destination="F3O-qS-Vkw" id="BIA-jM-XDl"/>
             </connections>
         </tableViewCell>
     </objects>
