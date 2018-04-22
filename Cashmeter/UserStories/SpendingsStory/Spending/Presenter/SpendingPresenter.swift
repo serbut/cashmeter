@@ -57,6 +57,7 @@ extension SpendingPresenter: SpendingViewOutput {
     
     func didTapOnSave() {
         interactor.addSpending(spendingInfo: spendingInfo)
+        router.closeModule()
     }
     
     func didChangeAmountValue(_ value: String?) {
@@ -76,7 +77,10 @@ extension SpendingPresenter: SpendingViewOutput {
 extension SpendingPresenter: SpendingInteractorOutput {
     
     func didParsedReceipt(with receiptInfo: ReceiptInfo) {
+        view.hideLoader()
+        
         spendingInfo.amount = receiptInfo.sum
+        spendingInfo.receiptItems = receiptInfo.items
         
         var cellObjects: [TableCellObject] = []
         let categories = interactor.requestCategories()
@@ -92,11 +96,14 @@ extension SpendingPresenter: SpendingInteractorOutput {
 extension SpendingPresenter: QRScannerModuleOutput {
     
     func scanIsFinished(_ scannedString: String) {
-        print(scannedString)
         guard let receipt = ReceiptData(fromQrString: scannedString) else {
             print("Ошибка") // TODO: move and process errror
             return
         }
+        view.showLoader()
+        
+        // TODO: Update UI for date and amount
+        
         interactor.parseReceipt(receipt)
     }
     

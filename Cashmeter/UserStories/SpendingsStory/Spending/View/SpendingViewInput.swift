@@ -21,4 +21,14 @@ protocol SpendingViewInput: class {
      */
     func showData(_ cellObjects: [TableCellObject])
     
+    /**
+     Метод показывает индикатор загрузки.
+     */
+    func showLoader()
+    
+    /**
+     Метод скрывает индикатор загрузки.
+     */
+    func hideLoader()
+    
 }

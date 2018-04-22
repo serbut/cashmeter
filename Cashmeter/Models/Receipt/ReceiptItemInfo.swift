@@ -14,3 +14,11 @@ struct ReceiptItemInfo: Codable {
     var sum: Double
     
 }
+
+extension ReceiptItemInfo: CustomDebugStringConvertible {
+    
+    var debugDescription: String {
+        return "\(name) — \(price)*\(quantity) = \(sum)\n"
+    }
+    
+}

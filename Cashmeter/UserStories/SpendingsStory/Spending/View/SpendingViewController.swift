@@ -16,11 +16,7 @@ final class SpendingViewController: UIViewController {
     var dataDisplayManager: SpendingDataDisplayManagerInput!
 
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var saveButton: UIButton! {
-        didSet {
-            saveButton.layer.cornerRadius = saveButton.frame.height / 4
-        }
-    }
+    @IBOutlet weak var activityIndicatorView: UIActivityIndicatorView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -69,6 +65,14 @@ extension SpendingViewController: SpendingViewInput {
     
     func showData(_ cellObjects: [TableCellObject]) {
         dataDisplayManager.showData(cellObjects)
+    }
+    
+    func showLoader() {
+        activityIndicatorView.startAnimating()
+    }
+    
+    func hideLoader() {
+        activityIndicatorView.stopAnimating()
     }
     
 }

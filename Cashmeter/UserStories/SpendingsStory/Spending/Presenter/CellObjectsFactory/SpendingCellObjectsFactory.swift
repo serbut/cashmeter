@@ -34,11 +34,26 @@ extension SpendingCellObjectsFactory: SpendingCellObjectsFactoryInput {
         dateTableViewCellObject.date = spendingInfo.date
         cellObjects.append(dateTableViewCellObject)
         
-        var receiptTableViewCellObject = AddReceiptTableViewCellObject()
-        receiptTableViewCellObject.cellClass = AddReceiptTableViewCell.self
-        cellObjects.append(receiptTableViewCellObject)
+        if let receiptItems = spendingInfo.receiptItems {
+            var receiptItemsTableViewCellObject = SpendingReceiptItemsTableViewCellObject()
+            receiptItemsTableViewCellObject.cellClass = SpendingReceiptItemsTableViewCell.self
+            receiptItemsTableViewCellObject.receiptItemsDetailsText = textForReceiptItems(receiptItems)
+            cellObjects.append(receiptItemsTableViewCellObject)
+        } else {
+            var receiptTableViewCellObject = AddReceiptTableViewCellObject()
+            receiptTableViewCellObject.cellClass = AddReceiptTableViewCell.self
+            cellObjects.append(receiptTableViewCellObject)
+        }
         
         return cellObjects
+    }
+    
+    private func textForReceiptItems(_ receiptItems: [ReceiptItemInfo]) -> String {
+        var text = ""
+        for item in receiptItems {
+            text.append(item.debugDescription)
+        }
+        return text
     }
     
 }

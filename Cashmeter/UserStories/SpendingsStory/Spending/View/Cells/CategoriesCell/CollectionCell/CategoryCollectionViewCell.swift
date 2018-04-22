@@ -13,11 +13,6 @@ class CategoryCollectionViewCell: UICollectionViewCell, HasNib {
     @IBOutlet weak var categoryImageView: UIImageView!
     @IBOutlet weak var categoryTitleLabel: UILabel!
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
 }
 
 extension CategoryCollectionViewCell: CollectionCellInput {

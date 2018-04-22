@@ -72,6 +72,9 @@
 		079E063A208CE7160072240F /* ReceiptInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079E0639208CE7160072240F /* ReceiptInfo.swift */; };
 		079E063C208CEA3E0072240F /* ServiceResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079E063B208CEA3E0072240F /* ServiceResponse.swift */; };
 		079E063E208CEC870072240F /* SpendingInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079E063D208CEC870072240F /* SpendingInteractorOutput.swift */; };
+		079E0642208CF3CA0072240F /* SpendingReceiptItemsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079E0640208CF3CA0072240F /* SpendingReceiptItemsTableViewCell.swift */; };
+		079E0643208CF3CA0072240F /* SpendingReceiptItemsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 079E0641208CF3CA0072240F /* SpendingReceiptItemsTableViewCell.xib */; };
+		079E0645208CF3F00072240F /* SpendingReceiptItemsTableViewCellObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079E0644208CF3F00072240F /* SpendingReceiptItemsTableViewCellObject.swift */; };
 		07B8D0A6202334470064AFF1 /* TestCoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B8D0A5202334470064AFF1 /* TestCoreDataStack.swift */; };
 		07B8D0A8202343530064AFF1 /* SpendingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B8D0A7202343530064AFF1 /* SpendingService.swift */; };
 		07B8D0BA202349820064AFF1 /* SpendingServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B8D0B9202349820064AFF1 /* SpendingServiceTests.swift */; };
@@ -183,6 +186,9 @@
 		079E0639208CE7160072240F /* ReceiptInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptInfo.swift; sourceTree = "<group>"; };
 		079E063B208CEA3E0072240F /* ServiceResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceResponse.swift; sourceTree = "<group>"; };
 		079E063D208CEC870072240F /* SpendingInteractorOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendingInteractorOutput.swift; sourceTree = "<group>"; };
+		079E0640208CF3CA0072240F /* SpendingReceiptItemsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendingReceiptItemsTableViewCell.swift; sourceTree = "<group>"; };
+		079E0641208CF3CA0072240F /* SpendingReceiptItemsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SpendingReceiptItemsTableViewCell.xib; sourceTree = "<group>"; };
+		079E0644208CF3F00072240F /* SpendingReceiptItemsTableViewCellObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendingReceiptItemsTableViewCellObject.swift; sourceTree = "<group>"; };
 		07B8D0A5202334470064AFF1 /* TestCoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCoreDataStack.swift; sourceTree = "<group>"; };
 		07B8D0A7202343530064AFF1 /* SpendingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendingService.swift; sourceTree = "<group>"; };
 		07B8D0B9202349820064AFF1 /* SpendingServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendingServiceTests.swift; sourceTree = "<group>"; };
@@ -472,6 +478,7 @@
 				0773D35C2083416600BB12ED /* CategoriesCell */,
 				075ED069208BAEEF009AE6E8 /* DateCell */,
 				0773D35D2083419300BB12ED /* AddReceiptCell */,
+				079E063F208CF3980072240F /* ReceiptItemsCell */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -601,6 +608,16 @@
 				07EC0007208681A3004E442B /* ReceiptServiceInput.swift */,
 			);
 			path = ReceiptService;
+			sourceTree = "<group>";
+		};
+		079E063F208CF3980072240F /* ReceiptItemsCell */ = {
+			isa = PBXGroup;
+			children = (
+				079E0640208CF3CA0072240F /* SpendingReceiptItemsTableViewCell.swift */,
+				079E0641208CF3CA0072240F /* SpendingReceiptItemsTableViewCell.xib */,
+				079E0644208CF3F00072240F /* SpendingReceiptItemsTableViewCellObject.swift */,
+			);
+			path = ReceiptItemsCell;
 			sourceTree = "<group>";
 		};
 		07B8D0A4202334290064AFF1 /* Services */ = {
@@ -850,6 +867,7 @@
 				0773D361208341BB00BB12ED /* AmountTableViewCell.xib in Resources */,
 				0773D3592083407E00BB12ED /* SpendingViewController.xib in Resources */,
 				075ED06D208BAF1E009AE6E8 /* SpendingDateTableViewCell.xib in Resources */,
+				079E0643208CF3CA0072240F /* SpendingReceiptItemsTableViewCell.xib in Resources */,
 				0773D35520829E5700BB12ED /* SpendingListTableViewCell.xib in Resources */,
 				073DE00920035DD4000CAD7C /* Images.xcassets in Resources */,
 				0743AF682086938F0026C5B9 /* CategoryCollectionViewCell.xib in Resources */,
@@ -1008,6 +1026,7 @@
 				0773D38C208359FC00BB12ED /* SpendingModuleOutput.swift in Sources */,
 				073DE00720035DD4000CAD7C /* Cashmeter.xcdatamodeld in Sources */,
 				07C0FF0C20823D2D00CA3FD0 /* NetworkProvider.swift in Sources */,
+				079E0645208CF3F00072240F /* SpendingReceiptItemsTableViewCellObject.swift in Sources */,
 				0773D3A020836EFC00BB12ED /* ServicesAssembly.swift in Sources */,
 				07C0FF0820823C2A00CA3FD0 /* NetworkProviderProtocol.swift in Sources */,
 				0773D3A4208370F400BB12ED /* SpendingInteractorInput.swift in Sources */,
@@ -1052,6 +1071,7 @@
 				9AF449E4ED17FBC2B0E0A2CF /* SpendingsListInteractor.swift in Sources */,
 				9FB88F2D01FF9A780DC984A0 /* SpendingsListRouterInput.swift in Sources */,
 				5B871DC9823E5DC0D7E88EA0 /* SpendingsListRouter.swift in Sources */,
+				079E0642208CF3CA0072240F /* SpendingReceiptItemsTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

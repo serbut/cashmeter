@@ -41,7 +41,7 @@ extension SpendingService: SpendingServiceInput {
         spending.amount = spendingInfo.amount
         spending.category = spendingInfo.category
         spending.date = spendingInfo.date
-        spending.details = spendingInfo.details
+        spending.details = spendingInfo.comment
         
         managedObjectContext.perform {
             do {
