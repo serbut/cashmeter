@@ -79,6 +79,9 @@ extension SpendingDataDisplayManager: UITableViewDataSource {
         else if let cell = cell as? SpendingDateTableViewCell {
             cell.delegate = self
         }
+        else if let cell = cell as? CategoriesTableViewCell {
+            cell.delegate = self
+        }
         
         return cell as! UITableViewCell
     }
@@ -109,6 +112,16 @@ extension SpendingDataDisplayManager: SpendingDateTableViewCellDelegate {
     
     func didChangeDateValue(_ value: Date?) {
         output.didChangeDateValue(value)
+    }
+    
+}
+
+// MARK: CategoriesTableViewCellDelegate
+
+extension SpendingDataDisplayManager: CategoriesTableViewCellDelegate {
+    
+    func didSelectCategory(_ category: Category?) {
+        output.didSelectCategory(category)
     }
     
 }

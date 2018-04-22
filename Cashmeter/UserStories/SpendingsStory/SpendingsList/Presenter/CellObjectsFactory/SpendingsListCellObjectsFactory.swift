@@ -8,13 +8,16 @@
 
 final class SpendingsListCellObjectsFactory: SpendingsListCellObjectsFactoryInput {
     
+    let noCategoryTitle = "No category"
+    let noCategoryImageName = "undefined_category"
+    
     func convert(spending: Spending) -> TableCellObject {
         let cellObject = SpendingListTableViewCellObject()
         
         cellObject.cellClass = SpendingListTableViewCell.self
         cellObject.amount = spending.amount
-        cellObject.categoryName = spending.category?.title
-        cellObject.categoryImageName = spending.category?.image_name
+        cellObject.categoryName = spending.category?.title ?? noCategoryTitle
+        cellObject.categoryImageName = spending.category?.image_name ?? noCategoryImageName
         
         return cellObject
     }

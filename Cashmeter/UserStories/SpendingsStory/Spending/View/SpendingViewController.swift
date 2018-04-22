@@ -95,4 +95,8 @@ extension SpendingViewController: SpendingDataDisplayManagerOutput {
         output.didChangeDateValue(value)
     }
     
+    func didSelectCategory(_ category: Category?) {
+        output.didSelectCategory(category)
+    }
+    
 }

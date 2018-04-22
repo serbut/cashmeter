@@ -64,6 +64,7 @@ extension SpendingsListDisplayManager: UITableViewDataSource {
 extension SpendingsListDisplayManager: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
         output.didSelectRowAt(indexPath: indexPath)
     }
     

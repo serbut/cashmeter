@@ -39,7 +39,6 @@ extension SpendingPresenter: SpendingViewOutput {
         var cellObjects: [TableCellObject] = []
         let categories = interactor.requestCategories()
         cellObjects = cellObjectsFactory.convert(spendingInfo: spendingInfo, categories: categories)
-        spendingInfo.category = categories.first
         view.showData(cellObjects)
     }
     
@@ -70,6 +69,10 @@ extension SpendingPresenter: SpendingViewOutput {
         spendingInfo.date = value
     }
     
+    func didSelectCategory(_ category: Category?) {
+        spendingInfo.category = category
+    }
+    
 }
 
 // MARK: SpendingInteractorOutput
@@ -85,7 +88,6 @@ extension SpendingPresenter: SpendingInteractorOutput {
         var cellObjects: [TableCellObject] = []
         let categories = interactor.requestCategories()
         cellObjects = cellObjectsFactory.convert(spendingInfo: spendingInfo, categories: categories)
-        spendingInfo.category = categories.first
         view.showData(cellObjects)
     }
     

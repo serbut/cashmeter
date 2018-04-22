@@ -8,11 +8,26 @@
 
 import UIKit
 
+protocol CategoriesTableViewCellDelegate: class {
+    
+    /**
+     Метод сообщает о том, что была выбрана категория.
+     
+     @param category - выбранная категория.
+     */
+    func didSelectCategory(_ category: Category?)
+    
+}
+
 final class CategoriesTableViewCell: UITableViewCell, HasNib {
 
+    weak var delegate: CategoriesTableViewCellDelegate!
+    
     @IBOutlet weak var categoriesCollectionView: UICollectionView!
+    
     var categories: [Category]!
     var alreadyRegisteredCells: Set<String> = []
+    var selectedCategoryIndex: IndexPath?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -60,8 +75,17 @@ extension CategoriesTableViewCell: UICollectionViewDataSource {
 extension CategoriesTableViewCell: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let cell = collectionView.cellForItem(at: indexPath) as! CategoryCollectionViewCell
-        cell.backgroundColor = .blue
+        if let selectedCategoryIndex = selectedCategoryIndex {
+            collectionView.deselectItem(at: selectedCategoryIndex, animated: true)
+        }
+        
+        if (indexPath != selectedCategoryIndex) {
+            selectedCategoryIndex = indexPath
+            delegate.didSelectCategory(categories[indexPath.row])
+        } else {
+            selectedCategoryIndex = nil
+            delegate.didSelectCategory(nil)
+        }
     }
     
 }
