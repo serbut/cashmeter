@@ -1,5 +1,5 @@
 //
-//  SpendingTableViewCell.swift
+//  SpendingListTableViewCell.swift
 //  Cashmeter
 //
 //  Created by Sergey Butorin on 14/04/2018.
@@ -8,9 +8,9 @@
 
 import UIKit
 
-final class SpendingTableViewCell: UITableViewCell, HasNib {
+final class SpendingListTableViewCell: UITableViewCell, HasNib {
 
-    @IBOutlet weak var categoryIconLabel: UILabel!
+    @IBOutlet weak var categoryIconImageView: UIImageView!
     @IBOutlet weak var categoryNameLabel: UILabel!
     @IBOutlet weak var amountLabel: UILabel!
     
@@ -23,14 +23,16 @@ final class SpendingTableViewCell: UITableViewCell, HasNib {
 
 // MARK: TableCellInput
 
-extension SpendingTableViewCell: TableCellInput {
+extension SpendingListTableViewCell: TableCellInput {
     
     func setup(with cellObject: TableCellObject) {
-        guard let cellObject = cellObject as? SpendingTableViewCellObject else { return }
+        guard let cellObject = cellObject as? SpendingListTableViewCellObject else { return }
         
-        categoryIconLabel.text = ":)"
         categoryNameLabel.text = cellObject.categoryName
-        amountLabel.text = "\(cellObject.amount) ₽"
+        amountLabel.text = "\(cellObject.amount!) ₽"
+        if let imageName = cellObject.categoryImageName {
+            categoryIconImageView.image = UIImage(named: imageName)
+        }
     }
     
 }

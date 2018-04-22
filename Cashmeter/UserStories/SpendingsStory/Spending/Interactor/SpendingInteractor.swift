@@ -8,7 +8,8 @@
 
 final class SpendingInteractor {
     
-    var receiptService: ReceiptService!
+    var receiptService: ReceiptServiceInput!
+    var spendingService: SpendingServiceInput!
     var categoryService: CategoryService!
     
 }
@@ -23,6 +24,10 @@ extension SpendingInteractor: SpendingInteractorInput {
     
     func requestCategories() -> [Category] {
         return categoryService.getCategories()
+    }
+    
+    func addSpending(spendingInfo: SpendingInfo) {
+        spendingService.addSpending(withInfo: spendingInfo)
     }
     
 }

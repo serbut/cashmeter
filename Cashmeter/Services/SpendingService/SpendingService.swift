@@ -9,8 +9,10 @@
 import Foundation
 import CoreData
 
-class SpendingService {
+final class SpendingService {
+    
     // MARK: Properties
+    
     let managedObjectContext: NSManagedObjectContext
     let coreDataStack: CoreDataStack
     
@@ -18,19 +20,7 @@ class SpendingService {
         self.managedObjectContext = managedObjectContext
         self.coreDataStack = coreDataStack
     }
-    
-    func addSpending(withAmount amount: Double,
-                     category: Category,
-                     details: String?) -> Spending {
-        let spending = Spending(context: managedObjectContext)
-        spending.amount = amount
-        spending.category = category
-        spending.details = details
-        spending.date = Date()
-        
-        return spending
-    }
-    
+   
     func updateSpending(_ spending: Spending,
                         withAmount amount: Double,
                         category: Category,
@@ -39,4 +29,28 @@ class SpendingService {
         spending.category = category
         spending.details = details
     }
+    
+}
+
+// MARK: SpendingServiceInput
+
+extension SpendingService: SpendingServiceInput {
+    
+    func addSpending(withInfo spendingInfo: SpendingInfo) {
+        let spending = Spending(context: managedObjectContext)
+        spending.amount = spendingInfo.amount
+        spending.category = spendingInfo.category
+        spending.date = spendingInfo.date
+        spending.details = spendingInfo.details
+        
+        managedObjectContext.perform {
+            do {
+                try self.managedObjectContext.save()
+            } catch let error as NSError {
+                fatalError(error.localizedDescription)
+            }
+            self.coreDataStack.saveContext()
+        }
+    }
+    
 }

@@ -8,8 +8,19 @@
 
 import UIKit
 
+protocol AmountTableViewCellDelegate: class {
+    
+    /**
+     Метод сообщает о том, что сумма была изменена.
+     */
+    func didChangeAmountValue(_ value: String?)
+    
+}
+
 class AmountTableViewCell: UITableViewCell, HasNib {
 
+    weak var delegate: AmountTableViewCellDelegate!
+    
     @IBOutlet weak var amountTextField: UITextField!
     @IBOutlet weak var currencyLabel: UILabel!
     
@@ -18,6 +29,9 @@ class AmountTableViewCell: UITableViewCell, HasNib {
         // Initialization code
     }
     
+    @IBAction func didChangeAmount(_ sender: UITextField) {
+        delegate.didChangeAmountValue(sender.text)
+    }
 }
 
 extension AmountTableViewCell: TableCellInput {

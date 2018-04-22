@@ -73,6 +73,13 @@ extension SpendingDataDisplayManager: UITableViewDataSource {
         
         cell.setup(with: cellObjects[indexPath.row])
         
+        if let cell = cell as? AmountTableViewCell {
+            cell.delegate = self
+        }
+        else if let cell = cell as? SpendingDateTableViewCell {
+            cell.delegate = self
+        }
+        
         return cell as! UITableViewCell
     }
     
@@ -82,6 +89,26 @@ extension SpendingDataDisplayManager: UITableViewDataSource {
             return height
         }
         return UITableViewAutomaticDimension
+    }
+    
+}
+
+// MARK: AmountTableViewCellDelegate
+
+extension SpendingDataDisplayManager: AmountTableViewCellDelegate {
+    
+    func didChangeAmountValue(_ value: String?) {
+        output.didChangeAmountValue(value)
+    }
+    
+}
+
+// MARK: SpendingDateTableViewCellDelegate
+
+extension SpendingDataDisplayManager: SpendingDateTableViewCellDelegate {
+    
+    func didChangeDateValue(_ value: Date?) {
+        output.didChangeDateValue(value)
     }
     
 }

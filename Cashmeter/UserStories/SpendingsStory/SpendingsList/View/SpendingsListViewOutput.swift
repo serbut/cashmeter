@@ -35,8 +35,15 @@ protocol SpendingsListViewOutput: class {
     func requestCellObject(at indexPath: IndexPath) -> TableCellObject
     
     /**
-     Метод сообщает о том, что была нажата кнопка добавления покупки.
+     Метод сообщает о том, что была нажата ячейка.
+     
+     @param indexPath - индекс выбранной ячейки.
      */
-    func didTapAddSpendingButton()
+    func didSelectRowAt(indexPath: IndexPath)
+    
+    /**
+     Метод сообщает о том, что была нажата кнопка фильтра.
+     */
+    func didTapFilterButton()
     
 }

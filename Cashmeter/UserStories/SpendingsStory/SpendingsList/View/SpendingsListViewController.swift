@@ -18,13 +18,16 @@ final class SpendingsListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(didTapAddSpendingButton))
+         self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "filter_bar_button"),
+                                                                  style: .plain,
+                                                                  target: self,
+                                                                  action: #selector(didTapFilterButton))
         
         output.viewDidLoad()
     }
 
-    @objc func didTapAddSpendingButton() {
-        output.didTapAddSpendingButton()
+    @objc func didTapFilterButton() {
+        output.didTapFilterButton()
     }
     
 }
@@ -50,6 +53,12 @@ extension SpendingsListViewController: SpendingsListViewInput {
 // MARK: SpendingsListDisplayManagerOutput
 
 extension SpendingsListViewController: SpendingsListDisplayManagerOutput {
+    
+    func didSelectRowAt(indexPath: IndexPath) {
+        output.didSelectRowAt(indexPath: indexPath)
+    }
+    
+    // TODO: rewrite this block
     
     func requestSectionsCount() -> Int {
         return output.requestSectionsCount()

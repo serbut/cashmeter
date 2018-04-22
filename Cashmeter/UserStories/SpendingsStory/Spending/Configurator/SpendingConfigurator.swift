@@ -50,7 +50,9 @@ final class SpendingConfigurator {
         let interactor = SpendingInteractor()
         
         interactor.receiptService = servicesAssembly.receiptService()
-        interactor.categoryService = servicesAssembly.categoryService()
+        let (spendingService, categoryService) = servicesAssembly.spendingAndCategoryService()
+        interactor.spendingService = spendingService
+        interactor.categoryService = categoryService
         
         return interactor
     }

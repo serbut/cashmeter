@@ -6,6 +6,8 @@
 //  Copyright © 2018 Sergey Butorin. All rights reserved.
 //
 
+import Foundation
+
 protocol SpendingDataDisplayManagerOutput: class {
     
     /**
@@ -18,4 +20,14 @@ protocol SpendingDataDisplayManagerOutput: class {
      */
     func didTriggerScanQrAction()
 
+    /**
+     Метод сообщает о том, что сумма была изменена.
+     */
+    func didChangeAmountValue(_ value: String?)
+    
+    /**
+     Метод сообщает о том, что дата была изменена.
+     */
+    func didChangeDateValue(_ value: Date?)
+    
 }

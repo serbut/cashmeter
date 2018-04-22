@@ -7,10 +7,12 @@
 //
 
 protocol SpendingsListRouterInput: class {
-	
+    
     /**
-      Метод открывает модуль создания покупки.
+     Метод открывает модуль покупки.
+     
+     @param spending - данные о покупке.
      */
-    func showNewSpendingModule()
+    func showSpendingModule(_ spending: Spending)
     
 }

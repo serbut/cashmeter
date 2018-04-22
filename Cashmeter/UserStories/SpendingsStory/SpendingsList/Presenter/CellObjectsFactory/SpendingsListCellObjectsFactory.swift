@@ -9,11 +9,12 @@
 final class SpendingsListCellObjectsFactory: SpendingsListCellObjectsFactoryInput {
     
     func convert(spending: Spending) -> TableCellObject {
-        let cellObject = SpendingTableViewCellObject()
+        let cellObject = SpendingListTableViewCellObject()
         
-        cellObject.cellClass = SpendingTableViewCell.self
+        cellObject.cellClass = SpendingListTableViewCell.self
         cellObject.amount = spending.amount
         cellObject.categoryName = spending.category?.title
+        cellObject.categoryImageName = spending.category?.image_name
         
         return cellObject
     }

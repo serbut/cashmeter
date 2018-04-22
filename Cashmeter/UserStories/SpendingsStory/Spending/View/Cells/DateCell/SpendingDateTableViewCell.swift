@@ -8,7 +8,18 @@
 
 import UIKit
 
+protocol SpendingDateTableViewCellDelegate: class {
+    
+    /**
+     Метод сообщает о том, что дата была изменена.
+     */
+    func didChangeDateValue(_ value: Date?)
+    
+}
+
 final class SpendingDateTableViewCell: UITableViewCell, HasNib {
+    
+    weak var delegate: SpendingDateTableViewCellDelegate!
 
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var datePicker: UIDatePicker!
@@ -19,7 +30,8 @@ final class SpendingDateTableViewCell: UITableViewCell, HasNib {
     }
     
     @IBAction func datePickerValueChanged(_ sender: UIDatePicker) {
-        dateLabel.text = datePicker.date.description
+        delegate.didChangeDateValue(sender.date)
+        dateLabel.text = sender.date.description
     }
 }
 

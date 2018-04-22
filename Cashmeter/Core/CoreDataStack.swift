@@ -47,4 +47,5 @@ extension CoreDataStack {
             fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
         }
     }
+    
 }

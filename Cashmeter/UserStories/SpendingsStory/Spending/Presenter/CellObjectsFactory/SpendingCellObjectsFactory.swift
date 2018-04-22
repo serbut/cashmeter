@@ -14,31 +14,14 @@ final class SpendingCellObjectsFactory {
 
 extension SpendingCellObjectsFactory: SpendingCellObjectsFactoryInput {
     
-    func convert(spending: Spending, categories: [Category]) -> [TableCellObject] {
+    func convert(spendingInfo: SpendingInfo, categories: [Category]) -> [TableCellObject] {
         var cellObjects: [TableCellObject] = []
         
         var amountTableViewCellObject = AmountTableViewCellObject()
         amountTableViewCellObject.cellClass = AmountTableViewCell.self
-        amountTableViewCellObject.amount = spending.amount
-        cellObjects.append(amountTableViewCellObject)
-        
-        var categoriesTableViewCellObject = CategoriesTableViewCellObject()
-        categoriesTableViewCellObject.cellClass = CategoriesTableViewCell.self
-        categoriesTableViewCellObject.categories = categories
-        cellObjects.append(categoriesTableViewCellObject)
-        
-        var receiptTableViewCellObject = AddReceiptTableViewCellObject()
-        receiptTableViewCellObject.cellClass = AddReceiptTableViewCell.self
-        cellObjects.append(receiptTableViewCellObject)
-        
-        return cellObjects
-    }
-    
-    func createForNewSpending(categories: [Category]) -> [TableCellObject] {
-        var cellObjects: [TableCellObject] = []
-
-        var amountTableViewCellObject = AmountTableViewCellObject()
-        amountTableViewCellObject.cellClass = AmountTableViewCell.self
+        if spendingInfo.amount != 0 {
+            amountTableViewCellObject.amount = spendingInfo.amount
+        }
         cellObjects.append(amountTableViewCellObject)
         
         var categoriesTableViewCellObject = CategoriesTableViewCellObject()
@@ -48,6 +31,7 @@ extension SpendingCellObjectsFactory: SpendingCellObjectsFactoryInput {
         
         var dateTableViewCellObject = SpendingDateTableViewCellObject()
         dateTableViewCellObject.cellClass = SpendingDateTableViewCell.self
+        dateTableViewCellObject.date = spendingInfo.date
         cellObjects.append(dateTableViewCellObject)
         
         var receiptTableViewCellObject = AddReceiptTableViewCellObject()

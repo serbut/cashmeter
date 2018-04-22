@@ -36,7 +36,7 @@
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
                     <connections>
-                        <action selector="didTapSaveButton:" destination="-1" eventType="touchUpInside" id="cft-FB-Fre"/>
+                        <action selector="didTapSaveButton:" destination="-1" eventType="touchUpInside" id="avw-ks-teI"/>
                     </connections>
                 </button>
             </subviews>

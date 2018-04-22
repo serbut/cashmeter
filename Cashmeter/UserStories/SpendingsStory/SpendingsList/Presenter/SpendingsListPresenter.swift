@@ -31,6 +31,12 @@ extension SpendingsListPresenter: SpendingsListViewOutput {
         view.setupInitialState()
     }
     
+    func didSelectRowAt(indexPath: IndexPath) {
+        let spending = interactor.requestSpendingObject(at: indexPath)
+        // TODO: Move to completion
+        router.showSpendingModule(spending)
+    }
+    
     func requestSectionsCount() -> Int {
         return interactor.requestSectionsCount()
     }
@@ -44,8 +50,8 @@ extension SpendingsListPresenter: SpendingsListViewOutput {
         return cellObjectsFactory.convert(spending: spending)
     }
     
-    func didTapAddSpendingButton() {
-        router.showNewSpendingModule()
+    func didTapFilterButton() {
+        print("Filter")
     }
 
 }

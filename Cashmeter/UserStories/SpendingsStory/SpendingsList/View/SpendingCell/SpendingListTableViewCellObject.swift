@@ -1,5 +1,5 @@
 //
-//  SpendingTableViewCellObject.swift
+//  SpendingListTableViewCellObject.swift
 //  Cashmeter
 //
 //  Created by Sergey Butorin on 21/04/2018.
@@ -8,11 +8,11 @@
 
 import UIKit
 
-final class SpendingTableViewCellObject: TableCellObject {
+final class SpendingListTableViewCellObject: TableCellObject {
     
     var cellClass: UITableViewCell.Type!
 
-    var categoryImageName: String!
+    var categoryImageName: String?
     var categoryName: String!
     var amount: Double!
     

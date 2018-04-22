@@ -17,7 +17,7 @@
 		0743AF672086938F0026C5B9 /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0743AF652086938F0026C5B9 /* CategoryCollectionViewCell.swift */; };
 		0743AF682086938F0026C5B9 /* CategoryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0743AF662086938F0026C5B9 /* CategoryCollectionViewCell.xib */; };
 		0743AF712086A01B0026C5B9 /* CollectionRegisterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0743AF702086A01B0026C5B9 /* CollectionRegisterCell.swift */; };
-		0743AF78208B8BB10026C5B9 /* SpendingTableViewCellObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0743AF77208B8BB10026C5B9 /* SpendingTableViewCellObject.swift */; };
+		0743AF78208B8BB10026C5B9 /* SpendingListTableViewCellObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0743AF77208B8BB10026C5B9 /* SpendingListTableViewCellObject.swift */; };
 		0743AF7A208B98E90026C5B9 /* SpendingsListService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0743AF79208B98E90026C5B9 /* SpendingsListService.swift */; };
 		0743AF7D208B990F0026C5B9 /* SpendingsListServiceInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0743AF7C208B990F0026C5B9 /* SpendingsListServiceInput.swift */; };
 		074E3243207EABD100C78501 /* ReceiptService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074E3242207EABD100C78501 /* ReceiptService.swift */; };
@@ -25,8 +25,8 @@
 		075ED06D208BAF1E009AE6E8 /* SpendingDateTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 075ED06B208BAF1E009AE6E8 /* SpendingDateTableViewCell.xib */; };
 		075ED06F208BAF2F009AE6E8 /* SpendingDateTableViewCellObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075ED06E208BAF2F009AE6E8 /* SpendingDateTableViewCellObject.swift */; };
 		076CFE87202C9A450021E452 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076CFE86202C9A450021E452 /* MainTabBarViewController.swift */; };
-		0773D35420829E5700BB12ED /* SpendingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0773D35220829E5700BB12ED /* SpendingTableViewCell.swift */; };
-		0773D35520829E5700BB12ED /* SpendingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0773D35320829E5700BB12ED /* SpendingTableViewCell.xib */; };
+		0773D35420829E5700BB12ED /* SpendingListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0773D35220829E5700BB12ED /* SpendingListTableViewCell.swift */; };
+		0773D35520829E5700BB12ED /* SpendingListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0773D35320829E5700BB12ED /* SpendingListTableViewCell.xib */; };
 		0773D3582083407E00BB12ED /* SpendingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0773D3562083407E00BB12ED /* SpendingViewController.swift */; };
 		0773D3592083407E00BB12ED /* SpendingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0773D3572083407E00BB12ED /* SpendingViewController.xib */; };
 		0773D360208341BB00BB12ED /* AmountTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0773D35E208341BB00BB12ED /* AmountTableViewCell.swift */; };
@@ -36,7 +36,6 @@
 		0773D36D20834B3900BB12ED /* SpendingDataDisplayManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0773D36C20834B3900BB12ED /* SpendingDataDisplayManager.swift */; };
 		0773D36F20834B5100BB12ED /* SpendingDataDisplayManagerInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0773D36E20834B5100BB12ED /* SpendingDataDisplayManagerInput.swift */; };
 		0773D37120834B5B00BB12ED /* SpendingDataDisplayManagerOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0773D37020834B5B00BB12ED /* SpendingDataDisplayManagerOutput.swift */; };
-		0773D37420834BC900BB12ED /* SpendingButtonType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0773D37320834BC900BB12ED /* SpendingButtonType.swift */; };
 		0773D37820834CCB00BB12ED /* CellObjectProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0773D37720834CCB00BB12ED /* CellObjectProtocol.swift */; };
 		0773D37A2083513300BB12ED /* TableRegisterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0773D3792083513300BB12ED /* TableRegisterCell.swift */; };
 		0773D37E2083541100BB12ED /* HasNib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0773D37D2083541100BB12ED /* HasNib.swift */; };
@@ -65,6 +64,10 @@
 		078037DE2023542A00AA651C /* CategoryServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078037DD2023542A00AA651C /* CategoryServiceTests.swift */; };
 		07843B8E208BC694001DBABF /* CategoriesTableViewCellObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07843B8D208BC694001DBABF /* CategoriesTableViewCellObject.swift */; };
 		07843B90208BCC6D001DBABF /* CategoryCollectionViewCellObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07843B8F208BCC6D001DBABF /* CategoryCollectionViewCellObject.swift */; };
+		079E062C208C900F0072240F /* SpendingServiceInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079E062B208C900F0072240F /* SpendingServiceInput.swift */; };
+		079E062E208C90BA0072240F /* SpendingInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079E062D208C90BA0072240F /* SpendingInfo.swift */; };
+		079E0630208CA4160072240F /* SpendingButtonType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079E062F208CA4150072240F /* SpendingButtonType.swift */; };
+		079E0632208CA5660072240F /* CategoryInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079E0631208CA5660072240F /* CategoryInfo.swift */; };
 		07B8D0A6202334470064AFF1 /* TestCoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B8D0A5202334470064AFF1 /* TestCoreDataStack.swift */; };
 		07B8D0A8202343530064AFF1 /* SpendingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B8D0A7202343530064AFF1 /* SpendingService.swift */; };
 		07B8D0BA202349820064AFF1 /* SpendingServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B8D0B9202349820064AFF1 /* SpendingServiceTests.swift */; };
@@ -75,7 +78,6 @@
 		07EC0008208681A3004E442B /* ReceiptServiceInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EC0007208681A3004E442B /* ReceiptServiceInput.swift */; };
 		07EC000B2086836D004E442B /* BaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EC000A2086836D004E442B /* BaseService.swift */; };
 		07EC000E20868581004E442B /* Receipt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EC000D20868581004E442B /* Receipt.swift */; };
-		07EDBFAA20828B7E009229DC /* SpendingListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EDBFA820828B7E009229DC /* SpendingListViewController.swift */; };
 		07EDBFAB20828B7E009229DC /* SpendingsListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07EDBFA920828B7E009229DC /* SpendingsListViewController.xib */; };
 		179F034FA193280B14B9776D /* SpendingsListInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACFD1A6EA40796D477271BEA /* SpendingsListInteractorInput.swift */; };
 		27AD6A7D0B629DB07C019AE0 /* SpendingsListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E61ED4B6F9015FF13F6BB2D /* SpendingsListPresenter.swift */; };
@@ -122,7 +124,7 @@
 		0743AF652086938F0026C5B9 /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		0743AF662086938F0026C5B9 /* CategoryCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryCollectionViewCell.xib; sourceTree = "<group>"; };
 		0743AF702086A01B0026C5B9 /* CollectionRegisterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionRegisterCell.swift; sourceTree = "<group>"; };
-		0743AF77208B8BB10026C5B9 /* SpendingTableViewCellObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendingTableViewCellObject.swift; sourceTree = "<group>"; };
+		0743AF77208B8BB10026C5B9 /* SpendingListTableViewCellObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendingListTableViewCellObject.swift; sourceTree = "<group>"; };
 		0743AF79208B98E90026C5B9 /* SpendingsListService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendingsListService.swift; sourceTree = "<group>"; };
 		0743AF7C208B990F0026C5B9 /* SpendingsListServiceInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendingsListServiceInput.swift; sourceTree = "<group>"; };
 		074E3242207EABD100C78501 /* ReceiptService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptService.swift; sourceTree = "<group>"; };
@@ -130,8 +132,8 @@
 		075ED06B208BAF1E009AE6E8 /* SpendingDateTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SpendingDateTableViewCell.xib; sourceTree = "<group>"; };
 		075ED06E208BAF2F009AE6E8 /* SpendingDateTableViewCellObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendingDateTableViewCellObject.swift; sourceTree = "<group>"; };
 		076CFE86202C9A450021E452 /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
-		0773D35220829E5700BB12ED /* SpendingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendingTableViewCell.swift; sourceTree = "<group>"; };
-		0773D35320829E5700BB12ED /* SpendingTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SpendingTableViewCell.xib; sourceTree = "<group>"; };
+		0773D35220829E5700BB12ED /* SpendingListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendingListTableViewCell.swift; sourceTree = "<group>"; };
+		0773D35320829E5700BB12ED /* SpendingListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SpendingListTableViewCell.xib; sourceTree = "<group>"; };
 		0773D3562083407E00BB12ED /* SpendingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendingViewController.swift; sourceTree = "<group>"; };
 		0773D3572083407E00BB12ED /* SpendingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SpendingViewController.xib; sourceTree = "<group>"; };
 		0773D35E208341BB00BB12ED /* AmountTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmountTableViewCell.swift; sourceTree = "<group>"; };
@@ -141,7 +143,6 @@
 		0773D36C20834B3900BB12ED /* SpendingDataDisplayManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendingDataDisplayManager.swift; sourceTree = "<group>"; };
 		0773D36E20834B5100BB12ED /* SpendingDataDisplayManagerInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendingDataDisplayManagerInput.swift; sourceTree = "<group>"; };
 		0773D37020834B5B00BB12ED /* SpendingDataDisplayManagerOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendingDataDisplayManagerOutput.swift; sourceTree = "<group>"; };
-		0773D37320834BC900BB12ED /* SpendingButtonType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendingButtonType.swift; sourceTree = "<group>"; };
 		0773D37720834CCB00BB12ED /* CellObjectProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellObjectProtocol.swift; sourceTree = "<group>"; };
 		0773D3792083513300BB12ED /* TableRegisterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableRegisterCell.swift; sourceTree = "<group>"; };
 		0773D37D2083541100BB12ED /* HasNib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HasNib.swift; sourceTree = "<group>"; };
@@ -170,6 +171,10 @@
 		078037DD2023542A00AA651C /* CategoryServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryServiceTests.swift; sourceTree = "<group>"; };
 		07843B8D208BC694001DBABF /* CategoriesTableViewCellObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesTableViewCellObject.swift; sourceTree = "<group>"; };
 		07843B8F208BCC6D001DBABF /* CategoryCollectionViewCellObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCellObject.swift; sourceTree = "<group>"; };
+		079E062B208C900F0072240F /* SpendingServiceInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendingServiceInput.swift; sourceTree = "<group>"; };
+		079E062D208C90BA0072240F /* SpendingInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendingInfo.swift; sourceTree = "<group>"; };
+		079E062F208CA4150072240F /* SpendingButtonType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpendingButtonType.swift; sourceTree = "<group>"; };
+		079E0631208CA5660072240F /* CategoryInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryInfo.swift; sourceTree = "<group>"; };
 		07B8D0A5202334470064AFF1 /* TestCoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCoreDataStack.swift; sourceTree = "<group>"; };
 		07B8D0A7202343530064AFF1 /* SpendingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendingService.swift; sourceTree = "<group>"; };
 		07B8D0B9202349820064AFF1 /* SpendingServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendingServiceTests.swift; sourceTree = "<group>"; };
@@ -180,7 +185,6 @@
 		07EC0007208681A3004E442B /* ReceiptServiceInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptServiceInput.swift; sourceTree = "<group>"; };
 		07EC000A2086836D004E442B /* BaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseService.swift; sourceTree = "<group>"; };
 		07EC000D20868581004E442B /* Receipt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Receipt.swift; sourceTree = "<group>"; };
-		07EDBFA820828B7E009229DC /* SpendingListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendingListViewController.swift; sourceTree = "<group>"; };
 		07EDBFA920828B7E009229DC /* SpendingsListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SpendingsListViewController.xib; sourceTree = "<group>"; };
 		1356556D4DC764BDC6709CE7 /* SpendingsListInteractorOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SpendingsListInteractorOutput.swift; sourceTree = "<group>"; };
 		19ECDDF716CE6C42FF7DEBC4 /* SpendingsListViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SpendingsListViewController.swift; sourceTree = "<group>"; };
@@ -230,6 +234,7 @@
 			isa = PBXGroup;
 			children = (
 				07EC000C2086856F004E442B /* Receipt */,
+				079E0633208CA56D0072240F /* Category */,
 				0773D37220834BBB00BB12ED /* Spending */,
 			);
 			path = Models;
@@ -238,7 +243,6 @@
 		07193BF52017580200DA1ECC /* UserStories */ = {
 			isa = PBXGroup;
 			children = (
-				074E3245207EAC0100C78501 /* SpendingsList */,
 				0743AF76208B7EC20026C5B9 /* SpendingsStory */,
 				076CFE86202C9A450021E452 /* MainTabBarViewController.swift */,
 			);
@@ -336,34 +340,6 @@
 				0743AF7C208B990F0026C5B9 /* SpendingsListServiceInput.swift */,
 			);
 			path = SpendingsListService;
-			sourceTree = "<group>";
-		};
-		074E3241207EABB500C78501 /* CoreData */ = {
-			isa = PBXGroup;
-			children = (
-				0743AF7B208B98F60026C5B9 /* SpendingsListService */,
-				07D76D82201E56FD00D2FC0F /* CoreDataStack.swift */,
-				07B8D0A7202343530064AFF1 /* SpendingService.swift */,
-				078037DB20234EAA00AA651C /* CategoryService.swift */,
-			);
-			path = CoreData;
-			sourceTree = "<group>";
-		};
-		074E3244207EABD500C78501 /* Network */ = {
-			isa = PBXGroup;
-			children = (
-				074E3242207EABD100C78501 /* ReceiptService.swift */,
-				07EC0007208681A3004E442B /* ReceiptServiceInput.swift */,
-			);
-			path = Network;
-			sourceTree = "<group>";
-		};
-		074E3245207EAC0100C78501 /* SpendingsList */ = {
-			isa = PBXGroup;
-			children = (
-				07EDBFA820828B7E009229DC /* SpendingListViewController.swift */,
-			);
-			path = SpendingsList;
 			sourceTree = "<group>";
 		};
 		074E3246207EAC4800C78501 /* Spending */ = {
@@ -504,7 +480,8 @@
 		0773D37220834BBB00BB12ED /* Spending */ = {
 			isa = PBXGroup;
 			children = (
-				0773D37320834BC900BB12ED /* SpendingButtonType.swift */,
+				079E062F208CA4150072240F /* SpendingButtonType.swift */,
+				079E062D208C90BA0072240F /* SpendingInfo.swift */,
 			);
 			path = Spending;
 			sourceTree = "<group>";
@@ -533,6 +510,7 @@
 		0773D37B208353F200BB12ED /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				07D76D82201E56FD00D2FC0F /* CoreDataStack.swift */,
 				0773D39920836E1A00BB12ED /* Module */,
 				0773D37C2083540100BB12ED /* Protocols */,
 			);
@@ -590,6 +568,32 @@
 			path = QRScanner;
 			sourceTree = "<group>";
 		};
+		079E062A208C8FEB0072240F /* SpendingService */ = {
+			isa = PBXGroup;
+			children = (
+				079E062B208C900F0072240F /* SpendingServiceInput.swift */,
+				07B8D0A7202343530064AFF1 /* SpendingService.swift */,
+			);
+			path = SpendingService;
+			sourceTree = "<group>";
+		};
+		079E0633208CA56D0072240F /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				079E0631208CA5660072240F /* CategoryInfo.swift */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		079E0634208CAC0D0072240F /* ReceiptService */ = {
+			isa = PBXGroup;
+			children = (
+				074E3242207EABD100C78501 /* ReceiptService.swift */,
+				07EC0007208681A3004E442B /* ReceiptServiceInput.swift */,
+			);
+			path = ReceiptService;
+			sourceTree = "<group>";
+		};
 		07B8D0A4202334290064AFF1 /* Services */ = {
 			isa = PBXGroup;
 			children = (
@@ -603,9 +607,9 @@
 		07C0FF1520824E9900CA3FD0 /* SpendingCell */ = {
 			isa = PBXGroup;
 			children = (
-				0773D35220829E5700BB12ED /* SpendingTableViewCell.swift */,
-				0773D35320829E5700BB12ED /* SpendingTableViewCell.xib */,
-				0743AF77208B8BB10026C5B9 /* SpendingTableViewCellObject.swift */,
+				0773D35220829E5700BB12ED /* SpendingListTableViewCell.swift */,
+				0773D35320829E5700BB12ED /* SpendingListTableViewCell.xib */,
+				0743AF77208B8BB10026C5B9 /* SpendingListTableViewCellObject.swift */,
 			);
 			path = SpendingCell;
 			sourceTree = "<group>";
@@ -623,8 +627,10 @@
 		07D76D84201E596F00D2FC0F /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				074E3244207EABD500C78501 /* Network */,
-				074E3241207EABB500C78501 /* CoreData */,
+				079E062A208C8FEB0072240F /* SpendingService */,
+				0743AF7B208B98F60026C5B9 /* SpendingsListService */,
+				078037DB20234EAA00AA651C /* CategoryService.swift */,
+				079E0634208CAC0D0072240F /* ReceiptService */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -832,7 +838,7 @@
 				0773D361208341BB00BB12ED /* AmountTableViewCell.xib in Resources */,
 				0773D3592083407E00BB12ED /* SpendingViewController.xib in Resources */,
 				075ED06D208BAF1E009AE6E8 /* SpendingDateTableViewCell.xib in Resources */,
-				0773D35520829E5700BB12ED /* SpendingTableViewCell.xib in Resources */,
+				0773D35520829E5700BB12ED /* SpendingListTableViewCell.xib in Resources */,
 				073DE00920035DD4000CAD7C /* Images.xcassets in Resources */,
 				0743AF682086938F0026C5B9 /* CategoryCollectionViewCell.xib in Resources */,
 				0773D365208342A300BB12ED /* AddReceiptTableViewCell.xib in Resources */,
@@ -959,8 +965,7 @@
 			files = (
 				0773D36D20834B3900BB12ED /* SpendingDataDisplayManager.swift in Sources */,
 				0773D380208355E100BB12ED /* CellProtocol.swift in Sources */,
-				0773D37420834BC900BB12ED /* SpendingButtonType.swift in Sources */,
-				0743AF78208B8BB10026C5B9 /* SpendingTableViewCellObject.swift in Sources */,
+				0743AF78208B8BB10026C5B9 /* SpendingListTableViewCellObject.swift in Sources */,
 				07EC0008208681A3004E442B /* ReceiptServiceInput.swift in Sources */,
 				0773D364208342A300BB12ED /* AddReceiptTableViewCell.swift in Sources */,
 				0773D37A2083513300BB12ED /* TableRegisterCell.swift in Sources */,
@@ -971,8 +976,9 @@
 				07EC000B2086836D004E442B /* BaseService.swift in Sources */,
 				0773D39B20836E2700BB12ED /* Module.swift in Sources */,
 				0773D3822083567F00BB12ED /* SpendingViewInput.swift in Sources */,
-				0773D35420829E5700BB12ED /* SpendingTableViewCell.swift in Sources */,
+				0773D35420829E5700BB12ED /* SpendingListTableViewCell.swift in Sources */,
 				0773D3B12083B9B500BB12ED /* QRScannerModuleOutput.swift in Sources */,
+				079E0630208CA4160072240F /* SpendingButtonType.swift in Sources */,
 				0773D3AB2083A1F200BB12ED /* QRScannerViewController.swift in Sources */,
 				0743AF672086938F0026C5B9 /* CategoryCollectionViewCell.swift in Sources */,
 				0773D37820834CCB00BB12ED /* CellObjectProtocol.swift in Sources */,
@@ -984,6 +990,7 @@
 				0743AF7A208B98E90026C5B9 /* SpendingsListService.swift in Sources */,
 				0773D39820835E2000BB12ED /* SpendingConfigurator.swift in Sources */,
 				0743AF62208692C80026C5B9 /* CategoriesTableViewCell.swift in Sources */,
+				079E0632208CA5660072240F /* CategoryInfo.swift in Sources */,
 				07843B90208BCC6D001DBABF /* CategoryCollectionViewCellObject.swift in Sources */,
 				0773D38C208359FC00BB12ED /* SpendingModuleOutput.swift in Sources */,
 				073DE00720035DD4000CAD7C /* Cashmeter.xcdatamodeld in Sources */,
@@ -991,6 +998,7 @@
 				0773D3A020836EFC00BB12ED /* ServicesAssembly.swift in Sources */,
 				07C0FF0820823C2A00CA3FD0 /* NetworkProviderProtocol.swift in Sources */,
 				0773D3A4208370F400BB12ED /* SpendingInteractorInput.swift in Sources */,
+				079E062E208C90BA0072240F /* SpendingInfo.swift in Sources */,
 				075ED06C208BAF1E009AE6E8 /* SpendingDateTableViewCell.swift in Sources */,
 				0743AF7D208B990F0026C5B9 /* SpendingsListServiceInput.swift in Sources */,
 				0773D388208359D800BB12ED /* SpendingModuleInput.swift in Sources */,
@@ -1009,7 +1017,6 @@
 				07843B8E208BC694001DBABF /* CategoriesTableViewCellObject.swift in Sources */,
 				076CFE87202C9A450021E452 /* MainTabBarViewController.swift in Sources */,
 				073DDFFF20035DD4000CAD7C /* AppDelegate.swift in Sources */,
-				07EDBFAA20828B7E009229DC /* SpendingListViewController.swift in Sources */,
 				0773D37120834B5B00BB12ED /* SpendingDataDisplayManagerOutput.swift in Sources */,
 				0773D386208359C900BB12ED /* SpendingPresenter.swift in Sources */,
 				35977FC0FE9000C7C6D00B02 /* SpendingsListConfigurator.swift in Sources */,
@@ -1019,6 +1026,7 @@
 				DCAF783A476AFF6A35A134C9 /* SpendingsListDisplayManager.swift in Sources */,
 				344907B3E08789527E898C94 /* SpendingsListDisplayManagerInput.swift in Sources */,
 				8394006A1F7B7ED45F954A58 /* SpendingsListDisplayManagerOutput.swift in Sources */,
+				079E062C208C900F0072240F /* SpendingServiceInput.swift in Sources */,
 				D04096D385436B18918A8F18 /* SpendingsListModuleInput.swift in Sources */,
 				27AD6A7D0B629DB07C019AE0 /* SpendingsListPresenter.swift in Sources */,
 				C9B36980784A0F8ED6759D6E /* SpendingsListCellObjectsFactoryInput.swift in Sources */,

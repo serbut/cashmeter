@@ -16,7 +16,7 @@ final class SpendingPresenter {
     var output: SpendingModuleOutput?
     var cellObjectsFactory: SpendingCellObjectsFactoryInput!
     
-    var spending: Spending?
+    var spendingInfo = SpendingInfo()
     
 }
 
@@ -25,7 +25,7 @@ final class SpendingPresenter {
 extension SpendingPresenter: SpendingModuleInput {
     
     func setup(with spending: Spending) {
-        self.spending = spending
+        self.spendingInfo = SpendingInfo(from: spending)
     }
     
 }
@@ -38,11 +38,8 @@ extension SpendingPresenter: SpendingViewOutput {
         view.setupInitialState()
         var cellObjects: [TableCellObject] = []
         let categories = interactor.requestCategories()
-        if let spending = spending {
-            cellObjects = cellObjectsFactory.convert(spending: spending, categories: categories)
-        } else {
-            cellObjects = cellObjectsFactory.createForNewSpending(categories: categories)
-        }
+        cellObjects = cellObjectsFactory.convert(spendingInfo: spendingInfo, categories: categories)
+        spendingInfo.category = categories.first
         view.showData(cellObjects)
     }
     
@@ -56,6 +53,20 @@ extension SpendingPresenter: SpendingViewOutput {
     
     func didTapOnClose() {
         router.closeModule()
+    }
+    
+    func didTapOnSave() {
+        interactor.addSpending(spendingInfo: spendingInfo)
+    }
+    
+    func didChangeAmountValue(_ value: String?) {
+        guard let value = value, let amount = Double(value) else { return }
+        spendingInfo.amount = amount
+    }
+    
+    func didChangeDateValue(_ value: Date?) {
+        guard let value = value else { return }
+        spendingInfo.date = value
     }
     
 }

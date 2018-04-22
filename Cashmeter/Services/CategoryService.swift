@@ -10,7 +10,9 @@ import Foundation
 import CoreData
 
 class CategoryService {
+    
     // MARK: Properties
+    
     let managedObjectContext: NSManagedObjectContext
     let coreDataStack: CoreDataStack
     
@@ -43,4 +45,5 @@ class CategoryService {
         }
         return results
     }
+    
 }

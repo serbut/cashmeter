@@ -11,9 +11,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SpendingTableViewCell" customModule="Cashmeter" customModuleProvider="target"/>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SpendingListTableViewCell" customModule="Cashmeter" customModuleProvider="target"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SpendingTableViewCell" id="KGk-i7-Jjw" customClass="SpendingTableViewCell" customModule="Cashmeter" customModuleProvider="target">
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="44" id="KGk-i7-Jjw" customClass="SpendingListTableViewCell" customModule="Cashmeter" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
@@ -26,35 +26,39 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="🍔" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ugl-ij-qek">
-                        <rect key="frame" x="16" y="11" width="23" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="500₽" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ddA-JU-tDk">
                         <rect key="frame" x="262.5" y="11" width="41.5" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="car" translatesAutoresizingMaskIntoConstraints="NO" id="zkR-9w-bca">
+                        <rect key="frame" x="16" y="11" width="22" height="22"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="22" id="kvw-gH-9KG"/>
+                            <constraint firstAttribute="width" constant="22" id="rfB-zp-T6N"/>
+                        </constraints>
+                    </imageView>
                 </subviews>
                 <constraints>
                     <constraint firstItem="ddA-JU-tDk" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="F3O-qS-Vkw" secondAttribute="trailing" constant="10" id="7bz-UO-PlG"/>
-                    <constraint firstItem="Ugl-ij-qek" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="HSh-Bj-mJp"/>
-                    <constraint firstItem="F3O-qS-Vkw" firstAttribute="centerY" secondItem="Ugl-ij-qek" secondAttribute="centerY" id="JwD-Sk-nkb"/>
+                    <constraint firstItem="zkR-9w-bca" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="KLF-du-qdW"/>
+                    <constraint firstItem="zkR-9w-bca" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Pbi-bR-KrL"/>
                     <constraint firstAttribute="trailingMargin" secondItem="ddA-JU-tDk" secondAttribute="trailing" id="ZTX-d4-hVB"/>
+                    <constraint firstItem="F3O-qS-Vkw" firstAttribute="leading" secondItem="zkR-9w-bca" secondAttribute="trailing" constant="17" id="cxJ-Nc-dL0"/>
                     <constraint firstItem="ddA-JU-tDk" firstAttribute="centerY" secondItem="F3O-qS-Vkw" secondAttribute="centerY" id="kgr-nu-vPW"/>
-                    <constraint firstItem="Ugl-ij-qek" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="o16-iG-cd0"/>
-                    <constraint firstItem="F3O-qS-Vkw" firstAttribute="leading" secondItem="Ugl-ij-qek" secondAttribute="trailing" constant="16" id="uge-ID-ttc"/>
+                    <constraint firstItem="F3O-qS-Vkw" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="khV-gq-VWG"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="amountLabel" destination="ddA-JU-tDk" id="e1i-TQ-cV1"/>
-                <outlet property="categoryIconLabel" destination="Ugl-ij-qek" id="zc4-ql-pvf"/>
+                <outlet property="categoryIconImageView" destination="zkR-9w-bca" id="ZKv-xl-MbQ"/>
                 <outlet property="categoryNameLabel" destination="F3O-qS-Vkw" id="BIA-jM-XDl"/>
             </connections>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="car" width="60" height="60"/>
+    </resources>
 </document>

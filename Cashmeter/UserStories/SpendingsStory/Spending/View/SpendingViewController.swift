@@ -29,12 +29,14 @@ final class SpendingViewController: UIViewController {
     }
 
     @IBAction func didTapSaveButton(_ sender: UIButton) {
+        output.didTapOnSave()
     }
     
     fileprivate func setupCloseButton() {
-        let closeBarButton = UIBarButtonItem(barButtonSystemItem: .cancel,
-                        target: self,
-                        action: #selector(didTapOnClose))
+        let closeBarButton = UIBarButtonItem(image: UIImage(named: "close_bar_button"),
+                                             style: .plain,
+                                             target: self,
+                                             action: #selector(didTapOnClose))
         
         self.navigationItem.rightBarButtonItem = closeBarButton
     }
@@ -68,6 +70,14 @@ extension SpendingViewController: SpendingDataDisplayManagerOutput {
     
     func didTriggerScanQrAction() {
         output.didTriggerScanQrAction()
+    }
+    
+    func didChangeAmountValue(_ value: String?) {
+        output.didChangeAmountValue(value)
+    }
+    
+    func didChangeDateValue(_ value: Date?) {
+        output.didChangeDateValue(value)
     }
     
 }

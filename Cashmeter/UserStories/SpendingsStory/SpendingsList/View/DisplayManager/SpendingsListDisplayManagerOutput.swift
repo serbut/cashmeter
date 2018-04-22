@@ -11,6 +11,13 @@ import Foundation
 protocol SpendingsListDisplayManagerOutput: class {
     
     /**
+     Метод сообщает о том, что была нажата ячейка.
+     
+     @param indexPath - индекс выбранной ячейки.
+     */
+    func didSelectRowAt(indexPath: IndexPath)
+    
+    /**
      Метод запрашивает количество секций.
      */
     func requestSectionsCount() -> Int
