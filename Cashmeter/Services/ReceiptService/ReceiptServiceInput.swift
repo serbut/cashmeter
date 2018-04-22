@@ -10,6 +10,6 @@ import Foundation
 
 protocol ReceiptServiceInput {
     
-    func parse(_ receiptData: ReceiptData)
+    func parse(_ receiptData: ReceiptData, with completion: @escaping (ServiceResponse<ReceiptInfo>) -> Void)
     
 }

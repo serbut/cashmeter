@@ -68,6 +68,10 @@
 		079E062E208C90BA0072240F /* SpendingInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079E062D208C90BA0072240F /* SpendingInfo.swift */; };
 		079E0630208CA4160072240F /* SpendingButtonType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079E062F208CA4150072240F /* SpendingButtonType.swift */; };
 		079E0632208CA5660072240F /* CategoryInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079E0631208CA5660072240F /* CategoryInfo.swift */; };
+		079E0638208CE6970072240F /* ReceiptItemInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079E0637208CE6970072240F /* ReceiptItemInfo.swift */; };
+		079E063A208CE7160072240F /* ReceiptInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079E0639208CE7160072240F /* ReceiptInfo.swift */; };
+		079E063C208CEA3E0072240F /* ServiceResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079E063B208CEA3E0072240F /* ServiceResponse.swift */; };
+		079E063E208CEC870072240F /* SpendingInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079E063D208CEC870072240F /* SpendingInteractorOutput.swift */; };
 		07B8D0A6202334470064AFF1 /* TestCoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B8D0A5202334470064AFF1 /* TestCoreDataStack.swift */; };
 		07B8D0A8202343530064AFF1 /* SpendingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B8D0A7202343530064AFF1 /* SpendingService.swift */; };
 		07B8D0BA202349820064AFF1 /* SpendingServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B8D0B9202349820064AFF1 /* SpendingServiceTests.swift */; };
@@ -77,7 +81,7 @@
 		07D76D83201E56FD00D2FC0F /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D76D82201E56FD00D2FC0F /* CoreDataStack.swift */; };
 		07EC0008208681A3004E442B /* ReceiptServiceInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EC0007208681A3004E442B /* ReceiptServiceInput.swift */; };
 		07EC000B2086836D004E442B /* BaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EC000A2086836D004E442B /* BaseService.swift */; };
-		07EC000E20868581004E442B /* Receipt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EC000D20868581004E442B /* Receipt.swift */; };
+		07EC000E20868581004E442B /* ReceiptData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EC000D20868581004E442B /* ReceiptData.swift */; };
 		07EDBFAB20828B7E009229DC /* SpendingsListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07EDBFA920828B7E009229DC /* SpendingsListViewController.xib */; };
 		179F034FA193280B14B9776D /* SpendingsListInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACFD1A6EA40796D477271BEA /* SpendingsListInteractorInput.swift */; };
 		27AD6A7D0B629DB07C019AE0 /* SpendingsListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E61ED4B6F9015FF13F6BB2D /* SpendingsListPresenter.swift */; };
@@ -175,6 +179,10 @@
 		079E062D208C90BA0072240F /* SpendingInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendingInfo.swift; sourceTree = "<group>"; };
 		079E062F208CA4150072240F /* SpendingButtonType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpendingButtonType.swift; sourceTree = "<group>"; };
 		079E0631208CA5660072240F /* CategoryInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryInfo.swift; sourceTree = "<group>"; };
+		079E0637208CE6970072240F /* ReceiptItemInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptItemInfo.swift; sourceTree = "<group>"; };
+		079E0639208CE7160072240F /* ReceiptInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptInfo.swift; sourceTree = "<group>"; };
+		079E063B208CEA3E0072240F /* ServiceResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceResponse.swift; sourceTree = "<group>"; };
+		079E063D208CEC870072240F /* SpendingInteractorOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendingInteractorOutput.swift; sourceTree = "<group>"; };
 		07B8D0A5202334470064AFF1 /* TestCoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCoreDataStack.swift; sourceTree = "<group>"; };
 		07B8D0A7202343530064AFF1 /* SpendingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendingService.swift; sourceTree = "<group>"; };
 		07B8D0B9202349820064AFF1 /* SpendingServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendingServiceTests.swift; sourceTree = "<group>"; };
@@ -184,7 +192,7 @@
 		07D76D82201E56FD00D2FC0F /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		07EC0007208681A3004E442B /* ReceiptServiceInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptServiceInput.swift; sourceTree = "<group>"; };
 		07EC000A2086836D004E442B /* BaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseService.swift; sourceTree = "<group>"; };
-		07EC000D20868581004E442B /* Receipt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Receipt.swift; sourceTree = "<group>"; };
+		07EC000D20868581004E442B /* ReceiptData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptData.swift; sourceTree = "<group>"; };
 		07EDBFA920828B7E009229DC /* SpendingsListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SpendingsListViewController.xib; sourceTree = "<group>"; };
 		1356556D4DC764BDC6709CE7 /* SpendingsListInteractorOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SpendingsListInteractorOutput.swift; sourceTree = "<group>"; };
 		19ECDDF716CE6C42FF7DEBC4 /* SpendingsListViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SpendingsListViewController.swift; sourceTree = "<group>"; };
@@ -302,9 +310,9 @@
 		0742CF6E207EAA350055A3DC /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				073DDFFE20035DD4000CAD7C /* AppDelegate.swift */,
 				0773D37B208353F200BB12ED /* Core */,
 				0773D37520834CB000BB12ED /* Base */,
-				073DDFFE20035DD4000CAD7C /* AppDelegate.swift */,
 				07D4C16720823BEC00D26C6E /* Network */,
 				07193BF4201757F700DA1ECC /* Models */,
 				07193BF52017580200DA1ECC /* UserStories */,
@@ -443,6 +451,7 @@
 			children = (
 				0773D3A120836FE900BB12ED /* SpendingInteractor.swift */,
 				0773D3A3208370F400BB12ED /* SpendingInteractorInput.swift */,
+				079E063D208CEC870072240F /* SpendingInteractorOutput.swift */,
 			);
 			path = Interactor;
 			sourceTree = "<group>";
@@ -620,6 +629,7 @@
 				07C0FF0720823C2A00CA3FD0 /* NetworkProviderProtocol.swift */,
 				07C0FF0B20823D2D00CA3FD0 /* NetworkProvider.swift */,
 				07C0FF0D20823E7500CA3FD0 /* RequestTypes.swift */,
+				079E063B208CEA3E0072240F /* ServiceResponse.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -646,7 +656,9 @@
 		07EC000C2086856F004E442B /* Receipt */ = {
 			isa = PBXGroup;
 			children = (
-				07EC000D20868581004E442B /* Receipt.swift */,
+				07EC000D20868581004E442B /* ReceiptData.swift */,
+				079E0637208CE6970072240F /* ReceiptItemInfo.swift */,
+				079E0639208CE7160072240F /* ReceiptInfo.swift */,
 			);
 			path = Receipt;
 			sourceTree = "<group>";
@@ -983,6 +995,7 @@
 				0743AF672086938F0026C5B9 /* CategoryCollectionViewCell.swift in Sources */,
 				0773D37820834CCB00BB12ED /* CellObjectProtocol.swift in Sources */,
 				0773D38F20835B6600BB12ED /* SpendingCellObjectsFactory.swift in Sources */,
+				079E063A208CE7160072240F /* ReceiptInfo.swift in Sources */,
 				074E3243207EABD100C78501 /* ReceiptService.swift in Sources */,
 				0773D39320835CC400BB12ED /* SpendingRouter.swift in Sources */,
 				0773D360208341BB00BB12ED /* AmountTableViewCell.swift in Sources */,
@@ -1007,7 +1020,7 @@
 				07C0FF0E20823E7500CA3FD0 /* RequestTypes.swift in Sources */,
 				0773D3842083569300BB12ED /* SpendingViewOutput.swift in Sources */,
 				07D76D83201E56FD00D2FC0F /* CoreDataStack.swift in Sources */,
-				07EC000E20868581004E442B /* Receipt.swift in Sources */,
+				07EC000E20868581004E442B /* ReceiptData.swift in Sources */,
 				0773D39D20836E7800BB12ED /* AssembledModule.swift in Sources */,
 				0773D3A220836FE900BB12ED /* SpendingInteractor.swift in Sources */,
 				0773D3582083407E00BB12ED /* SpendingViewController.swift in Sources */,
@@ -1024,11 +1037,14 @@
 				D9B28A6BE071763210132460 /* SpendingsListViewOutput.swift in Sources */,
 				D0964F5362E5554A03F55B85 /* SpendingsListViewController.swift in Sources */,
 				DCAF783A476AFF6A35A134C9 /* SpendingsListDisplayManager.swift in Sources */,
+				079E063E208CEC870072240F /* SpendingInteractorOutput.swift in Sources */,
 				344907B3E08789527E898C94 /* SpendingsListDisplayManagerInput.swift in Sources */,
 				8394006A1F7B7ED45F954A58 /* SpendingsListDisplayManagerOutput.swift in Sources */,
+				079E0638208CE6970072240F /* ReceiptItemInfo.swift in Sources */,
 				079E062C208C900F0072240F /* SpendingServiceInput.swift in Sources */,
 				D04096D385436B18918A8F18 /* SpendingsListModuleInput.swift in Sources */,
 				27AD6A7D0B629DB07C019AE0 /* SpendingsListPresenter.swift in Sources */,
+				079E063C208CEA3E0072240F /* ServiceResponse.swift in Sources */,
 				C9B36980784A0F8ED6759D6E /* SpendingsListCellObjectsFactoryInput.swift in Sources */,
 				A1A6E26F892396DD8AFB88DC /* SpendingsListCellObjectsFactory.swift in Sources */,
 				179F034FA193280B14B9776D /* SpendingsListInteractorInput.swift in Sources */,

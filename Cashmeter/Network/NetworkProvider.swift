@@ -18,24 +18,29 @@ final class NetworkProvider {
 // MARK: NetworkProviderProtocol
 
 extension NetworkProvider: NetworkProviderProtocol {
-    func sendRequest(_ requestType: RequestType, parameters: Parameters?, completion: @escaping () -> Void) {
+    
+    func sendRequest(_ requestType: RequestType, parameters: Parameters?, completion: @escaping (NetworkProviderResponse) -> Void) {
 
         let requestUrl = baseUrl + requestType.rawValue
 
-        Alamofire.request(requestUrl, method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: [:]).responseJSON
-            { response in
+        Alamofire.request(requestUrl,
+                          method: .post,
+                          parameters: parameters,
+                          encoding: JSONEncoding.default,
+                          headers: [:])
+            .responseJSON { response in
                 switch(response.result) {
                 case .success(_):
-                    if response.result.value != nil{
-                        print(response)
-                        completion()
+                    if let data = response.data {
+                        completion(.success(result: data))
+                    } else {
+                        // TODO: Do something
+                        print("Error - no data")
                     }
-                    break
-                    
-                case .failure(_):
-                    print("Failure : \(response.result.error)")
-                    break
+                case .failure(let error):
+                    completion(.error(error: error))
                 }
         }
+        
     }
 }

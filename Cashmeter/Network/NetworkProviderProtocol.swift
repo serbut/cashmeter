@@ -9,8 +9,15 @@
 import Foundation
 import Alamofire
 
+enum NetworkProviderResponse {
+    
+    case success(result: Data)
+    case error(error: Error)
+    
+}
+
 protocol NetworkProviderProtocol: class {
     
-    func sendRequest(_ requestType: RequestType, parameters: Parameters?, completion: @escaping () -> Void)
+    func sendRequest(_ requestType: RequestType, parameters: Parameters?, completion: @escaping (NetworkProviderResponse) -> Void)
     
 }

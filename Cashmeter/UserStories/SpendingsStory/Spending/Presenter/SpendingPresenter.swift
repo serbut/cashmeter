@@ -71,6 +71,22 @@ extension SpendingPresenter: SpendingViewOutput {
     
 }
 
+// MARK: SpendingInteractorOutput
+
+extension SpendingPresenter: SpendingInteractorOutput {
+    
+    func didParsedReceipt(with receiptInfo: ReceiptInfo) {
+        spendingInfo.amount = receiptInfo.sum
+        
+        var cellObjects: [TableCellObject] = []
+        let categories = interactor.requestCategories()
+        cellObjects = cellObjectsFactory.convert(spendingInfo: spendingInfo, categories: categories)
+        spendingInfo.category = categories.first
+        view.showData(cellObjects)
+    }
+    
+}
+
 // MARK: QRScannerModuleOutput
 
 extension SpendingPresenter: QRScannerModuleOutput {

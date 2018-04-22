@@ -8,6 +8,8 @@
 
 final class SpendingInteractor {
     
+    weak var output: SpendingInteractorOutput!
+    
     var receiptService: ReceiptServiceInput!
     var spendingService: SpendingServiceInput!
     var categoryService: CategoryService!
@@ -19,7 +21,16 @@ final class SpendingInteractor {
 extension SpendingInteractor: SpendingInteractorInput {
     
     func parseReceipt(_ receipt: ReceiptData) {
-        receiptService.parse(receipt)
+        receiptService.parse(receipt) { [weak self] (response: ServiceResponse<ReceiptInfo>) in
+            switch response {
+            case let .success(receiptInfo):
+                self?.output.didParsedReceipt(with: receiptInfo)
+            case let .error(error):
+                // TODO
+                //output.didFailParseReceipt()
+                break
+            }
+        }
     }
     
     func requestCategories() -> [Category] {

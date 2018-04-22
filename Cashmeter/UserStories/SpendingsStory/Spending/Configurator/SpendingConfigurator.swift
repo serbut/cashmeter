@@ -22,6 +22,8 @@ final class SpendingConfigurator {
         presenter.interactor = interactor
         presenter.router = router
         
+        interactor.output = presenter
+        
         router.transitionHandler = viewController
         
         let module = AssembledModule(viewController: viewController, moduleInput: presenter)
