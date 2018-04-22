@@ -27,8 +27,17 @@ final class SpendingViewController: UIViewController {
 
         output.viewIsReady()
     }
-
-    @IBAction func didTapSaveButton(_ sender: UIButton) {
+    
+    fileprivate func setupSaveButton() {
+        let saveBarButton = UIBarButtonItem(image: UIImage(named: "check_bar_button"),
+                                            style: .plain,
+                                            target: self,
+                                            action: #selector(didTapOnSave))
+        
+        self.navigationItem.rightBarButtonItem = saveBarButton
+    }
+    
+    @objc func didTapOnSave() {
         output.didTapOnSave()
     }
     
@@ -38,12 +47,13 @@ final class SpendingViewController: UIViewController {
                                              target: self,
                                              action: #selector(didTapOnClose))
         
-        self.navigationItem.rightBarButtonItem = closeBarButton
+        self.navigationItem.leftBarButtonItem = closeBarButton
     }
     
     @objc func didTapOnClose() {
         output.didTapOnClose()
     }
+
 }
 
 // MARK: SpendingViewInput
@@ -52,6 +62,7 @@ extension SpendingViewController: SpendingViewInput {
     
     func setupInitialState() {
         navigationController?.title = titleVc
+        setupSaveButton()
         setupCloseButton()
         dataDisplayManager.setup(with: tableView)
     }

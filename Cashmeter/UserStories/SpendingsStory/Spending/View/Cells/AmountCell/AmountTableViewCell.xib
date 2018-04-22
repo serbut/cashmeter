@@ -33,7 +33,7 @@
                         </constraints>
                         <nil key="textColor"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <textInputTraits key="textInputTraits"/>
+                        <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                         <connections>
                             <action selector="didChangeAmount:" destination="KGk-i7-Jjw" eventType="editingChanged" id="uK9-Kp-DXA"/>
                         </connections>
