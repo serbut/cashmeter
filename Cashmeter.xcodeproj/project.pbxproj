@@ -68,7 +68,7 @@
 		079E062E208C90BA0072240F /* SpendingInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079E062D208C90BA0072240F /* SpendingInfo.swift */; };
 		079E0630208CA4160072240F /* SpendingButtonType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079E062F208CA4150072240F /* SpendingButtonType.swift */; };
 		079E0632208CA5660072240F /* CategoryInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079E0631208CA5660072240F /* CategoryInfo.swift */; };
-		079E0638208CE6970072240F /* ReceiptItemInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079E0637208CE6970072240F /* ReceiptItemInfo.swift */; };
+		079E0638208CE6970072240F /* SpendingItemInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079E0637208CE6970072240F /* SpendingItemInfo.swift */; };
 		079E063A208CE7160072240F /* ReceiptInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079E0639208CE7160072240F /* ReceiptInfo.swift */; };
 		079E063C208CEA3E0072240F /* ServiceResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079E063B208CEA3E0072240F /* ServiceResponse.swift */; };
 		079E063E208CEC870072240F /* SpendingInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079E063D208CEC870072240F /* SpendingInteractorOutput.swift */; };
@@ -182,7 +182,7 @@
 		079E062D208C90BA0072240F /* SpendingInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendingInfo.swift; sourceTree = "<group>"; };
 		079E062F208CA4150072240F /* SpendingButtonType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpendingButtonType.swift; sourceTree = "<group>"; };
 		079E0631208CA5660072240F /* CategoryInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryInfo.swift; sourceTree = "<group>"; };
-		079E0637208CE6970072240F /* ReceiptItemInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptItemInfo.swift; sourceTree = "<group>"; };
+		079E0637208CE6970072240F /* SpendingItemInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendingItemInfo.swift; sourceTree = "<group>"; };
 		079E0639208CE7160072240F /* ReceiptInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptInfo.swift; sourceTree = "<group>"; };
 		079E063B208CEA3E0072240F /* ServiceResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceResponse.swift; sourceTree = "<group>"; };
 		079E063D208CEC870072240F /* SpendingInteractorOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendingInteractorOutput.swift; sourceTree = "<group>"; };
@@ -674,7 +674,7 @@
 			isa = PBXGroup;
 			children = (
 				07EC000D20868581004E442B /* ReceiptData.swift */,
-				079E0637208CE6970072240F /* ReceiptItemInfo.swift */,
+				079E0637208CE6970072240F /* SpendingItemInfo.swift */,
 				079E0639208CE7160072240F /* ReceiptInfo.swift */,
 			);
 			path = Receipt;
@@ -1059,7 +1059,7 @@
 				079E063E208CEC870072240F /* SpendingInteractorOutput.swift in Sources */,
 				344907B3E08789527E898C94 /* SpendingsListDisplayManagerInput.swift in Sources */,
 				8394006A1F7B7ED45F954A58 /* SpendingsListDisplayManagerOutput.swift in Sources */,
-				079E0638208CE6970072240F /* ReceiptItemInfo.swift in Sources */,
+				079E0638208CE6970072240F /* SpendingItemInfo.swift in Sources */,
 				079E062C208C900F0072240F /* SpendingServiceInput.swift in Sources */,
 				D04096D385436B18918A8F18 /* SpendingsListModuleInput.swift in Sources */,
 				27AD6A7D0B629DB07C019AE0 /* SpendingsListPresenter.swift in Sources */,

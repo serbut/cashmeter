@@ -43,6 +43,19 @@ extension SpendingService: SpendingServiceInput {
         spending.date = spendingInfo.date
         spending.details = spendingInfo.comment
         
+        if let receiptItems = spendingInfo.receiptItems {
+            for itemInfo in receiptItems {
+                let item = SpendingItem(context: managedObjectContext)
+                item.title = itemInfo.name
+                item.price = itemInfo.price
+                item.quantity = itemInfo.quantity
+                item.sum = itemInfo.sum
+                item.spending = spending
+                spending.items?.adding(item)
+            }
+        }
+        
+        
         managedObjectContext.perform {
             do {
                 try self.managedObjectContext.save()

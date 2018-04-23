@@ -9,6 +9,6 @@
 struct ReceiptInfo: Codable {
     
     var sum: Double
-    var items: [ReceiptItemInfo]
+    var items: [SpendingItemInfo]
     
 }

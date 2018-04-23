@@ -48,7 +48,7 @@ extension SpendingCellObjectsFactory: SpendingCellObjectsFactoryInput {
         return cellObjects
     }
     
-    private func textForReceiptItems(_ receiptItems: [ReceiptItemInfo]) -> String {
+    private func textForReceiptItems(_ receiptItems: [SpendingItemInfo]) -> String {
         var text = ""
         for item in receiptItems {
             text.append(item.debugDescription)
