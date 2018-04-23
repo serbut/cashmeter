@@ -13,7 +13,13 @@ final class SpendingRouter: SpendingRouterInput {
     func showScanQrModule(moduleOutput: QRScannerModuleOutput) {
         let viewController = QRScannerViewController()
         viewController.moduleOutput = moduleOutput
-        self.transitionHandler.present(viewController, animated: true, completion: nil)
+        transitionHandler.present(viewController, animated: true, completion: nil)
+    }
+    
+    func showItemsList(spendingItems: [SpendingItemInfo]) {
+        let viewController = SpendingItemsListViewController()
+        viewController.spendingItems = spendingItems
+        transitionHandler.navigationController?.pushViewController(viewController, animated: true)
     }
     
     func closeModule() {

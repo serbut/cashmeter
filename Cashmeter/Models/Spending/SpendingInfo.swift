@@ -10,6 +10,8 @@ import Foundation
 
 final class SpendingInfo {
     
+    var spending: Spending?
+    
     var amount: Double
     var currency: Currency?
     var category: Category?
@@ -24,12 +26,13 @@ final class SpendingInfo {
     }
     
     init(from spending: Spending) {
+        self.spending = spending
         self.amount = spending.amount
         self.currency = spending.currency
         self.category = spending.category
         self.date = spending.date!
         self.receiptItems = spending.items?.allObjects.map { SpendingItemInfo(from: $0 as! SpendingItem) }
-        self.comment = spending.details ?? ""
+        self.comment = spending.comment ?? ""
     }
         
 }

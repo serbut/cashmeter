@@ -37,8 +37,16 @@ extension SpendingInteractor: SpendingInteractorInput {
         return categoryService.getCategories()
     }
     
-    func addSpending(spendingInfo: SpendingInfo) {
-        spendingService.addSpending(withInfo: spendingInfo)
+    func saveSpending(spendingInfo: SpendingInfo) {
+        
+        // TODO
+        // FIX this part - incomprehensible code
+        
+        if spendingInfo.spending != nil {
+            spendingService.updateSpending(withInfo: spendingInfo)
+        } else {
+            spendingService.addSpending(withInfo: spendingInfo)
+        }
     }
     
 }

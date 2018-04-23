@@ -50,12 +50,17 @@ extension SpendingPresenter: SpendingViewOutput {
         router.showScanQrModule(moduleOutput: self)
     }
     
+    func didTriggerShowSpendingItemsAction() {
+        guard let spendingItems = spendingInfo.receiptItems else { return }
+        router.showItemsList(spendingItems: spendingItems)
+    }
+    
     func didTapOnClose() {
         router.closeModule()
     }
     
     func didTapOnSave() {
-        interactor.addSpending(spendingInfo: spendingInfo)
+        interactor.saveSpending(spendingInfo: spendingInfo)
         router.closeModule()
     }
     

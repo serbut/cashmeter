@@ -20,14 +20,16 @@ final class SpendingService {
         self.managedObjectContext = managedObjectContext
         self.coreDataStack = coreDataStack
     }
-   
-    func updateSpending(_ spending: Spending,
-                        withAmount amount: Double,
-                        category: Category,
-                        details: String?) {
-        spending.amount = amount
-        spending.category = category
-        spending.details = details
+    
+    fileprivate func save() {
+        managedObjectContext.perform {
+            do {
+                try self.managedObjectContext.save()
+            } catch let error as NSError {
+                fatalError(error.localizedDescription)
+            }
+            self.coreDataStack.saveContext()
+        }
     }
     
 }
@@ -41,7 +43,7 @@ extension SpendingService: SpendingServiceInput {
         spending.amount = spendingInfo.amount
         spending.category = spendingInfo.category
         spending.date = spendingInfo.date
-        spending.details = spendingInfo.comment
+        spending.comment = spendingInfo.comment
         
         if let receiptItems = spendingInfo.receiptItems {
             for itemInfo in receiptItems {
@@ -55,15 +57,24 @@ extension SpendingService: SpendingServiceInput {
             }
         }
         
-        
-        managedObjectContext.perform {
-            do {
-                try self.managedObjectContext.save()
-            } catch let error as NSError {
-                fatalError(error.localizedDescription)
-            }
-            self.coreDataStack.saveContext()
+        save()
+    }
+    
+    func updateSpending(withInfo spendingInfo: SpendingInfo) {
+        guard let spending = spendingInfo.spending else {
+            fatalError("Trying to update spending: nil")
         }
+        
+        // TODO: fix fatal error - category from different context
+        
+        spending.amount = spendingInfo.amount
+        spending.date = spendingInfo.date
+        spending.category = spendingInfo.category
+        spending.comment = spendingInfo.comment
+        
+        // TODO: update or create spending items
+        
+        save()
     }
     
 }

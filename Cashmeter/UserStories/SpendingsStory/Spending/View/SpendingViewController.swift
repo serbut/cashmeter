@@ -87,6 +87,10 @@ extension SpendingViewController: SpendingDataDisplayManagerOutput {
         output.didTriggerScanQrAction()
     }
     
+    func didTriggerShowSpendingItemsAction() {
+        output.didTriggerShowSpendingItemsAction()
+    }
+    
     func didChangeAmountValue(_ value: String?) {
         output.didChangeAmountValue(value)
     }

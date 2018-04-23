@@ -26,6 +26,11 @@ protocol SpendingViewOutput: class {
     func didTriggerScanQrAction()
     
     /**
+     Метод сообщает о том, что пользователь нажал на ячейку списка позиций в чеке.
+     */
+    func didTriggerShowSpendingItemsAction()
+    
+    /**
      Метод сообщает о том, что пользователь нажал на кнопку закрытия модуля.
      */
     func didTapOnClose()

@@ -10,6 +10,18 @@ import Foundation
 
 protocol SpendingServiceInput {
     
+    /**
+     Метод добавляет информацию о покупке.
+     
+     @param spendingInfo - информация о покупке.
+     */
     func addSpending(withInfo spendingInfo: SpendingInfo)
+    
+    /**
+     Метод обновляет информацию о покупке.
+     
+     @param spendingInfo - информация о покупке.
+     */
+    func updateSpending(withInfo spendingInfo: SpendingInfo)
     
 }

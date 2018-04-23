@@ -19,6 +19,11 @@ protocol SpendingDataDisplayManagerOutput: class {
      Метод сообщает о том, что пользователь нажал на ячейку сканирования QR-кода.
      */
     func didTriggerScanQrAction()
+    
+    /**
+     Метод сообщает о том, что пользователь нажал на ячейку списка позиций в чеке.
+     */
+    func didTriggerShowSpendingItemsAction()
 
     /**
      Метод сообщает о том, что сумма была изменена.

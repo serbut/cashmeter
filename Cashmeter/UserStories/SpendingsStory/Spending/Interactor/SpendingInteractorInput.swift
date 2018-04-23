@@ -21,8 +21,8 @@ protocol SpendingInteractorInput {
     func requestCategories() -> [Category]
     
     /**
-     Метод добавляет покупку.
+     Метод сохраняет покупку.
      */
-    func addSpending(spendingInfo: SpendingInfo)
+    func saveSpending(spendingInfo: SpendingInfo)
     
 }
