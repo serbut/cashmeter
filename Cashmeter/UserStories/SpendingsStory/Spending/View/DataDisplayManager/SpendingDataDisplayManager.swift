@@ -127,4 +127,8 @@ extension SpendingDataDisplayManager: CategoriesTableViewCellDelegate {
         output.didSelectCategory(category)
     }
     
+    func didTapAddCategory() {
+        print("Add category")
+    }
+    
 }

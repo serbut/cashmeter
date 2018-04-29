@@ -17,6 +17,11 @@ protocol CategoriesTableViewCellDelegate: class {
      */
     func didSelectCategory(_ category: Category?)
     
+    /**
+     Метод сообщает о том, что пользователь нажал на ячейку добавления категории.
+     */
+    func didTapAddCategory()
+    
 }
 
 final class CategoriesTableViewCell: UITableViewCell, HasNib {
@@ -32,6 +37,7 @@ final class CategoriesTableViewCell: UITableViewCell, HasNib {
     override func awakeFromNib() {
         super.awakeFromNib()
         
+        categoriesCollectionView.allowsMultipleSelection = true
         categoriesCollectionView.delegate = self
         categoriesCollectionView.dataSource = self
     }
@@ -60,18 +66,22 @@ extension CategoriesTableViewCell: TableCellInput {
 extension CategoriesTableViewCell: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return categories.count
+        return categories.count + 1
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withType: CategoryCollectionViewCell.self, at: indexPath, alreadyRegistered: &alreadyRegisteredCells) as! CategoryCollectionViewCell
-
-        cell.categoryTitleLabel.text = categories[indexPath.row].title
-        if let imageName = categories[indexPath.row].image_name {
-            cell.categoryImageView.image = UIImage(named: imageName)
+        if indexPath.row < categories.count {
+            let cell = collectionView.dequeueReusableCell(withType: CategoryCollectionViewCell.self, at: indexPath, alreadyRegistered: &alreadyRegisteredCells) as! CategoryCollectionViewCell
+            cell.categoryTitleLabel.text = categories[indexPath.row].title
+            if let imageName = categories[indexPath.row].image_name,
+                let image = UIImage(named: imageName) {
+                cell.categoryImageView.image = image.withRenderingMode(.alwaysTemplate)
+            }
+            return cell
+        } else {
+            let cell = collectionView.dequeueReusableCell(withType: AddCategoryCollectionViewCell.self, at: indexPath, alreadyRegistered: &alreadyRegisteredCells) as! AddCategoryCollectionViewCell
+            return cell
         }
-
-        return cell
     }
     
 }
@@ -81,16 +91,19 @@ extension CategoriesTableViewCell: UICollectionViewDataSource {
 extension CategoriesTableViewCell: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if let selectedCategoryIndex = selectedCategoryIndex {
-            collectionView.deselectItem(at: selectedCategoryIndex, animated: true)
-        }
-        
-        if (indexPath != selectedCategoryIndex) {
-            selectedCategoryIndex = indexPath
-            delegate.didSelectCategory(categories[indexPath.row])
+        if indexPath.row < categories.count {
+            if let selectedCategoryIndex = selectedCategoryIndex {
+                collectionView.deselectItem(at: selectedCategoryIndex, animated: true)
+            }
+            if (indexPath != selectedCategoryIndex) {
+                selectedCategoryIndex = indexPath
+                delegate.didSelectCategory(categories[indexPath.row])
+            } else {
+                selectedCategoryIndex = nil
+                delegate.didSelectCategory(nil)
+            }
         } else {
-            selectedCategoryIndex = nil
-            delegate.didSelectCategory(nil)
+            delegate.didTapAddCategory()
         }
     }
     

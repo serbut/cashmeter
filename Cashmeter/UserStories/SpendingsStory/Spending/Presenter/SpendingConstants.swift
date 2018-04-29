@@ -12,5 +12,6 @@ struct SpendingConstants {
     static let errorGetReceiptAlertText = "Произошла ошибка при получении чека. Попробуйте позже."
     static let errorParseReceiptAlertText = "Произошла ошибка при распознавании чека."
     static let closeActionTitle = "Закрыть"
+    static let addCategoryTitle = "Добавить категорию"
     
 }
