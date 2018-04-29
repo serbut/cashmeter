@@ -96,6 +96,12 @@ extension SpendingPresenter: SpendingInteractorOutput {
         view.showData(cellObjects)
     }
     
+    func didFailParseReceipt(error: String) {
+        view.hideLoader()
+//        router.showErrorAlert(with: error)
+        router.showErrorAlert(with: SpendingConstants.errorGetReceiptAlertText)
+    }
+    
 }
 
 // MARK: QRScannerModuleOutput
@@ -104,7 +110,7 @@ extension SpendingPresenter: QRScannerModuleOutput {
     
     func scanIsFinished(_ scannedString: String) {
         guard let receipt = ReceiptData(fromQrString: scannedString) else {
-            print("Ошибка") // TODO: move and process errror
+            router.showErrorAlert(with: SpendingConstants.errorParseQrAlertText) // TODO: move and process errror
             return
         }
         view.showLoader()

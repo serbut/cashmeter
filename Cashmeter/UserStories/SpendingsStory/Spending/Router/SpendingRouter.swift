@@ -6,6 +6,8 @@
 //  Copyright © 2018 Sergey Butorin. All rights reserved.
 //
 
+import UIKit
+
 final class SpendingRouter: SpendingRouterInput {
     
     weak var transitionHandler: SpendingViewController!
@@ -24,6 +26,14 @@ final class SpendingRouter: SpendingRouterInput {
     
     func closeModule() {
         transitionHandler.dismiss(animated: true, completion: nil)
+    }
+    
+    func showErrorAlert(with message: String) {
+        let alert = UIAlertController(title: nil, message: message, preferredStyle: .alert)
+        let closeAction = UIAlertAction(title: SpendingConstants.closeActionTitle, style: .cancel, handler: nil)
+        alert.addAction(closeAction)
+        
+        transitionHandler.present(alert, animated: true, completion: nil)
     }
     
 }

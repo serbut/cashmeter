@@ -26,9 +26,7 @@ extension SpendingInteractor: SpendingInteractorInput {
             case let .success(receiptInfo):
                 self?.output.didParsedReceipt(with: receiptInfo)
             case let .error(error):
-                // TODO
-                //output.didFailParseReceipt()
-                break
+                self?.output.didFailParseReceipt(error: error.localizedDescription)
             }
         }
     }

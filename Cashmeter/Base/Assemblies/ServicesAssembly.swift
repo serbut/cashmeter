@@ -34,31 +34,31 @@ final class ServicesAssembly {
     
     func spendingService() -> SpendingServiceInput {
         let stack = coreDataStack()
-        let childContext = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
-        childContext.parent = stack.mainContext
-        let spendingService = SpendingService(managedObjectContext: childContext, coreDataStack: stack)
+//        let childContext = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
+//        childContext.parent = stack.mainContext
+        let spendingService = SpendingService(managedObjectContext: stack.mainContext, coreDataStack: stack)
         
         return spendingService
     }
     
     func categoryService() -> CategoryService {
         let stack = coreDataStack()
-        let childContext = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
-        childContext.parent = stack.mainContext
-        let categoryService = CategoryService(managedObjectContext: childContext, coreDataStack: stack)
+//        let childContext = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
+//        childContext.parent = stack.mainContext
+        let categoryService = CategoryService(managedObjectContext: stack.mainContext, coreDataStack: stack)
         
         return categoryService
     }
     
-    func spendingAndCategoryService() -> (SpendingServiceInput, CategoryService) {
-        let stack = coreDataStack()
-        let childContext = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
-        childContext.parent = stack.mainContext
-        let spendingService = SpendingService(managedObjectContext: childContext, coreDataStack: stack)
-        let categoryService = CategoryService(managedObjectContext: childContext, coreDataStack: stack)
-        
-        return (spendingService, categoryService)
-    }
+//    func spendingAndCategoryService() -> (SpendingServiceInput, CategoryService) {
+//        let stack = coreDataStack()
+//        let childContext = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
+//        childContext.parent = stack.mainContext
+//        let spendingService = SpendingService(managedObjectContext: childContext, coreDataStack: stack)
+//        let categoryService = CategoryService(managedObjectContext: childContext, coreDataStack: stack)
+//        
+//        return (spendingService, categoryService)
+//    }
     
     private func coreDataStack() -> CoreDataStack {
         return (UIApplication.shared.delegate as? AppDelegate)!.coreDataStack

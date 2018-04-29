@@ -65,14 +65,25 @@ extension SpendingService: SpendingServiceInput {
             fatalError("Trying to update spending: nil")
         }
         
-        // TODO: fix fatal error - category from different context
-        
         spending.amount = spendingInfo.amount
         spending.date = spendingInfo.date
         spending.category = spendingInfo.category
         spending.comment = spendingInfo.comment
         
-        // TODO: update or create spending items
+        if spendingInfo.spending?.items?.count == 0,
+            let receiptItems = spendingInfo.receiptItems {
+            for itemInfo in receiptItems {
+                let item = SpendingItem(context: managedObjectContext)
+                item.title = itemInfo.name
+                item.price = itemInfo.price
+                item.quantity = itemInfo.quantity
+                item.sum = itemInfo.sum
+                item.spending = spending
+                spending.items?.adding(item)
+            }
+        }
+        
+        // TODO: update spending items
         
         save()
     }

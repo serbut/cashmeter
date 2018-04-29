@@ -15,4 +15,11 @@ protocol SpendingInteractorOutput: class {
      */
     func didParsedReceipt(with receiptInfo: ReceiptInfo)
     
+    /**
+     Метод сообщает, что парсинг чека завершился с ошибкой.
+     
+     @param error - ошибка.
+     */
+    func didFailParseReceipt(error: String)
+    
 }
