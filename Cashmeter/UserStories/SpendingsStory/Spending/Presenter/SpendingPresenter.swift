@@ -110,7 +110,7 @@ extension SpendingPresenter: QRScannerModuleOutput {
     
     func scanIsFinished(_ scannedString: String) {
         guard let receipt = ReceiptData(fromQrString: scannedString) else {
-            router.showErrorAlert(with: SpendingConstants.errorParseQrAlertText) // TODO: move and process errror
+            router.showErrorAlert(with: SpendingConstants.errorParseQrAlertText) // TODO: move and process error
             return
         }
         view.showLoader()

@@ -14,6 +14,7 @@ class QRScannerViewController: UIViewController {
     let borderWidth: CGFloat = 3
     let borderColor: UIColor = .blue
     let borderSizeMultiplier: CGFloat = 0.8
+    let closeButtonInset: CGFloat = 20.0
     
     var video: AVCaptureVideoPreviewLayer!
     
@@ -24,9 +25,14 @@ class QRScannerViewController: UIViewController {
         
         setupAVCaptureSession()
         setupSquareView()
+        setupCloseButton()
     }
     
-    func setupSquareView() {
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
+    
+    private func setupSquareView() {
         let squareView: UIView = {
             let squareView = UIView()
             squareView.frame.size.width = borderSizeMultiplier * self.view.frame.width
@@ -43,11 +49,49 @@ class QRScannerViewController: UIViewController {
         self.view.bringSubview(toFront: squareView)
     }
     
+    private func setupCloseButton() {
+        let closeButton: UIButton = {
+            let button = UIButton()
+            let image = UIImage(named: "close_bar_button")?.withRenderingMode(.alwaysTemplate)
+            button.setImage(image, for: .normal)
+            button.tintColor = .white
+            button.addTarget(self, action: #selector(closeModule), for: .touchDown)
+
+            button.translatesAutoresizingMaskIntoConstraints = false
+            return button
+        }()
+        
+        view.addSubview(closeButton)
+        
+        let horizontalConstraint = NSLayoutConstraint(item: closeButton,
+                                                      attribute: NSLayoutAttribute.top,
+                                                      relatedBy: NSLayoutRelation.equal,
+                                                      toItem: view,
+                                                      attribute: NSLayoutAttribute.top,
+                                                      multiplier: 1,
+                                                      constant: closeButtonInset)
+        let verticalConstraint = NSLayoutConstraint(item: closeButton,
+                                                    attribute: NSLayoutAttribute.leading,
+                                                    relatedBy: NSLayoutRelation.equal,
+                                                    toItem: view,
+                                                    attribute: NSLayoutAttribute.leading,
+                                                    multiplier: 1,
+                                                    constant: closeButtonInset)
+        view.addConstraints([horizontalConstraint, verticalConstraint])
+
+        
+        view.bringSubview(toFront: closeButton)
+    }
+    
+    @objc func closeModule() {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
 }
 
 extension QRScannerViewController: AVCaptureMetadataOutputObjectsDelegate {
     
-    func setupAVCaptureSession() {
+    fileprivate func setupAVCaptureSession() {
         let session = AVCaptureSession()
         
         guard let captureDevice = AVCaptureDevice.default(for: .video) else { return }

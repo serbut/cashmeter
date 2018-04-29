@@ -12,7 +12,7 @@ protocol QRScannerModuleOutput {
      Метод сообщает о том, что сканирование завершено
      
      @param scannedString - отсканированная строка
-    */
+     */
     func scanIsFinished(_ scannedString: String)
     
 }
