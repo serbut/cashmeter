@@ -45,6 +45,12 @@ extension CategoriesTableViewCell: TableCellInput {
     func setup(with cellObject: TableCellObject) {
         guard let cellObject = cellObject as? CategoriesTableViewCellObject else { return }
         categories = cellObject.categories
+        if let selectedCategory = cellObject.selectedCategory,
+            let categoryIndex = categories.index(of: selectedCategory) {
+            selectedCategoryIndex = IndexPath(row: categoryIndex, section: 0)
+            categoriesCollectionView.selectItem(at: selectedCategoryIndex, animated: true, scrollPosition: .centeredHorizontally)
+            categoriesCollectionView.scrollToItem(at: selectedCategoryIndex!, at: .centeredHorizontally, animated: false)
+        }
     }
     
 }

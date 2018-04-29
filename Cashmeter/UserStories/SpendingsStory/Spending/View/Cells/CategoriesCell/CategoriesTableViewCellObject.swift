@@ -13,5 +13,6 @@ struct CategoriesTableViewCellObject: TableCellObject {
     var cellClass: UITableViewCell.Type!
     
     var categories: [Category]!
+    var selectedCategory: Category?
     
 }

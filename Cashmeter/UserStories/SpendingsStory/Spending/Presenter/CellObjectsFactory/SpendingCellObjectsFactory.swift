@@ -27,6 +27,7 @@ extension SpendingCellObjectsFactory: SpendingCellObjectsFactoryInput {
         var categoriesTableViewCellObject = CategoriesTableViewCellObject()
         categoriesTableViewCellObject.cellClass = CategoriesTableViewCell.self
         categoriesTableViewCellObject.categories = categories
+        categoriesTableViewCellObject.selectedCategory = spendingInfo.category
         cellObjects.append(categoriesTableViewCellObject)
         
         var dateTableViewCellObject = SpendingDateTableViewCellObject()
