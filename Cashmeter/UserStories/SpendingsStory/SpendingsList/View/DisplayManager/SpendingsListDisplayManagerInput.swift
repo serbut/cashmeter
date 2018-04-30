@@ -16,12 +16,5 @@ protocol SpendingsListDisplayManagerInput: class {
      @param tableView - таблица.
      */
     func setupInitialState(with tableView: UITableView)
-
-    /**
-     Метод отображает контент коллекции.
-     
-     @param cellObjects - массив cellObject-ов.
-     */
-    func show(cellObjects: [TableCellObject])
     
 }

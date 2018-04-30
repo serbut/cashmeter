@@ -45,13 +45,14 @@ final class SpendingsListModuleConfigurator {
 
     private func configureDisplayManager() -> SpendingsListDisplayManager {
         let displayManager = SpendingsListDisplayManager()
-
+        let service = servicesAssembly.spendingsListService()
+        displayManager.fetchedResultsController = service.fetchedResultsController
+//        displayManager.fetchedResultsController.delegate = displayManager
         return displayManager
     }
 
     private func configurePresenter() -> SpendingsListPresenter {
         let presenter =  SpendingsListPresenter()
-        presenter.cellObjectsFactory = SpendingsListCellObjectsFactory()
 
         return presenter
     }

@@ -7,14 +7,14 @@
 //
 
 import UIKit
+import CoreData
 
 final class SpendingsListDisplayManager: NSObject {
 
     weak var output: SpendingsListDisplayManagerOutput!
     weak var tableView: UITableView!
-
-    var cellObjects: [TableCellObject] = []
-
+    var fetchedResultsController: NSFetchedResultsController<Spending>!
+    
 }
 
 // MARK: SpendingsListDisplayManagerInput
@@ -28,12 +28,6 @@ extension SpendingsListDisplayManager: SpendingsListDisplayManagerInput {
         tableView.dataSource = self
     }
     
-    func show(cellObjects: [TableCellObject]) {
-        self.cellObjects = cellObjects
-
-        tableView.reloadData()
-    }
-    
 }
 
 // MARK: UITableViewDataSource
@@ -41,20 +35,20 @@ extension SpendingsListDisplayManager: SpendingsListDisplayManagerInput {
 extension SpendingsListDisplayManager: UITableViewDataSource {
 
     func numberOfSections(in tableView: UITableView) -> Int {
-        return output.requestSectionsCount()
+        return fetchedResultsController.sections!.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return output.requestRowsCount(in: section)
+        return fetchedResultsController.sections![section].numberOfObjects
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let object = output.requestCellObject(at: indexPath)
-        let cell = tableView.dequeueReusableCell(withType: object.cellClass, at: indexPath) as! TableCellInput
+        let spending = fetchedResultsController.object(at: indexPath)
+        let cell = tableView.dequeueReusableCell(withType: SpendingListTableViewCell.self, at: indexPath) as! SpendingListTableViewCell
         
-        cell.setup(with: object)
+        cell.setup(with: spending)
         
-        return cell as! UITableViewCell
+        return cell
     }
     
 }
@@ -65,7 +59,8 @@ extension SpendingsListDisplayManager: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        output.didSelectRowAt(indexPath: indexPath)
+        let spending = fetchedResultsController.object(at: indexPath)
+        output.didSelectSpending(spending: spending)
     }
     
 }

@@ -20,16 +20,16 @@ final class SpendingsListInteractor {
 
 extension SpendingsListInteractor: SpendingsListInteractorInput {
     
-    func requestSectionsCount() -> Int {
-        return spendingsListService.spendingsSectionsCount()
-    }
-    
-    func requestRowsCount(in section: Int) -> Int {
-        return spendingsListService.spendingsCount(in: section)
-    }
-    
-    func requestSpendingObject(at indexPath: IndexPath) -> Spending {
-        return spendingsListService.spendingAtIndexPath(indexPath)
-    }
+//    func requestSectionsCount() -> Int {
+//        return spendingsListService.spendingsSectionsCount()
+//    }
+//
+//    func requestRowsCount(in section: Int) -> Int {
+//        return spendingsListService.spendingsCount(in: section)
+//    }
+//
+//    func requestSpendingObject(at indexPath: IndexPath) -> Spending {
+//        return spendingsListService.spendingAtIndexPath(indexPath)
+//    }
 	
 }

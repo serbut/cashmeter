@@ -14,13 +14,6 @@ protocol SpendingsListViewInput: class {
     func setupInitialState()
 
     /**
-     Метод отображает контент коллекции.
-     
-     @param cellObjects - массив cellObject-ов.
-     */
-    func show(cellObjects: [TableCellObject])
-    
-    /**
      Метод перезагружает коллекцию.
      */
     func reload()

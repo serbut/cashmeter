@@ -9,11 +9,11 @@
 import Foundation
 
 protocol SpendingsListServiceInput: class {
-    
-    func spendingsSectionsCount() -> Int
-    
-    func spendingsCount(in section: Int) -> Int
-    
-    func spendingAtIndexPath(_ indexPath: IndexPath) -> Spending
+//    
+//    func spendingsSectionsCount() -> Int
+//    
+//    func spendingsCount(in section: Int) -> Int
+//    
+//    func spendingAtIndexPath(_ indexPath: IndexPath) -> Spending
 
 }

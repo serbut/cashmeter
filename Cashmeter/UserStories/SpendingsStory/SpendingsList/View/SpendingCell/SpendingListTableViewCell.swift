@@ -14,25 +14,11 @@ final class SpendingListTableViewCell: UITableViewCell, HasNib {
     @IBOutlet weak var categoryNameLabel: UILabel!
     @IBOutlet weak var amountLabel: UILabel!
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    func setup(with spending: Spending) {
+        categoryNameLabel.text = spending.category?.title ?? "No category"
+        amountLabel.text = "\(spending.amount) ₽"
+        categoryIconImageView.image = UIImage(named: spending.category?.image_name ?? "undefined_category")
     }
     
 }
 
-// MARK: TableCellInput
-
-extension SpendingListTableViewCell: TableCellInput {
-    
-    func setup(with cellObject: TableCellObject) {
-        guard let cellObject = cellObject as? SpendingListTableViewCellObject else { return }
-        
-        categoryNameLabel.text = cellObject.categoryName
-        amountLabel.text = "\(cellObject.amount!) ₽"
-        if let imageName = cellObject.categoryImageName {
-            categoryIconImageView.image = UIImage(named: imageName)
-        }
-    }
-    
-}

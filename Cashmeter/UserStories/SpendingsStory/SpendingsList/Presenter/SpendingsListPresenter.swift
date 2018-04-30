@@ -11,7 +11,6 @@ import Foundation
 final class SpendingsListPresenter {
 
     weak var view: SpendingsListViewInput!
-    var cellObjectsFactory: SpendingsListCellObjectsFactoryInput!
     var interactor: SpendingsListInteractorInput!
     var router: SpendingsListRouterInput!
     
@@ -31,23 +30,8 @@ extension SpendingsListPresenter: SpendingsListViewOutput {
         view.setupInitialState()
     }
     
-    func didSelectRowAt(indexPath: IndexPath) {
-        let spending = interactor.requestSpendingObject(at: indexPath)
-        // TODO: Move to completion
+    func didSelectSpending(spending: Spending) {
         router.showSpendingModule(spending)
-    }
-    
-    func requestSectionsCount() -> Int {
-        return interactor.requestSectionsCount()
-    }
-    
-    func requestRowsCount(in section: Int) -> Int {
-        return interactor.requestRowsCount(in: section)
-    }
-    
-    func requestCellObject(at indexPath: IndexPath) -> TableCellObject {
-        let spending = interactor.requestSpendingObject(at: indexPath)
-        return cellObjectsFactory.convert(spending: spending)
     }
     
     func didTapFilterButton() {

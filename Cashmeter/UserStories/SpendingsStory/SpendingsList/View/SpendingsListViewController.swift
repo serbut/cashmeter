@@ -40,10 +40,6 @@ extension SpendingsListViewController: SpendingsListViewInput {
 		displayManager.setupInitialState(with: tableView)
     }
 
-    func show(cellObjects: [TableCellObject]) {
-        displayManager.show(cellObjects: cellObjects)
-    }
-    
     func reload() {
         tableView.reloadData()
     }
@@ -53,23 +49,9 @@ extension SpendingsListViewController: SpendingsListViewInput {
 // MARK: SpendingsListDisplayManagerOutput
 
 extension SpendingsListViewController: SpendingsListDisplayManagerOutput {
-    
-    func didSelectRowAt(indexPath: IndexPath) {
-        output.didSelectRowAt(indexPath: indexPath)
+
+    func didSelectSpending(spending: Spending) {
+        output.didSelectSpending(spending: spending)
     }
-    
-    // TODO: rewrite this block
-    
-    func requestSectionsCount() -> Int {
-        return output.requestSectionsCount()
-    }
-    
-    func requestRowsCount(in section: Int) -> Int {
-        return output.requestRowsCount(in: section)
-    }
-    
-    func requestCellObject(at indexPath: IndexPath) -> TableCellObject {
-        return output.requestCellObject(at: indexPath)
-    }
-    
+
 }

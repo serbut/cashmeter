@@ -26,17 +26,17 @@ final class SpendingsListService: NSObject {
 
 extension SpendingsListService: SpendingsListServiceInput {
     
-    func spendingsSectionsCount() -> Int {
-        return fetchedResultsController.sections?.count ?? 0
-    }
-    
-    func spendingsCount(in section: Int) -> Int {
-        return fetchedResultsController.sections?[section].numberOfObjects ?? 0
-    }
-    
-    func spendingAtIndexPath(_ indexPath: IndexPath) -> Spending {
-        return fetchedResultsController.object(at: indexPath)
-    }
+//    func spendingsSectionsCount() -> Int {
+//        return fetchedResultsController.sections?.count ?? 0
+//    }
+//    
+//    func spendingsCount(in section: Int) -> Int {
+//        return fetchedResultsController.sections?[section].numberOfObjects ?? 0
+//    }
+//    
+//    func spendingAtIndexPath(_ indexPath: IndexPath) -> Spending {
+//        return fetchedResultsController.object(at: indexPath)
+//    }
     
 }
 
@@ -69,6 +69,10 @@ extension SpendingsListService: NSFetchedResultsControllerDelegate {
         
         return fetchRequest
     }
+    
+//    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
+//        <#code#>
+//    }
     
 //    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
 //        output.contentChanged()

@@ -12,28 +12,7 @@ protocol SpendingsListDisplayManagerOutput: class {
     
     /**
      Метод сообщает о том, что была нажата ячейка.
-     
-     @param indexPath - индекс выбранной ячейки.
      */
-    func didSelectRowAt(indexPath: IndexPath)
-    
-    /**
-     Метод запрашивает количество секций.
-     */
-    func requestSectionsCount() -> Int
-    
-    /**
-     Метод запрашивает количество ячеек в секции.
-     
-     @param section - номер секции.
-     */
-    func requestRowsCount(in section: Int) -> Int
-    
-    /**
-     Метод запрашивает ячейку.
-     
-     @param indexPath - индекс ячейки.
-     */
-    func requestCellObject(at indexPath: IndexPath) -> TableCellObject
+    func didSelectSpending(spending: Spending)
     
 }
