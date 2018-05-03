@@ -22,24 +22,6 @@ final class SpendingsListService: NSObject {
     
 }
 
-// MARK: SpendingsListServiceInput
-
-extension SpendingsListService: SpendingsListServiceInput {
-    
-//    func spendingsSectionsCount() -> Int {
-//        return fetchedResultsController.sections?.count ?? 0
-//    }
-//    
-//    func spendingsCount(in section: Int) -> Int {
-//        return fetchedResultsController.sections?[section].numberOfObjects ?? 0
-//    }
-//    
-//    func spendingAtIndexPath(_ indexPath: IndexPath) -> Spending {
-//        return fetchedResultsController.object(at: indexPath)
-//    }
-    
-}
-
 // MARK: NSFetchedResultsController
 
 extension SpendingsListService: NSFetchedResultsControllerDelegate {

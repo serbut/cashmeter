@@ -78,6 +78,9 @@ extension SpendingPresenter: SpendingViewOutput {
         spendingInfo.category = category
     }
     
+    func didTapAddCategory() {
+        router.showAddCategoryModule()
+    }
 }
 
 // MARK: SpendingInteractorOutput

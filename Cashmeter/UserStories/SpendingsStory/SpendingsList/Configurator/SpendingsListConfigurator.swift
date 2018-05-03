@@ -59,7 +59,6 @@ final class SpendingsListModuleConfigurator {
 
     private func configureInteractor() -> SpendingsListInteractor {
         let interactor =  SpendingsListInteractor()
-        interactor.spendingsListService = servicesAssembly.spendingsListService()
 
         return interactor
     }

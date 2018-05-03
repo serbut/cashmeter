@@ -36,4 +36,11 @@ final class SpendingRouter: SpendingRouterInput {
         transitionHandler.present(alert, animated: true, completion: nil)
     }
     
+    func showAddCategoryModule() {
+        let viewController = NewCategoryViewController()
+        let navVC = UINavigationController(rootViewController: viewController)
+        
+        transitionHandler.present(navVC, animated: true)
+    }
+    
 }

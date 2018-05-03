@@ -21,14 +21,25 @@ class CategoryService {
         self.coreDataStack = coreDataStack
     }
     
+    fileprivate func save() {
+        managedObjectContext.perform {
+            do {
+                try self.managedObjectContext.save()
+            } catch let error as NSError {
+                fatalError(error.localizedDescription)
+            }
+            self.coreDataStack.saveContext()
+        }
+    }
+    
     func addCategory(withTitle title: String,
-                     image_name: String) -> Category {
+                     image_name: String) {
         let category = Category(context: managedObjectContext)
         
         category.title = title
         category.image_name = image_name
-                
-        return category
+        
+        save()
     }
     
     func getCategories() -> [Category] {

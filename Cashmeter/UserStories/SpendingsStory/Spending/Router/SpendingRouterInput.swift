@@ -28,4 +28,9 @@ protocol SpendingRouterInput: class {
      */
     func showErrorAlert(with message: String)
     
+    /**
+     Метод открывает модуль добавления новой категории.
+     */
+    func showAddCategoryModule()
+    
 }

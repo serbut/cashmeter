@@ -12,24 +12,10 @@ final class SpendingsListInteractor {
 
     weak var output: SpendingsListInteractorOutput!
     
-    var spendingsListService: SpendingsListServiceInput!
-
 }
 
 // MARK: SpendingsListInteractorInput
 
 extension SpendingsListInteractor: SpendingsListInteractorInput {
-    
-//    func requestSectionsCount() -> Int {
-//        return spendingsListService.spendingsSectionsCount()
-//    }
-//
-//    func requestRowsCount(in section: Int) -> Int {
-//        return spendingsListService.spendingsCount(in: section)
-//    }
-//
-//    func requestSpendingObject(at indexPath: IndexPath) -> Spending {
-//        return spendingsListService.spendingAtIndexPath(indexPath)
-//    }
 	
 }

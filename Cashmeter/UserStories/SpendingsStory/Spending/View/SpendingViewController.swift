@@ -103,4 +103,7 @@ extension SpendingViewController: SpendingDataDisplayManagerOutput {
         output.didSelectCategory(category)
     }
     
+    func didTapAddCategory() {
+        output.didTapAddCategory()
+    }
 }

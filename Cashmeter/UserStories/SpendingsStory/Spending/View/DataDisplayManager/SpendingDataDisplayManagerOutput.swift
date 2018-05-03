@@ -42,4 +42,9 @@ protocol SpendingDataDisplayManagerOutput: class {
      */
     func didSelectCategory(_ category: Category?)
     
+    /**
+     Метод сообщает о том, что была нажата ячейка добавления новой категории.
+     */
+    func didTapAddCategory()
+    
 }
