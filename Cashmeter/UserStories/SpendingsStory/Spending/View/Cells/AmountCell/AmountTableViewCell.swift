@@ -42,6 +42,7 @@ extension AmountTableViewCell: TableCellInput {
         if let amount = cellObject.amount {
             amountTextField.text = "\(amount)"
         }
+        currencyLabel.text = cellObject.currencySign
     }
     
 }

@@ -36,9 +36,13 @@ final class WalletsListViewController: UIViewController {
     }
     
     @objc func didTapOnAdd() {
-        let newWalletVC = UINavigationController(rootViewController: EditWalletViewController())
+        let newWalletVC = EditWalletViewController()
         
-        self.present(newWalletVC, animated: true)
+        let servicesAssembly = ServicesAssembly()
+        newWalletVC.walletService = servicesAssembly.walletService()
+        newWalletVC.currencyService = servicesAssembly.currencyService()
+        
+        self.present(UINavigationController(rootViewController: newWalletVC), animated: true)
     }
 
 }
@@ -57,7 +61,7 @@ extension WalletsListViewController: UITableViewDataSource {
         let walletForCell = wallets[indexPath.row]
         
         cell.nameLabel.text = walletForCell.name
-        cell.amountLabel.text = "\(walletForCell.amount)"
+        cell.amountLabel.text = "\(walletForCell.balance) \(walletForCell.currency?.label ?? "")"
         return cell
     }
     

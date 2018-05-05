@@ -6,25 +6,25 @@
 		<key>image_name</key>
 		<string>car</string>
 		<key>title</key>
-		<string>Car</string>
+		<string>Машина</string>
 	</dict>
 	<dict>
 		<key>image_name</key>
 		<string>travel</string>
 		<key>title</key>
-		<string>Travel</string>
+		<string>Путешествия</string>
 	</dict>
 	<dict>
 		<key>image_name</key>
 		<string>transport</string>
 		<key>title</key>
-		<string>Transport</string>
+		<string>Транспорт</string>
 	</dict>
 	<dict>
 		<key>image_name</key>
 		<string>food</string>
 		<key>title</key>
-		<string>Food</string>
+		<string>Еда</string>
 	</dict>
 </array>
 </plist>

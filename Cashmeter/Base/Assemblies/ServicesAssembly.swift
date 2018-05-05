@@ -58,6 +58,14 @@ final class ServicesAssembly {
         return walletService
     }
     
+    func currencyService() -> CurrencyService {
+        let stack = coreDataStack()
+        
+        let currencyService = CurrencyService(managedObjectContext: stack.mainContext, coreDataStack: stack)
+        
+        return currencyService
+    }
+    
     private func coreDataStack() -> CoreDataStack {
         return (UIApplication.shared.delegate as? AppDelegate)!.coreDataStack
     }

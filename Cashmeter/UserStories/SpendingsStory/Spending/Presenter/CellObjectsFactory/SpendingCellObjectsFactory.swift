@@ -22,6 +22,7 @@ extension SpendingCellObjectsFactory: SpendingCellObjectsFactoryInput {
         if spendingInfo.amount != 0 {
             amountTableViewCellObject.amount = spendingInfo.amount
         }
+        amountTableViewCellObject.currencySign = spendingInfo.currencySign
         cellObjects.append(amountTableViewCellObject)
         
         var categoriesTableViewCellObject = CategoriesTableViewCellObject()
@@ -45,6 +46,11 @@ extension SpendingCellObjectsFactory: SpendingCellObjectsFactoryInput {
             receiptTableViewCellObject.cellClass = AddReceiptTableViewCell.self
             cellObjects.append(receiptTableViewCellObject)
         }
+        
+        var spendingCommentTableViewCellObject = SpendingCommentTableViewCellObject()
+        spendingCommentTableViewCellObject.cellClass = SpendingCommentTableViewCell.self
+        spendingCommentTableViewCellObject.commentText = spendingInfo.comment
+        cellObjects.append(spendingCommentTableViewCellObject)
         
         return cellObjects
     }

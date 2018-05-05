@@ -9,7 +9,7 @@
 import Foundation
 import CoreData
 
-class WalletService {
+final class WalletService {
     
     // MARK: Properties
     
@@ -33,21 +33,13 @@ class WalletService {
     }
     
     func addWallet(withName name: String,
-                   currencyCode: String) {
-        let wallet = Wallet(context: managedObjectContext)
-        
-        wallet.name = name
-        // TODO: fetch currency
-        
-        save()
-    }
-    
-    func addWallet(withName name: String,
-                     currency: Currency) {
+                     currency: Currency,
+                     balance: Double) {
         let wallet = Wallet(context: managedObjectContext)
         
         wallet.name = name
         wallet.currency = currency
+        wallet.balance = balance
         
         save()
     }

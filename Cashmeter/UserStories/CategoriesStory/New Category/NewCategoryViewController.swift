@@ -58,7 +58,7 @@ class NewCategoryViewController: UIViewController {
             // TODO: Add alert
         }
         let iconImageName = iconsImageNames[iconIndex]
-        categoryService.addCategory(withTitle: title, image_name: iconImageName)
+        categoryService.addCategory(withTitle: title, imageName: iconImageName)
         
         // TODO: Move dismiss to completion
         // TODO: Refresh categories on spending page

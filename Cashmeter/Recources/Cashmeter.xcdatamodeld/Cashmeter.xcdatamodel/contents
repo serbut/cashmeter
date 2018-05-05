@@ -37,7 +37,7 @@
         <relationship name="spending" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Spending" inverseName="items" inverseEntity="Spending" syncable="YES"/>
     </entity>
     <entity name="Wallet" representedClassName="Cashmeter.Wallet" syncable="YES" codeGenerationType="class">
-        <attribute name="amount" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="balance" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="currency" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Currency" inverseName="wallet" inverseEntity="Currency" syncable="YES"/>
         <relationship name="spending" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Spending" inverseName="wallet" inverseEntity="Spending" syncable="YES"/>

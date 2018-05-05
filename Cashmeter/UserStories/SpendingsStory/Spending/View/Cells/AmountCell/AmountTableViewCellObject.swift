@@ -13,6 +13,6 @@ struct AmountTableViewCellObject: TableCellObject {
     var cellClass: UITableViewCell.Type!
     
     var amount: Double!
-//    var currency: String
+    var currencySign: String!
     
 }

@@ -85,6 +85,9 @@ extension SpendingDataDisplayManager: UITableViewDataSource {
         else if let cell = cell as? CategoriesTableViewCell {
             cell.delegate = self
         }
+        else if let cell = cell as? SpendingCommentTableViewCell {
+            cell.delegate = self
+        }
         
         return cell as! UITableViewCell
     }
@@ -129,6 +132,16 @@ extension SpendingDataDisplayManager: CategoriesTableViewCellDelegate {
     
     func didTapAddCategory() {
         output.didTapAddCategory()
+    }
+    
+}
+
+// MARK: SpendingCommentTableViewCellDelegate
+
+extension SpendingDataDisplayManager: SpendingCommentTableViewCellDelegate {
+    
+    func didChangeComment(_ comment: String?) {
+        output.didChangeComment(comment)
     }
     
 }

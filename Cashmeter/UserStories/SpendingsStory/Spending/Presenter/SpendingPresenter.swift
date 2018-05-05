@@ -74,6 +74,11 @@ extension SpendingPresenter: SpendingViewOutput {
         spendingInfo.date = value
     }
     
+    func didChangeComment(_ comment: String?) {
+        guard let comment = comment else { return }
+        spendingInfo.comment = comment
+    }
+    
     func didSelectCategory(_ category: Category?) {
         spendingInfo.category = category
     }
@@ -81,6 +86,7 @@ extension SpendingPresenter: SpendingViewOutput {
     func didTapAddCategory() {
         router.showAddCategoryModule()
     }
+    
 }
 
 // MARK: SpendingInteractorOutput

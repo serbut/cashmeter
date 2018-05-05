@@ -51,6 +51,11 @@ protocol SpendingViewOutput: class {
     func didChangeDateValue(_ value: Date?)
     
     /**
+     Метод сообщает о том, что комментарий был изменен.
+     */
+    func didChangeComment(_ comment: String?)
+    
+    /**
      Метод сообщает о том, что была выбрана категория.
      
      @param category - выбранная категория.

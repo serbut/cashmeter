@@ -9,7 +9,7 @@
 import Foundation
 import CoreData
 
-class CategoryService {
+final class CategoryService {
     
     // MARK: Properties
     
@@ -33,11 +33,11 @@ class CategoryService {
     }
     
     func addCategory(withTitle title: String,
-                     image_name: String) {
+                     imageName: String) {
         let category = Category(context: managedObjectContext)
         
         category.title = title
-        category.image_name = image_name
+        category.image_name = imageName
         
         save()
     }
