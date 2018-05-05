@@ -19,6 +19,11 @@ protocol SpendingRouterInput: class {
     func showItemsList(spendingItems: [SpendingItemInfo])
     
     /**
+     Метод открывает модуль выбора кошелька.
+     */
+    func showSelectWalletModule()
+    
+    /**
      Метод закрывает модуль.
      */
     func closeModule()

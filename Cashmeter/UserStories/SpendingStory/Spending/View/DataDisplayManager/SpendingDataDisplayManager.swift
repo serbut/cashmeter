@@ -58,6 +58,9 @@ extension SpendingDataDisplayManager: UITableViewDelegate {
         else if let _ = cellObjects[indexPath.row] as? SpendingReceiptItemsTableViewCellObject {
             output.didTriggerShowSpendingItemsAction()
         }
+        else if let _ = cellObjects[indexPath.row] as? SpendingWalletTableViewCellObject {
+            output.didTriggerSelectWalletAction()
+        }
     }
     
 }

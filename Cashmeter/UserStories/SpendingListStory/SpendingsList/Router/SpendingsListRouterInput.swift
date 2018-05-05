@@ -15,4 +15,9 @@ protocol SpendingsListRouterInput: class {
      */
     func showSpendingModule(_ spending: Spending)
     
+    /**
+     Метод открывает модуль фильтра.
+     */
+    func showFilterModule()
+    
 }

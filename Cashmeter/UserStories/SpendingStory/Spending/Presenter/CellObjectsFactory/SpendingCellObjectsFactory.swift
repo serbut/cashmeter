@@ -31,6 +31,13 @@ extension SpendingCellObjectsFactory: SpendingCellObjectsFactoryInput {
         categoriesTableViewCellObject.selectedCategory = spendingInfo.category
         cellObjects.append(categoriesTableViewCellObject)
         
+        var walletTableCellObject = SpendingWalletTableViewCellObject()
+        walletTableCellObject.cellClass = SpendingWalletTableViewCell.self
+        walletTableCellObject.walletName = spendingInfo.wallet?.name
+        walletTableCellObject.walletBalance = spendingInfo.wallet?.balance
+        walletTableCellObject.walletCurrencySign = spendingInfo.wallet?.currency?.label
+        cellObjects.append(walletTableCellObject)
+        
         var dateTableViewCellObject = SpendingDateTableViewCellObject()
         dateTableViewCellObject.cellClass = SpendingDateTableViewCell.self
         dateTableViewCellObject.date = spendingInfo.date
@@ -47,10 +54,10 @@ extension SpendingCellObjectsFactory: SpendingCellObjectsFactoryInput {
             cellObjects.append(receiptTableViewCellObject)
         }
         
-        var spendingCommentTableViewCellObject = SpendingCommentTableViewCellObject()
-        spendingCommentTableViewCellObject.cellClass = SpendingCommentTableViewCell.self
-        spendingCommentTableViewCellObject.commentText = spendingInfo.comment
-        cellObjects.append(spendingCommentTableViewCellObject)
+        var commentTableViewCellObject = SpendingCommentTableViewCellObject()
+        commentTableViewCellObject.cellClass = SpendingCommentTableViewCell.self
+        commentTableViewCellObject.commentText = spendingInfo.comment
+        cellObjects.append(commentTableViewCellObject)
         
         return cellObjects
     }

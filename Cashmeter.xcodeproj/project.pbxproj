@@ -105,6 +105,15 @@
 		07CD28FE209E349F0086F005 /* SpendingCommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CD28FC209E349F0086F005 /* SpendingCommentTableViewCell.swift */; };
 		07CD28FF209E349F0086F005 /* SpendingCommentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07CD28FD209E349F0086F005 /* SpendingCommentTableViewCell.xib */; };
 		07CD2901209E354C0086F005 /* SpendingCommentTableViewCellObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CD2900209E354C0086F005 /* SpendingCommentTableViewCellObject.swift */; };
+		07CD2905209E3D2D0086F005 /* SpendingWalletTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CD2903209E3D2D0086F005 /* SpendingWalletTableViewCell.swift */; };
+		07CD2906209E3D2D0086F005 /* SpendingWalletTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07CD2904209E3D2D0086F005 /* SpendingWalletTableViewCell.xib */; };
+		07CD2908209E3D3F0086F005 /* SpendingWalletTableViewCellObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CD2907209E3D3F0086F005 /* SpendingWalletTableViewCellObject.swift */; };
+		07CD290C209E441E0086F005 /* SelectWalletViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CD290A209E441E0086F005 /* SelectWalletViewController.swift */; };
+		07CD290D209E441E0086F005 /* SelectWalletViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07CD290B209E441E0086F005 /* SelectWalletViewController.xib */; };
+		07CD2911209E444F0086F005 /* SelectWalletTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CD290F209E444F0086F005 /* SelectWalletTableViewCell.swift */; };
+		07CD2912209E444F0086F005 /* SelectWalletTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07CD2910209E444F0086F005 /* SelectWalletTableViewCell.xib */; };
+		07CD2917209E4D6F0086F005 /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CD2915209E4D6F0086F005 /* FilterViewController.swift */; };
+		07CD2918209E4D6F0086F005 /* FilterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07CD2916209E4D6F0086F005 /* FilterViewController.xib */; };
 		07D76D83201E56FD00D2FC0F /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D76D82201E56FD00D2FC0F /* CoreDataStack.swift */; };
 		07EC0008208681A3004E442B /* ReceiptServiceInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EC0007208681A3004E442B /* ReceiptServiceInput.swift */; };
 		07EC000B2086836D004E442B /* BaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EC000A2086836D004E442B /* BaseService.swift */; };
@@ -241,6 +250,15 @@
 		07CD28FC209E349F0086F005 /* SpendingCommentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendingCommentTableViewCell.swift; sourceTree = "<group>"; };
 		07CD28FD209E349F0086F005 /* SpendingCommentTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SpendingCommentTableViewCell.xib; sourceTree = "<group>"; };
 		07CD2900209E354C0086F005 /* SpendingCommentTableViewCellObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendingCommentTableViewCellObject.swift; sourceTree = "<group>"; };
+		07CD2903209E3D2D0086F005 /* SpendingWalletTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendingWalletTableViewCell.swift; sourceTree = "<group>"; };
+		07CD2904209E3D2D0086F005 /* SpendingWalletTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SpendingWalletTableViewCell.xib; sourceTree = "<group>"; };
+		07CD2907209E3D3F0086F005 /* SpendingWalletTableViewCellObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendingWalletTableViewCellObject.swift; sourceTree = "<group>"; };
+		07CD290A209E441E0086F005 /* SelectWalletViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectWalletViewController.swift; sourceTree = "<group>"; };
+		07CD290B209E441E0086F005 /* SelectWalletViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectWalletViewController.xib; sourceTree = "<group>"; };
+		07CD290F209E444F0086F005 /* SelectWalletTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectWalletTableViewCell.swift; sourceTree = "<group>"; };
+		07CD2910209E444F0086F005 /* SelectWalletTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectWalletTableViewCell.xib; sourceTree = "<group>"; };
+		07CD2915209E4D6F0086F005 /* FilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
+		07CD2916209E4D6F0086F005 /* FilterViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilterViewController.xib; sourceTree = "<group>"; };
 		07D76D82201E56FD00D2FC0F /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		07EC0007208681A3004E442B /* ReceiptServiceInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptServiceInput.swift; sourceTree = "<group>"; };
 		07EC000A2086836D004E442B /* BaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseService.swift; sourceTree = "<group>"; };
@@ -312,7 +330,8 @@
 			children = (
 				0769A335209CEFF4004BD5E8 /* WalletsStory */,
 				0768D88C209BAD4B00A517B1 /* CategoriesStory */,
-				0743AF76208B7EC20026C5B9 /* SpendingsStory */,
+				07CD2913209E4D320086F005 /* SpendingListStory */,
+				0743AF76208B7EC20026C5B9 /* SpendingStory */,
 				076CFE86202C9A450021E452 /* MainTabBarViewController.swift */,
 			);
 			path = UserStories;
@@ -391,15 +410,15 @@
 			path = CategoryCollectionCell;
 			sourceTree = "<group>";
 		};
-		0743AF76208B7EC20026C5B9 /* SpendingsStory */ = {
+		0743AF76208B7EC20026C5B9 /* SpendingStory */ = {
 			isa = PBXGroup;
 			children = (
-				D48A6F34B137BD8B921F0218 /* SpendingsList */,
+				07CD2909209E43FA0086F005 /* WalletSelect */,
 				074E3246207EAC4800C78501 /* Spending */,
 				079E0646208E729E0072240F /* SpendingItemsList */,
 				0773D3A92083A1C300BB12ED /* QRScanner */,
 			);
-			path = SpendingsStory;
+			path = SpendingStory;
 			sourceTree = "<group>";
 		};
 		0743AF7B208B98F60026C5B9 /* SpendingsListService */ = {
@@ -585,12 +604,13 @@
 		0773D36A20834AF700BB12ED /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				07CD28FB209E34810086F005 /* CommentCell */,
 				0773D35B208340D000BB12ED /* AmountCell */,
 				0773D35C2083416600BB12ED /* CategoriesCell */,
+				07CD2902209E3CEE0086F005 /* WalletCell */,
 				075ED069208BAEEF009AE6E8 /* DateCell */,
 				0773D35D2083419300BB12ED /* AddReceiptCell */,
 				079E063F208CF3980072240F /* ReceiptItemsCell */,
+				07CD28FB209E34810086F005 /* CommentCell */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -799,6 +819,53 @@
 				07CD28FD209E349F0086F005 /* SpendingCommentTableViewCell.xib */,
 			);
 			path = CommentCell;
+			sourceTree = "<group>";
+		};
+		07CD2902209E3CEE0086F005 /* WalletCell */ = {
+			isa = PBXGroup;
+			children = (
+				07CD2903209E3D2D0086F005 /* SpendingWalletTableViewCell.swift */,
+				07CD2904209E3D2D0086F005 /* SpendingWalletTableViewCell.xib */,
+				07CD2907209E3D3F0086F005 /* SpendingWalletTableViewCellObject.swift */,
+			);
+			path = WalletCell;
+			sourceTree = "<group>";
+		};
+		07CD2909209E43FA0086F005 /* WalletSelect */ = {
+			isa = PBXGroup;
+			children = (
+				07CD290E209E44210086F005 /* Cell */,
+				07CD290A209E441E0086F005 /* SelectWalletViewController.swift */,
+				07CD290B209E441E0086F005 /* SelectWalletViewController.xib */,
+			);
+			path = WalletSelect;
+			sourceTree = "<group>";
+		};
+		07CD290E209E44210086F005 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				07CD290F209E444F0086F005 /* SelectWalletTableViewCell.swift */,
+				07CD2910209E444F0086F005 /* SelectWalletTableViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		07CD2913209E4D320086F005 /* SpendingListStory */ = {
+			isa = PBXGroup;
+			children = (
+				07CD2914209E4D490086F005 /* Filter */,
+				D48A6F34B137BD8B921F0218 /* SpendingsList */,
+			);
+			path = SpendingListStory;
+			sourceTree = "<group>";
+		};
+		07CD2914209E4D490086F005 /* Filter */ = {
+			isa = PBXGroup;
+			children = (
+				07CD2915209E4D6F0086F005 /* FilterViewController.swift */,
+				07CD2916209E4D6F0086F005 /* FilterViewController.xib */,
+			);
+			path = Filter;
 			sourceTree = "<group>";
 		};
 		07D4C16720823BEC00D26C6E /* Network */ = {
@@ -1027,6 +1094,8 @@
 				0773D3592083407E00BB12ED /* SpendingViewController.xib in Resources */,
 				075ED06D208BAF1E009AE6E8 /* SpendingDateTableViewCell.xib in Resources */,
 				07CD28FA209DC4180086F005 /* CurrencyListTableViewCell.xib in Resources */,
+				07CD290D209E441E0086F005 /* SelectWalletViewController.xib in Resources */,
+				07CD2918209E4D6F0086F005 /* FilterViewController.xib in Resources */,
 				079E064F208E731B0072240F /* SpendingItemTableViewCell.xib in Resources */,
 				079E0643208CF3CA0072240F /* SpendingReceiptItemsTableViewCell.xib in Resources */,
 				0773D35520829E5700BB12ED /* SpendingListTableViewCell.xib in Resources */,
@@ -1034,10 +1103,12 @@
 				070539A520966383003AF0D4 /* AddCategoryCollectionViewCell.xib in Resources */,
 				0769A333209BB62A004BD5E8 /* CategoryIconCollectionViewCell.xib in Resources */,
 				0743AF682086938F0026C5B9 /* CategoryCollectionViewCell.xib in Resources */,
+				07CD2912209E444F0086F005 /* SelectWalletTableViewCell.xib in Resources */,
 				07CD28ED209DB2600086F005 /* DefaultWallets.plist in Resources */,
 				0773D365208342A300BB12ED /* AddReceiptTableViewCell.xib in Resources */,
 				0769A339209CF07D004BD5E8 /* WalletsListViewController.xib in Resources */,
 				07CD28EF209DB37A0086F005 /* DefaultCurrencies.plist in Resources */,
+				07CD2906209E3D2D0086F005 /* SpendingWalletTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1177,9 +1248,12 @@
 				0773D3B12083B9B500BB12ED /* QRScannerModuleOutput.swift in Sources */,
 				079E0630208CA4160072240F /* SpendingButtonType.swift in Sources */,
 				0773D3AB2083A1F200BB12ED /* QRScannerViewController.swift in Sources */,
+				07CD290C209E441E0086F005 /* SelectWalletViewController.swift in Sources */,
+				07CD2905209E3D2D0086F005 /* SpendingWalletTableViewCell.swift in Sources */,
 				0743AF672086938F0026C5B9 /* CategoryCollectionViewCell.swift in Sources */,
 				0773D37820834CCB00BB12ED /* CellObjectProtocol.swift in Sources */,
 				0773D38F20835B6600BB12ED /* SpendingCellObjectsFactory.swift in Sources */,
+				07CD2908209E3D3F0086F005 /* SpendingWalletTableViewCellObject.swift in Sources */,
 				079E063A208CE7160072240F /* ReceiptInfo.swift in Sources */,
 				074E3243207EABD100C78501 /* ReceiptService.swift in Sources */,
 				0773D39320835CC400BB12ED /* SpendingRouter.swift in Sources */,
@@ -1224,6 +1298,7 @@
 				076CFE87202C9A450021E452 /* MainTabBarViewController.swift in Sources */,
 				073DDFFF20035DD4000CAD7C /* AppDelegate.swift in Sources */,
 				0773D37120834B5B00BB12ED /* SpendingDataDisplayManagerOutput.swift in Sources */,
+				07CD2917209E4D6F0086F005 /* FilterViewController.swift in Sources */,
 				0773D386208359C900BB12ED /* SpendingPresenter.swift in Sources */,
 				35977FC0FE9000C7C6D00B02 /* SpendingsListConfigurator.swift in Sources */,
 				8A5E5F1A28AB524855BC99D7 /* SpendingsListViewInput.swift in Sources */,
@@ -1244,6 +1319,7 @@
 				82FF54B91A41E5695C11801D /* SpendingsListInteractorOutput.swift in Sources */,
 				9AF449E4ED17FBC2B0E0A2CF /* SpendingsListInteractor.swift in Sources */,
 				07CD28F3209DB67D0086F005 /* CurrencyService.swift in Sources */,
+				07CD2911209E444F0086F005 /* SelectWalletTableViewCell.swift in Sources */,
 				9FB88F2D01FF9A780DC984A0 /* SpendingsListRouterInput.swift in Sources */,
 				0769A332209BB62A004BD5E8 /* CategoryIconCollectionViewCell.swift in Sources */,
 				5B871DC9823E5DC0D7E88EA0 /* SpendingsListRouter.swift in Sources */,

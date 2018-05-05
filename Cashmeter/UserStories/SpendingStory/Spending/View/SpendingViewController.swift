@@ -91,6 +91,10 @@ extension SpendingViewController: SpendingDataDisplayManagerOutput {
         output.didTriggerShowSpendingItemsAction()
     }
     
+    func didTriggerSelectWalletAction() {
+        output.didTriggerSelectWalletAction()
+    }
+    
     func didChangeAmountValue(_ value: String?) {
         output.didChangeAmountValue(value)
     }

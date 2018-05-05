@@ -35,7 +35,7 @@ extension SpendingsListPresenter: SpendingsListViewOutput {
     }
     
     func didTapFilterButton() {
-        print("Filter")
+        router.showFilterModule()
     }
 
 }

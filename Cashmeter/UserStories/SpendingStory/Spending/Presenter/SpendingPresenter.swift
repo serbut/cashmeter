@@ -55,6 +55,10 @@ extension SpendingPresenter: SpendingViewOutput {
         router.showItemsList(spendingItems: spendingItems)
     }
     
+    func didTriggerSelectWalletAction() {
+        router.showSelectWalletModule()
+    }
+    
     func didTapOnClose() {
         router.closeModule()
     }
