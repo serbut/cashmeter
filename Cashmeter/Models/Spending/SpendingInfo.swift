@@ -13,8 +13,9 @@ final class SpendingInfo {
     var spending: Spending?
     
     var amount: Double
-    var currency: Currency?
     var category: Category?
+    var wallet: Wallet?
+    var currencySign: String?
     var date: Date
     var receiptItems: [SpendingItemInfo]?
     var comment: String
@@ -28,8 +29,9 @@ final class SpendingInfo {
     init(from spending: Spending) {
         self.spending = spending
         self.amount = spending.amount
-        self.currency = spending.currency
         self.category = spending.category
+        self.wallet = spending.wallet
+        self.currencySign = spending.wallet?.currency?.label
         self.date = spending.date!
         self.receiptItems = spending.items?.allObjects.map { SpendingItemInfo(from: $0 as! SpendingItem) }
         self.comment = spending.comment ?? ""

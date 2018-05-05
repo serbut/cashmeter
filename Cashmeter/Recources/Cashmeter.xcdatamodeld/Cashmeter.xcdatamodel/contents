@@ -7,9 +7,10 @@
         <relationship name="spending" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Spending" inverseName="category" inverseEntity="Spending" syncable="YES"/>
     </entity>
     <entity name="Currency" representedClassName="Cashmeter.Currency" syncable="YES" codeGenerationType="class">
-        <attribute name="label" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="spending" toMany="YES" deletionRule="Deny" destinationEntity="Spending" inverseName="currency" inverseEntity="Spending" syncable="YES"/>
+        <attribute name="code" attributeType="String" syncable="YES"/>
+        <attribute name="label" attributeType="String" syncable="YES"/>
+        <attribute name="name" attributeType="String" syncable="YES"/>
+        <relationship name="wallet" toMany="YES" deletionRule="Deny" destinationEntity="Wallet" inverseName="currency" inverseEntity="Wallet" syncable="YES"/>
     </entity>
     <entity name="Receipt" representedClassName="Cashmeter.Receipt" syncable="YES" codeGenerationType="class">
         <attribute name="fn" optional="YES" attributeType="String" syncable="YES"/>
@@ -23,7 +24,6 @@
         <attribute name="date" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="shop" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="category" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Category" inverseName="spending" inverseEntity="Category" syncable="YES"/>
-        <relationship name="currency" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Currency" inverseName="spending" inverseEntity="Currency" syncable="YES"/>
         <relationship name="items" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="SpendingItem" inverseName="spending" inverseEntity="SpendingItem" syncable="YES"/>
         <relationship name="receipt" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Receipt" inverseName="spending" inverseEntity="Receipt" syncable="YES"/>
         <relationship name="wallet" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Wallet" inverseName="spending" inverseEntity="Wallet" syncable="YES"/>
@@ -37,15 +37,17 @@
         <relationship name="spending" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Spending" inverseName="items" inverseEntity="Spending" syncable="YES"/>
     </entity>
     <entity name="Wallet" representedClassName="Cashmeter.Wallet" syncable="YES" codeGenerationType="class">
+        <attribute name="amount" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="currency" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Currency" inverseName="wallet" inverseEntity="Currency" syncable="YES"/>
         <relationship name="spending" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Spending" inverseName="wallet" inverseEntity="Spending" syncable="YES"/>
     </entity>
     <elements>
         <element name="Category" positionX="-216" positionY="122" width="128" height="103"/>
-        <element name="Currency" positionX="-162" positionY="344" width="128" height="88"/>
+        <element name="Currency" positionX="-162" positionY="344" width="128" height="103"/>
         <element name="Receipt" positionX="421" positionY="423" width="128" height="103"/>
-        <element name="Spending" positionX="115" positionY="216" width="128" height="178"/>
+        <element name="Spending" positionX="115" positionY="216" width="128" height="163"/>
         <element name="SpendingItem" positionX="403" positionY="63" width="128" height="133"/>
-        <element name="Wallet" positionX="439" positionY="242" width="128" height="73"/>
+        <element name="Wallet" positionX="439" positionY="242" width="128" height="103"/>
     </elements>
 </model>

@@ -22,7 +22,7 @@ class MainTabBarViewController: ESTabBarController {
     }
     
     private func configureChildrenControllers() {
-        let spendingsNavVC = UINavigationController(rootViewController: createSpendingsVC())
+        let spendingsNavVC = createSpendingsVC()
 
         let stubVC = UIViewController()
         stubVC.tabBarItem = UITabBarItem(title: nil, image: UIImage(named: "coin_icon"), tag: 2)
@@ -43,8 +43,7 @@ class MainTabBarViewController: ESTabBarController {
         
         didHijackHandler = { tabbarController, viewController, index in
             let newSpendingVC = self.createNewSpendingVC()
-            let newSpendingNavVC = UINavigationController(rootViewController: newSpendingVC)
-            self.present(newSpendingNavVC, animated: true, completion: nil)
+            self.present(newSpendingVC, animated: true, completion: nil)
         }
     }
     
@@ -55,13 +54,14 @@ class MainTabBarViewController: ESTabBarController {
         let viewController = module.viewController
         
         viewController.tabBarItem = UITabBarItem(title: nil, image: UIImage(named: "list_icon"), tag: 1)
-        return viewController
+        return UINavigationController(rootViewController: viewController)
     }
     
     private func createWalletsVC() -> UIViewController {
-        let walletsVC = UIViewController()
+        let walletsVC = WalletsListViewController()
+        walletsVC.walletService = ServicesAssembly().walletService()
         walletsVC.tabBarItem = UITabBarItem(title: nil, image: UIImage(named: "wallet_icon"), tag: 3)
-        return walletsVC
+        return UINavigationController(rootViewController: walletsVC)
     }
     
     private func createNewSpendingVC() -> UIViewController {
@@ -70,29 +70,6 @@ class MainTabBarViewController: ESTabBarController {
         let viewController = module.viewController
         
         viewController.tabBarItem = UITabBarItem(tabBarSystemItem: .favorites, tag: 2)
-        return viewController
+        return UINavigationController(rootViewController: viewController)
     }
 }
-
-//extension MainTabBarViewController: EditSpendingDelegate {
-//    func didFinish(viewController: EditSpendingViewController, didSave: Bool) {
-//        guard didSave,
-//            let context = viewController.context,
-//            context.hasChanges else {
-//                dismiss(animated: true)
-//                return
-//        }
-//
-//        context.perform {
-//            do {
-//                try context.save()
-//            } catch let error as NSError {
-//                fatalError("Error: \(error.localizedDescription)")
-//            }
-//
-//            self.coreDataStack.saveContext()
-//        }
-//
-//        dismiss(animated: true)
-//    }
-//}

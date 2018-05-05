@@ -52,12 +52,4 @@ extension SpendingsListService: NSFetchedResultsControllerDelegate {
         return fetchRequest
     }
     
-//    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
-//        <#code#>
-//    }
-    
-//    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
-//        output.contentChanged()
-//    }
-    
 }

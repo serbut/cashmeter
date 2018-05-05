@@ -29,6 +29,13 @@
 		0768D891209BAD8A00A517B1 /* NewCategoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0768D88F209BAD8A00A517B1 /* NewCategoryViewController.xib */; };
 		0769A332209BB62A004BD5E8 /* CategoryIconCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0769A330209BB62A004BD5E8 /* CategoryIconCollectionViewCell.swift */; };
 		0769A333209BB62A004BD5E8 /* CategoryIconCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0769A331209BB62A004BD5E8 /* CategoryIconCollectionViewCell.xib */; };
+		0769A338209CF07D004BD5E8 /* WalletsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0769A336209CF07D004BD5E8 /* WalletsListViewController.swift */; };
+		0769A339209CF07D004BD5E8 /* WalletsListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0769A337209CF07D004BD5E8 /* WalletsListViewController.xib */; };
+		0769A33D209CF0E4004BD5E8 /* WalletsListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0769A33B209CF0E4004BD5E8 /* WalletsListTableViewCell.swift */; };
+		0769A33E209CF0E4004BD5E8 /* WalletsListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0769A33C209CF0E4004BD5E8 /* WalletsListTableViewCell.xib */; };
+		0769A343209CF3A2004BD5E8 /* EditWalletViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0769A341209CF3A2004BD5E8 /* EditWalletViewController.swift */; };
+		0769A344209CF3A2004BD5E8 /* EditWalletViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0769A342209CF3A2004BD5E8 /* EditWalletViewController.xib */; };
+		0769A346209CF559004BD5E8 /* WalletService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0769A345209CF559004BD5E8 /* WalletService.swift */; };
 		076CFE87202C9A450021E452 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076CFE86202C9A450021E452 /* MainTabBarViewController.swift */; };
 		0773D35420829E5700BB12ED /* SpendingListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0773D35220829E5700BB12ED /* SpendingListTableViewCell.swift */; };
 		0773D35520829E5700BB12ED /* SpendingListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0773D35320829E5700BB12ED /* SpendingListTableViewCell.xib */; };
@@ -89,6 +96,9 @@
 		07C0FF0820823C2A00CA3FD0 /* NetworkProviderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C0FF0720823C2A00CA3FD0 /* NetworkProviderProtocol.swift */; };
 		07C0FF0C20823D2D00CA3FD0 /* NetworkProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C0FF0B20823D2D00CA3FD0 /* NetworkProvider.swift */; };
 		07C0FF0E20823E7500CA3FD0 /* RequestTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C0FF0D20823E7500CA3FD0 /* RequestTypes.swift */; };
+		07CD28ED209DB2600086F005 /* DefaultWallets.plist in Resources */ = {isa = PBXBuildFile; fileRef = 07CD28EC209DB2600086F005 /* DefaultWallets.plist */; };
+		07CD28EF209DB37A0086F005 /* DefaultCurrencies.plist in Resources */ = {isa = PBXBuildFile; fileRef = 07CD28EE209DB37A0086F005 /* DefaultCurrencies.plist */; };
+		07CD28F3209DB67D0086F005 /* CurrencyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CD28F2209DB67D0086F005 /* CurrencyService.swift */; };
 		07D76D83201E56FD00D2FC0F /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D76D82201E56FD00D2FC0F /* CoreDataStack.swift */; };
 		07EC0008208681A3004E442B /* ReceiptServiceInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EC0007208681A3004E442B /* ReceiptServiceInput.swift */; };
 		07EC000B2086836D004E442B /* BaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EC000A2086836D004E442B /* BaseService.swift */; };
@@ -149,6 +159,13 @@
 		0768D88F209BAD8A00A517B1 /* NewCategoryViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewCategoryViewController.xib; sourceTree = "<group>"; };
 		0769A330209BB62A004BD5E8 /* CategoryIconCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryIconCollectionViewCell.swift; sourceTree = "<group>"; };
 		0769A331209BB62A004BD5E8 /* CategoryIconCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CategoryIconCollectionViewCell.xib; sourceTree = "<group>"; };
+		0769A336209CF07D004BD5E8 /* WalletsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletsListViewController.swift; sourceTree = "<group>"; };
+		0769A337209CF07D004BD5E8 /* WalletsListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WalletsListViewController.xib; sourceTree = "<group>"; };
+		0769A33B209CF0E4004BD5E8 /* WalletsListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletsListTableViewCell.swift; sourceTree = "<group>"; };
+		0769A33C209CF0E4004BD5E8 /* WalletsListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WalletsListTableViewCell.xib; sourceTree = "<group>"; };
+		0769A341209CF3A2004BD5E8 /* EditWalletViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditWalletViewController.swift; sourceTree = "<group>"; };
+		0769A342209CF3A2004BD5E8 /* EditWalletViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditWalletViewController.xib; sourceTree = "<group>"; };
+		0769A345209CF559004BD5E8 /* WalletService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletService.swift; sourceTree = "<group>"; };
 		076CFE86202C9A450021E452 /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
 		0773D35220829E5700BB12ED /* SpendingListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendingListTableViewCell.swift; sourceTree = "<group>"; };
 		0773D35320829E5700BB12ED /* SpendingListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SpendingListTableViewCell.xib; sourceTree = "<group>"; };
@@ -209,6 +226,9 @@
 		07C0FF0720823C2A00CA3FD0 /* NetworkProviderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkProviderProtocol.swift; sourceTree = "<group>"; };
 		07C0FF0B20823D2D00CA3FD0 /* NetworkProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkProvider.swift; sourceTree = "<group>"; };
 		07C0FF0D20823E7500CA3FD0 /* RequestTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestTypes.swift; sourceTree = "<group>"; };
+		07CD28EC209DB2600086F005 /* DefaultWallets.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = DefaultWallets.plist; sourceTree = "<group>"; };
+		07CD28EE209DB37A0086F005 /* DefaultCurrencies.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = DefaultCurrencies.plist; sourceTree = "<group>"; };
+		07CD28F2209DB67D0086F005 /* CurrencyService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyService.swift; sourceTree = "<group>"; };
 		07D76D82201E56FD00D2FC0F /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		07EC0007208681A3004E442B /* ReceiptServiceInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptServiceInput.swift; sourceTree = "<group>"; };
 		07EC000A2086836D004E442B /* BaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseService.swift; sourceTree = "<group>"; };
@@ -278,6 +298,7 @@
 		07193BF52017580200DA1ECC /* UserStories */ = {
 			isa = PBXGroup;
 			children = (
+				0769A335209CEFF4004BD5E8 /* WalletsStory */,
 				0768D88C209BAD4B00A517B1 /* CategoriesStory */,
 				0743AF76208B7EC20026C5B9 /* SpendingsStory */,
 				076CFE86202C9A450021E452 /* MainTabBarViewController.swift */,
@@ -318,7 +339,7 @@
 		073DDFFD20035DD4000CAD7C /* Cashmeter */ = {
 			isa = PBXGroup;
 			children = (
-				0764A30D207EACE500D6FEB9 /* Resources */,
+				07CD28F1209DB3A60086F005 /* Recources */,
 				074E324A207EACC000C78501 /* Supporting Files */,
 				0742CF6E207EAA350055A3DC /* Classes */,
 			);
@@ -393,6 +414,7 @@
 			isa = PBXGroup;
 			children = (
 				073DE00A20035DD4000CAD7C /* LaunchScreen.storyboard */,
+				073DE00D20035DD4000CAD7C /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -405,17 +427,6 @@
 				075ED06E208BAF2F009AE6E8 /* SpendingDateTableViewCellObject.swift */,
 			);
 			path = DateCell;
-			sourceTree = "<group>";
-		};
-		0764A30D207EACE500D6FEB9 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				073DE00820035DD4000CAD7C /* Images.xcassets */,
-				073DE00D20035DD4000CAD7C /* Info.plist */,
-				073DE00520035DD4000CAD7C /* Cashmeter.xcdatamodeld */,
-				077EBB732018BC15006E12D5 /* DefaultCategories.plist */,
-			);
-			name = Resources;
 			sourceTree = "<group>";
 		};
 		0768D88C209BAD4B00A517B1 /* CategoriesStory */ = {
@@ -443,6 +454,43 @@
 				0769A331209BB62A004BD5E8 /* CategoryIconCollectionViewCell.xib */,
 			);
 			path = CategoryIconCell;
+			sourceTree = "<group>";
+		};
+		0769A335209CEFF4004BD5E8 /* WalletsStory */ = {
+			isa = PBXGroup;
+			children = (
+				0769A340209CF368004BD5E8 /* EditWallet */,
+				0769A33A209CF080004BD5E8 /* WalletsList */,
+			);
+			path = WalletsStory;
+			sourceTree = "<group>";
+		};
+		0769A33A209CF080004BD5E8 /* WalletsList */ = {
+			isa = PBXGroup;
+			children = (
+				0769A33F209CF0EB004BD5E8 /* Cell */,
+				0769A336209CF07D004BD5E8 /* WalletsListViewController.swift */,
+				0769A337209CF07D004BD5E8 /* WalletsListViewController.xib */,
+			);
+			path = WalletsList;
+			sourceTree = "<group>";
+		};
+		0769A33F209CF0EB004BD5E8 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				0769A33B209CF0E4004BD5E8 /* WalletsListTableViewCell.swift */,
+				0769A33C209CF0E4004BD5E8 /* WalletsListTableViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		0769A340209CF368004BD5E8 /* EditWallet */ = {
+			isa = PBXGroup;
+			children = (
+				0769A341209CF3A2004BD5E8 /* EditWalletViewController.swift */,
+				0769A342209CF3A2004BD5E8 /* EditWalletViewController.xib */,
+			);
+			path = EditWallet;
 			sourceTree = "<group>";
 		};
 		0773D35B208340D000BB12ED /* AmountCell */ = {
@@ -708,6 +756,18 @@
 			path = SpendingCell;
 			sourceTree = "<group>";
 		};
+		07CD28F1209DB3A60086F005 /* Recources */ = {
+			isa = PBXGroup;
+			children = (
+				073DE00820035DD4000CAD7C /* Images.xcassets */,
+				073DE00520035DD4000CAD7C /* Cashmeter.xcdatamodeld */,
+				077EBB732018BC15006E12D5 /* DefaultCategories.plist */,
+				07CD28EC209DB2600086F005 /* DefaultWallets.plist */,
+				07CD28EE209DB37A0086F005 /* DefaultCurrencies.plist */,
+			);
+			path = Recources;
+			sourceTree = "<group>";
+		};
 		07D4C16720823BEC00D26C6E /* Network */ = {
 			isa = PBXGroup;
 			children = (
@@ -725,6 +785,8 @@
 				079E062A208C8FEB0072240F /* SpendingService */,
 				0743AF7B208B98F60026C5B9 /* SpendingsListService */,
 				078037DB20234EAA00AA651C /* CategoryService.swift */,
+				0769A345209CF559004BD5E8 /* WalletService.swift */,
+				07CD28F2209DB67D0086F005 /* CurrencyService.swift */,
 				079E0634208CAC0D0072240F /* ReceiptService */,
 			);
 			path = Services;
@@ -921,9 +983,11 @@
 				0743AF63208692C80026C5B9 /* CategoriesTableViewCell.xib in Resources */,
 				077EBB742018BC15006E12D5 /* DefaultCategories.plist in Resources */,
 				07EDBFAB20828B7E009229DC /* SpendingsListViewController.xib in Resources */,
+				0769A33E209CF0E4004BD5E8 /* WalletsListTableViewCell.xib in Resources */,
 				079E064A208E72EE0072240F /* SpendingItemsListViewController.xib in Resources */,
 				073DE00C20035DD4000CAD7C /* LaunchScreen.storyboard in Resources */,
 				0768D891209BAD8A00A517B1 /* NewCategoryViewController.xib in Resources */,
+				0769A344209CF3A2004BD5E8 /* EditWalletViewController.xib in Resources */,
 				0773D361208341BB00BB12ED /* AmountTableViewCell.xib in Resources */,
 				0773D3592083407E00BB12ED /* SpendingViewController.xib in Resources */,
 				075ED06D208BAF1E009AE6E8 /* SpendingDateTableViewCell.xib in Resources */,
@@ -934,7 +998,10 @@
 				070539A520966383003AF0D4 /* AddCategoryCollectionViewCell.xib in Resources */,
 				0769A333209BB62A004BD5E8 /* CategoryIconCollectionViewCell.xib in Resources */,
 				0743AF682086938F0026C5B9 /* CategoryCollectionViewCell.xib in Resources */,
+				07CD28ED209DB2600086F005 /* DefaultWallets.plist in Resources */,
 				0773D365208342A300BB12ED /* AddReceiptTableViewCell.xib in Resources */,
+				0769A339209CF07D004BD5E8 /* WalletsListViewController.xib in Resources */,
+				07CD28EF209DB37A0086F005 /* DefaultCurrencies.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1069,6 +1136,7 @@
 				0773D39B20836E2700BB12ED /* Module.swift in Sources */,
 				0773D3822083567F00BB12ED /* SpendingViewInput.swift in Sources */,
 				079E064E208E731B0072240F /* SpendingItemTableViewCell.swift in Sources */,
+				0769A338209CF07D004BD5E8 /* WalletsListViewController.swift in Sources */,
 				0773D35420829E5700BB12ED /* SpendingListTableViewCell.swift in Sources */,
 				0773D3B12083B9B500BB12ED /* QRScannerModuleOutput.swift in Sources */,
 				079E0630208CA4160072240F /* SpendingButtonType.swift in Sources */,
@@ -1085,6 +1153,7 @@
 				0773D39820835E2000BB12ED /* SpendingConfigurator.swift in Sources */,
 				0743AF62208692C80026C5B9 /* CategoriesTableViewCell.swift in Sources */,
 				079E0632208CA5660072240F /* CategoryInfo.swift in Sources */,
+				0769A33D209CF0E4004BD5E8 /* WalletsListTableViewCell.swift in Sources */,
 				0773D38C208359FC00BB12ED /* SpendingModuleOutput.swift in Sources */,
 				073DE00720035DD4000CAD7C /* Cashmeter.xcdatamodeld in Sources */,
 				07C0FF0C20823D2D00CA3FD0 /* NetworkProvider.swift in Sources */,
@@ -1094,6 +1163,7 @@
 				0773D3A4208370F400BB12ED /* SpendingInteractorInput.swift in Sources */,
 				079E062E208C90BA0072240F /* SpendingInfo.swift in Sources */,
 				075ED06C208BAF1E009AE6E8 /* SpendingDateTableViewCell.swift in Sources */,
+				0769A346209CF559004BD5E8 /* WalletService.swift in Sources */,
 				0773D388208359D800BB12ED /* SpendingModuleInput.swift in Sources */,
 				0773D3A820838D0B00BB12ED /* AddReceiptTableViewCellObject.swift in Sources */,
 				0768D890209BAD8A00A517B1 /* NewCategoryViewController.swift in Sources */,
@@ -1107,6 +1177,7 @@
 				0773D3582083407E00BB12ED /* SpendingViewController.swift in Sources */,
 				0773D37E2083541100BB12ED /* HasNib.swift in Sources */,
 				0773D39120835B8100BB12ED /* SpendingCellObjectsFactoryInput.swift in Sources */,
+				0769A343209CF3A2004BD5E8 /* EditWalletViewController.swift in Sources */,
 				075ED06F208BAF2F009AE6E8 /* SpendingDateTableViewCellObject.swift in Sources */,
 				079E0649208E72EE0072240F /* SpendingItemsListViewController.swift in Sources */,
 				07843B8E208BC694001DBABF /* CategoriesTableViewCellObject.swift in Sources */,
@@ -1132,6 +1203,7 @@
 				179F034FA193280B14B9776D /* SpendingsListInteractorInput.swift in Sources */,
 				82FF54B91A41E5695C11801D /* SpendingsListInteractorOutput.swift in Sources */,
 				9AF449E4ED17FBC2B0E0A2CF /* SpendingsListInteractor.swift in Sources */,
+				07CD28F3209DB67D0086F005 /* CurrencyService.swift in Sources */,
 				9FB88F2D01FF9A780DC984A0 /* SpendingsListRouterInput.swift in Sources */,
 				0769A332209BB62A004BD5E8 /* CategoryIconCollectionViewCell.swift in Sources */,
 				5B871DC9823E5DC0D7E88EA0 /* SpendingsListRouter.swift in Sources */,

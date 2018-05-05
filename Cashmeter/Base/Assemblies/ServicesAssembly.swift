@@ -50,15 +50,13 @@ final class ServicesAssembly {
         return categoryService
     }
     
-//    func spendingAndCategoryService() -> (SpendingServiceInput, CategoryService) {
-//        let stack = coreDataStack()
-//        let childContext = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
-//        childContext.parent = stack.mainContext
-//        let spendingService = SpendingService(managedObjectContext: childContext, coreDataStack: stack)
-//        let categoryService = CategoryService(managedObjectContext: childContext, coreDataStack: stack)
-//        
-//        return (spendingService, categoryService)
-//    }
+    func walletService() -> WalletService {
+        let stack = coreDataStack()
+        
+        let walletService = WalletService(managedObjectContext: stack.mainContext, coreDataStack: stack)
+        
+        return walletService
+    }
     
     private func coreDataStack() -> CoreDataStack {
         return (UIApplication.shared.delegate as? AppDelegate)!.coreDataStack
