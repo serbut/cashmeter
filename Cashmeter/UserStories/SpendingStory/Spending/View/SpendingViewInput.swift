@@ -31,4 +31,9 @@ protocol SpendingViewInput: class {
      */
     func hideLoader()
     
+    /**
+     Метод сообщает, показывать ли кнопку удаления покупки.
+     */
+    func showDeleteButton(_ show: Bool)
+    
 }

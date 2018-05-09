@@ -52,7 +52,7 @@ class QRScannerViewController: UIViewController {
     private func setupCloseButton() {
         let closeButton: UIButton = {
             let button = UIButton()
-            let image = UIImage(named: "close_bar_button")?.withRenderingMode(.alwaysTemplate)
+            let image = #imageLiteral(resourceName: "close_bar_button").withRenderingMode(.alwaysTemplate)
             button.setImage(image, for: .normal)
             button.tintColor = .white
             button.addTarget(self, action: #selector(closeModule), for: .touchDown)

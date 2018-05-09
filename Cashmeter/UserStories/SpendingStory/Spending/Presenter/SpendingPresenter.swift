@@ -25,7 +25,8 @@ final class SpendingPresenter {
 extension SpendingPresenter: SpendingModuleInput {
     
     func setup(with spending: Spending) {
-        self.spendingInfo = SpendingInfo(from: spending)
+        spendingInfo = SpendingInfo(from: spending)
+        view.showDeleteButton(true)
     }
     
 }
@@ -63,8 +64,20 @@ extension SpendingPresenter: SpendingViewOutput {
         router.closeModule()
     }
     
+    func didTapOnDelete() {
+        //      TODO: Show alert
+        //      router.showConfirmationDeleteAlert()
+        guard let spending = spendingInfo.spending else {
+            fatalError("Trying to delete spending which doesn't exists")
+        }
+        interactor.deleteSpending(spending)
+        // TODO: move to completion
+        router.closeModule()
+    }
+    
     func didTapOnSave() {
         interactor.saveSpending(spendingInfo: spendingInfo)
+        // TODO: move to completion
         router.closeModule()
     }
     

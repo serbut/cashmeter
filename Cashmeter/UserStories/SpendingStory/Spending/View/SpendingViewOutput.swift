@@ -41,6 +41,11 @@ protocol SpendingViewOutput: class {
     func didTapOnClose()
     
     /**
+     Метод сообщает о том, что пользователь нажал на кнопку удаления покупки.
+     */
+    func didTapOnDelete()
+    
+    /**
      Метод сообщает о том, что пользователь нажал на кнопку сохранения покупки.
      */
     func didTapOnSave()

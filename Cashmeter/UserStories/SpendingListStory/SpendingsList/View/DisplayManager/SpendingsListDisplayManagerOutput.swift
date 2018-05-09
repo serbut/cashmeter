@@ -15,4 +15,9 @@ protocol SpendingsListDisplayManagerOutput: class {
      */
     func didSelectSpending(spending: Spending)
     
+    /**
+     Метод сообщает о том, что было инициировано удаление покупки.
+     */
+    func didTriggerDeleteAction(_ spending: Spending)
+    
 }

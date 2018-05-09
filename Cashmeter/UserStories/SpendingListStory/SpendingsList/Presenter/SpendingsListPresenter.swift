@@ -37,6 +37,10 @@ extension SpendingsListPresenter: SpendingsListViewOutput {
     func didTapFilterButton() {
         router.showFilterModule()
     }
+    
+    func didTriggerDeleteAction(_ spending: Spending) {
+        interactor.deleteSpending(spending)
+    }
 
 }
 

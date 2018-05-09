@@ -47,4 +47,8 @@ extension SpendingInteractor: SpendingInteractorInput {
         }
     }
     
+    func deleteSpending(_ spending: Spending) {
+        spendingService.deleteSpending(spending)
+    }
+    
 }

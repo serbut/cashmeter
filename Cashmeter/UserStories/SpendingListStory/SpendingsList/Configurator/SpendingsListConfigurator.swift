@@ -47,7 +47,7 @@ final class SpendingsListModuleConfigurator {
         let displayManager = SpendingsListDisplayManager()
         let service = servicesAssembly.spendingsListService()
         displayManager.fetchedResultsController = service.fetchedResultsController
-//        displayManager.fetchedResultsController.delegate = displayManager
+        displayManager.fetchedResultsController.delegate = displayManager
         return displayManager
     }
 
@@ -59,7 +59,8 @@ final class SpendingsListModuleConfigurator {
 
     private func configureInteractor() -> SpendingsListInteractor {
         let interactor =  SpendingsListInteractor()
-
+        interactor.spendingService = servicesAssembly.spendingService()
+        
         return interactor
     }
 

@@ -24,4 +24,11 @@ protocol SpendingServiceInput {
      */
     func updateSpending(withInfo spendingInfo: SpendingInfo)
     
+    /**
+     Метод удаляет информацию о покупке.
+     
+     @param spending - информация о покупке.
+     */
+    func deleteSpending(_ spending: Spending)
+    
 }

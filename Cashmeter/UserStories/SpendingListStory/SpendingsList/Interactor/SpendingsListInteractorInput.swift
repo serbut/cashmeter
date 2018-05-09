@@ -10,23 +10,9 @@ import Foundation
 
 protocol SpendingsListInteractorInput: class {
 	
-//    /**
-//     Метод запрашивает количество секций.
-//     */
-//    func requestSectionsCount() -> Int
-//    
-//    /**
-//     Метод запрашивает количество ячеек в секции.
-//     
-//     @param section - номер секции.
-//     */
-//    func requestRowsCount(in section: Int) -> Int
-//    
-//    /**
-//     Метод запрашивает данные о покупке.
-//     
-//     @param indexPath - индекс ячейки.
-//     */
-//    func requestSpendingObject(at indexPath: IndexPath) -> Spending
+    /**
+     Метод вызывает удаление покупки.
+     */
+    func deleteSpending(_ spending: Spending)
     
 }

@@ -25,4 +25,9 @@ protocol SpendingInteractorInput {
      */
     func saveSpending(spendingInfo: SpendingInfo)
     
+    /**
+     Метод вызывает удаление покупки.
+     */
+    func deleteSpending(_ spending: Spending)
+    
 }

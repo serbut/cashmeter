@@ -17,6 +17,7 @@ final class SpendingViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var activityIndicatorView: UIActivityIndicatorView!
+    var shouldShowDeleteButton = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +26,7 @@ final class SpendingViewController: UIViewController {
     }
     
     fileprivate func setupSaveButton() {
-        let saveBarButton = UIBarButtonItem(image: UIImage(named: "check_bar_button"),
+        let saveBarButton = UIBarButtonItem(image: #imageLiteral(resourceName: "check_bar_button"),
                                             style: .plain,
                                             target: self,
                                             action: #selector(didTapOnSave))
@@ -37,17 +38,31 @@ final class SpendingViewController: UIViewController {
         output.didTapOnSave()
     }
     
-    fileprivate func setupCloseButton() {
-        let closeBarButton = UIBarButtonItem(image: UIImage(named: "close_bar_button"),
+    fileprivate func setupCloseAndDeleteButtons() {
+        let closeBarButton = UIBarButtonItem(image: #imageLiteral(resourceName: "close_bar_button"),
                                              style: .plain,
                                              target: self,
                                              action: #selector(didTapOnClose))
         
-        self.navigationItem.leftBarButtonItem = closeBarButton
+        if shouldShowDeleteButton {
+            let deleteBarButton = UIBarButtonItem(image: #imageLiteral(resourceName: "delete_bar_button"),
+                                                  style: .plain,
+                                                  target: self,
+                                                  action: #selector(didTapOnDelete))
+            
+            navigationItem.leftBarButtonItems = [closeBarButton, deleteBarButton]
+        } else {
+            navigationItem.leftBarButtonItem = closeBarButton
+        }
+        
     }
     
     @objc func didTapOnClose() {
         output.didTapOnClose()
+    }
+    
+    @objc func didTapOnDelete() {
+        output.didTapOnDelete()
     }
 
 }
@@ -59,7 +74,7 @@ extension SpendingViewController: SpendingViewInput {
     func setupInitialState() {
         navigationController?.title = titleVc
         setupSaveButton()
-        setupCloseButton()
+        setupCloseAndDeleteButtons()
         dataDisplayManager.setup(with: tableView)
     }
     
@@ -73,6 +88,11 @@ extension SpendingViewController: SpendingViewInput {
     
     func hideLoader() {
         activityIndicatorView.stopAnimating()
+    }
+    
+    func showDeleteButton(_ show: Bool) {
+        shouldShowDeleteButton = show
+        setupCloseAndDeleteButtons()
     }
     
 }

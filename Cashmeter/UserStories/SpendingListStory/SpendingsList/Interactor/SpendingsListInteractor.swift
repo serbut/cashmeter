@@ -12,10 +12,16 @@ final class SpendingsListInteractor {
 
     weak var output: SpendingsListInteractorOutput!
     
+    var spendingService: SpendingServiceInput!
+    
 }
 
 // MARK: SpendingsListInteractorInput
 
 extension SpendingsListInteractor: SpendingsListInteractorInput {
 	
+    func deleteSpending(_ spending: Spending) {
+        spendingService.deleteSpending(spending)
+    }
+    
 }

@@ -88,4 +88,9 @@ extension SpendingService: SpendingServiceInput {
         save()
     }
     
+    func deleteSpending(_ spending: Spending) {
+        managedObjectContext.delete(spending)
+        save()
+    }
+    
 }

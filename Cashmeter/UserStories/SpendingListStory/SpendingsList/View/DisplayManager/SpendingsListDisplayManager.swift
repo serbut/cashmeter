@@ -63,4 +63,24 @@ extension SpendingsListDisplayManager: UITableViewDelegate {
         output.didSelectSpending(spending: spending)
     }
     
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            
+            // TODO: хреново получать spending здесь
+            
+            let spending = fetchedResultsController.object(at: indexPath)
+            output.didTriggerDeleteAction(spending)
+        }
+    }
+    
+}
+
+// MARK: NSFetchedResultsControllerDelegate
+
+extension SpendingsListDisplayManager: NSFetchedResultsControllerDelegate {
+
+    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        tableView.reloadData()
+    }
+    
 }

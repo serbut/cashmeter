@@ -33,7 +33,7 @@ final class EditWalletViewController: UIViewController {
     }
     
     fileprivate func setupSaveButton() {
-        let saveBarButton = UIBarButtonItem(image: UIImage(named: "check_bar_button"),
+        let saveBarButton = UIBarButtonItem(image: #imageLiteral(resourceName: "check_bar_button"),
                                             style: .plain,
                                             target: self,
                                             action: #selector(didTapOnSave))
@@ -58,7 +58,7 @@ final class EditWalletViewController: UIViewController {
     }
     
     fileprivate func setupCloseButton() {
-        let closeBarButton = UIBarButtonItem(image: UIImage(named: "close_bar_button"),
+        let closeBarButton = UIBarButtonItem(image: #imageLiteral(resourceName: "close_bar_button"),
                                              style: .plain,
                                              target: self,
                                              action: #selector(didTapOnClose))

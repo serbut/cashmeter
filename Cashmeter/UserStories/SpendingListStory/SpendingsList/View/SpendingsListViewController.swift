@@ -18,7 +18,7 @@ final class SpendingsListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-         self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "filter_bar_button"),
+         self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "filter_bar_button"),
                                                                   style: .plain,
                                                                   target: self,
                                                                   action: #selector(didTapFilterButton))
@@ -52,6 +52,10 @@ extension SpendingsListViewController: SpendingsListDisplayManagerOutput {
 
     func didSelectSpending(spending: Spending) {
         output.didSelectSpending(spending: spending)
+    }
+    
+    func didTriggerDeleteAction(_ spending: Spending) {
+        output.didTriggerDeleteAction(spending)
     }
 
 }
