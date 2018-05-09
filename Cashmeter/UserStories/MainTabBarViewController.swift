@@ -25,7 +25,7 @@ class MainTabBarViewController: ESTabBarController {
         let spendingsNavVC = createSpendingsVC()
 
         let stubVC = UIViewController()
-        stubVC.tabBarItem = UITabBarItem(title: nil, image: UIImage(named: "coin_icon"), tag: 2)
+        stubVC.tabBarItem = UITabBarItem(title: nil, image: #imageLiteral(resourceName: "coin_icon"), tag: 2)
         
         let walletsVC = createWalletsVC()
         
@@ -53,14 +53,14 @@ class MainTabBarViewController: ESTabBarController {
         let module = configurator.buildModule()
         let viewController = module.viewController
         
-        viewController.tabBarItem = UITabBarItem(title: nil, image: UIImage(named: "list_icon"), tag: 1)
+        viewController.tabBarItem = UITabBarItem(title: nil, image: #imageLiteral(resourceName: "list_icon"), tag: 1)
         return UINavigationController(rootViewController: viewController)
     }
     
     private func createWalletsVC() -> UIViewController {
         let walletsVC = WalletsListViewController()
         walletsVC.walletService = ServicesAssembly().walletService()
-        walletsVC.tabBarItem = UITabBarItem(title: nil, image: UIImage(named: "wallet_icon"), tag: 3)
+        walletsVC.tabBarItem = UITabBarItem(title: nil, image: #imageLiteral(resourceName: "wallet_icon"), tag: 3)
         return UINavigationController(rootViewController: walletsVC)
     }
     

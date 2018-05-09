@@ -10,7 +10,7 @@ import UIKit
 import CoreData
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+final class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     lazy var coreDataStack = CoreDataStack(modelName: "Cashmeter")
@@ -19,6 +19,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         _ = coreDataStack.mainContext
         
         InitialDataFillerService().addInitialData()
+        
+        setupAppearance()
 
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
@@ -33,6 +35,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillTerminate(_ application: UIApplication) {
         coreDataStack.saveContext()
+    }
+    
+    private func setupAppearance() {
+        UINavigationBar.appearance().isTranslucent = false
+        UINavigationBar.appearance().barTintColor = UIColor(red: 32/255, green: 146/255, blue: 202/255, alpha: 1.0)
+        UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
+        UINavigationBar.appearance().tintColor = .white
+        
+        UITabBar.appearance().barTintColor = UIColor(red: 32/255, green: 146/255, blue: 202/255, alpha: 1.0)
+        UITabBar.appearance().tintColor = .red
+        UITabBar.appearance().unselectedItemTintColor = .white
     }
 
 }

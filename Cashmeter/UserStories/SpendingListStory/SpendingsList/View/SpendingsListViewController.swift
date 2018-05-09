@@ -10,6 +10,8 @@ import UIKit
 
 final class SpendingsListViewController: UIViewController {
 
+    let vcTitle = "Мои расходы"
+    
     var output: SpendingsListViewOutput!
     var displayManager: SpendingsListDisplayManager!
     
@@ -37,6 +39,7 @@ final class SpendingsListViewController: UIViewController {
 extension SpendingsListViewController: SpendingsListViewInput {
 	
 	func setupInitialState() {
+        title = vcTitle
 		displayManager.setupInitialState(with: tableView)
     }
 

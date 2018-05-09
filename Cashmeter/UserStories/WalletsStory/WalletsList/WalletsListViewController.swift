@@ -10,6 +10,8 @@ import UIKit
 
 final class WalletsListViewController: UIViewController {
 
+    let vcTitle = "Кошельки"
+    
     @IBOutlet weak var tableView: UITableView!
     var walletService: WalletService! {
         didSet {
@@ -21,6 +23,7 @@ final class WalletsListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        title = vcTitle
         tableView.dataSource = self
         tableView.delegate = self
         
