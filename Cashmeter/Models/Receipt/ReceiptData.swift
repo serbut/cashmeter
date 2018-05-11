@@ -12,6 +12,8 @@ struct ReceiptData {
     let fn: String
     let i: String
     let fp: String
+    let dateTime: Date?
+    let amount: Double?
     
     init?(fromQrString qrString: String) {
         let dict = qrString.split(separator: "&").reduce(into: [String:String]()) { (result, keyValue) in
@@ -24,12 +26,19 @@ struct ReceiptData {
         
         guard let fn = dict["fn"],
             let i = dict["i"],
-            let fp = dict["fp"] else {
+            let fp = dict["fp"],
+            let dateTimeString = dict["t"],
+            let amountText = dict["s"] else {
                 return nil
         }
         
         self.fn = fn
         self.i = i
         self.fp = fp
+        self.amount = Double(amountText)
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyyMMdd'T'HHmmss"
+        self.dateTime = dateFormatter.date(from: dateTimeString)
     }
 }

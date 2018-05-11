@@ -18,6 +18,13 @@ final class SpendingPresenter {
     
     var spendingInfo = SpendingInfo()
     
+    fileprivate func updateUI() {
+        var cellObjects: [TableCellObject] = []
+        let categories = interactor.requestCategories()
+        cellObjects = cellObjectsFactory.convert(spendingInfo: spendingInfo, categories: categories)
+        view.showData(cellObjects)
+    }
+    
 }
 
 // MARK: SpendingModuleInput
@@ -37,14 +44,8 @@ extension SpendingPresenter: SpendingViewOutput {
     
     func viewIsReady() {
         view.setupInitialState()
-        var cellObjects: [TableCellObject] = []
-        let categories = interactor.requestCategories()
-        cellObjects = cellObjectsFactory.convert(spendingInfo: spendingInfo, categories: categories)
-        view.showData(cellObjects)
-    }
-    
-    func didTapButton(with type: SpendingButtonType) {
-        print("Tap button")
+
+        updateUI()
     }
     
     func didTriggerScanQrAction() {
@@ -135,15 +136,20 @@ extension SpendingPresenter: SpendingInteractorOutput {
 extension SpendingPresenter: QRScannerModuleOutput {
     
     func scanIsFinished(_ scannedString: String) {
-        guard let receipt = ReceiptData(fromQrString: scannedString) else {
+        guard let receiptData = ReceiptData(fromQrString: scannedString) else {
             router.showErrorAlert(with: SpendingConstants.errorParseQrAlertText) // TODO: move and process error
             return
         }
+        if let dateTime = receiptData.dateTime {
+            spendingInfo.date = dateTime
+        }
+        if let amount = receiptData.amount {
+            spendingInfo.amount = amount
+        }
+        updateUI()
         view.showLoader()
-        
-        // TODO: Update UI for date and amount
-        
-        interactor.parseReceipt(receipt)
+                
+        interactor.parseReceipt(receiptData)
     }
     
 }

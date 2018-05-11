@@ -13,6 +13,6 @@ struct SpendingDateTableViewCellObject: TableCellObject {
     
     var cellClass: UITableViewCell.Type!
     
-    var date: Date = Date()
+    var date: Date!
     
 }

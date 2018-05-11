@@ -79,7 +79,6 @@
 		078B248620A6081100987152 /* UIViewController+HideKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078B248520A6081100987152 /* UIViewController+HideKeyboard.swift */; };
 		079E062C208C900F0072240F /* SpendingServiceInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079E062B208C900F0072240F /* SpendingServiceInput.swift */; };
 		079E062E208C90BA0072240F /* SpendingInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079E062D208C90BA0072240F /* SpendingInfo.swift */; };
-		079E0630208CA4160072240F /* SpendingButtonType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079E062F208CA4150072240F /* SpendingButtonType.swift */; };
 		079E0632208CA5660072240F /* CategoryInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079E0631208CA5660072240F /* CategoryInfo.swift */; };
 		079E0638208CE6970072240F /* SpendingItemInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079E0637208CE6970072240F /* SpendingItemInfo.swift */; };
 		079E063A208CE7160072240F /* ReceiptInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079E0639208CE7160072240F /* ReceiptInfo.swift */; };
@@ -226,7 +225,6 @@
 		078B248520A6081100987152 /* UIViewController+HideKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+HideKeyboard.swift"; sourceTree = "<group>"; };
 		079E062B208C900F0072240F /* SpendingServiceInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendingServiceInput.swift; sourceTree = "<group>"; };
 		079E062D208C90BA0072240F /* SpendingInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendingInfo.swift; sourceTree = "<group>"; };
-		079E062F208CA4150072240F /* SpendingButtonType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpendingButtonType.swift; sourceTree = "<group>"; };
 		079E0631208CA5660072240F /* CategoryInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryInfo.swift; sourceTree = "<group>"; };
 		079E0637208CE6970072240F /* SpendingItemInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendingItemInfo.swift; sourceTree = "<group>"; };
 		079E0639208CE7160072240F /* ReceiptInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptInfo.swift; sourceTree = "<group>"; };
@@ -633,7 +631,6 @@
 		0773D37220834BBB00BB12ED /* Spending */ = {
 			isa = PBXGroup;
 			children = (
-				079E062F208CA4150072240F /* SpendingButtonType.swift */,
 				079E062D208C90BA0072240F /* SpendingInfo.swift */,
 			);
 			path = Spending;
@@ -1260,7 +1257,6 @@
 				0769A338209CF07D004BD5E8 /* WalletsListViewController.swift in Sources */,
 				0773D35420829E5700BB12ED /* SpendingListTableViewCell.swift in Sources */,
 				0773D3B12083B9B500BB12ED /* QRScannerModuleOutput.swift in Sources */,
-				079E0630208CA4160072240F /* SpendingButtonType.swift in Sources */,
 				0773D3AB2083A1F200BB12ED /* QRScannerViewController.swift in Sources */,
 				07CD290C209E441E0086F005 /* SelectWalletViewController.swift in Sources */,
 				07CD2905209E3D2D0086F005 /* SpendingWalletTableViewCell.swift in Sources */,

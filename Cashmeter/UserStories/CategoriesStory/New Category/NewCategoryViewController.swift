@@ -93,7 +93,6 @@ class NewCategoryViewController: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     
-    // TODO: Handle keyboard
     // TODO: Rewrite using VIPER
     
 }

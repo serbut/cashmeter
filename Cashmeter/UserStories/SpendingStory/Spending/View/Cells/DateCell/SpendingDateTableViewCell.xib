@@ -19,7 +19,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="314" height="211.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <datePicker hidden="YES" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="uzo-6e-c4l">
+                    <datePicker hidden="YES" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="uzo-6e-c4l">
                         <rect key="frame" x="0.0" y="49.5" width="314" height="162"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="162" id="90g-GL-Kk8"/>

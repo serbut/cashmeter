@@ -99,10 +99,6 @@ extension SpendingViewController: SpendingViewInput {
 
 extension SpendingViewController: SpendingDataDisplayManagerOutput {
     
-    func didTapButton(with type: SpendingButtonType) {
-        output.didTapButton(with: type)
-    }
-    
     func didTriggerScanQrAction() {
         output.didTriggerScanQrAction()
     }
