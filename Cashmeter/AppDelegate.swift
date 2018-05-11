@@ -39,11 +39,11 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
     
     private func setupAppearance() {
         UINavigationBar.appearance().isTranslucent = false
-        UINavigationBar.appearance().barTintColor = UIColor(red: 32/255, green: 146/255, blue: 202/255, alpha: 1.0)
+        UINavigationBar.appearance().barTintColor = .primary
         UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
         UINavigationBar.appearance().tintColor = .white
         
-        UITabBar.appearance().barTintColor = UIColor(red: 32/255, green: 146/255, blue: 202/255, alpha: 1.0)
+        UITabBar.appearance().barTintColor = .primary
         UITabBar.appearance().tintColor = .red
         UITabBar.appearance().unselectedItemTintColor = .white
     }

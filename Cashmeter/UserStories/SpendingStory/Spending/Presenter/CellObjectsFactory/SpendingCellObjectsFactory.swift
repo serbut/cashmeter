@@ -33,9 +33,11 @@ extension SpendingCellObjectsFactory: SpendingCellObjectsFactoryInput {
         
         var walletTableCellObject = SpendingWalletTableViewCellObject()
         walletTableCellObject.cellClass = SpendingWalletTableViewCell.self
-        walletTableCellObject.walletName = spendingInfo.wallet?.name
-        walletTableCellObject.walletBalance = spendingInfo.wallet?.balance
-        walletTableCellObject.walletCurrencySign = spendingInfo.wallet?.currency?.label
+        if let wallet = spendingInfo.wallet {
+            walletTableCellObject.walletName = wallet.name
+            walletTableCellObject.walletBalance = wallet.balance
+            walletTableCellObject.walletCurrencySign = wallet.currency!.label
+        }
         cellObjects.append(walletTableCellObject)
         
         var dateTableViewCellObject = SpendingDateTableViewCellObject()

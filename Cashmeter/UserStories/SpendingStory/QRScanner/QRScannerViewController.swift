@@ -12,9 +12,11 @@ import AVFoundation
 class QRScannerViewController: UIViewController {
     
     let borderWidth: CGFloat = 3
-    let borderColor: UIColor = .blue
+    let borderColor: UIColor = .primary
     let borderSizeMultiplier: CGFloat = 0.8
     let closeButtonInset: CGFloat = 20.0
+    
+    let isStatusBarInitiallyHidden = UIApplication.shared.isStatusBarHidden
     
     var video: AVCaptureVideoPreviewLayer!
     
@@ -26,6 +28,16 @@ class QRScannerViewController: UIViewController {
         setupAVCaptureSession()
         setupSquareView()
         setupCloseButton()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        UIApplication.shared.isStatusBarHidden = true
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        UIApplication.shared.isStatusBarHidden = isStatusBarInitiallyHidden
     }
     
     override var prefersStatusBarHidden: Bool {

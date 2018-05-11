@@ -10,6 +10,8 @@ import UIKit
 
 class SpendingWalletTableViewCell: UITableViewCell, HasNib {
 
+    let noWalletTitle = "Кошелек не выбран"
+    
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var balanceLabel: UILabel!
     @IBOutlet weak var currencySignLabel: UILabel!
@@ -17,12 +19,6 @@ class SpendingWalletTableViewCell: UITableViewCell, HasNib {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
     
 }
@@ -34,9 +30,9 @@ extension SpendingWalletTableViewCell: TableCellInput {
     func setup(with cellObject: TableCellObject) {
         guard let cellObject = cellObject as? SpendingWalletTableViewCellObject else { return }
         
-        nameLabel.text = cellObject.walletName
+        nameLabel.text = cellObject.walletName ?? noWalletTitle
         balanceLabel.text = "\(cellObject.walletBalance)"
-        currencySignLabel.text = cellObject.walletCurrencySign
+        currencySignLabel.text = cellObject.walletCurrencySign ?? ""
     }
     
 }

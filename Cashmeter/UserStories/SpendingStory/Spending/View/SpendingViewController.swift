@@ -10,8 +10,9 @@ import UIKit
 
 final class SpendingViewController: UIViewController {
     
-    let titleVc = "Добавление покупки"
-    
+    let newSpendingVcTitle = "Добавление покупки"
+    let editSpendingVcTitle = "Редактирование покупки"
+
     var output: SpendingViewOutput!
     var dataDisplayManager: SpendingDataDisplayManagerInput!
 
@@ -54,7 +55,6 @@ final class SpendingViewController: UIViewController {
         } else {
             navigationItem.leftBarButtonItem = closeBarButton
         }
-        
     }
     
     @objc func didTapOnClose() {
@@ -72,7 +72,7 @@ final class SpendingViewController: UIViewController {
 extension SpendingViewController: SpendingViewInput {
     
     func setupInitialState() {
-        navigationController?.title = titleVc
+        navigationController?.title = newSpendingVcTitle
         setupSaveButton()
         setupCloseAndDeleteButtons()
         dataDisplayManager.setup(with: tableView)

@@ -13,11 +13,24 @@ class NewCategoryViewController: UIViewController {
     let vcTitle = "Новая категория"
     
     let iconsImageNames = [
-        "car",
         "food",
         "restaurants",
+        "beer",
+        "beer_bottle",
         "transport",
-        "travel"
+        "travel",
+        "baby",
+        "children",
+        "student_male",
+        "carousel",
+        "gift",
+        "car",
+        "dirt_bike",
+        "kart",
+        "service",
+        "guitar",
+        "musical_notes",
+        "party_baloon",
     ]
     
     @IBOutlet weak var titleTextField: UITextField!
@@ -37,6 +50,8 @@ class NewCategoryViewController: UIViewController {
         iconsCollectionView.delegate = self
         setupSaveButton()
         setupCloseButton()
+        
+        hideKeyboardWhenTappedAround() 
     }
     
     fileprivate func setupSaveButton() {

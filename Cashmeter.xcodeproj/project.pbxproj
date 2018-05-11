@@ -75,6 +75,8 @@
 		078037DC20234EAA00AA651C /* CategoryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078037DB20234EAA00AA651C /* CategoryService.swift */; };
 		078037DE2023542A00AA651C /* CategoryServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078037DD2023542A00AA651C /* CategoryServiceTests.swift */; };
 		07843B8E208BC694001DBABF /* CategoriesTableViewCellObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07843B8D208BC694001DBABF /* CategoriesTableViewCellObject.swift */; };
+		078B248420A3A0C700987152 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078B248320A3A0C700987152 /* Colors.swift */; };
+		078B248620A6081100987152 /* UIViewController+HideKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078B248520A6081100987152 /* UIViewController+HideKeyboard.swift */; };
 		079E062C208C900F0072240F /* SpendingServiceInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079E062B208C900F0072240F /* SpendingServiceInput.swift */; };
 		079E062E208C90BA0072240F /* SpendingInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079E062D208C90BA0072240F /* SpendingInfo.swift */; };
 		079E0630208CA4160072240F /* SpendingButtonType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079E062F208CA4150072240F /* SpendingButtonType.swift */; };
@@ -220,6 +222,8 @@
 		078037DB20234EAA00AA651C /* CategoryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryService.swift; sourceTree = "<group>"; };
 		078037DD2023542A00AA651C /* CategoryServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryServiceTests.swift; sourceTree = "<group>"; };
 		07843B8D208BC694001DBABF /* CategoriesTableViewCellObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesTableViewCellObject.swift; sourceTree = "<group>"; };
+		078B248320A3A0C700987152 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		078B248520A6081100987152 /* UIViewController+HideKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+HideKeyboard.swift"; sourceTree = "<group>"; };
 		079E062B208C900F0072240F /* SpendingServiceInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendingServiceInput.swift; sourceTree = "<group>"; };
 		079E062D208C90BA0072240F /* SpendingInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendingInfo.swift; sourceTree = "<group>"; };
 		079E062F208CA4150072240F /* SpendingButtonType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpendingButtonType.swift; sourceTree = "<group>"; };
@@ -390,6 +394,7 @@
 		0742CF6E207EAA350055A3DC /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				078B248220A3A0B000987152 /* Common */,
 				073DDFFE20035DD4000CAD7C /* AppDelegate.swift */,
 				0773D37B208353F200BB12ED /* Core */,
 				0773D37520834CB000BB12ED /* Base */,
@@ -714,6 +719,15 @@
 				0773D3B02083B9B500BB12ED /* QRScannerModuleOutput.swift */,
 			);
 			path = QRScanner;
+			sourceTree = "<group>";
+		};
+		078B248220A3A0B000987152 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				078B248320A3A0C700987152 /* Colors.swift */,
+				078B248520A6081100987152 /* UIViewController+HideKeyboard.swift */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 		079E062A208C8FEB0072240F /* SpendingService */ = {
@@ -1261,6 +1275,7 @@
 				078037DC20234EAA00AA651C /* CategoryService.swift in Sources */,
 				0743AF7A208B98E90026C5B9 /* SpendingsListService.swift in Sources */,
 				0773D39820835E2000BB12ED /* SpendingConfigurator.swift in Sources */,
+				078B248420A3A0C700987152 /* Colors.swift in Sources */,
 				0743AF62208692C80026C5B9 /* CategoriesTableViewCell.swift in Sources */,
 				079E0632208CA5660072240F /* CategoryInfo.swift in Sources */,
 				0769A33D209CF0E4004BD5E8 /* WalletsListTableViewCell.swift in Sources */,
@@ -1286,6 +1301,7 @@
 				07D76D83201E56FD00D2FC0F /* CoreDataStack.swift in Sources */,
 				07EC000E20868581004E442B /* ReceiptData.swift in Sources */,
 				0773D39D20836E7800BB12ED /* AssembledModule.swift in Sources */,
+				078B248620A6081100987152 /* UIViewController+HideKeyboard.swift in Sources */,
 				0773D3A220836FE900BB12ED /* SpendingInteractor.swift in Sources */,
 				07CD28F9209DC4180086F005 /* CurrencyListTableViewCell.swift in Sources */,
 				0773D3582083407E00BB12ED /* SpendingViewController.swift in Sources */,
