@@ -10,8 +10,11 @@ import UIKit
 
 final class EditWalletViewController: UIViewController {
     
-    let showAllFieldsTitle = "Необходимо заполнить все поля"
-
+    let vcTitle = "Новый кошелек"
+    let fillTitleError = "Введите название"
+    let fillBalanceError = "Введите текущий баланс"
+    let chooseCurrencyError = "Выберите валюту"
+    
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var currentBalanceTextField: UITextField!
     @IBOutlet weak var currenciesTableView: UITableView!
@@ -28,6 +31,9 @@ final class EditWalletViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        title = vcTitle
+        hideKeyboardWhenTappedAround()
+        
         currenciesTableView.dataSource = self
         currenciesTableView.delegate = self
         setupSaveButton()
@@ -44,16 +50,22 @@ final class EditWalletViewController: UIViewController {
     }
     
     @objc func didTapOnSave() {
-        guard let name = nameTextField.text, !name.isEmpty,
-            let balanceText = currentBalanceTextField.text,
-            let selectedCurrencyIndex = currenciesTableView.indexPathForSelectedRow?.row else {
-                showFillAllFieldsAlert()
-                return
+        guard let name = nameTextField.text, !name.isEmpty else {
+            showAlert(with: fillTitleError)
+            return
+        }
+        guard let balanceText = currentBalanceTextField.text,
+            let balance: Double = Double(balanceText) else {
+            showAlert(with: fillBalanceError)
+            return
+        }
+        guard let selectedCurrencyIndex = currenciesTableView.indexPathForSelectedRow?.row else {
+            showAlert(with: chooseCurrencyError)
+            return
         }
         
         // TODO: Let enter two digits after comma at max
         
-        let balance: Double = Double(balanceText) ?? 0
         let currency = currencies[selectedCurrencyIndex]
         walletService.addWallet(withName: name, currency: currency, balance: balance)
         dismiss(animated: true, completion: nil)
@@ -72,8 +84,8 @@ final class EditWalletViewController: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     
-    func showFillAllFieldsAlert() {
-        let alert = UIAlertController(title: nil, message: showAllFieldsTitle, preferredStyle: .alert)
+    func showAlert(with message: String) {
+        let alert = UIAlertController(title: nil, message: message, preferredStyle: .alert)
         let closeAction = UIAlertAction(title: SpendingConstants.closeActionTitle, style: .cancel, handler: nil)
         alert.addAction(closeAction)
         present(alert, animated: true, completion: nil)

@@ -64,7 +64,20 @@ final class SpendingViewController: UIViewController {
     @objc func didTapOnDelete() {
         output.didTapOnDelete()
     }
+    
+    @objc func keyboardWillShow(notification: NSNotification) {
+        guard let userInfo = notification.userInfo,
+            let keyboardFrame: CGRect = (userInfo[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else {
+            return
+        }
+        
+        tableView.contentInset = UIEdgeInsetsMake(0, 0, keyboardFrame.height, 0)
+    }
 
+    @objc func keyboardWillHide(notification: NSNotification) {
+        tableView.contentInset = .zero
+    }
+    
 }
 
 // MARK: SpendingViewInput
@@ -76,6 +89,11 @@ extension SpendingViewController: SpendingViewInput {
         setupSaveButton()
         setupCloseAndDeleteButtons()
         dataDisplayManager.setup(with: tableView)
+        
+        hideKeyboardWhenTappedAround()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name: .UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(notification:)), name: .UIKeyboardWillHide, object: nil)
     }
     
     func showData(_ cellObjects: [TableCellObject]) {
