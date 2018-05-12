@@ -73,7 +73,14 @@ extension WalletsListViewController: UITableViewDataSource {
 extension WalletsListViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let wallet = wallets[indexPath.row]
         
+        let viewController = WalletIncomeViewController()
+        viewController.walletService = ServicesAssembly().walletService()
+        viewController.wallet = wallet
+        let navVC = UINavigationController(rootViewController: viewController)
+        
+        present(navVC, animated: true, completion: nil)
     }
     
 }

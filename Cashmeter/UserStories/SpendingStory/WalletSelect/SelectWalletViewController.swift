@@ -33,7 +33,7 @@ class SelectWalletViewController: UIViewController {
                                            target: self,
                                            action: #selector(didTapOnAdd))
         
-        self.navigationItem.rightBarButtonItem = addBarButton
+        navigationItem.rightBarButtonItem = addBarButton
     }
     
     @objc func didTapOnAdd() {
@@ -43,7 +43,7 @@ class SelectWalletViewController: UIViewController {
         newWalletVC.walletService = servicesAssembly.walletService()
         newWalletVC.currencyService = servicesAssembly.currencyService()
         
-        self.present(UINavigationController(rootViewController: newWalletVC), animated: true)
+        present(UINavigationController(rootViewController: newWalletVC), animated: true)
     }
 
 }

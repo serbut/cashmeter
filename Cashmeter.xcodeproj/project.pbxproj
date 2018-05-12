@@ -13,6 +13,8 @@
 		072A469520A6DF0C00A98C6E /* NewCategoryModuleOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072A469420A6DF0C00A98C6E /* NewCategoryModuleOutput.swift */; };
 		072A469720A6E7B400A98C6E /* Date+Format.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072A469620A6E7B400A98C6E /* Date+Format.swift */; };
 		072A469920A7525300A98C6E /* SelectWalletModuleOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072A469820A7525300A98C6E /* SelectWalletModuleOutput.swift */; };
+		072A469D20A7713700A98C6E /* WalletIncomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072A469B20A7713700A98C6E /* WalletIncomeViewController.swift */; };
+		072A469E20A7713700A98C6E /* WalletIncomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 072A469C20A7713700A98C6E /* WalletIncomeViewController.xib */; };
 		073DDFFF20035DD4000CAD7C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073DDFFE20035DD4000CAD7C /* AppDelegate.swift */; };
 		073DE00720035DD4000CAD7C /* Cashmeter.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 073DE00520035DD4000CAD7C /* Cashmeter.xcdatamodeld */; };
 		073DE00920035DD4000CAD7C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 073DE00820035DD4000CAD7C /* Images.xcassets */; };
@@ -158,6 +160,8 @@
 		072A469420A6DF0C00A98C6E /* NewCategoryModuleOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCategoryModuleOutput.swift; sourceTree = "<group>"; };
 		072A469620A6E7B400A98C6E /* Date+Format.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Format.swift"; sourceTree = "<group>"; };
 		072A469820A7525300A98C6E /* SelectWalletModuleOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectWalletModuleOutput.swift; sourceTree = "<group>"; };
+		072A469B20A7713700A98C6E /* WalletIncomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletIncomeViewController.swift; sourceTree = "<group>"; };
+		072A469C20A7713700A98C6E /* WalletIncomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WalletIncomeViewController.xib; sourceTree = "<group>"; };
 		073DDFFB20035DD4000CAD7C /* Cashmeter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cashmeter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		073DDFFE20035DD4000CAD7C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		073DE00620035DD4000CAD7C /* Cashmeter.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Cashmeter.xcdatamodel; sourceTree = "<group>"; };
@@ -345,6 +349,15 @@
 			path = UserStories;
 			sourceTree = "<group>";
 		};
+		072A469A20A7711D00A98C6E /* WalletIncome */ = {
+			isa = PBXGroup;
+			children = (
+				072A469B20A7713700A98C6E /* WalletIncomeViewController.swift */,
+				072A469C20A7713700A98C6E /* WalletIncomeViewController.xib */,
+			);
+			path = WalletIncome;
+			sourceTree = "<group>";
+		};
 		073553E6BF4ED4778AFF58D3 /* DisplayManager */ = {
 			isa = PBXGroup;
 			children = (
@@ -500,6 +513,7 @@
 		0769A335209CEFF4004BD5E8 /* WalletsStory */ = {
 			isa = PBXGroup;
 			children = (
+				072A469A20A7711D00A98C6E /* WalletIncome */,
 				0769A340209CF368004BD5E8 /* EditWallet */,
 				0769A33A209CF080004BD5E8 /* WalletsList */,
 			);
@@ -1125,6 +1139,7 @@
 				0743AF682086938F0026C5B9 /* CategoryCollectionViewCell.xib in Resources */,
 				07CD2912209E444F0086F005 /* SelectWalletTableViewCell.xib in Resources */,
 				07CD28ED209DB2600086F005 /* DefaultWallets.plist in Resources */,
+				072A469E20A7713700A98C6E /* WalletIncomeViewController.xib in Resources */,
 				0773D365208342A300BB12ED /* AddReceiptTableViewCell.xib in Resources */,
 				0769A339209CF07D004BD5E8 /* WalletsListViewController.xib in Resources */,
 				07CD28EF209DB37A0086F005 /* DefaultCurrencies.plist in Resources */,
@@ -1273,6 +1288,7 @@
 				0773D37820834CCB00BB12ED /* CellObjectProtocol.swift in Sources */,
 				0773D38F20835B6600BB12ED /* SpendingCellObjectsFactory.swift in Sources */,
 				07CD2908209E3D3F0086F005 /* SpendingWalletTableViewCellObject.swift in Sources */,
+				072A469D20A7713700A98C6E /* WalletIncomeViewController.swift in Sources */,
 				072A469520A6DF0C00A98C6E /* NewCategoryModuleOutput.swift in Sources */,
 				079E063A208CE7160072240F /* ReceiptInfo.swift in Sources */,
 				074E3243207EABD100C78501 /* ReceiptService.swift in Sources */,

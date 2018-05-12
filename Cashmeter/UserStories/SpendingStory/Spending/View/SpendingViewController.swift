@@ -32,7 +32,7 @@ final class SpendingViewController: UIViewController {
                                             target: self,
                                             action: #selector(didTapOnSave))
         
-        self.navigationItem.rightBarButtonItem = saveBarButton
+        navigationItem.rightBarButtonItem = saveBarButton
     }
     
     @objc func didTapOnSave() {

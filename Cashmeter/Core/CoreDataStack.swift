@@ -14,12 +14,12 @@ class CoreDataStack {
     fileprivate let modelName: String
     
     lazy var mainContext: NSManagedObjectContext = {
-        return self.storeContainer.viewContext
+        return storeContainer.viewContext
     }()
     
     lazy var storeContainer: NSPersistentContainer = {
         
-        let container = NSPersistentContainer(name: self.modelName)
+        let container = NSPersistentContainer(name: modelName)
         container.loadPersistentStores { (storeDescription, error) in
             if let error = error as NSError? {
                 fatalError("Unresolved error \(error), \(error.userInfo)")

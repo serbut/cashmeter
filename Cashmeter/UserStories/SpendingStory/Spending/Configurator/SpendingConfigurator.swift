@@ -11,10 +11,10 @@ final class SpendingConfigurator {
     let servicesAssembly = ServicesAssembly()
     
     func spendingModule() -> Module {
-        let viewController = self.configureViewController()
-        let presenter = self.configurePresenter()
-        let interactor = self.configureInteractor()
-        let router = self.configureRouter()
+        let viewController = configureViewController()
+        let presenter = configurePresenter()
+        let interactor = configureInteractor()
+        let router = configureRouter()
         
         viewController.output = presenter
         

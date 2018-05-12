@@ -47,8 +47,8 @@ class QRScannerViewController: UIViewController {
     private func setupSquareView() {
         let squareView: UIView = {
             let squareView = UIView()
-            squareView.frame.size.width = borderSizeMultiplier * self.view.frame.width
-            squareView.frame.size.height = borderSizeMultiplier * self.view.frame.width
+            squareView.frame.size.width = borderSizeMultiplier * view.frame.width
+            squareView.frame.size.height = borderSizeMultiplier * view.frame.width
             squareView.center = view.center
 
             squareView.layer.borderWidth = borderWidth
@@ -57,8 +57,8 @@ class QRScannerViewController: UIViewController {
             return squareView
         }()
         
-        self.view.addSubview(squareView)
-        self.view.bringSubview(toFront: squareView)
+        view.addSubview(squareView)
+        view.bringSubview(toFront: squareView)
     }
     
     private func setupCloseButton() {
@@ -96,7 +96,7 @@ class QRScannerViewController: UIViewController {
     }
     
     @objc func closeModule() {
-        self.dismiss(animated: true, completion: nil)
+        dismiss(animated: true, completion: nil)
     }
     
 }
@@ -134,7 +134,7 @@ extension QRScannerViewController: AVCaptureMetadataOutputObjectsDelegate {
             let object = metadataObjects[0] as? AVMetadataMachineReadableCodeObject,
             object.type == .qr,
             let scannedString = object.stringValue {
-            self.dismiss(animated: true) {
+            dismiss(animated: true) {
                 self.moduleOutput.scanIsFinished(scannedString)
             }
         }

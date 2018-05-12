@@ -55,7 +55,7 @@ final class EditWalletViewController: UIViewController {
             return
         }
         guard let balanceText = currentBalanceTextField.text,
-            let balance: Double = Double(balanceText) else {
+            let balance = Double(balanceText) else {
             showAlert(with: fillBalanceError)
             return
         }
