@@ -44,6 +44,9 @@ extension SpendingService: SpendingServiceInput {
         spending.category = spendingInfo.category
         spending.date = spendingInfo.date
         spending.comment = spendingInfo.comment
+        spending.wallet = spendingInfo.wallet
+        
+        // TODO: Update wallet's balance
         
         if let receiptItems = spendingInfo.receiptItems {
             for itemInfo in receiptItems {
@@ -70,6 +73,8 @@ extension SpendingService: SpendingServiceInput {
         spending.category = spendingInfo.category
         spending.comment = spendingInfo.comment
         spending.wallet = spendingInfo.wallet
+        
+        // TODO: Think about situation, when wallet changed (what to do with balances)
         
         if spendingInfo.spending?.items?.count == 0,
             let receiptItems = spendingInfo.receiptItems {

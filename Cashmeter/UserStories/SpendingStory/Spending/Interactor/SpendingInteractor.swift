@@ -13,6 +13,7 @@ final class SpendingInteractor {
     var receiptService: ReceiptServiceInput!
     var spendingService: SpendingServiceInput!
     var categoryService: CategoryService!
+    var walletService: WalletService!
     
 }
 
@@ -41,14 +42,36 @@ extension SpendingInteractor: SpendingInteractorInput {
         // FIX this part - incomprehensible code
         
         if spendingInfo.spending != nil {
+            updateWalletBalance(spendingInfo: spendingInfo)
             spendingService.updateSpending(withInfo: spendingInfo)
         } else {
+            updateWalletBalance(spendingInfo: spendingInfo)
             spendingService.addSpending(withInfo: spendingInfo)
+        }
+    }
+    
+    private func updateWalletBalance(spendingInfo: SpendingInfo) {
+        let wallet = spendingInfo.wallet
+        if let wallet = wallet {
+            if let spending = spendingInfo.spending,
+                spendingInfo.amount != spending.amount {
+                // If spending already exists
+                // And amount changed
+                // Update amount
+                let diff = spendingInfo.amount - spending.amount
+                walletService.updateBalance(wallet, amount: diff, isIncome: false)
+            } else {
+                walletService.updateBalance(wallet, amount: spendingInfo.amount, isIncome: false)
+            }
         }
     }
     
     func deleteSpending(_ spending: Spending) {
         spendingService.deleteSpending(spending)
+        // Returning money to wallet if it was set
+        if let wallet = spending.wallet {
+            walletService.updateBalance(wallet, amount: spending.amount, isIncome: true)
+        }
     }
     
 }

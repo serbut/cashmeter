@@ -59,4 +59,14 @@ final class WalletService {
         return results
     }
     
+    func updateBalance(_ wallet: Wallet, amount: Double, isIncome: Bool) {
+        if isIncome {
+            wallet.balance += amount
+        } else {
+            wallet.balance -= amount
+        }
+        
+        save()
+    }
+    
 }

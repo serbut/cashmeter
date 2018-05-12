@@ -11,7 +11,7 @@ import UIKit
 final class SpendingViewController: UIViewController {
     
     let newSpendingVcTitle = "Добавление покупки"
-    let editSpendingVcTitle = "Редактирование покупки"
+    let editSpendingVcTitle = "Редактирование"
 
     var output: SpendingViewOutput!
     var dataDisplayManager: SpendingDataDisplayManagerInput!
@@ -85,7 +85,7 @@ final class SpendingViewController: UIViewController {
 extension SpendingViewController: SpendingViewInput {
     
     func setupInitialState() {
-        navigationController?.title = newSpendingVcTitle
+        title = newSpendingVcTitle
         setupSaveButton()
         setupCloseAndDeleteButtons()
         dataDisplayManager.setup(with: tableView)

@@ -54,6 +54,7 @@ final class SpendingConfigurator {
         interactor.receiptService = servicesAssembly.receiptService()
         interactor.spendingService = servicesAssembly.spendingService()
         interactor.categoryService = servicesAssembly.categoryService()
+        interactor.walletService = servicesAssembly.walletService()
         
         return interactor
     }
