@@ -15,11 +15,13 @@ final class SpendingListTableViewCell: UITableViewCell, HasNib {
     @IBOutlet weak var categoryIconImageView: UIImageView!
     @IBOutlet weak var categoryNameLabel: UILabel!
     @IBOutlet weak var amountLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
     
     func setup(with spending: Spending) {
         categoryNameLabel.text = spending.category?.title ?? noCategoryTitle
         amountLabel.text = "\(spending.amount) ₽"
         categoryIconImageView.image = UIImage(named: spending.category?.image_name ?? "undefined_category")
+        dateLabel.text = spending.date!.shortFormat
     }
     
 }

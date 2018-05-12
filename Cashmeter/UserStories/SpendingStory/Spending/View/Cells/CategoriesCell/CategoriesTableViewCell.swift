@@ -51,6 +51,7 @@ extension CategoriesTableViewCell: TableCellInput {
     func setup(with cellObject: TableCellObject) {
         guard let cellObject = cellObject as? CategoriesTableViewCellObject else { return }
         categories = cellObject.categories
+        categoriesCollectionView.reloadData()
         if let selectedCategory = cellObject.selectedCategory,
             let categoryIndex = categories.index(of: selectedCategory) {
             selectedCategoryIndex = IndexPath(row: categoryIndex, section: 0)
@@ -92,18 +93,21 @@ extension CategoriesTableViewCell: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if indexPath.row < categories.count {
+            /* Если уже была выбрана категория - снимаем выделение */
             if let selectedCategoryIndex = selectedCategoryIndex {
                 collectionView.deselectItem(at: selectedCategoryIndex, animated: true)
             }
-            if (indexPath != selectedCategoryIndex) {
-                selectedCategoryIndex = indexPath
-                delegate.didSelectCategory(categories[indexPath.row])
-            } else {
-                selectedCategoryIndex = nil
-                delegate.didSelectCategory(nil)
-            }
+            selectedCategoryIndex = indexPath
+            delegate.didSelectCategory(categories[indexPath.row])
         } else {
             delegate.didTapAddCategory()
+         }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+        if indexPath.row < categories.count {
+            selectedCategoryIndex = nil
+            delegate.didSelectCategory(nil)
         }
     }
     

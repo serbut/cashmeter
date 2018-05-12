@@ -40,7 +40,7 @@ extension SpendingDateTableViewCell: TableCellInput {
     func setup(with cellObject: TableCellObject) {
         guard let cellObject = cellObject as? SpendingDateTableViewCellObject else { return }
         
-        dateLabel.text = cellObject.date.description
+        dateLabel.text = cellObject.date.shortFormat
         datePicker.date = cellObject.date
     }
     

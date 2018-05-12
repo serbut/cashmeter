@@ -36,9 +36,6 @@ struct ReceiptData {
         self.i = i
         self.fp = fp
         self.amount = Double(amountText)
-        
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyyMMdd'T'HHmmss"
-        self.dateTime = dateFormatter.date(from: dateTimeString)
+        self.dateTime = Date.init(fromQrString: dateTimeString)
     }
 }

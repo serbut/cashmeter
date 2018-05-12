@@ -36,6 +36,6 @@ protocol SpendingRouterInput: class {
     /**
      Метод открывает модуль добавления новой категории.
      */
-    func showAddCategoryModule()
+    func showAddCategoryModule(moduleOutput: NewCategoryModuleOutput)
     
 }

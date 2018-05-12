@@ -10,6 +10,8 @@
 		070539A02095D31C003AF0D4 /* SpendingConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0705399F2095D31C003AF0D4 /* SpendingConstants.swift */; };
 		070539A420966383003AF0D4 /* AddCategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070539A220966383003AF0D4 /* AddCategoryCollectionViewCell.swift */; };
 		070539A520966383003AF0D4 /* AddCategoryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 070539A320966383003AF0D4 /* AddCategoryCollectionViewCell.xib */; };
+		072A469520A6DF0C00A98C6E /* NewCategoryModuleOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072A469420A6DF0C00A98C6E /* NewCategoryModuleOutput.swift */; };
+		072A469720A6E7B400A98C6E /* Date+Format.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072A469620A6E7B400A98C6E /* Date+Format.swift */; };
 		073DDFFF20035DD4000CAD7C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073DDFFE20035DD4000CAD7C /* AppDelegate.swift */; };
 		073DE00720035DD4000CAD7C /* Cashmeter.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 073DE00520035DD4000CAD7C /* Cashmeter.xcdatamodeld */; };
 		073DE00920035DD4000CAD7C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 073DE00820035DD4000CAD7C /* Images.xcassets */; };
@@ -152,6 +154,8 @@
 		0705399F2095D31C003AF0D4 /* SpendingConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendingConstants.swift; sourceTree = "<group>"; };
 		070539A220966383003AF0D4 /* AddCategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCategoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		070539A320966383003AF0D4 /* AddCategoryCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddCategoryCollectionViewCell.xib; sourceTree = "<group>"; };
+		072A469420A6DF0C00A98C6E /* NewCategoryModuleOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCategoryModuleOutput.swift; sourceTree = "<group>"; };
+		072A469620A6E7B400A98C6E /* Date+Format.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Format.swift"; sourceTree = "<group>"; };
 		073DDFFB20035DD4000CAD7C /* Cashmeter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cashmeter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		073DDFFE20035DD4000CAD7C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		073DE00620035DD4000CAD7C /* Cashmeter.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Cashmeter.xcdatamodel; sourceTree = "<group>"; };
@@ -477,6 +481,7 @@
 				0769A334209BB631004BD5E8 /* CategoryIconCell */,
 				0768D88E209BAD8A00A517B1 /* NewCategoryViewController.swift */,
 				0768D88F209BAD8A00A517B1 /* NewCategoryViewController.xib */,
+				072A469420A6DF0C00A98C6E /* NewCategoryModuleOutput.swift */,
 			);
 			path = "New Category";
 			sourceTree = "<group>";
@@ -723,6 +728,7 @@
 			children = (
 				078B248320A3A0C700987152 /* Colors.swift */,
 				078B248520A6081100987152 /* UIViewController+HideKeyboard.swift */,
+				072A469620A6E7B400A98C6E /* Date+Format.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -1264,6 +1270,7 @@
 				0773D37820834CCB00BB12ED /* CellObjectProtocol.swift in Sources */,
 				0773D38F20835B6600BB12ED /* SpendingCellObjectsFactory.swift in Sources */,
 				07CD2908209E3D3F0086F005 /* SpendingWalletTableViewCellObject.swift in Sources */,
+				072A469520A6DF0C00A98C6E /* NewCategoryModuleOutput.swift in Sources */,
 				079E063A208CE7160072240F /* ReceiptInfo.swift in Sources */,
 				074E3243207EABD100C78501 /* ReceiptService.swift in Sources */,
 				0773D39320835CC400BB12ED /* SpendingRouter.swift in Sources */,
@@ -1304,6 +1311,7 @@
 				0773D37E2083541100BB12ED /* HasNib.swift in Sources */,
 				0773D39120835B8100BB12ED /* SpendingCellObjectsFactoryInput.swift in Sources */,
 				0769A343209CF3A2004BD5E8 /* EditWalletViewController.swift in Sources */,
+				072A469720A6E7B400A98C6E /* Date+Format.swift in Sources */,
 				075ED06F208BAF2F009AE6E8 /* SpendingDateTableViewCellObject.swift in Sources */,
 				079E0649208E72EE0072240F /* SpendingItemsListViewController.swift in Sources */,
 				07843B8E208BC694001DBABF /* CategoriesTableViewCellObject.swift in Sources */,

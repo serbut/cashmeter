@@ -10,6 +10,7 @@ import UIKit
 
 class NewCategoryViewController: UIViewController {
 
+    var moduleOutput: NewCategoryModuleOutput!
     let vcTitle = "Новая категория"
     
     let iconsImageNames = [
@@ -38,7 +39,6 @@ class NewCategoryViewController: UIViewController {
     
     var alreadyRegisteredCells: Set<String> = []
     var selectedCategoryIndex: Int?
-
     var categoryService = ServicesAssembly().categoryService()
     
     override func viewDidLoad() {
@@ -76,7 +76,7 @@ class NewCategoryViewController: UIViewController {
         categoryService.addCategory(withTitle: title, imageName: iconImageName)
         
         // TODO: Move dismiss to completion
-        // TODO: Refresh categories on spending page
+        moduleOutput.didAddCategory()
         dismiss(animated: true, completion: nil)
     }
     

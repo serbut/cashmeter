@@ -102,7 +102,7 @@ extension SpendingPresenter: SpendingViewOutput {
     }
     
     func didTapAddCategory() {
-        router.showAddCategoryModule()
+        router.showAddCategoryModule(moduleOutput: self)
     }
     
 }
@@ -150,6 +150,16 @@ extension SpendingPresenter: QRScannerModuleOutput {
         view.showLoader()
                 
         interactor.parseReceipt(receiptData)
+    }
+    
+}
+
+// MARK: NewCategoryModuleOutput
+
+extension SpendingPresenter: NewCategoryModuleOutput {
+    
+    func didAddCategory() {
+        updateUI()
     }
     
 }

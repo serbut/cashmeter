@@ -36,8 +36,9 @@ final class SpendingRouter: SpendingRouterInput {
         transitionHandler.present(alert, animated: true, completion: nil)
     }
     
-    func showAddCategoryModule() {
+    func showAddCategoryModule(moduleOutput: NewCategoryModuleOutput) {
         let viewController = NewCategoryViewController()
+        viewController.moduleOutput = moduleOutput
         let navVC = UINavigationController(rootViewController: viewController)
         
         transitionHandler.present(navVC, animated: true)

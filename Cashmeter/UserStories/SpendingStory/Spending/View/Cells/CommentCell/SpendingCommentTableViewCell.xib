@@ -26,7 +26,7 @@
                         </constraints>
                         <nil key="textColor"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                        <textInputTraits key="textInputTraits"/>
+                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                         <connections>
                             <action selector="didChangeComment:" destination="KGk-i7-Jjw" eventType="editingChanged" id="mmI-r2-4kb"/>
                         </connections>
