@@ -66,14 +66,14 @@ extension SpendingPresenter: SpendingViewOutput {
     }
     
     func didTapOnDelete() {
-        //      TODO: Show alert
-        //      router.showConfirmationDeleteAlert()
-        guard let spending = spendingInfo.spending else {
-            fatalError("Trying to delete spending which doesn't exists")
+        router.showConfirmationDeleteAlert { [weak self] in
+            guard let spending = self?.spendingInfo.spending else {
+                fatalError("Trying to delete spending which doesn't exists")
+            }
+            self?.interactor.deleteSpending(spending)
+            // TODO: move to completion
+            self?.router.closeModule()
         }
-        interactor.deleteSpending(spending)
-        // TODO: move to completion
-        router.closeModule()
     }
     
     func didTapOnSave() {

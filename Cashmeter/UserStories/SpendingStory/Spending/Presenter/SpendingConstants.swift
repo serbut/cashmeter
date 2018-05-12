@@ -13,5 +13,8 @@ struct SpendingConstants {
     static let errorParseReceiptAlertText = "Произошла ошибка при распознавании чека."
     static let closeActionTitle = "Закрыть"
     static let addCategoryTitle = "Добавить категорию"
-    
+    static let deleteActionTitle = "Вы уверены, что хотите удалить запись о покупке?"
+    static let deleteActionYes = "Да"
+    static let deleteActionNo = "Нет"
+
 }

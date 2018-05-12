@@ -38,4 +38,9 @@ protocol SpendingRouterInput: class {
      */
     func showAddCategoryModule(moduleOutput: NewCategoryModuleOutput)
     
+    /**
+     Метод показывает алерт перед удалением покупки.
+     */
+    func showConfirmationDeleteAlert(completion: @escaping () -> Void)
+    
 }

@@ -50,4 +50,18 @@ final class SpendingRouter: SpendingRouterInput {
         transitionHandler.navigationController?.pushViewController(viewController, animated: true)
     }
     
+    func showConfirmationDeleteAlert(completion: @escaping () -> Void) {
+        let alert = UIAlertController(title: nil, message: SpendingConstants.deleteActionTitle, preferredStyle: .alert)
+        
+        let deleteAction = UIAlertAction(title: SpendingConstants.deleteActionYes, style: .destructive) { _ in
+            completion()
+        }
+        let cancelAction = UIAlertAction(title: SpendingConstants.deleteActionNo, style: .cancel)
+        
+        alert.addAction(deleteAction)
+        alert.addAction(cancelAction)
+        
+        transitionHandler.present(alert, animated: true, completion:nil)
+    }
+    
 }
