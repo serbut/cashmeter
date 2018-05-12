@@ -12,8 +12,9 @@ struct SpendingWalletTableViewCellObject: TableCellObject {
     
     var cellClass: UITableViewCell.Type!
     
-    var walletName: String!
-    var walletBalance: Double!
-    var walletCurrencySign: String!
+    var shouldShowWalletInfo: Bool = false
+    var walletName: String?
+    var walletBalance: String?
+    var walletCurrencySign: String?
     
 }

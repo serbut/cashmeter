@@ -69,6 +69,7 @@ extension SpendingService: SpendingServiceInput {
         spending.date = spendingInfo.date
         spending.category = spendingInfo.category
         spending.comment = spendingInfo.comment
+        spending.wallet = spendingInfo.wallet
         
         if spendingInfo.spending?.items?.count == 0,
             let receiptItems = spendingInfo.receiptItems {

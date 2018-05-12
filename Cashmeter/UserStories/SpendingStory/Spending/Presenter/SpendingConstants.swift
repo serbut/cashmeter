@@ -16,5 +16,6 @@ struct SpendingConstants {
     static let deleteActionTitle = "Вы уверены, что хотите удалить запись о покупке?"
     static let deleteActionYes = "Да"
     static let deleteActionNo = "Нет"
+    static let noWalletTitle = "Кошелек не выбран"
 
 }

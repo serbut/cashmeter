@@ -21,7 +21,7 @@ protocol SpendingRouterInput: class {
     /**
      Метод открывает модуль выбора кошелька.
      */
-    func showSelectWalletModule()
+    func showSelectWalletModule(moduleOutput: SelectWalletModuleOutput)
     
     /**
      Метод закрывает модуль.

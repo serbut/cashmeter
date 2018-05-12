@@ -13,6 +13,7 @@ class SelectWalletViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     var walletService: WalletService = ServicesAssembly().walletService() 
     var wallets: [Wallet]!
+    var moduleOutput: SelectWalletModuleOutput!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -71,8 +72,10 @@ extension SelectWalletViewController: UITableViewDataSource {
 extension SelectWalletViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        // TODO: Tell output, that wallet was selected
         tableView.cellForRow(at: indexPath)?.accessoryType = .checkmark
+        let wallet = wallets[indexPath.row]
+        moduleOutput.didSelectWallet(wallet)
+        navigationController?.popViewController(animated: true)
     }
     
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {

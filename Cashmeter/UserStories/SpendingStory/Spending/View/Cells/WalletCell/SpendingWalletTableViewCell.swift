@@ -9,9 +9,8 @@
 import UIKit
 
 class SpendingWalletTableViewCell: UITableViewCell, HasNib {
-
-    let noWalletTitle = "Кошелек не выбран"
     
+    @IBOutlet weak var walletNotChosenLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var balanceLabel: UILabel!
     @IBOutlet weak var currencySignLabel: UILabel!
@@ -30,9 +29,14 @@ extension SpendingWalletTableViewCell: TableCellInput {
     func setup(with cellObject: TableCellObject) {
         guard let cellObject = cellObject as? SpendingWalletTableViewCellObject else { return }
         
-        nameLabel.text = cellObject.walletName ?? noWalletTitle
-        balanceLabel.text = "\(cellObject.walletBalance)"
-        currencySignLabel.text = cellObject.walletCurrencySign ?? ""
+        walletNotChosenLabel.isHidden = cellObject.shouldShowWalletInfo
+        nameLabel.isHidden = !cellObject.shouldShowWalletInfo
+        balanceLabel.isHidden = !cellObject.shouldShowWalletInfo
+        currencySignLabel.isHidden = !cellObject.shouldShowWalletInfo
+        
+        nameLabel.text = cellObject.walletName
+        balanceLabel.text = cellObject.walletBalance
+        currencySignLabel.text = cellObject.walletCurrencySign
     }
     
 }

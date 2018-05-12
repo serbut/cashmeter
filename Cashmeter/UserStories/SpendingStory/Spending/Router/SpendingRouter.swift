@@ -44,9 +44,10 @@ final class SpendingRouter: SpendingRouterInput {
         transitionHandler.present(navVC, animated: true)
     }
     
-    func showSelectWalletModule() {
+    func showSelectWalletModule(moduleOutput: SelectWalletModuleOutput) {
         let viewController = SelectWalletViewController()
-        
+        viewController.moduleOutput = moduleOutput
+
         transitionHandler.navigationController?.pushViewController(viewController, animated: true)
     }
     

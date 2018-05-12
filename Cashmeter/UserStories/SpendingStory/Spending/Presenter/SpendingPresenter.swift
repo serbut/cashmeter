@@ -58,7 +58,7 @@ extension SpendingPresenter: SpendingViewOutput {
     }
     
     func didTriggerSelectWalletAction() {
-        router.showSelectWalletModule()
+        router.showSelectWalletModule(moduleOutput: self)
     }
     
     func didTapOnClose() {
@@ -158,6 +158,17 @@ extension SpendingPresenter: QRScannerModuleOutput {
 extension SpendingPresenter: NewCategoryModuleOutput {
     
     func didAddCategory() {
+        updateUI()
+    }
+    
+}
+
+// MARK: SelectWalletModuleOutput
+
+extension SpendingPresenter: SelectWalletModuleOutput {
+    
+    func didSelectWallet(_ wallet: Wallet) {
+        spendingInfo.wallet = wallet
         updateUI()
     }
     
