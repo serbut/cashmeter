@@ -15,7 +15,9 @@ class QRScannerViewController: UIViewController {
     let borderColor: UIColor = .primary
     let borderSizeMultiplier: CGFloat = 0.8
     let closeButtonInset: CGFloat = 20.0
-    
+    let closeButtonCornerRadius: CGFloat = 8.0
+    let closeButtonEdgeInset: CGFloat = 5.0
+
     let isStatusBarInitiallyHidden = UIApplication.shared.isStatusBarHidden
     
     var video: AVCaptureVideoPreviewLayer!
@@ -67,7 +69,13 @@ class QRScannerViewController: UIViewController {
             let image = #imageLiteral(resourceName: "close_bar_button").withRenderingMode(.alwaysTemplate)
             button.setImage(image, for: .normal)
             button.tintColor = .white
-            button.addTarget(self, action: #selector(closeModule), for: .touchDown)
+            button.backgroundColor = .lightGraySemiTransparent
+            button.layer.cornerRadius = closeButtonCornerRadius
+            button.contentEdgeInsets = UIEdgeInsets(top: closeButtonEdgeInset,
+                                                    left: closeButtonEdgeInset,
+                                                    bottom: closeButtonEdgeInset,
+                                                    right: closeButtonEdgeInset)
+            button.addTarget(self, action: #selector(closeModule), for: .touchUpInside)
 
             button.translatesAutoresizingMaskIntoConstraints = false
             return button

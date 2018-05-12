@@ -27,8 +27,12 @@
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </tableView>
                 <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Gje-1E-svX">
-                    <rect key="frame" x="169" y="325" width="37" height="37"/>
-                    <color key="color" white="0.66666666669999997" alpha="1" colorSpace="calibratedWhite"/>
+                    <rect key="frame" x="162.5" y="318.5" width="50" height="50"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="50" id="AIr-Ba-IlB"/>
+                        <constraint firstAttribute="height" constant="50" id="Eq8-pB-qWJ"/>
+                    </constraints>
                 </activityIndicatorView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -17,7 +17,11 @@ final class SpendingViewController: UIViewController {
     var dataDisplayManager: SpendingDataDisplayManagerInput!
 
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var activityIndicatorView: UIActivityIndicatorView!
+    @IBOutlet weak var activityIndicatorView: UIActivityIndicatorView! {
+        didSet {
+            activityIndicatorView.layer.cornerRadius = activityIndicatorView.frame.height / 8
+        }
+    }
     var shouldShowDeleteButton = false
     
     override func viewDidLoad() {
