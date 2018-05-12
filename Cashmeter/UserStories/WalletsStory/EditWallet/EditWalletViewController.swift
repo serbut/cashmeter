@@ -9,6 +9,8 @@
 import UIKit
 
 final class EditWalletViewController: UIViewController {
+    
+    let showAllFieldsTitle = "Необходимо заполнить все поля"
 
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var currentBalanceTextField: UITextField!
@@ -45,7 +47,7 @@ final class EditWalletViewController: UIViewController {
         guard let name = nameTextField.text, !name.isEmpty,
             let balanceText = currentBalanceTextField.text,
             let selectedCurrencyIndex = currenciesTableView.indexPathForSelectedRow?.row else {
-                // TODO: Show alert
+                showFillAllFieldsAlert()
                 return
         }
         
@@ -68,6 +70,13 @@ final class EditWalletViewController: UIViewController {
     
     @objc func didTapOnClose() {
         dismiss(animated: true, completion: nil)
+    }
+    
+    func showFillAllFieldsAlert() {
+        let alert = UIAlertController(title: nil, message: showAllFieldsTitle, preferredStyle: .alert)
+        let closeAction = UIAlertAction(title: SpendingConstants.closeActionTitle, style: .cancel, handler: nil)
+        alert.addAction(closeAction)
+        present(alert, animated: true, completion: nil)
     }
 
 }

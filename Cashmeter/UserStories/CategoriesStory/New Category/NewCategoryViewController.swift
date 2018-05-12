@@ -12,6 +12,8 @@ class NewCategoryViewController: UIViewController {
 
     var moduleOutput: NewCategoryModuleOutput!
     let vcTitle = "Новая категория"
+    let fillTitleError = "Введите название категории"
+    let chooseIconError = "Выберите иконку для категории"
     
     let iconsImageNames = [
         "food",
@@ -64,13 +66,14 @@ class NewCategoryViewController: UIViewController {
     }
     
     @objc func didTapOnSave() {
-        guard let title = titleTextField.text else {
+        guard let title = titleTextField.text, !title.isEmpty else {
+            // TODO: Check not consists of spaces
+            showAlert(with: fillTitleError)
             return
-            // TODO: Add alert
         }
         guard let iconIndex = selectedCategoryIndex else {
+            showAlert(with: chooseIconError)
             return
-            // TODO: Add alert
         }
         let iconImageName = iconsImageNames[iconIndex]
         categoryService.addCategory(withTitle: title, imageName: iconImageName)
@@ -91,6 +94,13 @@ class NewCategoryViewController: UIViewController {
     
     @objc func didTapOnClose() {
         dismiss(animated: true, completion: nil)
+    }
+    
+    func showAlert(with message: String) {
+        let alert = UIAlertController(title: nil, message: message, preferredStyle: .alert)
+        let closeAction = UIAlertAction(title: SpendingConstants.closeActionTitle, style: .cancel, handler: nil)
+        alert.addAction(closeAction)
+        present(alert, animated: true, completion: nil)
     }
     
     // TODO: Rewrite using VIPER

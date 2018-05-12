@@ -125,7 +125,6 @@ extension SpendingPresenter: SpendingInteractorOutput {
     
     func didFailParseReceipt(error: String) {
         view.hideLoader()
-//        router.showErrorAlert(with: error)
         router.showErrorAlert(with: SpendingConstants.errorGetReceiptAlertText)
     }
     
