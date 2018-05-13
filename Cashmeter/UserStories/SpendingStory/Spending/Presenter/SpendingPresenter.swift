@@ -53,7 +53,7 @@ extension SpendingPresenter: SpendingViewOutput {
     }
     
     func didTriggerShowSpendingItemsAction() {
-        guard let spendingItems = spendingInfo.receiptItems else { return }
+        guard let spendingItems = spendingInfo.items else { return }
         router.showItemsList(spendingItems: spendingItems)
     }
     
@@ -115,7 +115,7 @@ extension SpendingPresenter: SpendingInteractorOutput {
         view.hideLoader()
         
         spendingInfo.amount = receiptInfo.sum
-        spendingInfo.receiptItems = receiptInfo.items
+        spendingInfo.items = receiptInfo.items.map { SpendingItemInfo(from: $0) }
         
         var cellObjects: [TableCellObject] = []
         let categories = interactor.requestCategories()

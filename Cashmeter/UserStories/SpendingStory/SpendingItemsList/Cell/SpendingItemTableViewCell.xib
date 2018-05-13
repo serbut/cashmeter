@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -60,9 +56,9 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="amountLabel" destination="FYI-r4-3pF" id="Awv-vE-DQk"/>
                 <outlet property="nameLabel" destination="Vr4-tE-DCa" id="Usc-8g-eNF"/>
                 <outlet property="priceCountLabel" destination="XYq-EY-TMF" id="3JA-5O-fTN"/>
-                <outlet property="sumLabel" destination="FYI-r4-3pF" id="Awv-vE-DQk"/>
             </connections>
             <point key="canvasLocation" x="34" y="88.5"/>
         </tableViewCell>

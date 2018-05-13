@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -19,30 +19,24 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="119.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="yco-Km-2r5">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="120"/>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XMh-9P-a2r">
+                        <rect key="frame" x="0.0" y="-0.5" width="320" height="120.5"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="120" id="nwH-xc-wI8"/>
+                            <constraint firstAttribute="height" constant="120" id="Y6m-Jh-oBr"/>
                         </constraints>
-                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="2gv-NF-sd4">
-                            <size key="itemSize" width="100" height="120"/>
-                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                        </collectionViewFlowLayout>
-                    </collectionView>
+                    </view>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="yco-Km-2r5" firstAttribute="height" secondItem="H2p-sc-9uM" secondAttribute="height" id="eJG-SE-E4d"/>
-                    <constraint firstItem="yco-Km-2r5" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="fzD-9r-9Pk"/>
-                    <constraint firstItem="yco-Km-2r5" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="mFW-gX-UNW"/>
-                    <constraint firstItem="yco-Km-2r5" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" id="xAU-q7-JlP"/>
+                    <constraint firstItem="XMh-9P-a2r" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="BNY-BK-MnX"/>
+                    <constraint firstAttribute="trailing" secondItem="XMh-9P-a2r" secondAttribute="trailing" id="D4L-FD-Lbs"/>
+                    <constraint firstItem="XMh-9P-a2r" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="EPP-rf-uNe"/>
+                    <constraint firstAttribute="bottom" secondItem="XMh-9P-a2r" secondAttribute="bottom" id="LN5-Xi-wcw"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="categoriesCollectionView" destination="yco-Km-2r5" id="qYc-hk-iUX"/>
+                <outlet property="containerView" destination="XMh-9P-a2r" id="UMa-Ti-0Ja"/>
             </connections>
             <point key="canvasLocation" x="34" y="87"/>
         </tableViewCell>

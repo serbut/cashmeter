@@ -17,7 +17,7 @@ final class SpendingInfo {
     var wallet: Wallet?
     var currencySign: String?
     var date: Date
-    var receiptItems: [SpendingItemInfo]?
+    var items: [SpendingItemInfo]?
     var comment: String
     
     init() {
@@ -33,7 +33,7 @@ final class SpendingInfo {
         self.wallet = spending.wallet
         self.currencySign = spending.wallet?.currency?.label
         self.date = spending.date!
-        self.receiptItems = spending.items?.allObjects.map { SpendingItemInfo(from: $0 as! SpendingItem) }
+        self.items = spending.items?.allObjects.map { SpendingItemInfo(from: $0 as! SpendingItem) }
         self.comment = spending.comment ?? ""
     }
         

@@ -46,15 +46,13 @@ extension SpendingService: SpendingServiceInput {
         spending.comment = spendingInfo.comment
         spending.wallet = spendingInfo.wallet
         
-        // TODO: Update wallet's balance
-        
-        if let receiptItems = spendingInfo.receiptItems {
-            for itemInfo in receiptItems {
+        if let spendingItems = spendingInfo.items {
+            for itemInfo in spendingItems {
                 let item = SpendingItem(context: managedObjectContext)
                 item.title = itemInfo.name
                 item.price = itemInfo.price
                 item.quantity = itemInfo.quantity
-                item.sum = itemInfo.sum
+                item.amount = itemInfo.amount
                 item.spending = spending
                 spending.items?.adding(item)
             }
@@ -74,16 +72,14 @@ extension SpendingService: SpendingServiceInput {
         spending.comment = spendingInfo.comment
         spending.wallet = spendingInfo.wallet
         
-        // TODO: Think about situation, when wallet changed (what to do with balances)
-        
         if spendingInfo.spending?.items?.count == 0,
-            let receiptItems = spendingInfo.receiptItems {
-            for itemInfo in receiptItems {
+            let spendingItems = spendingInfo.items {
+            for itemInfo in spendingItems {
                 let item = SpendingItem(context: managedObjectContext)
                 item.title = itemInfo.name
                 item.price = itemInfo.price
                 item.quantity = itemInfo.quantity
-                item.sum = itemInfo.sum
+                item.amount = itemInfo.amount
                 item.spending = spending
                 spending.items?.adding(item)
             }

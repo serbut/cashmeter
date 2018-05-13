@@ -12,7 +12,7 @@ final class SpendingItemTableViewCell: UITableViewCell, HasNib {
 
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var priceCountLabel: UILabel!
-    @IBOutlet weak var sumLabel: UILabel!
+    @IBOutlet weak var amountLabel: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()

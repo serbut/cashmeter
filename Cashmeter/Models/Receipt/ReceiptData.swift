@@ -9,6 +9,7 @@
 import Foundation
 
 struct ReceiptData {
+    
     let fn: String
     let i: String
     let fp: String
@@ -38,4 +39,5 @@ struct ReceiptData {
         self.amount = Double(amountText)
         self.dateTime = Date.init(fromQrString: dateTimeString)
     }
+    
 }

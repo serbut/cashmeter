@@ -28,4 +28,20 @@ extension UIView {
         return String(describing: self)
     }
     
+    class func loadNib(name: String? = nil) -> Self {
+        return loadNib(by: name)
+    }
+    
+    private class func loadNib<T>(by name: String?) -> T {
+        var viewName: String? = name
+        
+        if viewName == nil {
+            viewName = self.name()
+        }
+        
+        let view: T = UINib(nibName: viewName!, bundle: nil).instantiate(withOwner: nil, options: nil).first as! T
+        
+        return view
+    }
+    
 }

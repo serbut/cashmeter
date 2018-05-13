@@ -46,7 +46,7 @@ extension SpendingCellObjectsFactory: SpendingCellObjectsFactoryInput {
         dateTableViewCellObject.date = spendingInfo.date
         cellObjects.append(dateTableViewCellObject)
         
-        if let receiptItems = spendingInfo.receiptItems, !receiptItems.isEmpty {
+        if let receiptItems = spendingInfo.items, !receiptItems.isEmpty {
             var receiptItemsTableViewCellObject = SpendingReceiptItemsTableViewCellObject()
             receiptItemsTableViewCellObject.cellClass = SpendingReceiptItemsTableViewCell.self
             receiptItemsTableViewCellObject.receiptItemsDetailsText = textForReceiptItems(receiptItems)

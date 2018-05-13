@@ -15,6 +15,11 @@
 		072A469920A7525300A98C6E /* SelectWalletModuleOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072A469820A7525300A98C6E /* SelectWalletModuleOutput.swift */; };
 		072A469D20A7713700A98C6E /* WalletIncomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072A469B20A7713700A98C6E /* WalletIncomeViewController.swift */; };
 		072A469E20A7713700A98C6E /* WalletIncomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 072A469C20A7713700A98C6E /* WalletIncomeViewController.xib */; };
+		072A46A520A8406900A98C6E /* SpendingItemInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072A46A420A8406900A98C6E /* SpendingItemInfo.swift */; };
+		072A46B020A84A3600A98C6E /* SelectCategory.xib in Resources */ = {isa = PBXBuildFile; fileRef = 072A46AE20A84A3600A98C6E /* SelectCategory.xib */; };
+		072A46B120A84A3600A98C6E /* SelectCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072A46AF20A84A3600A98C6E /* SelectCategory.swift */; };
+		072A46B320A84A5900A98C6E /* SelectCategoryModuleOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072A46B220A84A5900A98C6E /* SelectCategoryModuleOutput.swift */; };
+		072A46B720A84DA700A98C6E /* SelectCategoryModuleInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072A46B620A84DA700A98C6E /* SelectCategoryModuleInput.swift */; };
 		073DDFFF20035DD4000CAD7C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073DDFFE20035DD4000CAD7C /* AppDelegate.swift */; };
 		073DE00720035DD4000CAD7C /* Cashmeter.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 073DE00520035DD4000CAD7C /* Cashmeter.xcdatamodeld */; };
 		073DE00920035DD4000CAD7C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 073DE00820035DD4000CAD7C /* Images.xcassets */; };
@@ -85,7 +90,7 @@
 		079E062C208C900F0072240F /* SpendingServiceInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079E062B208C900F0072240F /* SpendingServiceInput.swift */; };
 		079E062E208C90BA0072240F /* SpendingInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079E062D208C90BA0072240F /* SpendingInfo.swift */; };
 		079E0632208CA5660072240F /* CategoryInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079E0631208CA5660072240F /* CategoryInfo.swift */; };
-		079E0638208CE6970072240F /* SpendingItemInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079E0637208CE6970072240F /* SpendingItemInfo.swift */; };
+		079E0638208CE6970072240F /* ReceiptItemInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079E0637208CE6970072240F /* ReceiptItemInfo.swift */; };
 		079E063A208CE7160072240F /* ReceiptInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079E0639208CE7160072240F /* ReceiptInfo.swift */; };
 		079E063C208CEA3E0072240F /* ServiceResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079E063B208CEA3E0072240F /* ServiceResponse.swift */; };
 		079E063E208CEC870072240F /* SpendingInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079E063D208CEC870072240F /* SpendingInteractorOutput.swift */; };
@@ -162,6 +167,11 @@
 		072A469820A7525300A98C6E /* SelectWalletModuleOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectWalletModuleOutput.swift; sourceTree = "<group>"; };
 		072A469B20A7713700A98C6E /* WalletIncomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletIncomeViewController.swift; sourceTree = "<group>"; };
 		072A469C20A7713700A98C6E /* WalletIncomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WalletIncomeViewController.xib; sourceTree = "<group>"; };
+		072A46A420A8406900A98C6E /* SpendingItemInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendingItemInfo.swift; sourceTree = "<group>"; };
+		072A46AE20A84A3600A98C6E /* SelectCategory.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SelectCategory.xib; sourceTree = "<group>"; };
+		072A46AF20A84A3600A98C6E /* SelectCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectCategory.swift; sourceTree = "<group>"; };
+		072A46B220A84A5900A98C6E /* SelectCategoryModuleOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCategoryModuleOutput.swift; sourceTree = "<group>"; };
+		072A46B620A84DA700A98C6E /* SelectCategoryModuleInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCategoryModuleInput.swift; sourceTree = "<group>"; };
 		073DDFFB20035DD4000CAD7C /* Cashmeter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cashmeter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		073DDFFE20035DD4000CAD7C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		073DE00620035DD4000CAD7C /* Cashmeter.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Cashmeter.xcdatamodel; sourceTree = "<group>"; };
@@ -236,7 +246,7 @@
 		079E062B208C900F0072240F /* SpendingServiceInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendingServiceInput.swift; sourceTree = "<group>"; };
 		079E062D208C90BA0072240F /* SpendingInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendingInfo.swift; sourceTree = "<group>"; };
 		079E0631208CA5660072240F /* CategoryInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryInfo.swift; sourceTree = "<group>"; };
-		079E0637208CE6970072240F /* SpendingItemInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendingItemInfo.swift; sourceTree = "<group>"; };
+		079E0637208CE6970072240F /* ReceiptItemInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptItemInfo.swift; sourceTree = "<group>"; };
 		079E0639208CE7160072240F /* ReceiptInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptInfo.swift; sourceTree = "<group>"; };
 		079E063B208CEA3E0072240F /* ServiceResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceResponse.swift; sourceTree = "<group>"; };
 		079E063D208CEC870072240F /* SpendingInteractorOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendingInteractorOutput.swift; sourceTree = "<group>"; };
@@ -358,6 +368,26 @@
 			path = WalletIncome;
 			sourceTree = "<group>";
 		};
+		072A46AC20A8495E00A98C6E /* CategorySelect */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CategorySelect;
+			sourceTree = "<group>";
+		};
+		072A46AD20A84A0600A98C6E /* SelectCategory */ = {
+			isa = PBXGroup;
+			children = (
+				0743AF64208693710026C5B9 /* CategoryCollectionCell */,
+				070539A12096634E003AF0D4 /* AddCategoryCollectionCell */,
+				072A46AF20A84A3600A98C6E /* SelectCategory.swift */,
+				072A46AE20A84A3600A98C6E /* SelectCategory.xib */,
+				072A46B220A84A5900A98C6E /* SelectCategoryModuleOutput.swift */,
+				072A46B620A84DA700A98C6E /* SelectCategoryModuleInput.swift */,
+			);
+			path = SelectCategory;
+			sourceTree = "<group>";
+		};
 		073553E6BF4ED4778AFF58D3 /* DisplayManager */ = {
 			isa = PBXGroup;
 			children = (
@@ -435,6 +465,7 @@
 		0743AF76208B7EC20026C5B9 /* SpendingStory */ = {
 			isa = PBXGroup;
 			children = (
+				072A46AD20A84A0600A98C6E /* SelectCategory */,
 				07CD2909209E43FA0086F005 /* WalletSelect */,
 				074E3246207EAC4800C78501 /* Spending */,
 				079E0646208E729E0072240F /* SpendingItemsList */,
@@ -562,8 +593,6 @@
 		0773D35C2083416600BB12ED /* CategoriesCell */ = {
 			isa = PBXGroup;
 			children = (
-				0743AF64208693710026C5B9 /* CategoryCollectionCell */,
-				070539A12096634E003AF0D4 /* AddCategoryCollectionCell */,
 				0743AF60208692C80026C5B9 /* CategoriesTableViewCell.swift */,
 				07843B8D208BC694001DBABF /* CategoriesTableViewCellObject.swift */,
 				0743AF61208692C80026C5B9 /* CategoriesTableViewCell.xib */,
@@ -653,6 +682,7 @@
 			isa = PBXGroup;
 			children = (
 				079E062D208C90BA0072240F /* SpendingInfo.swift */,
+				072A46A420A8406900A98C6E /* SpendingItemInfo.swift */,
 			);
 			path = Spending;
 			sourceTree = "<group>";
@@ -788,6 +818,7 @@
 		079E0646208E729E0072240F /* SpendingItemsList */ = {
 			isa = PBXGroup;
 			children = (
+				072A46AC20A8495E00A98C6E /* CategorySelect */,
 				079E064B208E72F80072240F /* Cell */,
 				079E0647208E72EE0072240F /* SpendingItemsListViewController.swift */,
 				079E0648208E72EE0072240F /* SpendingItemsListViewController.xib */,
@@ -939,7 +970,7 @@
 			isa = PBXGroup;
 			children = (
 				07EC000D20868581004E442B /* ReceiptData.swift */,
-				079E0637208CE6970072240F /* SpendingItemInfo.swift */,
+				079E0637208CE6970072240F /* ReceiptItemInfo.swift */,
 				079E0639208CE7160072240F /* ReceiptInfo.swift */,
 			);
 			path = Receipt;
@@ -1126,6 +1157,7 @@
 				0769A344209CF3A2004BD5E8 /* EditWalletViewController.xib in Resources */,
 				0773D361208341BB00BB12ED /* AmountTableViewCell.xib in Resources */,
 				0773D3592083407E00BB12ED /* SpendingViewController.xib in Resources */,
+				072A46B020A84A3600A98C6E /* SelectCategory.xib in Resources */,
 				075ED06D208BAF1E009AE6E8 /* SpendingDateTableViewCell.xib in Resources */,
 				07CD28FA209DC4180086F005 /* CurrencyListTableViewCell.xib in Resources */,
 				07CD290D209E441E0086F005 /* SelectWalletViewController.xib in Resources */,
@@ -1266,6 +1298,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0773D36D20834B3900BB12ED /* SpendingDataDisplayManager.swift in Sources */,
+				072A46B120A84A3600A98C6E /* SelectCategory.swift in Sources */,
 				0773D380208355E100BB12ED /* CellProtocol.swift in Sources */,
 				07EC0008208681A3004E442B /* ReceiptServiceInput.swift in Sources */,
 				0773D364208342A300BB12ED /* AddReceiptTableViewCell.swift in Sources */,
@@ -1279,6 +1312,7 @@
 				0773D3822083567F00BB12ED /* SpendingViewInput.swift in Sources */,
 				079E064E208E731B0072240F /* SpendingItemTableViewCell.swift in Sources */,
 				0769A338209CF07D004BD5E8 /* WalletsListViewController.swift in Sources */,
+				072A46B720A84DA700A98C6E /* SelectCategoryModuleInput.swift in Sources */,
 				0773D35420829E5700BB12ED /* SpendingListTableViewCell.swift in Sources */,
 				0773D3B12083B9B500BB12ED /* QRScannerModuleOutput.swift in Sources */,
 				0773D3AB2083A1F200BB12ED /* QRScannerViewController.swift in Sources */,
@@ -1298,6 +1332,7 @@
 				072A469920A7525300A98C6E /* SelectWalletModuleOutput.swift in Sources */,
 				0743AF7A208B98E90026C5B9 /* SpendingsListService.swift in Sources */,
 				0773D39820835E2000BB12ED /* SpendingConfigurator.swift in Sources */,
+				072A46B320A84A5900A98C6E /* SelectCategoryModuleOutput.swift in Sources */,
 				078B248420A3A0C700987152 /* Colors.swift in Sources */,
 				0743AF62208692C80026C5B9 /* CategoriesTableViewCell.swift in Sources */,
 				079E0632208CA5660072240F /* CategoryInfo.swift in Sources */,
@@ -1341,6 +1376,7 @@
 				07CD2917209E4D6F0086F005 /* FilterViewController.swift in Sources */,
 				0773D386208359C900BB12ED /* SpendingPresenter.swift in Sources */,
 				35977FC0FE9000C7C6D00B02 /* SpendingsListConfigurator.swift in Sources */,
+				072A46A520A8406900A98C6E /* SpendingItemInfo.swift in Sources */,
 				8A5E5F1A28AB524855BC99D7 /* SpendingsListViewInput.swift in Sources */,
 				D9B28A6BE071763210132460 /* SpendingsListViewOutput.swift in Sources */,
 				D0964F5362E5554A03F55B85 /* SpendingsListViewController.swift in Sources */,
@@ -1348,7 +1384,7 @@
 				079E063E208CEC870072240F /* SpendingInteractorOutput.swift in Sources */,
 				344907B3E08789527E898C94 /* SpendingsListDisplayManagerInput.swift in Sources */,
 				8394006A1F7B7ED45F954A58 /* SpendingsListDisplayManagerOutput.swift in Sources */,
-				079E0638208CE6970072240F /* SpendingItemInfo.swift in Sources */,
+				079E0638208CE6970072240F /* ReceiptItemInfo.swift in Sources */,
 				070539A02095D31C003AF0D4 /* SpendingConstants.swift in Sources */,
 				070539A420966383003AF0D4 /* AddCategoryCollectionViewCell.swift in Sources */,
 				079E062C208C900F0072240F /* SpendingServiceInput.swift in Sources */,
