@@ -8,7 +8,7 @@
     </entity>
     <entity name="Currency" representedClassName="Cashmeter.Currency" syncable="YES" codeGenerationType="class">
         <attribute name="code" attributeType="String" syncable="YES"/>
-        <attribute name="label" attributeType="String" syncable="YES"/>
+        <attribute name="label" attributeType="String" defaultValueString="₽" syncable="YES"/>
         <attribute name="name" attributeType="String" syncable="YES"/>
         <relationship name="wallet" toMany="YES" deletionRule="Deny" destinationEntity="Wallet" inverseName="currency" inverseEntity="Wallet" syncable="YES"/>
     </entity>
@@ -44,7 +44,7 @@
     </entity>
     <elements>
         <element name="Category" positionX="-216" positionY="122" width="128" height="103"/>
-        <element name="Currency" positionX="-162" positionY="344" width="128" height="103"/>
+        <element name="Currency" positionX="-162" positionY="344" width="128" height="105"/>
         <element name="Receipt" positionX="421" positionY="423" width="128" height="103"/>
         <element name="Spending" positionX="115" positionY="216" width="128" height="163"/>
         <element name="SpendingItem" positionX="403" positionY="63" width="128" height="135"/>

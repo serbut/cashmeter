@@ -29,9 +29,11 @@ protocol SpendingRouterInput: class {
     func closeModule()
     
     /**
-     Метод показывает ошибку при невозможности получения чека.
+     Метод показывает алерт с сообщением.
+     
+     @param message - текст сообщения.
      */
-    func showErrorAlert(with message: String)
+    func showAlert(with message: String)
     
     /**
      Метод открывает модуль добавления новой категории.

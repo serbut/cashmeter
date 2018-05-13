@@ -30,7 +30,7 @@ final class SpendingRouter: SpendingRouterInput {
         transitionHandler.dismiss(animated: true, completion: nil)
     }
     
-    func showErrorAlert(with message: String) {
+    func showAlert(with message: String) {
         let alert = UIAlertController(title: nil, message: message, preferredStyle: .alert)
         let closeAction = UIAlertAction(title: SpendingConstants.closeActionTitle, style: .cancel, handler: nil)
         alert.addAction(closeAction)

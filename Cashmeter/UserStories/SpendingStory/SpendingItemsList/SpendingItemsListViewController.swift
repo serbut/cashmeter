@@ -178,6 +178,7 @@ extension SpendingItemsListViewController: SelectCategoryModuleOutput {
     func didSelectCategory(_ category: Category?) {
         selectedItems.forEach { $0.category = category }
         selectedItems = []
+        categorySelectView.deselectSelectedCategory()
         tableView.reloadData()
     }
     

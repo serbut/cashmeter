@@ -43,6 +43,11 @@ extension SelectCategory: SelectCategoryModuleInput {
         }
     }
     
+    func deselectSelectedCategory() {
+        guard let selectedCategoryIndex = selectedCategoryIndex else { return }
+        categoriesCollectionView.deselectItem(at: selectedCategoryIndex, animated: true)
+    }
+    
 }
 
 // MARK: UICollectionViewDataSource

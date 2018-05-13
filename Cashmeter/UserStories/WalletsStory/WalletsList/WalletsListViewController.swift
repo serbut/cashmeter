@@ -64,7 +64,7 @@ extension WalletsListViewController: UITableViewDataSource {
         let walletForCell = wallets[indexPath.row]
         
         cell.nameLabel.text = walletForCell.name
-        cell.amountLabel.text = "\(walletForCell.balance) \(walletForCell.currency?.label ?? "")"
+        cell.amountLabel.text = "\(walletForCell.balance) \(walletForCell.currency!.label!)"
         return cell
     }
     

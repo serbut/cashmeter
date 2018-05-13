@@ -17,4 +17,10 @@ protocol SelectCategoryModuleInput {
      */
     func setup(with categories: [Category], selectedCategory: Category?)
     
+    /**
+     Метод снимает выделение с выбранной категории.
+     */
+    // TODO: Wrong place; rewrite using VIPER
+    func deselectSelectedCategory()
+    
 }

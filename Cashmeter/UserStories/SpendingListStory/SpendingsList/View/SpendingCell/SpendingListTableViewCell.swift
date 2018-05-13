@@ -19,7 +19,8 @@ final class SpendingListTableViewCell: UITableViewCell, HasNib {
     
     func setup(with spending: Spending) {
         categoryNameLabel.text = spending.category?.title ?? noCategoryTitle
-        amountLabel.text = "\(spending.amount) ₽"
+        let currencySign = spending.wallet?.currency?.label ?? "₽"
+        amountLabel.text = "\(spending.amount) \(currencySign)"
         categoryIconImageView.image = UIImage(named: spending.category?.image_name ?? "undefined_category")
         dateLabel.text = spending.date!.shortFormat
     }

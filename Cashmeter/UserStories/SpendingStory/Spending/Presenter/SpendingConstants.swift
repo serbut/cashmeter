@@ -17,5 +17,6 @@ struct SpendingConstants {
     static let deleteActionYes = "Да"
     static let deleteActionNo = "Нет"
     static let noWalletTitle = "Кошелек не выбран"
+    static let fillAmountError = "Введите сумму"
 
 }

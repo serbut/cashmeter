@@ -77,13 +77,20 @@ extension SpendingPresenter: SpendingViewOutput {
     }
     
     func didTapOnSave() {
+        guard spendingInfo.amount > 0 else {
+            router.showAlert(with: SpendingConstants.fillAmountError)
+            return
+        }
         interactor.saveSpending(spendingInfo: spendingInfo)
         // TODO: move to completion
         router.closeModule()
     }
     
     func didChangeAmountValue(_ value: String?) {
-        guard let value = value, let amount = Double(value) else { return }
+        guard let value = value, let amount = Double(value) else {
+            spendingInfo.amount = 0
+            return
+        }
         spendingInfo.amount = amount
     }
     
@@ -125,7 +132,7 @@ extension SpendingPresenter: SpendingInteractorOutput {
     
     func didFailParseReceipt(error: String) {
         view.hideLoader()
-        router.showErrorAlert(with: SpendingConstants.errorGetReceiptAlertText)
+        router.showAlert(with: SpendingConstants.errorGetReceiptAlertText)
     }
     
 }
@@ -136,7 +143,7 @@ extension SpendingPresenter: QRScannerModuleOutput {
     
     func scanIsFinished(_ scannedString: String) {
         guard let receiptData = ReceiptData(fromQrString: scannedString) else {
-            router.showErrorAlert(with: SpendingConstants.errorParseQrAlertText) // TODO: move and process error
+            router.showAlert(with: SpendingConstants.errorParseQrAlertText) // TODO: move and process error
             return
         }
         if let dateTime = receiptData.dateTime {
@@ -169,6 +176,7 @@ extension SpendingPresenter: SelectWalletModuleOutput {
     
     func didSelectWallet(_ wallet: Wallet) {
         spendingInfo.wallet = wallet
+        spendingInfo.currencySign = spendingInfo.wallet!.currency!.label!
         updateUI()
     }
     
