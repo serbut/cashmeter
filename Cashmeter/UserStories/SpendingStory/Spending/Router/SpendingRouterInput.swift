@@ -16,7 +16,7 @@ protocol SpendingRouterInput: class {
     /**
      Метод открывает модуль со списком позиций в покупке.
      */
-    func showItemsList(spendingItems: [SpendingItemInfo])
+    func showItemsList(spendingItems: [SpendingItemInfo], moduleOutput: SpendingItemsListModuleOutput)
     
     /**
      Метод открывает модуль выбора кошелька.

@@ -15,12 +15,15 @@ final class SpendingItemInfo {
     var price: Double
     var amount: Double
     var category: Category?
+    var spendingItem: SpendingItem?
     
     init(from spendingItem: SpendingItem) {
         self.name = spendingItem.title!
         self.quantity = spendingItem.quantity
         self.price = spendingItem.price
         self.amount = spendingItem.amount
+        self.category = spendingItem.category
+        self.spendingItem = spendingItem
     }
     
     init(from receiptItemInfo: ReceiptItemInfo) {
@@ -32,10 +35,29 @@ final class SpendingItemInfo {
     
 }
 
+// MARK: CustomDebugStringConvertible
+
 extension SpendingItemInfo: CustomDebugStringConvertible {
     
     var debugDescription: String {
         return "\(name) — \(price)*\(quantity) = \(amount)\n"
+    }
+    
+}
+
+// MARK: Hashable
+
+extension SpendingItemInfo: Hashable {
+    
+    var hashValue: Int {
+        return name.hashValue + price.hashValue + quantity.hashValue + amount.hashValue
+    }
+    
+    static func == (lhs: SpendingItemInfo, rhs: SpendingItemInfo) -> Bool {
+        return lhs.name == rhs.name &&
+            lhs.price == rhs.price &&
+            lhs.quantity == rhs.quantity &&
+            lhs.amount == rhs.amount
     }
     
 }

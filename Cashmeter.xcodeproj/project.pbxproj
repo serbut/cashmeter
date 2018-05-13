@@ -130,6 +130,7 @@
 		07EC000B2086836D004E442B /* BaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EC000A2086836D004E442B /* BaseService.swift */; };
 		07EC000E20868581004E442B /* ReceiptData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EC000D20868581004E442B /* ReceiptData.swift */; };
 		07EDBFAB20828B7E009229DC /* SpendingsListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07EDBFA920828B7E009229DC /* SpendingsListViewController.xib */; };
+		07F45B1620A87D6200D8603B /* SpendingItemsListModuleOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F45B1520A87D6200D8603B /* SpendingItemsListModuleOutput.swift */; };
 		179F034FA193280B14B9776D /* SpendingsListInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACFD1A6EA40796D477271BEA /* SpendingsListInteractorInput.swift */; };
 		27AD6A7D0B629DB07C019AE0 /* SpendingsListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E61ED4B6F9015FF13F6BB2D /* SpendingsListPresenter.swift */; };
 		344907B3E08789527E898C94 /* SpendingsListDisplayManagerInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54CB9EC36D8D02CEB08773B /* SpendingsListDisplayManagerInput.swift */; };
@@ -286,6 +287,7 @@
 		07EC000A2086836D004E442B /* BaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseService.swift; sourceTree = "<group>"; };
 		07EC000D20868581004E442B /* ReceiptData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptData.swift; sourceTree = "<group>"; };
 		07EDBFA920828B7E009229DC /* SpendingsListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SpendingsListViewController.xib; sourceTree = "<group>"; };
+		07F45B1520A87D6200D8603B /* SpendingItemsListModuleOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendingItemsListModuleOutput.swift; sourceTree = "<group>"; };
 		1356556D4DC764BDC6709CE7 /* SpendingsListInteractorOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SpendingsListInteractorOutput.swift; sourceTree = "<group>"; };
 		19ECDDF716CE6C42FF7DEBC4 /* SpendingsListViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SpendingsListViewController.swift; sourceTree = "<group>"; };
 		222E71FB5583B12E0833277A /* SpendingsListViewOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SpendingsListViewOutput.swift; sourceTree = "<group>"; };
@@ -822,6 +824,7 @@
 				079E064B208E72F80072240F /* Cell */,
 				079E0647208E72EE0072240F /* SpendingItemsListViewController.swift */,
 				079E0648208E72EE0072240F /* SpendingItemsListViewController.xib */,
+				07F45B1520A87D6200D8603B /* SpendingItemsListModuleOutput.swift */,
 			);
 			path = SpendingItemsList;
 			sourceTree = "<group>";
@@ -1344,6 +1347,7 @@
 				079E0645208CF3F00072240F /* SpendingReceiptItemsTableViewCellObject.swift in Sources */,
 				07CD2901209E354C0086F005 /* SpendingCommentTableViewCellObject.swift in Sources */,
 				0773D3A020836EFC00BB12ED /* ServicesAssembly.swift in Sources */,
+				07F45B1620A87D6200D8603B /* SpendingItemsListModuleOutput.swift in Sources */,
 				07C0FF0820823C2A00CA3FD0 /* NetworkProviderProtocol.swift in Sources */,
 				0773D3A4208370F400BB12ED /* SpendingInteractorInput.swift in Sources */,
 				079E062E208C90BA0072240F /* SpendingInfo.swift in Sources */,

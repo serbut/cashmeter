@@ -18,7 +18,7 @@
             <subviews>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="6Dt-eQ-3Lj">
                     <rect key="frame" x="0.0" y="0.0" width="755" height="370"/>
-                    <color key="backgroundColor" red="0.98039215690000003" green="0.7843137255" blue="0.074509803920000006" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="s9N-Ha-B1o">
                         <size key="itemSize" width="100" height="120"/>
                         <size key="headerReferenceSize" width="0.0" height="0.0"/>

@@ -10,13 +10,12 @@ import UIKit
 
 final class SpendingItemTableViewCell: UITableViewCell, HasNib {
 
-    @IBOutlet weak var nameLabel: UILabel!
+    // TODO: Insets
+    @IBOutlet weak var nameTextView: UITextView!
     @IBOutlet weak var priceCountLabel: UILabel!
     @IBOutlet weak var amountLabel: UILabel!
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
+    @IBOutlet weak var categoryContainer: UIView!
+    @IBOutlet weak var categoryImageView: UIImageView!
+    @IBOutlet weak var categoryTitleLabel: UILabel!
+    
 }

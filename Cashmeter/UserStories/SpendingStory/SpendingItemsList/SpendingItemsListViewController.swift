@@ -15,12 +15,18 @@ class SpendingItemsListViewController: UIViewController {
     let splitTitle = "Разделить" // TODO: Think about naming
     let cancelSplitTitle = "Отменить"
     
+    var splitModeEnabled = false
+    let categoriesOpenHeightConstraintValue: CGFloat = 120.0
+    
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var categoriesCollectionView: UICollectionView!
-    @IBOutlet var categoriesCollectionViewHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var categoriesContainerView: UIView!
+    @IBOutlet var categoriesContainerViewHeightConstraint: NSLayoutConstraint!
+    fileprivate lazy var categorySelectView = SelectCategory.loadNib()
     
     var spendingItems: [SpendingItemInfo]!
-    var categories: [Category]!
+    var categoryService: CategoryService!
+    var selectedItems: [SpendingItemInfo] = []
+    var moduleOutput: SpendingItemsListModuleOutput!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,8 +38,53 @@ class SpendingItemsListViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         
+        setupCategoriesView()
         setupSplitButton()
+        
+        // TODO: Setup mode, nor button
     }
+    
+    func setupCategoriesView() {
+        let categories = categoryService.getCategories()
+        categorySelectView.setup(with: categories, selectedCategory: nil)
+        categorySelectView.moduleOutput = self
+        categoriesContainerView.addSubview(categorySelectView)
+        categorySelectView.translatesAutoresizingMaskIntoConstraints = false
+        categorySelectView.leadingAnchor.constraint(equalTo: categoriesContainerView.leadingAnchor).isActive = true
+        categorySelectView.trailingAnchor.constraint(equalTo: categoriesContainerView.trailingAnchor).isActive = true
+        categorySelectView.topAnchor.constraint(equalTo: categoriesContainerView.topAnchor).isActive = true
+        categorySelectView.bottomAnchor.constraint(equalTo: categoriesContainerView.bottomAnchor).isActive = true
+    }
+    
+    private func setupNormalMode() {
+        splitModeEnabled = false
+        categoriesContainerViewHeightConstraint.constant = 0.0
+        UIView.animate(withDuration: 0.5) {
+            self.view.setNeedsLayout()
+            self.view.layoutIfNeeded()
+        }
+        navigationItem.leftBarButtonItem = navigationItem.backBarButtonItem
+        setupSplitButton()
+        tableView.allowsSelection = false
+    }
+    
+    private func setupSplitMode() {
+        splitModeEnabled = true
+        categoriesContainerViewHeightConstraint.constant = categoriesOpenHeightConstraintValue
+        UIView.animate(withDuration: 0.5) {
+            self.view.setNeedsLayout()
+            self.view.layoutIfNeeded()
+        }
+        setupCancelSplitButton()
+        setupSplitDoneButton()
+        tableView.allowsMultipleSelection = true
+    }
+    
+}
+
+// MARK: Buttons
+
+extension SpendingItemsListViewController {
     
     fileprivate func setupSplitButton() {
         let splitBarButton = UIBarButtonItem(title: splitTitle,
@@ -50,46 +101,29 @@ class SpendingItemsListViewController: UIViewController {
     
     fileprivate func setupSplitDoneButton() {
         let splitDoneButton = UIBarButtonItem(image: #imageLiteral(resourceName: "check_bar_button"),
-                                                style: .plain,
-                                                target: self,
-                                                action: #selector(didTapOnSplitDone))
+                                              style: .plain,
+                                              target: self,
+                                              action: #selector(didTapOnSplitDone))
         
         navigationItem.rightBarButtonItem = splitDoneButton
     }
     
     @objc func didTapOnSplitDone() {
+        moduleOutput.didSplitItems(spendingItems)
         setupNormalMode()
     }
-
+    
     fileprivate func setupCancelSplitButton() {
         let cancelSplitButton = UIBarButtonItem(image: #imageLiteral(resourceName: "close_bar_button"),
-                                             style: .plain,
-                                             target: self,
-                                             action: #selector(didTapOnCancelSplit))
+                                                style: .plain,
+                                                target: self,
+                                                action: #selector(didTapOnCancelSplit))
         
         navigationItem.leftBarButtonItem = cancelSplitButton
     }
     
     @objc func didTapOnCancelSplit() {
         setupNormalMode()
-    }
-    
-    private func setupNormalMode() {
-        categoriesCollectionViewHeightConstraint.constant = 0.0
-        UIView.animate(withDuration: 0.5) {
-            self.view.layoutIfNeeded()
-        }
-        navigationItem.leftBarButtonItem = navigationItem.backBarButtonItem
-        setupSplitButton()
-    }
-    
-    private func setupSplitMode() {
-        categoriesCollectionViewHeightConstraint.constant = 50.0
-        UIView.animate(withDuration: 0.5) {
-            self.view.layoutIfNeeded()
-        }
-        setupCancelSplitButton()
-        setupSplitDoneButton()
     }
     
 }
@@ -106,9 +140,13 @@ extension SpendingItemsListViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withType: SpendingItemTableViewCell.self, at: indexPath) as! SpendingItemTableViewCell
         let itemForCell = spendingItems[indexPath.row]
         
-        cell.nameLabel.text = itemForCell.name
+        cell.nameTextView.text = itemForCell.name
         cell.priceCountLabel.text = "\(itemForCell.price) * \(itemForCell.quantity)"
         cell.amountLabel.text = "\(itemForCell.amount)"
+        cell.categoryContainer.isHidden = itemForCell.category == nil
+        cell.categoryTitleLabel.text = itemForCell.category?.title
+        let imageName = itemForCell.category?.image_name ?? "undefined_category"
+        cell.categoryImageView.image = UIImage(named: imageName)
         
         return cell
     }
@@ -120,7 +158,46 @@ extension SpendingItemsListViewController: UITableViewDataSource {
 extension SpendingItemsListViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
+        guard splitModeEnabled else { return }
+        let item = spendingItems[indexPath.row]
+        if selectedItems.contains(item),
+            let index = spendingItems.index(of: item) {
+            tableView.deselectRow(at: indexPath, animated: true)
+            spendingItems.remove(at: index)
+        } else {
+            selectedItems.append(item)
+        }
+    }
+    
+}
+
+// MARK: SelectCategoryModuleOutput
+
+extension SpendingItemsListViewController: SelectCategoryModuleOutput {
+    
+    func didSelectCategory(_ category: Category?) {
+        selectedItems.forEach { $0.category = category }
+        selectedItems = []
+        tableView.reloadData()
+    }
+    
+    func didTapAddCategory() {
+        let viewContoller = NewCategoryViewController()
+        viewContoller.moduleOutput = self
+        viewContoller.categoryService = ServicesAssembly().categoryService()
+        let navVC = UINavigationController(rootViewController: viewContoller)
+        
+        present(navVC, animated: true, completion: nil)
+    }
+    
+}
+
+// MARK: NewCategoryModuleOutput
+
+extension SpendingItemsListViewController: NewCategoryModuleOutput {
+    
+    func didAddCategory() {
+        setupCategoriesView()
     }
     
 }

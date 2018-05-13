@@ -72,16 +72,22 @@ extension SpendingService: SpendingServiceInput {
         spending.comment = spendingInfo.comment
         spending.wallet = spendingInfo.wallet
         
-        if spendingInfo.spending?.items?.count == 0,
-            let spendingItems = spendingInfo.items {
-            for itemInfo in spendingItems {
-                let item = SpendingItem(context: managedObjectContext)
-                item.title = itemInfo.name
-                item.price = itemInfo.price
-                item.quantity = itemInfo.quantity
-                item.amount = itemInfo.amount
-                item.spending = spending
-                spending.items?.adding(item)
+        if let spendingItems = spendingInfo.items {
+            if spendingInfo.spending?.items?.count == 0 {
+                for itemInfo in spendingItems {
+                    let item = SpendingItem(context: managedObjectContext)
+                    item.title = itemInfo.name
+                    item.price = itemInfo.price
+                    item.quantity = itemInfo.quantity
+                    item.amount = itemInfo.amount
+                    item.category = itemInfo.category
+                    item.spending = spending
+                    spending.items?.adding(item)
+                }
+            } else if !spendingItems.isEmpty {
+                for itemInfo in spendingItems where itemInfo.spendingItem != nil {
+                    itemInfo.spendingItem?.category = itemInfo.category
+                }
             }
         }
         

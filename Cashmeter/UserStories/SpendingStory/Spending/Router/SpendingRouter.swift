@@ -18,9 +18,11 @@ final class SpendingRouter: SpendingRouterInput {
         transitionHandler.present(viewController, animated: true, completion: nil)
     }
     
-    func showItemsList(spendingItems: [SpendingItemInfo]) {
+    func showItemsList(spendingItems: [SpendingItemInfo], moduleOutput: SpendingItemsListModuleOutput) {
         let viewController = SpendingItemsListViewController()
         viewController.spendingItems = spendingItems
+        viewController.categoryService = ServicesAssembly().categoryService()
+        viewController.moduleOutput = moduleOutput
         transitionHandler.navigationController?.pushViewController(viewController, animated: true)
     }
     

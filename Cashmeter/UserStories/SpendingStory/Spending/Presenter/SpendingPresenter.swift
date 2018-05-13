@@ -54,7 +54,7 @@ extension SpendingPresenter: SpendingViewOutput {
     
     func didTriggerShowSpendingItemsAction() {
         guard let spendingItems = spendingInfo.items else { return }
-        router.showItemsList(spendingItems: spendingItems)
+        router.showItemsList(spendingItems: spendingItems, moduleOutput: self)
     }
     
     func didTriggerSelectWalletAction() {
@@ -169,6 +169,18 @@ extension SpendingPresenter: SelectWalletModuleOutput {
     
     func didSelectWallet(_ wallet: Wallet) {
         spendingInfo.wallet = wallet
+        updateUI()
+    }
+    
+}
+
+// MARK: SpendingItemsListModuleOutput
+
+extension SpendingPresenter: SpendingItemsListModuleOutput {
+    
+    func didSplitItems(_ items: [SpendingItemInfo]) {
+        spendingInfo.items = items
+        // TODO: maybe only needed to update categories cell
         updateUI()
     }
     
