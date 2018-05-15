@@ -29,8 +29,10 @@ extension SpendingsListRouter: SpendingsListRouterInput {
         transitionHandler.present(navigationController, animated: true, completion: nil)
     }
     
-    func showFilterModule() {
+    func showFilterModule(moduleOutput: FilterModuleOutput) {
         let viewController = FilterViewController()
+        viewController.categories = ServicesAssembly().categoryService().getCategories()
+        viewController.moduleOutput = moduleOutput
         let navigationController = UINavigationController(rootViewController: viewController)
         
         transitionHandler.present(navigationController, animated: true, completion: nil)

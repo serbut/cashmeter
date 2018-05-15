@@ -131,6 +131,10 @@
 		07EC000E20868581004E442B /* ReceiptData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EC000D20868581004E442B /* ReceiptData.swift */; };
 		07EDBFAB20828B7E009229DC /* SpendingsListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07EDBFA920828B7E009229DC /* SpendingsListViewController.xib */; };
 		07F45B1620A87D6200D8603B /* SpendingItemsListModuleOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F45B1520A87D6200D8603B /* SpendingItemsListModuleOutput.swift */; };
+		07F45B1A20A8DBA700D8603B /* FilterCategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F45B1820A8DBA700D8603B /* FilterCategoryTableViewCell.swift */; };
+		07F45B1B20A8DBA700D8603B /* FilterCategoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07F45B1920A8DBA700D8603B /* FilterCategoryTableViewCell.xib */; };
+		07F45B1D20A8DE5500D8603B /* FilterModuleOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F45B1C20A8DE5500D8603B /* FilterModuleOutput.swift */; };
+		07F45B1F20AA29D700D8603B /* Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F45B1E20AA29D700D8603B /* Filter.swift */; };
 		179F034FA193280B14B9776D /* SpendingsListInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACFD1A6EA40796D477271BEA /* SpendingsListInteractorInput.swift */; };
 		27AD6A7D0B629DB07C019AE0 /* SpendingsListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E61ED4B6F9015FF13F6BB2D /* SpendingsListPresenter.swift */; };
 		344907B3E08789527E898C94 /* SpendingsListDisplayManagerInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54CB9EC36D8D02CEB08773B /* SpendingsListDisplayManagerInput.swift */; };
@@ -288,6 +292,10 @@
 		07EC000D20868581004E442B /* ReceiptData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptData.swift; sourceTree = "<group>"; };
 		07EDBFA920828B7E009229DC /* SpendingsListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SpendingsListViewController.xib; sourceTree = "<group>"; };
 		07F45B1520A87D6200D8603B /* SpendingItemsListModuleOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendingItemsListModuleOutput.swift; sourceTree = "<group>"; };
+		07F45B1820A8DBA700D8603B /* FilterCategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterCategoryTableViewCell.swift; sourceTree = "<group>"; };
+		07F45B1920A8DBA700D8603B /* FilterCategoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilterCategoryTableViewCell.xib; sourceTree = "<group>"; };
+		07F45B1C20A8DE5500D8603B /* FilterModuleOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterModuleOutput.swift; sourceTree = "<group>"; };
+		07F45B1E20AA29D700D8603B /* Filter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Filter.swift; sourceTree = "<group>"; };
 		1356556D4DC764BDC6709CE7 /* SpendingsListInteractorOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SpendingsListInteractorOutput.swift; sourceTree = "<group>"; };
 		19ECDDF716CE6C42FF7DEBC4 /* SpendingsListViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SpendingsListViewController.swift; sourceTree = "<group>"; };
 		222E71FB5583B12E0833277A /* SpendingsListViewOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SpendingsListViewOutput.swift; sourceTree = "<group>"; };
@@ -345,6 +353,7 @@
 				07EC000C2086856F004E442B /* Receipt */,
 				079E0633208CA56D0072240F /* Category */,
 				0773D37220834BBB00BB12ED /* Spending */,
+				07F45B1E20AA29D700D8603B /* Filter.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -930,7 +939,9 @@
 		07CD2914209E4D490086F005 /* Filter */ = {
 			isa = PBXGroup;
 			children = (
+				07F45B1720A8DB8500D8603B /* FilterCategoryCell */,
 				07CD2915209E4D6F0086F005 /* FilterViewController.swift */,
+				07F45B1C20A8DE5500D8603B /* FilterModuleOutput.swift */,
 				07CD2916209E4D6F0086F005 /* FilterViewController.xib */,
 			);
 			path = Filter;
@@ -977,6 +988,15 @@
 				079E0639208CE7160072240F /* ReceiptInfo.swift */,
 			);
 			path = Receipt;
+			sourceTree = "<group>";
+		};
+		07F45B1720A8DB8500D8603B /* FilterCategoryCell */ = {
+			isa = PBXGroup;
+			children = (
+				07F45B1820A8DBA700D8603B /* FilterCategoryTableViewCell.swift */,
+				07F45B1920A8DBA700D8603B /* FilterCategoryTableViewCell.xib */,
+			);
+			path = FilterCategoryCell;
 			sourceTree = "<group>";
 		};
 		89C919BBE7F647DD0871A687 /* Frameworks */ = {
@@ -1152,6 +1172,7 @@
 				0743AF63208692C80026C5B9 /* CategoriesTableViewCell.xib in Resources */,
 				077EBB742018BC15006E12D5 /* DefaultCategories.plist in Resources */,
 				07EDBFAB20828B7E009229DC /* SpendingsListViewController.xib in Resources */,
+				07F45B1B20A8DBA700D8603B /* FilterCategoryTableViewCell.xib in Resources */,
 				0769A33E209CF0E4004BD5E8 /* WalletsListTableViewCell.xib in Resources */,
 				079E064A208E72EE0072240F /* SpendingItemsListViewController.xib in Resources */,
 				073DE00C20035DD4000CAD7C /* LaunchScreen.storyboard in Resources */,
@@ -1342,6 +1363,7 @@
 				0769A33D209CF0E4004BD5E8 /* WalletsListTableViewCell.swift in Sources */,
 				0773D38C208359FC00BB12ED /* SpendingModuleOutput.swift in Sources */,
 				07CD28F5209DBF7E0086F005 /* InitialDataFillerService.swift in Sources */,
+				07F45B1A20A8DBA700D8603B /* FilterCategoryTableViewCell.swift in Sources */,
 				073DE00720035DD4000CAD7C /* Cashmeter.xcdatamodeld in Sources */,
 				07C0FF0C20823D2D00CA3FD0 /* NetworkProvider.swift in Sources */,
 				079E0645208CF3F00072240F /* SpendingReceiptItemsTableViewCellObject.swift in Sources */,
@@ -1379,6 +1401,7 @@
 				0773D37120834B5B00BB12ED /* SpendingDataDisplayManagerOutput.swift in Sources */,
 				07CD2917209E4D6F0086F005 /* FilterViewController.swift in Sources */,
 				0773D386208359C900BB12ED /* SpendingPresenter.swift in Sources */,
+				07F45B1F20AA29D700D8603B /* Filter.swift in Sources */,
 				35977FC0FE9000C7C6D00B02 /* SpendingsListConfigurator.swift in Sources */,
 				072A46A520A8406900A98C6E /* SpendingItemInfo.swift in Sources */,
 				8A5E5F1A28AB524855BC99D7 /* SpendingsListViewInput.swift in Sources */,
@@ -1399,6 +1422,7 @@
 				82FF54B91A41E5695C11801D /* SpendingsListInteractorOutput.swift in Sources */,
 				9AF449E4ED17FBC2B0E0A2CF /* SpendingsListInteractor.swift in Sources */,
 				07CD28F3209DB67D0086F005 /* CurrencyService.swift in Sources */,
+				07F45B1D20A8DE5500D8603B /* FilterModuleOutput.swift in Sources */,
 				07CD2911209E444F0086F005 /* SelectWalletTableViewCell.swift in Sources */,
 				9FB88F2D01FF9A780DC984A0 /* SpendingsListRouterInput.swift in Sources */,
 				0769A332209BB62A004BD5E8 /* CategoryIconCollectionViewCell.swift in Sources */,

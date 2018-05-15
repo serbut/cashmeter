@@ -11,13 +11,10 @@ import CoreData
 final class SpendingsListService: NSObject {
     
     var coreDataStack: CoreDataStack
-    var fetchedResultsController: NSFetchedResultsController<Spending>!
     
     init(with coreDataStack: CoreDataStack) {
         self.coreDataStack = coreDataStack
         super.init()
-        
-        fetchedResultsController = spendingsFetchedResultsController()
     }
     
 }
@@ -26,8 +23,8 @@ final class SpendingsListService: NSObject {
 
 extension SpendingsListService: NSFetchedResultsControllerDelegate {
     
-    func spendingsFetchedResultsController() -> NSFetchedResultsController<Spending> {
-        let fetchedResultController = NSFetchedResultsController(fetchRequest: spendingsFetchRequest(),
+    func spendingsFetchedResultsController(with filter: Filter?) -> NSFetchedResultsController<Spending> {
+        let fetchedResultController = NSFetchedResultsController(fetchRequest: spendingsFetchRequest(with: filter),
                                                                  managedObjectContext: coreDataStack.mainContext,
                                                                  sectionNameKeyPath: nil,
                                                                  cacheName: nil)
@@ -42,12 +39,37 @@ extension SpendingsListService: NSFetchedResultsControllerDelegate {
         return fetchedResultController
     }
     
-    func spendingsFetchRequest() -> NSFetchRequest<Spending> {
+    func spendingsFetchRequest(with filter: Filter?) -> NSFetchRequest<Spending> {
         let fetchRequest: NSFetchRequest<Spending> = Spending.fetchRequest()
         fetchRequest.fetchBatchSize = 20
         
         let sortDescriptor = NSSortDescriptor(key: "date", ascending: false)
         fetchRequest.sortDescriptors = [sortDescriptor]
+        
+        if let filter = filter {   
+            var predicates: [NSPredicate] = []
+            if let fromDate = filter.fromDate {
+                let fromDatePredicate = NSPredicate(format: "date >= %@", fromDate as NSDate)
+                predicates.append(fromDatePredicate)
+            }
+            if let toDate = filter.toDate {
+                let toDatePredicate = NSPredicate(format: "date <= %@", toDate as NSDate)
+                predicates.append(toDatePredicate)
+            }
+            if let categories = filter.categories {
+                var categoryPredicates: [NSPredicate] = []
+                for category in categories {
+                    let predicate = NSPredicate(format: "category.title == %@", category.title!)
+                    categoryPredicates.append(predicate)
+                }
+                if !categoryPredicates.isEmpty {
+                    predicates.append(NSCompoundPredicate(type: .or, subpredicates: categoryPredicates))
+                }
+            }
+            if !predicates.isEmpty {
+                fetchRequest.predicate = NSCompoundPredicate(andPredicateWithSubpredicates: predicates)
+            }
+        }
         
         return fetchRequest
     }

@@ -18,6 +18,6 @@ protocol SpendingsListRouterInput: class {
     /**
      Метод открывает модуль фильтра.
      */
-    func showFilterModule()
+    func showFilterModule(moduleOutput: FilterModuleOutput)
     
 }

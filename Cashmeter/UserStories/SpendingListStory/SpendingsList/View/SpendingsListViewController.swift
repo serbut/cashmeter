@@ -47,6 +47,10 @@ extension SpendingsListViewController: SpendingsListViewInput {
         tableView.reloadData()
     }
 
+    func didSetFilter(_ filter: Filter) {
+        displayManager.didSetFilter(filter)
+    }
+    
 }
 
 // MARK: SpendingsListDisplayManagerOutput

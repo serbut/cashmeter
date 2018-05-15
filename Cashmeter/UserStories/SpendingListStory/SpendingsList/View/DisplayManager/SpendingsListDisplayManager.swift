@@ -14,6 +14,7 @@ final class SpendingsListDisplayManager: NSObject {
     weak var output: SpendingsListDisplayManagerOutput!
     weak var tableView: UITableView!
     var fetchedResultsController: NSFetchedResultsController<Spending>!
+    var spendingListService: SpendingsListService!
     
 }
 
@@ -26,6 +27,12 @@ extension SpendingsListDisplayManager: SpendingsListDisplayManagerInput {
         
         tableView.delegate = self
         tableView.dataSource = self
+    }
+    
+    func didSetFilter(_ filter: Filter) {
+        fetchedResultsController = spendingListService.spendingsFetchedResultsController(with: filter)
+        try? fetchedResultsController.performFetch()
+        tableView.reloadData()
     }
     
 }

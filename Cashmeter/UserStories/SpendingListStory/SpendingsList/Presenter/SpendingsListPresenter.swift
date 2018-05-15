@@ -35,7 +35,7 @@ extension SpendingsListPresenter: SpendingsListViewOutput {
     }
     
     func didTapFilterButton() {
-        router.showFilterModule()
+        router.showFilterModule(moduleOutput: self)
     }
     
     func didTriggerDeleteAction(_ spending: Spending) {
@@ -50,6 +50,16 @@ extension SpendingsListPresenter: SpendingsListInteractorOutput {
     
     func contentChanged() {
         view.reload()
+    }
+    
+}
+
+// MARK: FilterModuleOutput
+
+extension SpendingsListPresenter: FilterModuleOutput {
+    
+    func didSelectFilter(filter: Filter) {
+        view.didSetFilter(filter)
     }
     
 }

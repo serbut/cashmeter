@@ -24,14 +24,9 @@ final class SpendingDateTableViewCell: UITableViewCell, HasNib {
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var datePicker: UIDatePicker!
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-    
     @IBAction func datePickerValueChanged(_ sender: UIDatePicker) {
         delegate.didChangeDateValue(sender.date)
-        dateLabel.text = sender.date.description
+        dateLabel.text = sender.date.shortFormat
     }
 }
 

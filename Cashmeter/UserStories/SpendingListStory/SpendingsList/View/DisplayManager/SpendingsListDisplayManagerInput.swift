@@ -17,4 +17,11 @@ protocol SpendingsListDisplayManagerInput: class {
      */
     func setupInitialState(with tableView: UITableView)
     
+    /**
+     Метод сообщает о том, что был применен фильтр.
+     
+     @param filter - примененный фильтр.
+     */
+    func didSetFilter(_ filter: Filter)
+    
 }

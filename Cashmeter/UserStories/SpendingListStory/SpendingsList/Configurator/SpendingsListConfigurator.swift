@@ -46,26 +46,27 @@ final class SpendingsListModuleConfigurator {
     private func configureDisplayManager() -> SpendingsListDisplayManager {
         let displayManager = SpendingsListDisplayManager()
         let service = servicesAssembly.spendingsListService()
-        displayManager.fetchedResultsController = service.fetchedResultsController
+        displayManager.fetchedResultsController = service.spendingsFetchedResultsController(with: nil)
         displayManager.fetchedResultsController.delegate = displayManager
+        displayManager.spendingListService = servicesAssembly.spendingsListService()
         return displayManager
     }
 
     private func configurePresenter() -> SpendingsListPresenter {
-        let presenter =  SpendingsListPresenter()
+        let presenter = SpendingsListPresenter()
 
         return presenter
     }
 
     private func configureInteractor() -> SpendingsListInteractor {
-        let interactor =  SpendingsListInteractor()
+        let interactor = SpendingsListInteractor()
         interactor.spendingService = servicesAssembly.spendingService()
         
         return interactor
     }
 
     private func configureRouter() -> SpendingsListRouter {
-        let router =  SpendingsListRouter()
+        let router = SpendingsListRouter()
 
         return router
     }
