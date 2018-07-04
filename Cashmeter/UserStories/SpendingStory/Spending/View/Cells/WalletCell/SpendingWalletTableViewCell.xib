@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" id="KGk-i7-Jjw" customClass="SpendingWalletTableViewCell" customModule="Cashmeter" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="286" height="43.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Наличные" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Bf-hB-6QT">
+                        <rect key="frame" x="16" y="11.5" width="81.5" height="20.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="₽" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="buh-Km-66y">
+                        <rect key="frame" x="267" y="11" width="11" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12500" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ukn-vD-H1O">
+                        <rect key="frame" x="210.5" y="12" width="48.5" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Кошелек не выбран" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KxV-Tx-TIR">
+                        <rect key="frame" x="16" y="12" width="159" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="0Bf-hB-6QT" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="B58-6g-RdE"/>
+                    <constraint firstItem="buh-Km-66y" firstAttribute="leading" secondItem="ukn-vD-H1O" secondAttribute="trailing" constant="8" id="Bkk-5q-S0j"/>
+                    <constraint firstItem="0Bf-hB-6QT" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="HBg-A9-fbF"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="buh-Km-66y" secondAttribute="trailing" id="Mlt-cz-mdG"/>
+                    <constraint firstItem="ukn-vD-H1O" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="0Bf-hB-6QT" secondAttribute="trailing" constant="20" id="Q5Y-On-hFy"/>
+                    <constraint firstItem="KxV-Tx-TIR" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="VkQ-Ct-qcN"/>
+                    <constraint firstItem="ukn-vD-H1O" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="ZUN-9h-Zvv"/>
+                    <constraint firstItem="KxV-Tx-TIR" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="bNF-j5-yjd"/>
+                    <constraint firstItem="buh-Km-66y" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="loK-5k-PCc"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="balanceLabel" destination="ukn-vD-H1O" id="qaM-Yh-YrK"/>
+                <outlet property="currencySignLabel" destination="buh-Km-66y" id="9z4-wd-91q"/>
+                <outlet property="nameLabel" destination="0Bf-hB-6QT" id="pdE-C9-GL6"/>
+                <outlet property="walletNotChosenLabel" destination="KxV-Tx-TIR" id="KRl-oU-OYO"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+</document>

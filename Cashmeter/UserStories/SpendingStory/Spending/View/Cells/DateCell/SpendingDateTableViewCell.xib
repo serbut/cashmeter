@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="212" id="KGk-i7-Jjw" customClass="SpendingDateTableViewCell" customModule="Cashmeter" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="314" height="212"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="314" height="211.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <datePicker hidden="YES" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="uzo-6e-c4l">
+                        <rect key="frame" x="0.0" y="49.5" width="314" height="162"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="162" id="90g-GL-Kk8"/>
+                        </constraints>
+                        <date key="date" timeIntervalSinceReferenceDate="546025347.30124402">
+                            <!--2018-04-21 17:42:27 +0000-->
+                        </date>
+                        <connections>
+                            <action selector="datePickerValueChanged:" destination="KGk-i7-Jjw" eventType="valueChanged" id="eWU-mJ-lUK"/>
+                        </connections>
+                    </datePicker>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Mr-AT-ur1">
+                        <rect key="frame" x="20" y="0.0" width="274" height="50"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="50" id="Jir-zB-03P"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="6Mr-AT-ur1" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" symbolic="YES" id="B87-Zz-SZt"/>
+                    <constraint firstItem="uzo-6e-c4l" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="blm-nO-47z"/>
+                    <constraint firstItem="6Mr-AT-ur1" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="rMF-KR-OKn"/>
+                    <constraint firstAttribute="trailing" secondItem="6Mr-AT-ur1" secondAttribute="trailing" constant="20" symbolic="YES" id="rnF-hq-2Se"/>
+                    <constraint firstAttribute="bottom" secondItem="uzo-6e-c4l" secondAttribute="bottom" id="xP6-Z5-QOI"/>
+                    <constraint firstAttribute="trailing" secondItem="uzo-6e-c4l" secondAttribute="trailing" id="yNG-1p-pZr"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="dateLabel" destination="6Mr-AT-ur1" id="XLb-eR-xlw"/>
+                <outlet property="datePicker" destination="uzo-6e-c4l" id="eyL-KM-Aby"/>
+            </connections>
+            <point key="canvasLocation" x="31" y="102"/>
+        </tableViewCell>
+    </objects>
+</document>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EditWalletViewController" customModule="Cashmeter" customModuleProvider="target">
+            <connections>
+                <outlet property="currenciesTableView" destination="W7c-uB-8yS" id="SKq-P1-9BD"/>
+                <outlet property="currentBalanceTextField" destination="8jp-ND-4YB" id="08L-xc-RLd"/>
+                <outlet property="nameTextField" destination="OZ9-JX-IRc" id="iXn-ra-L9s"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Название" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OZ9-JX-IRc">
+                    <rect key="frame" x="16" y="28" width="288" height="30"/>
+                    <nil key="textColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0.0" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8jp-ND-4YB">
+                    <rect key="frame" x="16" y="98" width="288" height="30"/>
+                    <nil key="textColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                </textField>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Текущий баланс" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FkA-gp-RUe">
+                    <rect key="frame" x="16" y="66" width="150" height="24"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Валюта" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mfI-Sw-ZPw">
+                    <rect key="frame" x="16" y="136" width="68.5" height="24"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="W7c-uB-8yS">
+                    <rect key="frame" x="0.0" y="168" width="320" height="400"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="OZ9-JX-IRc" secondAttribute="trailing" constant="16" id="1Qr-CT-B7b"/>
+                <constraint firstItem="W7c-uB-8yS" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="2KI-Hz-vME"/>
+                <constraint firstItem="mfI-Sw-ZPw" firstAttribute="top" secondItem="8jp-ND-4YB" secondAttribute="bottom" constant="8" id="7Fc-Dz-BPT"/>
+                <constraint firstItem="W7c-uB-8yS" firstAttribute="top" secondItem="mfI-Sw-ZPw" secondAttribute="bottom" constant="8" id="BBw-WY-Y1g"/>
+                <constraint firstItem="OZ9-JX-IRc" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="Ggq-vQ-emm"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="8jp-ND-4YB" secondAttribute="trailing" constant="16" id="L9C-pv-dta"/>
+                <constraint firstItem="FkA-gp-RUe" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="VQ8-NC-GjN"/>
+                <constraint firstItem="8jp-ND-4YB" firstAttribute="top" secondItem="FkA-gp-RUe" secondAttribute="bottom" constant="8" id="VR8-58-3ee"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="W7c-uB-8yS" secondAttribute="bottom" id="aTv-ZD-CpV"/>
+                <constraint firstItem="mfI-Sw-ZPw" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="bnl-Xn-eAT"/>
+                <constraint firstItem="OZ9-JX-IRc" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="8" id="goJ-kS-ua3"/>
+                <constraint firstItem="FkA-gp-RUe" firstAttribute="top" secondItem="OZ9-JX-IRc" secondAttribute="bottom" constant="8" id="rWS-d3-xNe"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="W7c-uB-8yS" secondAttribute="trailing" id="wB7-AY-QvY"/>
+                <constraint firstItem="8jp-ND-4YB" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="xzl-38-LYv"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+        </view>
+        <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="q6s-kF-mwf">
+            <rect key="frame" x="0.0" y="0.0" width="121" height="28"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <segments>
+                <segment title="First"/>
+                <segment title="Second"/>
+            </segments>
+            <point key="canvasLocation" x="357" y="136"/>
+        </segmentedControl>
+    </objects>
+</document>
